@@ -1,0 +1,5856 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        // Prevent browser from restoring previous scroll position on refresh
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+
+        // Remove #hash ASAP so the browser doesn't jump to that section on reload
+        if (location.hash) {
+            history.replaceState(null, document.title, location.pathname + location.search);
+        }
+    </script>
+
+    <title>LessonPlan | Educational Platform</title>
+
+    <link rel="icon" href="assets/logo-removebg.png" sizes="any">
+    <link rel="icon" type="image/png" href="assets/logo-removebg.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/logo-removebg.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="assets/logo-removebg.png" sizes="180x180">
+
+    <!-- Importing FontAwesome for Icons (No download needed, works online) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            /* Palette */
+            --primary-white: #ffffff;
+            --primary-blue: #003366; /* Deep Professional Blue */
+            --accent-blue: #eef4fa;  /* Very Light Blue for backgrounds */
+            --action-orange: #ff6600; /* Energetic Orange for contrast */
+            --text-dark: #333333;
+            --text-light: #666666;
+            
+            /* Styling */
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 20px rgba(0, 51, 102, 0.15);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- UTILITIES --- */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--action-orange);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- BUTTON STYLES --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Primary Button (Orange) */
+        .btn-primary {
+            background-color: var(--action-orange);
+            color: var(--primary-white);
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            /* background-color: #05429de9; */
+            background-color: #3076c6e9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+        }
+
+        /* Secondary Button (Blue Outline) */
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-blue);
+            color: var(--primary-white);
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--primary-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--action-orange);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--action-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --- HERO SECTION --- */
+        
+        /* --- SECTION 1: HERO --- */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 70px); /* Viewport minus header height */
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Background Image */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Dark Overlay */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 51, 102, 0.6) 0%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+            z-index: 2;
+        }
+
+        /* Central Content */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 40px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+        }
+
+        .hero-content .btn-primary {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Video Wrapper (Bottom Left) */
+        .hero-video-wrapper {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .hero-video-container {
+            width: 280px;
+            height: 160px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-video-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-white);
+            background: rgba(0, 51, 102, 0.85);
+            padding: 8px 16px;
+            border-radius: 4px;
+            border-left: 3px solid var(--action-orange);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- HERO RESPONSIVE STYLES --- */
+        @media (max-width: 992px) {
+            .hero-section {
+                height: calc(100vh - 120px); /* Account for stacked nav */
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-video-container {
+                width: 240px;
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: calc(100vh - 140px);
+                min-height: 600px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+                margin-bottom: 30px;
+            }
+            
+            .hero-content .btn-primary {
+                padding: 14px 32px;
+                font-size: 1rem;
+            }
+            
+            .hero-video-wrapper {
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .hero-video-container {
+                width: 200px;
+                height: 115px;
+            }
+            
+            .hero-video-title {
+                font-size: 0.85rem;
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                min-height: 550px;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            
+            .hero-content .btn-primary {
+                padding: 12px 28px;
+                font-size: 0.95rem;
+            }
+            
+            .hero-video-wrapper {
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+            }
+            
+            .hero-video-container {
+                width: 160px;
+                height: 95px;
+            }
+            
+            .hero-video-title {
+                font-size: 0.8rem;
+            }
+        }
+
+
+        
+        /* --- SECTION 2: SESSIONS CAROUSEL (ENHANCED) --- */
+        .sessions-section {
+            background-color: var(--primary-white);
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        /* --- Golden Frame Title --- */
+        .sessions-title-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        .sessions-title-frame {
+            position: relative;
+            padding: 30px 50px;
+            display: inline-block;
+        }
+
+        /* Golden Corner Accents */
+        .frame-corner {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-color: #D4AF37;
+            border-style: solid;
+        }
+
+        .frame-top-left {
+            top: 0;
+            left: 0;
+            border-width: 3px 0 0 3px;
+        }
+
+        .frame-top-right {
+            top: 0;
+            right: 0;
+            border-width: 3px 3px 0 0;
+        }
+
+        .frame-bottom-left {
+            bottom: 0;
+            left: 0;
+            border-width: 0 0 3px 3px;
+        }
+
+        .frame-bottom-right {
+            bottom: 0;
+            right: 0;
+            border-width: 0 3px 3px 0;
+        }
+
+        /* Title Glow Effect - Updated for white background */
+        .sessions-title-frame::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            background: radial-gradient(
+                ellipse at center,
+                rgba(212, 175, 55, 0.1) 0%,
+                transparent 70%
+            );
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Title - Updated for white background */
+        .sessions-title {
+            color: var(--primary-blue);
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        /* --- Controls Row: Left Subtitle, Right Arrows --- */
+        .sessions-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            padding: 0 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Highlighted Subtitle - Updated for white background */
+        .sessions-subtitle-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sessions-subtitle-icon {
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--action-orange), #D4AF37);
+            border-radius: 2px;
+        }
+
+        .sessions-subtitle {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .sessions-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--action-orange), transparent);
+        }
+
+        /* Arrow Buttons - Updated for white background */
+        .sessions-arrows {
+            display: flex;
+            gap: 15px;
+        }
+
+        .arrow-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-blue);
+            background: transparent;
+            color: var(--primary-blue);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .arrow-btn:hover {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: var(--primary-white);
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.25);
+        }
+
+        .arrow-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* --- Carousel --- */
+        .sessions-carousel-wrap {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0 40px;
+        }
+
+        .sessions-carousel-track {
+            display: flex;
+            gap: 30px;
+            will-change: transform;
+            padding-left: 40px;
+        }
+
+        /* --- Flip Card Styles --- */
+        .session-card {
+            flex-shrink: 0;
+            width: 300px;
+            height: 420px;
+            perspective: 1500px;
+        }
+
+        .session-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .session-card:hover .session-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Add subtle lift on hover */
+        .session-card:hover {
+            z-index: 10;
+        }
+
+        .session-card-front,
+        .session-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 51, 102, 0.15);
+        }
+
+        /* --- Front of Card --- */
+        .session-card-front {
+            background-color: #f0f4f8;
+            border: 1px solid rgba(0, 51, 102, 0.1);
+        }
+
+        .session-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .session-card:hover .session-card-front img {
+            transform: scale(1.1);
+        }
+
+        /* Front Overlay with Hint */
+        .card-front-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 51, 102, 0.8) 0%, transparent 100%);
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .session-card:hover .card-front-overlay {
+            opacity: 1;
+        }
+
+        .card-front-hint {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Back of Card --- */
+        .session-card-back {
+            background: linear-gradient(160deg, var(--primary-blue) 0%, #001a33 100%);
+            transform: rotateY(180deg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .card-back-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        .card-back-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #D4AF37 0%, #aa8a2e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            color: var(--primary-white);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .session-card-back h3 {
+            color: var(--primary-white);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .session-card-back p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .session-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--action-orange) 0%, #cc5200 100%);
+            color: var(--primary-white);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        /* --- SESSIONS RESPONSIVE STYLES --- */
+        @media (max-width: 992px) {
+            .sessions-title {
+                font-size: 2.2rem;
+            }
+            
+            .sessions-title-frame {
+                padding: 25px 40px;
+            }
+            
+            .frame-corner {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .session-card {
+                width: 270px;
+                height: 380px;
+            }
+            
+            .sessions-controls {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sessions-section {
+                padding: 60px 0;
+            }
+            
+            .sessions-title {
+                font-size: 1.7rem;
+            }
+            
+            .sessions-title-frame {
+                padding: 20px 30px;
+            }
+            
+            .frame-corner {
+                width: 20px;
+                height: 20px;
+                border-width: 2px;
+            }
+            
+            .sessions-controls {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+                padding: 0 25px;
+            }
+            
+            .sessions-arrows {
+                align-self: flex-end;
+            }
+            
+            .sessions-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .session-card {
+                width: 250px;
+                height: 350px;
+            }
+            
+            .card-back-content {
+                padding: 25px 20px;
+            }
+            
+            .card-back-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+            
+            .session-card-back h3 {
+                font-size: 1.3rem;
+            }
+            
+            .session-card-back p {
+                font-size: 0.9rem;
+            }
+            
+            .sessions-carousel-track {
+                padding-left: 25px;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sessions-title {
+                font-size: 1.4rem;
+            }
+            
+            .sessions-title-frame {
+                padding: 15px 20px;
+            }
+            
+            .sessions-subtitle {
+                font-size: 1rem;
+            }
+            
+            .sessions-subtitle-icon {
+                width: 30px;
+            }
+            
+            .arrow-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
+            }
+            
+            .session-card {
+                width: 230px;
+                height: 320px;
+            }
+            
+            .card-back-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            
+            .session-card-back h3 {
+                font-size: 1.15rem;
+                margin-bottom: 10px;
+            }
+            
+            .session-card-back p {
+                font-size: 0.85rem;
+                margin-bottom: 20px;
+            }
+            
+            .session-tag {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+            }
+            
+            .sessions-carousel-track {
+                padding-left: 20px;
+                gap: 15px;
+            }
+        }
+
+
+
+        /* --- SECTION 3: STUDENT POWER --- */
+        .student-power-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Background Image */
+        .student-power-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .student-power-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Gradient Overlay */
+        .student-power-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.75) 0%,
+                rgba(0, 0, 0, 0.4) 40%,
+                rgba(0, 0, 0, 0.1) 70%,
+                transparent 100%
+            );
+            z-index: 2;
+        }
+
+        /* Content Container - Bottom 40% */
+        .student-power-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 10vh;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Golden Box */
+        .student-power-box {
+            position: relative;
+            padding: 40px 60px;
+            margin-bottom: 35px;
+            background: linear-gradient(
+                135deg,
+                rgba(212, 175, 55, 0.15) 0%,
+                rgba(212, 175, 55, 0.05) 100%
+            );
+            border: 3px solid #D4AF37;
+            border-radius: 4px;
+            box-shadow: 
+                0 0 40px rgba(212, 175, 55, 0.2),
+                inset 0 0 30px rgba(212, 175, 55, 0.05);
+        }
+
+        /* Golden Corner Decorations */
+        .student-power-box::before,
+        .student-power-box::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: #FFD700;
+            border-style: solid;
+        }
+
+        .student-power-box::before {
+            top: -6px;
+            left: -6px;
+            border-width: 3px 0 0 3px;
+        }
+
+        .student-power-box::after {
+            bottom: -6px;
+            right: -6px;
+            border-width: 0 3px 3px 0;
+        }
+
+        /* Main Title */
+        .student-power-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary-white);
+            line-height: 1.25;
+            margin: 0 0 20px 0;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            letter-spacing: -0.5px;
+        }
+
+        .student-power-title span {
+            color: #FFD700;
+            display: block;
+        }
+
+        /* Subtitle */
+        .student-power-subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* CTA Button */
+        .student-power-btn {
+            padding: 18px 50px;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 30px rgba(255, 102, 0, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .student-power-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(255, 102, 0, 0.5);
+        }
+
+        /* --- SECTION 3 RESPONSIVE STYLES --- */
+        @media (max-width: 992px) {
+            .student-power-title {
+                font-size: 2.6rem;
+            }
+            
+            .student-power-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .student-power-box {
+                padding: 35px 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .student-power-section {
+                min-height: 550px;
+            }
+            
+            .student-power-content {
+                margin-bottom: 8vh;
+            }
+            
+            .student-power-box {
+                padding: 30px 35px;
+                margin-bottom: 30px;
+            }
+            
+            .student-power-title {
+                font-size: 2rem;
+            }
+            
+            .student-power-subtitle {
+                font-size: 1rem;
+                letter-spacing: 1.5px;
+            }
+            
+            .student-power-btn {
+                padding: 16px 40px;
+                font-size: 1.05rem;
+            }
+            
+            .student-power-box::before,
+            .student-power-box::after {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .student-power-section {
+                min-height: 500px;
+            }
+            
+            .student-power-content {
+                margin-bottom: 6vh;
+                padding: 0 15px;
+            }
+            
+            .student-power-box {
+                padding: 25px 25px;
+                margin-bottom: 25px;
+                border-width: 2px;
+            }
+            
+            .student-power-title {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+            
+            .student-power-subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+            
+            .student-power-btn {
+                padding: 14px 35px;
+                font-size: 1rem;
+            }
+            
+            .student-power-box::before,
+            .student-power-box::after {
+                width: 12px;
+                height: 12px;
+                border-width: 2px;
+            }
+            
+            .student-power-box::before {
+                top: -4px;
+                left: -4px;
+            }
+            
+            .student-power-box::after {
+                bottom: -4px;
+                right: -4px;
+            }
+        }
+
+
+        /* --- SECTION 4: EMPOWERING STUDENTS --- */
+        .empowering-section {
+            background-color: var(--primary-white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .empowering-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            gap: 60px;
+        }
+
+        /* --- Left Content (40%) --- */
+        .empowering-content {
+            flex: 0 0 40%;
+            max-width: 40%;
+            padding-right: 20px;
+        }
+
+        .empowering-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1.2;
+            margin: 0 0 30px 0;
+            letter-spacing: -1px;
+        }
+
+        .empowering-title span {
+            color: var(--action-orange);
+            display: block;
+            margin-top: 8px;
+        }
+
+        /* Decorative Accent Line */
+        .empowering-accent {
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--action-orange));
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .empowering-accent::after {
+            content: '';
+            position: absolute;
+            left: 90px;
+            top: 0;
+            width: 20px;
+            height: 5px;
+            background-color: var(--action-orange);
+            border-radius: 3px;
+        }
+
+        /* --- Right Image (60%) --- */
+        .empowering-image-wrapper {
+            flex: 0 0 60%;
+            max-width: 60%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .empowering-image-container {
+            position: relative;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 
+                0 25px 60px rgba(0, 51, 102, 0.15),
+                0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .empowering-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 16 / 10;
+        }
+
+        /* Subtle Border Accent */
+        .empowering-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(0, 51, 102, 0.1);
+            border-radius: 16px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Corner Accent */
+        .empowering-image-container::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--action-orange);
+            border-radius: 0 16px 0 0;
+            border-left: none;
+            border-bottom: none;
+            z-index: 3;
+        }
+
+        /* --- Mirror Reflection Effect --- */
+        .empowering-image-reflection {
+            width: 100%;
+            height: 80px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 2px;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .empowering-image-reflection img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transform: scaleY(-1);
+            transform-origin: top;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .empowering-image-reflection::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0.7) 40%,
+                rgba(255, 255, 255, 0.95) 80%,
+                rgba(255, 255, 255, 1) 100%
+            );
+            pointer-events: none;
+        }
+
+        /* --- SECTION 4 RESPONSIVE STYLES --- */
+        @media (max-width: 1200px) {
+            .empowering-title {
+                font-size: 2.8rem;
+            }
+            
+            .empowering-container {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .empowering-section {
+                min-height: auto;
+                padding: 80px 0;
+            }
+            
+            .empowering-container {
+                flex-direction: column;
+                padding: 0 30px;
+                gap: 50px;
+            }
+            
+            .empowering-content {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .empowering-title {
+                font-size: 2.5rem;
+            }
+            
+            .empowering-accent {
+                margin: 0 auto;
+            }
+            
+            .empowering-accent::after {
+                left: 90px;
+            }
+            
+            .empowering-image-wrapper {
+                flex: 0 0 100%;
+                max-width: 600px;
+            }
+            
+            .empowering-image-container::after {
+                width: 60px;
+                height: 60px;
+                top: -6px;
+                right: -6px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .empowering-section {
+                padding: 60px 0;
+            }
+            
+            .empowering-container {
+                padding: 0 25px;
+                gap: 40px;
+            }
+            
+            .empowering-title {
+                font-size: 2rem;
+                margin-bottom: 25px;
+            }
+            
+            .empowering-image-container {
+                border-radius: 12px;
+            }
+            
+            .empowering-image-container::before {
+                border-radius: 12px;
+            }
+            
+            .empowering-image-container::after {
+                width: 50px;
+                height: 50px;
+                border-width: 3px;
+                border-radius: 0 12px 0 0;
+            }
+            
+            .empowering-image-reflection {
+                height: 60px;
+                border-radius: 0 0 12px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .empowering-section {
+                padding: 50px 0;
+            }
+            
+            .empowering-container {
+                padding: 0 20px;
+                gap: 35px;
+            }
+            
+            .empowering-title {
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+            
+            .empowering-title span {
+                margin-top: 5px;
+            }
+            
+            .empowering-accent {
+                width: 60px;
+                height: 4px;
+            }
+            
+            .empowering-accent::after {
+                left: 70px;
+                width: 15px;
+                height: 4px;
+            }
+            
+            .empowering-image-container {
+                border-radius: 10px;
+            }
+            
+            .empowering-image-container::before {
+                border-radius: 10px;
+            }
+            
+            .empowering-image-container::after {
+                width: 40px;
+                height: 40px;
+                top: -5px;
+                right: -5px;
+                border-width: 3px;
+                border-radius: 0 10px 0 0;
+            }
+            
+            .empowering-image-reflection {
+                height: 50px;
+                border-radius: 0 0 10px 10px;
+            }
+        }
+
+
+        /* --- SECTION 5: PORTFOLIO --- */
+        .portfolio-section {
+            background-color: #f8f9fa;
+            padding: 100px 0 80px;
+            overflow: hidden;
+        }
+
+        /* --- Header Row --- */
+        .portfolio-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        /* Left: Title with decorative elements */
+        .portfolio-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .portfolio-title-line {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue));
+        }
+
+        .portfolio-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0;
+            letter-spacing: -1px;
+            position: relative;
+        }
+
+        .portfolio-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: var(--action-orange);
+            border-radius: 2px;
+        }
+
+        .portfolio-title-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--action-orange);
+            font-size: 1.2rem;
+            opacity: 0.7;
+            animation: arrowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% {
+                transform: translateX(0);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateX(5px);
+                opacity: 1;
+            }
+        }
+
+        /* Right: Navigation */
+        .portfolio-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .portfolio-nav-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .portfolio-arrows {
+            display: flex;
+            gap: 12px;
+        }
+
+        .portfolio-arrow-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-blue);
+            background: transparent;
+            color: var(--primary-blue);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .portfolio-arrow-btn:hover {
+            background: var(--primary-blue);
+            color: var(--primary-white);
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.25);
+        }
+
+        .portfolio-arrow-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* --- Video Showcase --- */
+        .portfolio-videos-wrapper {
+            overflow: visible;
+            margin-bottom: 80px;
+            padding: 15px 0;
+        }
+
+        .portfolio-videos-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 15px 0;
+        }
+
+        .portfolio-video-card {
+            flex: 1;
+            min-width: calc(33.333% - 20px);
+            padding: 10px 0;
+        }
+
+        .portfolio-video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 50px rgba(0, 51, 102, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #1a2230;
+        }
+
+        .portfolio-video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .portfolio-video-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 30px 70px rgba(0, 51, 102, 0.18),
+                0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-video-container video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- Milestones Section --- */
+        .portfolio-milestones {
+            margin-bottom: 50px;
+        }
+
+        .milestones-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .milestones-line {
+            flex: 1;
+            max-width: 150px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue));
+        }
+
+        .milestones-line-right {
+            background: linear-gradient(90deg, var(--primary-blue), transparent);
+        }
+
+        .milestones-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+
+        /* --- Awards Image --- */
+        .milestones-awards-wrapper {
+            width: 100%;
+            padding: 0;
+        }
+
+        .milestones-awards-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .milestones-awards-container::before,
+        .milestones-awards-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .milestones-awards-container::before {
+            left: 0;
+            background: linear-gradient(90deg, #f8f9fa, transparent);
+        }
+
+        .milestones-awards-container::after {
+            right: 0;
+            background: linear-gradient(90deg, transparent, #f8f9fa);
+        }
+
+        .milestones-awards-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* --- SECTION 5 RESPONSIVE STYLES --- */
+        @media (max-width: 1200px) {
+            .portfolio-title {
+                font-size: 2.4rem;
+            }
+            
+            .portfolio-video-card {
+                min-width: calc(33.333% - 20px);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .portfolio-section {
+                padding: 80px 0 60px;
+            }
+            
+            .portfolio-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+                margin-bottom: 50px;
+            }
+            
+            .portfolio-nav {
+                align-self: flex-end;
+            }
+            
+            .portfolio-title {
+                font-size: 2.2rem;
+            }
+            
+            .portfolio-videos-track {
+                gap: 25px;
+            }
+            
+            .portfolio-video-card {
+                min-width: calc(50% - 12.5px);
+            }
+            
+            .portfolio-video-container {
+                border-radius: 16px;
+            }
+            
+            .portfolio-video-container::before {
+                border-radius: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-section {
+                padding: 60px 0 50px;
+            }
+            
+            .portfolio-header {
+                margin-bottom: 40px;
+            }
+            
+            .portfolio-title-wrapper {
+                gap: 15px;
+            }
+            
+            .portfolio-title-line {
+                width: 30px;
+            }
+            
+            .portfolio-title {
+                font-size: 1.9rem;
+            }
+            
+            .portfolio-arrow-btn {
+                width: 44px;
+                height: 44px;
+            }
+            
+            .portfolio-videos-wrapper {
+                margin-bottom: 60px;
+            }
+            
+            .portfolio-videos-track {
+                gap: 20px;
+            }
+            
+            .portfolio-video-card {
+                min-width: calc(100% - 40px);
+            }
+            
+            .portfolio-video-container {
+                border-radius: 14px;
+            }
+            
+            .portfolio-video-badge {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+                border-radius: 10px;
+                top: 15px;
+                left: 15px;
+            }
+            
+            .milestones-header {
+                gap: 20px;
+            }
+            
+            .milestones-line {
+                max-width: 80px;
+            }
+            
+            .milestones-title {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+            
+            .milestones-awards-container::before,
+            .milestones-awards-container::after {
+                width: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-section {
+                padding: 50px 0 40px;
+            }
+            
+            .portfolio-title-line {
+                display: none;
+            }
+            
+            .portfolio-title {
+                font-size: 1.6rem;
+            }
+            
+            .portfolio-title-arrow {
+                font-size: 1rem;
+            }
+            
+            .portfolio-nav-label {
+                display: none;
+            }
+            
+            .portfolio-arrows {
+                gap: 10px;
+            }
+            
+            .portfolio-arrow-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+            
+            .portfolio-videos-wrapper {
+                margin-bottom: 50px;
+            }
+            
+            .portfolio-video-card {
+                min-width: 100%;
+            }
+            
+            .portfolio-video-container {
+                border-radius: 12px;
+            }
+            
+            .portfolio-video-badge {
+                width: 35px;
+                height: 35px;
+                font-size: 0.85rem;
+                border-radius: 8px;
+                top: 12px;
+                left: 12px;
+            }
+            
+            .milestones-line {
+                max-width: 50px;
+            }
+            
+            .milestones-title {
+                font-size: 1rem;
+                letter-spacing: 1.5px;
+            }
+            
+            .milestones-awards-container::before,
+            .milestones-awards-container::after {
+                width: 30px;
+            }
+        }
+
+        
+
+        /* Hi, me adding new section below */
+        @media (max-width: 992px) {
+            .portfolio-videos-wrapper {
+                padding: 10px 0;
+            }
+            
+            .portfolio-videos-track {
+                gap: 25px;
+                padding: 10px 0;
+            }
+            
+            .portfolio-video-card {
+                min-width: calc(50% - 12.5px);
+                padding: 8px 0;
+            }
+            
+            .portfolio-video-container {
+                border-radius: 16px;
+            }
+            
+            .portfolio-video-container::before {
+                border-radius: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-videos-wrapper {
+                margin-bottom: 60px;
+                padding: 8px 0;
+            }
+            
+            .portfolio-videos-track {
+                gap: 20px;
+                padding: 8px 0;
+            }
+            
+            .portfolio-video-card {
+                min-width: calc(100% - 40px);
+                padding: 6px 0;
+            }
+            
+            .portfolio-video-container {
+                border-radius: 14px;
+            }
+            
+            .portfolio-video-container:hover {
+                transform: translateY(-8px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-videos-wrapper {
+                margin-bottom: 50px;
+            }
+            
+            .portfolio-video-card {
+                min-width: 100%;
+                padding: 5px 0;
+            }
+            
+            .portfolio-video-container {
+                border-radius: 12px;
+            }
+            
+            .portfolio-video-container:hover {
+                transform: translateY(-6px);
+            }
+        }
+
+
+
+
+        /* --- SECTION 6: SUPERPOWER LEARNING --- */
+        .superpower-section {
+            background-color: var(--primary-white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .superpower-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            gap: 60px;
+        }
+
+        /* --- Left Image (60%) --- */
+        .superpower-image-wrapper {
+            flex: 0 0 60%;
+            max-width: 60%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .superpower-image-container {
+            position: relative;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 
+                0 25px 60px rgba(0, 51, 102, 0.15),
+                0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .superpower-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 16 / 10;
+        }
+
+        /* Subtle Border Accent */
+        .superpower-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(0, 51, 102, 0.1);
+            border-radius: 16px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Corner Accent - Top Left (opposite of Section 4) */
+        .superpower-image-container::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--action-orange);
+            border-radius: 16px 0 0 0;
+            border-right: none;
+            border-bottom: none;
+            z-index: 3;
+        }
+
+        /* --- Mirror Reflection Effect --- */
+        .superpower-image-reflection {
+            width: 100%;
+            height: 80px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 2px;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .superpower-image-reflection img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transform: scaleY(-1);
+            transform-origin: top;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .superpower-image-reflection::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0.7) 40%,
+                rgba(255, 255, 255, 0.95) 80%,
+                rgba(255, 255, 255, 1) 100%
+            );
+            pointer-events: none;
+        }
+
+        /* --- Right Content (40%) --- */
+        .superpower-content {
+            flex: 0 0 40%;
+            max-width: 40%;
+            padding-left: 20px;
+        }
+
+        .superpower-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1.2;
+            margin: 0 0 30px 0;
+            letter-spacing: -1px;
+        }
+
+        .superpower-title span {
+            color: var(--action-orange);
+            display: inline-block;
+            position: relative;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        /* Underline effect for SUPERPOWER */
+        .superpower-title span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--action-orange), #D4AF37);
+            border-radius: 2px;
+        }
+
+        /* Decorative Accent Line - Right aligned */
+        .superpower-accent {
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--action-orange), var(--primary-blue));
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .superpower-accent::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 20px;
+            height: 5px;
+            background-color: var(--action-orange);
+            border-radius: 3px;
+        }
+
+        /* --- SECTION 5 RESPONSIVE STYLES --- */
+        @media (max-width: 1200px) {
+            .superpower-title {
+                font-size: 2.8rem;
+            }
+            
+            .superpower-container {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .superpower-section {
+                min-height: auto;
+                padding: 80px 0;
+            }
+            
+            .superpower-container {
+                flex-direction: column-reverse;
+                padding: 0 30px;
+                gap: 50px;
+            }
+            
+            .superpower-content {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-left: 0;
+                text-align: center;
+            }
+            
+            .superpower-title {
+                font-size: 2.5rem;
+            }
+            
+            .superpower-accent {
+                margin: 0 auto;
+            }
+            
+            .superpower-accent::before {
+                left: -30px;
+            }
+            
+            .superpower-image-wrapper {
+                flex: 0 0 100%;
+                max-width: 600px;
+            }
+            
+            .superpower-image-container::after {
+                width: 60px;
+                height: 60px;
+                top: -6px;
+                left: -6px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .superpower-section {
+                padding: 60px 0;
+            }
+            
+            .superpower-container {
+                padding: 0 25px;
+                gap: 40px;
+            }
+            
+            .superpower-title {
+                font-size: 2rem;
+                margin-bottom: 25px;
+            }
+            
+            .superpower-title span::after {
+                height: 3px;
+                bottom: -3px;
+            }
+            
+            .superpower-image-container {
+                border-radius: 12px;
+            }
+            
+            .superpower-image-container::before {
+                border-radius: 12px;
+            }
+            
+            .superpower-image-container::after {
+                width: 50px;
+                height: 50px;
+                border-width: 3px;
+                border-radius: 12px 0 0 0;
+            }
+            
+            .superpower-image-reflection {
+                height: 60px;
+                border-radius: 0 0 12px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .superpower-section {
+                padding: 50px 0;
+            }
+            
+            .superpower-container {
+                padding: 0 20px;
+                gap: 35px;
+            }
+            
+            .superpower-title {
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+            
+            .superpower-title span {
+                letter-spacing: 1px;
+            }
+            
+            .superpower-title span::after {
+                height: 3px;
+                bottom: -2px;
+            }
+            
+            .superpower-accent {
+                width: 60px;
+                height: 4px;
+            }
+            
+            .superpower-accent::before {
+                left: -25px;
+                width: 15px;
+                height: 4px;
+            }
+            
+            .superpower-image-container {
+                border-radius: 10px;
+            }
+            
+            .superpower-image-container::before {
+                border-radius: 10px;
+            }
+            
+            .superpower-image-container::after {
+                width: 40px;
+                height: 40px;
+                top: -5px;
+                left: -5px;
+                border-width: 3px;
+                border-radius: 10px 0 0 0;
+            }
+            
+            .superpower-image-reflection {
+                height: 50px;
+                border-radius: 0 0 10px 10px;
+            }
+        }
+
+
+
+        /* --- SECTION 7: MASTER YOUR MIND --- */
+        .mentor-section {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0d1f35 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle background pattern */
+        .mentor-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 102, 0, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Main Content Wrapper */
+        .mentor-content-wrapper {
+            padding: 80px 0 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mentor-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        /* === LEFT COLUMN (40%) === */
+        .mentor-left {
+            flex: 0 0 38%;
+            max-width: 38%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Mentor Callout Box */
+        .mentor-callout-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 2px solid #D4AF37;
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .mentor-callout-box::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            width: 20px;
+            height: 20px;
+            background: #D4AF37;
+            border-radius: 50%;
+        }
+
+        .mentor-callout-box::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 60px;
+            width: 12px;
+            height: 12px;
+            background: var(--action-orange);
+            border-radius: 50%;
+        }
+
+        .callout-icon {
+            position: absolute;
+            top: -15px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #D4AF37 0%, #aa8a2e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a1628;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .callout-text {
+            color: var(--primary-white);
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Platform Impact Title */
+        .mentor-impact-title {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .mentor-impact-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 80%;
+            background: linear-gradient(180deg, #D4AF37, var(--action-orange));
+            border-radius: 3px;
+        }
+
+        /* Stats Paragraph */
+        .mentor-stats-para {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .mentor-stats-para strong {
+            color: #D4AF37;
+            font-weight: 700;
+        }
+
+        /* Next Level Quote */
+        .mentor-next-level {
+            color: var(--primary-white);
+            font-size: 1.15rem;
+            font-weight: 600;
+            font-style: italic;
+            margin: 0;
+            padding: 15px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* CTA Button */
+        .mentor-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 35px;
+            background: transparent;
+            border: 2px solid var(--primary-white);
+            border-radius: 50px;
+            color: var(--primary-white);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .mentor-cta-btn:hover {
+            background: var(--primary-white);
+            color: #0a1628;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .mentor-cta-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .mentor-cta-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* === RIGHT COLUMN (60%) === */
+        .mentor-right {
+            flex: 0 0 58%;
+            max-width: 58%;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        /* Multi-line Styled Title */
+        .workshop-title-block {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .workshop-title-line-1 {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0 0 15px 0;
+        }
+
+        .workshop-title-line-2 {
+            color: var(--primary-white);
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            letter-spacing: 4px;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% center;
+            }
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .workshop-title-line-3 {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .workshop-title-line-3 span {
+            color: #D4AF37;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        /* Workshops Section */
+        .workshops-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .workshops-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .workshops-heading {
+            color: var(--primary-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .workshops-heading-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        /* Workshop Carousel Container */
+        .workshops-carousel-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+
+        /* Workshop Arrows */
+        .workshop-arrow {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary-white);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            z-index: 5;
+        }
+
+        .workshop-arrow:hover {
+            background: #D4AF37;
+            border-color: #D4AF37;
+            color: #0a1628;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .workshop-arrow:active {
+            transform: scale(0.95);
+        }
+
+        /* Carousel Wrapper */
+        .workshops-carousel-wrapper {
+            flex: 1;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .workshops-carousel-track {
+            display: flex;
+            gap: 20px;
+            will-change: transform;
+        }
+
+        /* Workshop Poster */
+        .workshop-poster {
+            flex-shrink: 0;
+            width: calc((100% - 40px) / 3);
+        }
+
+        .workshop-poster-inner {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.3),
+                0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .workshop-poster-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .workshop-poster-inner:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.4),
+                0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .workshop-poster-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .workshop-poster-inner:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Poster Overlay */
+        .workshop-poster-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                180deg,
+                transparent 50%,
+                rgba(10, 22, 40, 0.8) 100%
+            );
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .poster-number {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0a1628;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* === BOTTOM MISSION BANNER === */
+        .mission-banner {
+            background: linear-gradient(90deg, #D4AF37 0%, #c9a227 50%, #D4AF37 100%);
+            padding: 25px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 100%
+            );
+            animation: bannerShine 4s linear infinite;
+        }
+
+        @keyframes bannerShine {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(50%);
+            }
+        }
+
+        .mission-banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mission-icon-left,
+        .mission-icon-right {
+            color: #0a1628;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .mission-text {
+            color: #0a1628;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* === SECTION 7 RESPONSIVE STYLES === */
+        @media (max-width: 1200px) {
+            .mentor-container {
+                gap: 50px;
+                padding: 0 30px;
+            }
+            
+            .mentor-left {
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+            
+            .mentor-right {
+                flex: 0 0 56%;
+                max-width: 56%;
+            }
+            
+            .workshop-title-line-2 {
+                font-size: 2.5rem;
+            }
+            
+            .callout-text {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .mentor-content-wrapper {
+                padding: 60px 0 50px;
+            }
+            
+            .mentor-container {
+                flex-direction: column;
+                gap: 50px;
+                padding: 0 25px;
+            }
+            
+            .mentor-left {
+                flex: 0 0 100%;
+                max-width: 100%;
+                order: 2;
+            }
+            
+            .mentor-right {
+                flex: 0 0 100%;
+                max-width: 100%;
+                order: 1;
+            }
+            
+            .mentor-callout-box {
+                max-width: 500px;
+            }
+            
+            .mentor-cta-btn {
+                align-self: flex-start;
+            }
+            
+            .workshop-title-line-2 {
+                font-size: 2.2rem;
+                letter-spacing: 3px;
+            }
+            
+            .workshop-poster {
+                width: calc((100% - 40px) / 3);
+            }
+            
+            .mission-text {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mentor-content-wrapper {
+                padding: 50px 0 40px;
+            }
+            
+            .mentor-container {
+                gap: 40px;
+                padding: 0 20px;
+            }
+            
+            .mentor-left {
+                gap: 25px;
+            }
+            
+            .mentor-callout-box {
+                padding: 25px;
+            }
+            
+            .callout-text {
+                font-size: 1.3rem;
+            }
+            
+            .mentor-impact-title {
+                font-size: 1.3rem;
+            }
+            
+            .mentor-stats-para {
+                font-size: 0.95rem;
+            }
+            
+            .mentor-next-level {
+                font-size: 1.05rem;
+            }
+            
+            .mentor-cta-btn {
+                padding: 14px 30px;
+                font-size: 0.9rem;
+            }
+            
+            .workshop-title-block {
+                padding: 20px;
+            }
+            
+            .workshop-title-line-1 {
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+            }
+            
+            .workshop-title-line-2 {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+            
+            .workshop-title-line-3 {
+                font-size: 1rem;
+            }
+            
+            .workshop-title-line-3 span {
+                font-size: 1.2rem;
+            }
+            
+            .workshops-heading {
+                font-size: 1.1rem;
+            }
+            
+            .workshop-arrow {
+                width: 44px;
+                height: 44px;
+                font-size: 0.9rem;
+            }
+            
+            .workshop-poster {
+                width: calc((100% - 20px) / 2);
+            }
+            
+            .workshops-carousel-track {
+                gap: 15px;
+            }
+            
+            .mission-banner {
+                padding: 20px 25px;
+            }
+            
+            .mission-text {
+                font-size: 1.1rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .mission-banner-content {
+                gap: 20px;
+            }
+            
+            .mission-icon-left,
+            .mission-icon-right {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mentor-content-wrapper {
+                padding: 40px 0 30px;
+            }
+            
+            .mentor-container {
+                gap: 35px;
+                padding: 0 15px;
+            }
+            
+            .mentor-left {
+                gap: 20px;
+            }
+            
+            .mentor-callout-box {
+                padding: 20px;
+            }
+            
+            .callout-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+                top: -12px;
+                right: 20px;
+            }
+            
+            .mentor-callout-box::before {
+                width: 15px;
+                height: 15px;
+                top: -8px;
+                left: 25px;
+            }
+            
+            .mentor-callout-box::after {
+                width: 10px;
+                height: 10px;
+                top: -5px;
+                left: 50px;
+            }
+            
+            .callout-text {
+                font-size: 1.15rem;
+            }
+            
+            .mentor-impact-title {
+                font-size: 1.15rem;
+                padding-left: 15px;
+            }
+            
+            .mentor-impact-title::before {
+                width: 4px;
+            }
+            
+            .mentor-stats-para {
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+            
+            .mentor-next-level {
+                font-size: 1rem;
+                padding: 12px 0;
+            }
+            
+            .mentor-cta-btn {
+                padding: 12px 25px;
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .workshop-title-block {
+                padding: 15px;
+            }
+            
+            .workshop-title-line-1 {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 10px;
+            }
+            
+            .workshop-title-line-2 {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            }
+            
+            .workshop-title-line-3 {
+                font-size: 0.9rem;
+            }
+            
+            .workshop-title-line-3 span {
+                font-size: 1.1rem;
+            }
+            
+            .workshops-header {
+                gap: 15px;
+            }
+            
+            .workshops-heading {
+                font-size: 1rem;
+            }
+            
+            .workshop-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 0.85rem;
+            }
+            
+            .workshop-poster {
+                width: calc(100% - 10px);
+            }
+            
+            .workshops-carousel-track {
+                gap: 12px;
+            }
+            
+            .poster-number {
+                width: 35px;
+                height: 35px;
+                font-size: 0.8rem;
+                border-radius: 8px;
+                bottom: 12px;
+                right: 12px;
+            }
+            
+            .mission-banner {
+                padding: 18px 20px;
+            }
+            
+            .mission-text {
+                font-size: 0.95rem;
+                letter-spacing: 0;
+            }
+            
+            .mission-banner-content {
+                gap: 15px;
+            }
+            
+            .mission-icon-left,
+            .mission-icon-right {
+                font-size: 0.85rem;
+            }
+        }
+
+
+
+        /* --- SECTION 8: PATIL'S PODCAST --- */
+        .podcast-section {
+            background-color: var(--primary-white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle background pattern */
+        .podcast-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 51, 102, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .podcast-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 102, 0, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Section Header */
+        .podcast-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .podcast-header-line {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue));
+        }
+
+        .podcast-header-line:last-child {
+            background: linear-gradient(90deg, var(--primary-blue), transparent);
+        }
+
+        .podcast-section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .podcast-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--action-orange);
+            border-radius: 2px;
+        }
+
+        /* Main Content Layout */
+        .podcast-content {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        /* === LEFT COLUMN: FEATURED PLAYER (40%) === */
+        .podcast-player-column {
+            flex: 0 0 38%;
+            max-width: 38%;
+        }
+
+        .featured-podcast-card {
+            background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 
+                0 20px 60px rgba(0, 51, 102, 0.08),
+                0 8px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 51, 102, 0.05);
+            position: relative;
+        }
+
+        /* Album Art */
+        .featured-podcast-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 40px rgba(0, 51, 102, 0.15);
+        }
+
+        .featured-podcast-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-podcast-card:hover .featured-podcast-image img {
+            transform: scale(1.03);
+        }
+
+        .podcast-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 51, 102, 0.3) 0%, transparent 40%, transparent 60%, rgba(0, 51, 102, 0.5) 100%);
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 15px;
+        }
+
+        .podcast-badge {
+            background: var(--action-orange);
+            color: var(--primary-white);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        .podcast-badge i {
+            font-size: 0.9rem;
+        }
+
+        /* Podcast Info */
+        .featured-podcast-info {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .featured-podcast-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .featured-podcast-artist {
+            font-size: 0.95rem;
+            color: var(--action-orange);
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Progress Bar */
+        .podcast-progress-container {
+            margin-bottom: 25px;
+        }
+
+        .podcast-progress-bar {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: rgba(0, 51, 102, 0.1);
+            border-radius: 3px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .podcast-progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary-blue), var(--action-orange));
+            border-radius: 3px;
+            transition: width 0.1s linear;
+        }
+
+        .podcast-progress-handle {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background: var(--action-orange);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(255, 102, 0, 0.4);
+            cursor: grab;
+            transition: transform 0.2s ease;
+            opacity: 0;
+        }
+
+        .podcast-progress-bar:hover .podcast-progress-handle,
+        .podcast-progress-handle.dragging {
+            opacity: 1;
+        }
+
+        .podcast-progress-handle:hover,
+        .podcast-progress-handle.dragging {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .podcast-time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Controls */
+        .podcast-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .podcast-control-btn {
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .podcast-secondary-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0, 51, 102, 0.08);
+            color: var(--primary-blue);
+            font-size: 1rem;
+        }
+
+        .podcast-secondary-btn:hover {
+            background: var(--primary-blue);
+            color: var(--primary-white);
+            transform: scale(1.08);
+        }
+
+        .podcast-secondary-btn .control-label {
+            position: absolute;
+            font-size: 0.6rem;
+            font-weight: 700;
+            bottom: 8px;
+        }
+
+        .podcast-primary-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001a33 100%);
+            color: var(--primary-white);
+            font-size: 1.4rem;
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.3);
+        }
+
+        .podcast-primary-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 35px rgba(0, 51, 102, 0.4);
+        }
+
+        .podcast-primary-btn:active {
+            transform: scale(0.95);
+        }
+
+        .podcast-primary-btn i {
+            margin-left: 3px;
+        }
+
+        .podcast-primary-btn.playing i {
+            margin-left: 0;
+        }
+
+        /* Volume Control */
+        .podcast-volume-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .volume-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0, 51, 102, 0.08);
+            color: var(--primary-blue);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .volume-btn:hover {
+            background: var(--primary-blue);
+            color: var(--primary-white);
+        }
+
+        .volume-slider-wrapper {
+            width: 120px;
+        }
+
+        .volume-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 5px;
+            border-radius: 3px;
+            background: rgba(0, 51, 102, 0.15);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 51, 102, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .volume-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(0, 51, 102, 0.3);
+        }
+
+        /* === RIGHT COLUMN: PODCAST LIST (60%) === */
+        .podcast-list-column {
+            flex: 0 0 58%;
+            max-width: 58%;
+        }
+
+        .podcast-list-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(0, 51, 102, 0.08);
+        }
+
+        .podcast-list-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .podcast-list-count {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+            background: rgba(0, 51, 102, 0.08);
+            padding: 6px 15px;
+            border-radius: 50px;
+        }
+
+        /* Podcast List */
+        .podcast-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .podcast-list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: linear-gradient(145deg, #fafbfc 0%, #ffffff 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 51, 102, 0.06);
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.04);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .podcast-list-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
+            border-color: rgba(0, 51, 102, 0.1);
+        }
+
+        .podcast-list-item.active {
+            background: linear-gradient(145deg, rgba(0, 51, 102, 0.05) 0%, rgba(0, 51, 102, 0.02) 100%);
+            border-color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.12);
+        }
+
+        /* Podcast Item Image */
+        .podcast-item-image {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 51, 102, 0.12);
+        }
+
+        .podcast-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .podcast-list-item:hover .podcast-item-image img {
+            transform: scale(1.08);
+        }
+
+        /* Podcast Item Info */
+        .podcast-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .podcast-item-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0 0 6px 0;
+            line-height: 1.3;
+        }
+
+        .podcast-item-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Play Button */
+        .podcast-item-play-btn {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--action-orange) 0%, #e55a00 100%);
+            color: var(--primary-white);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.25);
+        }
+
+        .podcast-item-play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.35);
+        }
+
+        .podcast-item-play-btn:active {
+            transform: scale(0.98);
+        }
+
+        .podcast-item-play-btn i {
+            font-size: 0.8rem;
+        }
+
+        .podcast-list-item.active .podcast-item-play-btn {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001a33 100%);
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.25);
+        }
+
+        /* === SECTION 8 RESPONSIVE STYLES === */
+        @media (max-width: 1200px) {
+            .podcast-content {
+                gap: 50px;
+            }
+            
+            .podcast-player-column {
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+            
+            .podcast-list-column {
+                flex: 0 0 56%;
+                max-width: 56%;
+            }
+            
+            .podcast-section-title {
+                font-size: 2.2rem;
+                letter-spacing: 3px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .podcast-section {
+                padding: 80px 0;
+            }
+            
+            .podcast-content {
+                flex-direction: column;
+                gap: 50px;
+            }
+            
+            .podcast-player-column {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .featured-podcast-card {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            
+            .podcast-list-column {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .podcast-section-title {
+                font-size: 2rem;
+            }
+            
+            .podcast-header-line {
+                width: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .podcast-section {
+                padding: 60px 0;
+            }
+            
+            .podcast-section-header {
+                margin-bottom: 40px;
+                gap: 20px;
+            }
+            
+            .podcast-section-title {
+                font-size: 1.6rem;
+                letter-spacing: 2px;
+            }
+            
+            .podcast-header-line {
+                width: 40px;
+            }
+            
+            .featured-podcast-card {
+                padding: 25px;
+                max-width: 100%;
+            }
+            
+            .featured-podcast-image {
+                border-radius: 14px;
+                margin-bottom: 20px;
+            }
+            
+            .featured-podcast-title {
+                font-size: 1.15rem;
+            }
+            
+            .podcast-controls {
+                gap: 12px;
+            }
+            
+            .podcast-secondary-btn {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .podcast-primary-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.3rem;
+            }
+            
+            .podcast-list-item {
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .podcast-item-image {
+                width: 70px;
+                height: 70px;
+                border-radius: 10px;
+            }
+            
+            .podcast-item-title {
+                font-size: 1.05rem;
+            }
+            
+            .podcast-item-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .podcast-item-play-btn {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+            
+            .podcast-item-play-btn span {
+                display: none;
+            }
+            
+            .podcast-item-play-btn i {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .podcast-section {
+                padding: 50px 0;
+            }
+            
+            .podcast-section-header {
+                gap: 15px;
+            }
+            
+            .podcast-section-title {
+                font-size: 1.3rem;
+                letter-spacing: 1.5px;
+            }
+            
+            .podcast-header-line {
+                width: 25px;
+            }
+            
+            .featured-podcast-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+            
+            .featured-podcast-image {
+                border-radius: 12px;
+                margin-bottom: 18px;
+            }
+            
+            .podcast-badge {
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+            
+            .featured-podcast-title {
+                font-size: 1.05rem;
+            }
+            
+            .featured-podcast-artist {
+                font-size: 0.9rem;
+            }
+            
+            .podcast-progress-container {
+                margin-bottom: 20px;
+            }
+            
+            .podcast-time-display {
+                font-size: 0.8rem;
+            }
+            
+            .podcast-controls {
+                gap: 10px;
+                margin-bottom: 18px;
+            }
+            
+            .podcast-secondary-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+            
+            .podcast-secondary-btn .control-label {
+                font-size: 0.5rem;
+                bottom: 6px;
+            }
+            
+            .podcast-primary-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.2rem;
+            }
+            
+            .volume-slider-wrapper {
+                width: 100px;
+            }
+            
+            .volume-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 0.9rem;
+            }
+            
+            .podcast-list-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .podcast-list-title {
+                font-size: 1.2rem;
+            }
+            
+            .podcast-list {
+                gap: 12px;
+            }
+            
+            .podcast-list-item {
+                padding: 12px;
+                gap: 12px;
+                border-radius: 12px;
+            }
+            
+            .podcast-list-item:hover {
+                transform: translateX(5px);
+            }
+            
+            .podcast-item-image {
+                width: 60px;
+                height: 60px;
+                border-radius: 8px;
+            }
+            
+            .podcast-item-title {
+                font-size: 0.95rem;
+            }
+            
+            .podcast-item-subtitle {
+                font-size: 0.8rem;
+            }
+            
+            .podcast-item-play-btn {
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                border-radius: 50%;
+                justify-content: center;
+            }
+        }
+
+
+
+    
+        /* --- SOLUTIONS GRID --- */
+        .solutions {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--primary-white);
+            border: 1px solid #e1e1e1;
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle Animation for Cards */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-blue);
+        }
+
+        /* Top Orange line on card hover */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--action-orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Image Placeholder styling using Icons */
+        .card-image {
+            width: 100%;
+            height: 160px;
+            background: var(--accent-blue);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            min-height: 48px; /* Alignment fix */
+        }
+
+        .card-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .card-btn:hover {
+            background-color: var(--action-orange);
+        }
+
+        /* --- ABOUT US & GALLERY --- */
+        #about {
+            padding: 80px 0;
+            background-color: var(--accent-blue);
+            overflow: hidden;
+        }
+
+        .about-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: var(--text-light);
+        }
+
+        
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--primary-white);
+            border: 1px solid #eee;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--primary-white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-mission {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.8;
+            border-left: 3px solid var(--action-orange);
+            padding-left: 15px;
+        }
+
+
+
+        /* Header logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+        }
+
+
+
+        /* Footer logo */
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+
+        .footer-logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-white);
+        }
+
+        
+        .footer-map {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 220px;
+            border: 0;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--primary-white);
+            text-decoration: underline;
+            opacity: 0.9;
+        }
+
+        .map-link:hover {
+            opacity: 1;
+        }
+
+
+        footer .footer-logo-img {
+            filter: brightness(0) invert(1);
+        }
+
+
+        .contact-details h3 {
+            color: var(--action-orange);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: var(--action-orange);
+            width: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+
+
+                <div class="logo">
+                    <img src="assets/logo.png" alt="logo" class="logo-img">
+                    <span class="logo-text">LessonPlan</span>
+                </div>
+                
+
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+
+                    <!-- We will link the href section later -->
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Company verticals</a></li>
+                    <li><a href="#">Training & workshop</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Portfolio</a></li>
+
+                    <li><a href="#contact" class="btn-primary" style="padding: 8px 20px; color: white; border-radius: 999px;">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section 1: Hero -->
+    <section id="home" class="hero-section">
+        
+        <!-- Background Image -->
+        <div class="hero-background">
+            <img src="assets/hero-bg.jpg" alt="LessonPlan Hero Background">
+        </div>
+        
+        <!-- Dark Overlay for Text Readability -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Central Content -->
+        <div class="hero-content">
+            <h1>Your breakthrough begins HERE.</h1>
+            <a href="#contact" class="btn btn-primary">Book your session</a>
+        </div>
+        
+        <!-- Video Component (Bottom Left) -->
+        <div class="hero-video-wrapper">
+            <div class="hero-video-container">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/hero-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- <p class="hero-video-title">Unleash the POWER WITHIN YOU</p> -->
+        </div>
+        
+    </section>
+
+
+    <!-- Section 2: Sessions Carousel -->
+    <section id="sessions" class="sessions-section">
+        <div class="container">
+            
+            <!-- Section Title with Golden Frame -->
+            <div class="sessions-title-wrapper">
+                <div class="sessions-title-frame">
+                    <span class="frame-corner frame-top-left"></span>
+                    <span class="frame-corner frame-top-right"></span>
+                    <span class="frame-corner frame-bottom-left"></span>
+                    <span class="frame-corner frame-bottom-right"></span>
+                    <h2 class="sessions-title">Because Growth Starts With the Right Session.</h2>
+                </div>
+            </div>
+            
+            <!-- Controls Row: Subtitle Left, Arrows Right -->
+            <div class="sessions-controls">
+                <div class="sessions-subtitle-wrapper">
+                    <span class="sessions-subtitle-icon"></span>
+                    <span class="sessions-subtitle">Explore sessions</span>
+                </div>
+                <div class="sessions-arrows">
+                    <button class="arrow-btn arrow-left" aria-label="Scroll left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="arrow-btn arrow-right" aria-label="Scroll right">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Carousel Container (Full Width) -->
+        <div class="sessions-carousel-wrap">
+            <div class="sessions-carousel-track" id="sessionsTrack">
+                
+                <!-- Card 1 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-1.jpg" alt="Leadership Coaching">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+                                <h3>Leadership Coaching</h3>
+                                <p>Develop essential leadership skills and unlock your potential to inspire and guide teams effectively.</p>
+                                <span class="session-tag">90 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-2.jpg" alt="Career Strategy">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-compass"></i>
+                                </div>
+                                <h3>Career Strategy</h3>
+                                <p>Chart your professional path with personalized guidance and actionable career development plans.</p>
+                                <span class="session-tag">60 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-3.jpg" alt="Communication Mastery">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-comments"></i>
+                                </div>
+                                <h3>Communication Mastery</h3>
+                                <p>Master the art of impactful communication for professional and personal success.</p>
+                                <span class="session-tag">75 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-4.jpg" alt="Mindset Transformation">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <h3>Mindset Transformation</h3>
+                                <p>Break limiting beliefs and cultivate a growth mindset for lasting personal transformation.</p>
+                                <span class="session-tag">90 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-5.jpg" alt="Team Building">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-users-gear"></i>
+                                </div>
+                                <h3>Team Building</h3>
+                                <p>Foster collaboration and strengthen team dynamics through proven engagement strategies.</p>
+                                <span class="session-tag">120 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-6.jpg" alt="Executive Presence">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                <h3>Executive Presence</h3>
+                                <p>Command attention and build credibility with refined executive presence techniques.</p>
+                                <span class="session-tag">60 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Duplicate Set for Infinite Loop -->
+                <!-- Card 1 Duplicate -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-1.jpg" alt="Leadership Coaching">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+                                <h3>Leadership Coaching</h3>
+                                <p>Develop essential leadership skills and unlock your potential to inspire and guide teams effectively.</p>
+                                <span class="session-tag">90 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2 Duplicate -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-2.jpg" alt="Career Strategy">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-compass"></i>
+                                </div>
+                                <h3>Career Strategy</h3>
+                                <p>Chart your professional path with personalized guidance and actionable career development plans.</p>
+                                <span class="session-tag">60 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3 Duplicate -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-3.jpg" alt="Communication Mastery">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-comments"></i>
+                                </div>
+                                <h3>Communication Mastery</h3>
+                                <p>Master the art of impactful communication for professional and personal success.</p>
+                                <span class="session-tag">75 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 4 Duplicate -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-4.jpg" alt="Mindset Transformation">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <h3>Mindset Transformation</h3>
+                                <p>Break limiting beliefs and cultivate a growth mindset for lasting personal transformation.</p>
+                                <span class="session-tag">90 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 5 Duplicate -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-5.jpg" alt="Team Building">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-users-gear"></i>
+                                </div>
+                                <h3>Team Building</h3>
+                                <p>Foster collaboration and strengthen team dynamics through proven engagement strategies.</p>
+                                <span class="session-tag">120 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 6 Duplicate -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-6.jpg" alt="Executive Presence">
+                            
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                <h3>Executive Presence</h3>
+                                <p>Command attention and build credibility with refined executive presence techniques.</p>
+                                <span class="session-tag">60 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+
+
+    <!-- Section 3: Student Power -->
+    <section id="student-power" class="student-power-section">
+        
+        <!-- Background Image -->
+        <div class="student-power-background">
+            <img src="assets/student-power-bg.jpg" alt="Student Power Background">
+        </div>
+        
+        <!-- Overlay for better text readability -->
+        <div class="student-power-overlay"></div>
+        
+        <!-- Content Container (Bottom 40%) -->
+        <div class="student-power-content">
+            
+            <!-- Golden Box with Titles -->
+            <div class="student-power-box">
+                <h2 class="student-power-title">
+                    Every Student Has Power,<br>
+                    <span>Unlock Yours.</span>
+                </h2>
+                <p class="student-power-subtitle">From Potential to Performance</p>
+            </div>
+            
+            <!-- CTA Button -->
+            <a href="#contact" class="btn btn-primary student-power-btn">Enroll Now</a>
+            
+        </div>
+        
+    </section>
+
+
+    <!-- Section 4: Empowering Students -->
+    <section id="empowering-students" class="empowering-section">
+        <div class="empowering-container">
+            
+            <!-- Left Content (40%) -->
+            <div class="empowering-content">
+                <h2 class="empowering-title">
+                    Empowering Students to<br>
+                    <span>Learn with Confidence</span>
+                </h2>
+                <div class="empowering-accent"></div>
+            </div>
+            
+            <!-- Right Image (60%) -->
+            <div class="empowering-image-wrapper">
+                <div class="empowering-image-container">
+                    <img src="assets/student-confidence.jpg" alt="Students learning with confidence" class="empowering-image">
+                </div>
+                <!-- Mirror Reflection -->
+                <div class="empowering-image-reflection">
+                    <img src="assets/student-confidence.jpg" alt="" aria-hidden="true">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+    <!-- Section 5: Portfolio -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            
+            <!-- Header Row -->
+            <div class="portfolio-header">
+                
+                <!-- Left: Title with decorative elements -->
+                <div class="portfolio-title-wrapper">
+                    <span class="portfolio-title-line"></span>
+                    <h2 class="portfolio-title">Portfolio</h2>
+                    <span class="portfolio-title-arrow">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </span>
+                </div>
+                
+                <!-- Right: Navigation Arrows -->
+                <div class="portfolio-nav">
+                    <span class="portfolio-nav-label">Explore</span>
+                    <div class="portfolio-arrows">
+                        <button class="portfolio-arrow-btn portfolio-prev" aria-label="Previous">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="portfolio-arrow-btn portfolio-next" aria-label="Next">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Video Showcase -->
+            <div class="portfolio-videos-wrapper">
+                <div class="portfolio-videos-track" id="portfolioTrack">
+                    
+                    <!-- Video 1 -->
+                    <div class="portfolio-video-card">
+                        <div class="portfolio-video-container">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/portfolio/portfolio-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Video 2 -->
+                    <div class="portfolio-video-card">
+                        <div class="portfolio-video-container">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/portfolio/portfolio-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Video 3 -->
+                    <div class="portfolio-video-card">
+                        <div class="portfolio-video-container">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/portfolio/portfolio-3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Milestones Section -->
+            <div class="portfolio-milestones">
+                <div class="milestones-header">
+                    <span class="milestones-line milestones-line-left"></span>
+                    <h3 class="milestones-title">Our Milestones</h3>
+                    <span class="milestones-line milestones-line-right"></span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Full-width Awards Image -->
+        <div class="milestones-awards-wrapper">
+            <div class="milestones-awards-container">
+                <img src="assets/portfolio/milestones-awards.jpg" alt="Our Awards and Achievements" class="milestones-awards-image">
+            </div>
+        </div>
+        
+    </section>
+
+
+
+    <!-- Section 6: Superpower Learning -->
+    <section id="superpower-learning" class="superpower-section">
+        <div class="superpower-container">
+            
+            <!-- Left Image (60%) -->
+            <div class="superpower-image-wrapper">
+                <div class="superpower-image-container">
+                    <img src="assets/superpower-learning.jpg" alt="Turn learning into a superpower" class="superpower-image">
+                </div>
+                <!-- Mirror Reflection -->
+                <div class="superpower-image-reflection">
+                    <img src="assets/superpower-learning.jpg" alt="" aria-hidden="true">
+                </div>
+            </div>
+            
+            <!-- Right Content (40%) -->
+            <div class="superpower-content">
+                <h2 class="superpower-title">
+                    Turn Learning<br>
+                    Into a <span>SUPERPOWER</span>
+                </h2>
+                <!-- <div class="superpower-accent"></div> -->
+            </div>
+            
+        </div>
+    </section>
+
+
+
+    <!-- Section 7: Master Your Mind -->
+    <section id="master-your-mind" class="mentor-section">
+        
+        <!-- Main Content Area -->
+        <div class="mentor-content-wrapper">
+            <div class="mentor-container">
+                
+                <!-- Left Column (40%) -->
+                <div class="mentor-left">
+                    
+                    <!-- Mentor Callout Box -->
+                    <div class="mentor-callout-box">
+                        <span class="callout-icon">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </span>
+                        <h3 class="callout-text">Because the Right Mentor<br>Changes Everything</h3>
+                    </div>
+                    
+                    <!-- Platform Impact Title -->
+                    <h4 class="mentor-impact-title">One platform, Endless impact</h4>
+                    
+                    <!-- Stats Paragraph -->
+                    <p class="mentor-stats-para">
+                        With <strong>30+</strong> expertly designed courses, we have mentored <strong>200+</strong> organizations, delivered <strong>8,000+</strong> hours of transformative training, inspired through <strong>60,000+</strong> success stories, and positively impacted <strong>2 lakh+</strong> students, shaping confident minds and future-ready leaders.
+                    </p>
+                    
+                    <!-- Next Level Quote -->
+                    <p class="mentor-next-level">Your Next Level Is One Course Away</p>
+                    
+                    <!-- CTA Button -->
+                    <a href="#contact" class="mentor-cta-btn">
+                        <span>Book Your Appointment</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                </div>
+                
+                <!-- Right Column (60%) -->
+                <div class="mentor-right">
+                    
+                    <!-- Multi-line Styled Title -->
+                    <div class="workshop-title-block">
+                        <p class="workshop-title-line-1">Education beyond classroom series presents</p>
+                        <h2 class="workshop-title-line-2">MASTER YOUR MIND</h2>
+                        <p class="workshop-title-line-3">by <span>S. PATIL</span></p>
+                    </div>
+                    
+                    <!-- Workshops Section -->
+                    <div class="workshops-section">
+                        
+                        <!-- Workshops Header -->
+                        <div class="workshops-header">
+                            <h4 class="workshops-heading">Explore our workshops</h4>
+                            <div class="workshops-heading-line"></div>
+                        </div>
+                        
+                        <!-- Workshop Carousel -->
+                        <div class="workshops-carousel-container">
+                            
+                            <!-- Left Arrow -->
+                            <button class="workshop-arrow workshop-arrow-left" aria-label="Previous workshops">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            
+                            <!-- Carousel Track -->
+                            <div class="workshops-carousel-wrapper">
+                                <div class="workshops-carousel-track" id="workshopsTrack">
+                                    
+                                    <!-- Poster 1 -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-1.jpg" alt="Workshop 1">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">01</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 2 -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-2.jpg" alt="Workshop 2">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">02</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 3 -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-3.jpg" alt="Workshop 3">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">03</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 4 -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-4.jpg" alt="Workshop 4">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">04</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 5 -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-5.jpg" alt="Workshop 5">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">05</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 6 -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-6.jpg" alt="Workshop 6">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">06</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Duplicate Set for Infinite Loop -->
+                                    <!-- Poster 1 Duplicate -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-1.jpg" alt="Workshop 1">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">01</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 2 Duplicate -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-2.jpg" alt="Workshop 2">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">02</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 3 Duplicate -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-3.jpg" alt="Workshop 3">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">03</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 4 Duplicate -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-4.jpg" alt="Workshop 4">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">04</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 5 Duplicate -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-5.jpg" alt="Workshop 5">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">05</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Poster 6 Duplicate -->
+                                    <div class="workshop-poster">
+                                        <div class="workshop-poster-inner">
+                                            <img src="assets/workshops/workshop-6.jpg" alt="Workshop 6">
+                                            <div class="workshop-poster-overlay">
+                                                <span class="poster-number">06</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <!-- Right Arrow -->
+                            <button class="workshop-arrow workshop-arrow-right" aria-label="Next workshops">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- Bottom Mission Banner -->
+        <div class="mission-banner">
+            <div class="mission-banner-content">
+                <span class="mission-icon-left"><i class="fa-solid fa-star"></i></span>
+                <h3 class="mission-text">On a mission to inspire, learn, and lead</h3>
+                <span class="mission-icon-right"><i class="fa-solid fa-star"></i></span>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+    <!-- Section 8: PATIL'S PODCAST -->
+    <section id="podcast" class="podcast-section">
+        <div class="container">
+            
+            <!-- Section Title -->
+            <div class="podcast-section-header">
+                <span class="podcast-header-line"></span>
+                <h2 class="podcast-section-title">PATIL'S PODCAST</h2>
+                <span class="podcast-header-line"></span>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="podcast-content">
+                
+                <!-- Left Column: Featured Player (40%) -->
+                <div class="podcast-player-column">
+                    
+                    <!-- Featured Podcast Card -->
+                    <div class="featured-podcast-card">
+                        
+                        <!-- Album Art -->
+                        <div class="featured-podcast-image">
+                            <img src="assets/podcasts/featured-podcast.jpg" alt="Positive Mindset Podcast" id="featuredPodcastImg">
+                            <div class="podcast-image-overlay">
+                                <span class="podcast-badge">
+                                    <i class="fa-solid fa-podcast"></i>
+                                    Now Playing
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Podcast Title -->
+                        <div class="featured-podcast-info">
+                            <h3 class="featured-podcast-title" id="featuredPodcastTitle">Positive Mindset: Roadmap towards Success, Exclusive</h3>
+                            <p class="featured-podcast-artist">S. PATIL</p>
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="podcast-progress-container">
+                            <div class="podcast-progress-bar" id="progressBar">
+                                <div class="podcast-progress-fill" id="progressFill"></div>
+                                <div class="podcast-progress-handle" id="progressHandle"></div>
+                            </div>
+                            <div class="podcast-time-display">
+                                <span class="podcast-current-time" id="currentTime">0:00</span>
+                                <span class="podcast-total-time" id="totalTime">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Controls -->
+                        <div class="podcast-controls">
+                            <button class="podcast-control-btn podcast-secondary-btn" id="prevBtn" aria-label="Previous track">
+                                <i class="fa-solid fa-backward-step"></i>
+                            </button>
+                            <button class="podcast-control-btn podcast-secondary-btn" id="backwardBtn" aria-label="Rewind 30 seconds">
+                                <i class="fa-solid fa-rotate-left"></i>
+                                <span class="control-label">30</span>
+                            </button>
+                            <button class="podcast-control-btn podcast-primary-btn" id="playPauseBtn" aria-label="Play or Pause">
+                                <i class="fa-solid fa-play" id="playPauseIcon"></i>
+                            </button>
+                            <button class="podcast-control-btn podcast-secondary-btn" id="forwardBtn" aria-label="Forward 30 seconds">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                <span class="control-label">30</span>
+                            </button>
+                            <button class="podcast-control-btn podcast-secondary-btn" id="nextBtn" aria-label="Next track">
+                                <i class="fa-solid fa-forward-step"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Volume Control -->
+                        <div class="podcast-volume-container">
+                            <button class="volume-btn" id="volumeBtn" aria-label="Toggle mute">
+                                <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+                            </button>
+                            <div class="volume-slider-wrapper">
+                                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Hidden Audio Element -->
+                    <audio id="podcastAudio" preload="metadata">
+                        <source src="assets/podcasts/audio/featured.mp3" type="audio/mpeg">
+                    </audio>
+                    
+                </div>
+                
+                <!-- Right Column: Podcast List (60%) -->
+                <div class="podcast-list-column">
+                    
+                    <div class="podcast-list-header">
+                        <h4 class="podcast-list-title">All Episodes</h4>
+                        <span class="podcast-list-count">4 Episodes</span>
+                    </div>
+                    
+                    <div class="podcast-list">
+                        
+                        <!-- Podcast 1 -->
+                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-1.mp3" data-image="assets/podcasts/podcast-1.jpg" data-title="The Mentor: Where Vision Meets Direction">
+                            <div class="podcast-item-image">
+                                <img src="assets/podcasts/podcast-1.jpg" alt="The Mentor">
+                            </div>
+                            <div class="podcast-item-info">
+                                <h5 class="podcast-item-title">The Mentor</h5>
+                                <p class="podcast-item-subtitle">"Where Vision Meets Direction."</p>
+                            </div>
+                            <button class="podcast-item-play-btn" aria-label="Play The Mentor">
+                                <i class="fa-solid fa-play"></i>
+                                <span>Listen</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Podcast 2 -->
+                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-2.mp3" data-image="assets/podcasts/podcast-2.jpg" data-title="Learning Excellence: Strategic Guidance for Real Results">
+                            <div class="podcast-item-image">
+                                <img src="assets/podcasts/podcast-2.jpg" alt="Learning Excellence">
+                            </div>
+                            <div class="podcast-item-info">
+                                <h5 class="podcast-item-title">Learning Excellence</h5>
+                                <p class="podcast-item-subtitle">"Strategic Guidance for Real Results."</p>
+                            </div>
+                            <button class="podcast-item-play-btn" aria-label="Play Learning Excellence">
+                                <i class="fa-solid fa-play"></i>
+                                <span>Listen</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Podcast 3 -->
+                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-3.mp3" data-image="assets/podcasts/podcast-3.jpg" data-title="Empower to Excel: Skills for Classrooms, Careers & Life">
+                            <div class="podcast-item-image">
+                                <img src="assets/podcasts/podcast-3.jpg" alt="Empower to Excel">
+                            </div>
+                            <div class="podcast-item-info">
+                                <h5 class="podcast-item-title">Empower to Excel</h5>
+                                <p class="podcast-item-subtitle">"Skills for Classrooms, Careers & Life."</p>
+                            </div>
+                            <button class="podcast-item-play-btn" aria-label="Play Empower to Excel">
+                                <i class="fa-solid fa-play"></i>
+                                <span>Listen</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Podcast 4 -->
+                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-4.mp3" data-image="assets/podcasts/podcast-4.jpg" data-title="Skills That Work: From Mindset to Skillset">
+                            <div class="podcast-item-image">
+                                <img src="assets/podcasts/podcast-4.jpg" alt="Skills That Work">
+                            </div>
+                            <div class="podcast-item-info">
+                                <h5 class="podcast-item-title">Skills That Work</h5>
+                                <p class="podcast-item-subtitle">"From Mindset to Skillset."</p>
+                            </div>
+                            <button class="podcast-item-play-btn" aria-label="Play Skills That Work">
+                                <i class="fa-solid fa-play"></i>
+                                <span>Listen</span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Have questions? We are here to help.</p>
+            </div>
+            
+            <div class="contact-box">
+                
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="d2050207-f865-4e9a-86e3-9df50075c2c5">
+                    <input type="hidden" name="subject" value="New Contact Form Submission - LessonPlan">
+
+                    <!-- Honeypot (spam trap) -->
+                    <input type="checkbox" name="botcheck" style="display:none;">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                    </div>
+
+                    <div id="form-status" aria-live="polite" style="margin: 12px 0;"></div>
+
+                    <button id="send-btn" type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    
+                    
+                    <div class="footer-logo">
+                        <img src="assets/logo-removebg.png" alt="LessonPlan logo" class="footer-logo-img">
+                        <span class="footer-logo-text">LessonPlan</span>
+                    </div>
+
+
+                    <p class="footer-mission">
+                        Our mission is to make learning intuitive and accessible for everyone. Revolutionizing education through connected knowledge graphs.
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <div class="contact-details">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 (805) 051-2005</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>lessonplan1025@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>2nd Floor, Bhagya Lakshmi Complex 10/B, Kogilu Main Road, Prakruthi Nagar, Yelahanka, Bengaluru-560064</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class="footer-map">
+                <div class="contact-details">
+                    <h3>Location</h3>
+
+                    <iframe
+                        class="map-embed"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d242.87059297496359!2d77.61568903607713!3d13.10365345219281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1765698292488!5m2!1sen!2sin"
+                        width="100%"
+                        height="220"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                </div>
+            </div>
+
+
+            </div>
+            <div class="copyright">
+                &copy; 2025 LessonPlan. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        (function () {
+            const form = document.getElementById("contact-form");
+            const statusEl = document.getElementById("form-status");
+            const sendBtn = document.getElementById("send-btn");
+
+            if (!form) return;
+
+            form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            statusEl.textContent = "Sending...";
+            statusEl.style.color = "#333";
+            sendBtn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+
+                const res = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+                });
+
+                const data = await res.json().catch(() => ({}));
+
+                if (res.ok && data.success) {
+                statusEl.textContent = "Message sent successfully.";
+                statusEl.style.color = "#0b7a0b";
+                form.reset();
+                } else {
+                statusEl.textContent = (data && data.message)
+                    ? data.message
+                    : "Failed to send. Please try again.";
+                statusEl.style.color = "#b00020";
+                }
+            } catch (err) {
+                console.error(err);
+                statusEl.textContent = "Network error. Please try again.";
+                statusEl.style.color = "#b00020";
+            } finally {
+                sendBtn.disabled = false;
+            }
+            });
+        })();
+
+
+        (function () {
+            function resetToHome() {
+            if (window.location.hash) {
+                // Remove #... without adding a new history entry
+                history.replaceState(null, document.title, window.location.pathname + window.location.search);
+                // Go to top
+                window.scrollTo(0, 0);
+            }
+            }
+
+            window.addEventListener("load", resetToHome);
+            // Covers some back-forward cache restores (Safari/Firefox)
+            window.addEventListener("pageshow", resetToHome);
+        })();
+
+
+        (function () {
+            function forceTop() {
+            // Force to top after layout/anchor behaviors
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+            // Extra forcing for some browsers
+            requestAnimationFrame(() => window.scrollTo(0, 0));
+            setTimeout(() => window.scrollTo(0, 0), 0);
+            setTimeout(() => window.scrollTo(0, 0), 50);
+            }
+
+            window.addEventListener("load", forceTop);
+            window.addEventListener("pageshow", forceTop);
+        })();
+
+
+        // --- SECTION 2: SMOOTH SESSIONS CAROUSEL ---
+        (function () {
+            const track = document.getElementById('sessionsTrack');
+            const leftBtn = document.querySelector('.sessions-section .arrow-left');
+            const rightBtn = document.querySelector('.sessions-section .arrow-right');
+            
+            if (!track || !leftBtn || !rightBtn) return;
+            
+            // Configuration
+            const CONFIG = {
+                autoScrollSpeed: 0.8,      // Pixels per frame
+                manualScrollAmount: 350,   // Pixels per arrow click
+                manualScrollDuration: 600, // Milliseconds for manual scroll animation
+                pauseDuration: 3000        // Pause duration after manual scroll
+            };
+            
+            // State
+            let currentPosition = 0;
+            let isAutoScrolling = true;
+            let isPaused = false;
+            let animationId = null;
+            let pauseTimeout = null;
+            
+            // Calculate half width for infinite loop reset
+            function getHalfWidth() {
+                return track.scrollWidth / 2;
+            }
+            
+            // Smooth scroll to position
+            function smoothScrollTo(targetPosition, duration) {
+                const startPosition = currentPosition;
+                const distance = targetPosition - startPosition;
+                const startTime = performance.now();
+                
+                isAutoScrolling = false;
+                
+                function animate(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Easing function: easeOutCubic
+                    const easeProgress = 1 - Math.pow(1 - progress, 3);
+                    
+                    currentPosition = startPosition + (distance * easeProgress);
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                    
+                    if (progress < 1) {
+                        animationId = requestAnimationFrame(animate);
+                    } else {
+                        // Handle infinite loop boundaries
+                        handleLoopBoundary();
+                        
+                        // Clear any existing pause timeout
+                        if (pauseTimeout) clearTimeout(pauseTimeout);
+                        
+                        // Resume auto-scroll after pause
+                        pauseTimeout = setTimeout(() => {
+                            isAutoScrolling = true;
+                            autoScroll();
+                        }, CONFIG.pauseDuration);
+                    }
+                }
+                
+                if (animationId) cancelAnimationFrame(animationId);
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            // Handle infinite loop boundary
+            function handleLoopBoundary() {
+                const halfWidth = getHalfWidth();
+                
+                // If scrolled past the duplicate set, reset to beginning
+                if (Math.abs(currentPosition) >= halfWidth) {
+                    currentPosition = currentPosition + halfWidth;
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                }
+                
+                // If scrolled before start, reset to end of first set
+                if (currentPosition > 0) {
+                    currentPosition = currentPosition - halfWidth;
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                }
+            }
+            
+            // Auto scroll animation
+            function autoScroll() {
+                if (!isAutoScrolling || isPaused) return;
+                
+                currentPosition -= CONFIG.autoScrollSpeed;
+                
+                // Reset position for infinite loop
+                const halfWidth = getHalfWidth();
+                if (Math.abs(currentPosition) >= halfWidth) {
+                    currentPosition = 0;
+                }
+                
+                track.style.transform = `translateX(${currentPosition}px)`;
+                animationId = requestAnimationFrame(autoScroll);
+            }
+            
+            // Arrow click handlers
+            leftBtn.addEventListener('click', function () {
+                if (animationId) cancelAnimationFrame(animationId);
+                if (pauseTimeout) clearTimeout(pauseTimeout);
+                
+                const targetPosition = currentPosition + CONFIG.manualScrollAmount;
+                smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
+            });
+            
+            rightBtn.addEventListener('click', function () {
+                if (animationId) cancelAnimationFrame(animationId);
+                if (pauseTimeout) clearTimeout(pauseTimeout);
+                
+                const targetPosition = currentPosition - CONFIG.manualScrollAmount;
+                smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
+            });
+            
+            // Pause on hover
+            track.addEventListener('mouseenter', function () {
+                isPaused = true;
+                if (animationId && isAutoScrolling) {
+                    cancelAnimationFrame(animationId);
+                }
+            });
+            
+            track.addEventListener('mouseleave', function () {
+                isPaused = false;
+                if (isAutoScrolling) {
+                    autoScroll();
+                }
+            });
+            
+            // Touch support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            track.addEventListener('touchstart', function (e) {
+                touchStartX = e.changedTouches[0].screenX;
+                isPaused = true;
+                if (animationId && isAutoScrolling) {
+                    cancelAnimationFrame(animationId);
+                }
+            }, { passive: true });
+            
+            track.addEventListener('touchend', function (e) {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeDistance = touchEndX - touchStartX;
+                
+                if (Math.abs(swipeDistance) > 50) {
+                    if (animationId) cancelAnimationFrame(animationId);
+                    if (pauseTimeout) clearTimeout(pauseTimeout);
+                    
+                    const targetPosition = currentPosition + (swipeDistance > 0 ? CONFIG.manualScrollAmount : -CONFIG.manualScrollAmount);
+                    smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
+                } else {
+                    isPaused = false;
+                    if (isAutoScrolling) {
+                        autoScroll();
+                    }
+                }
+            }, { passive: true });
+            
+            // Start auto-scroll
+            autoScroll();
+        })();        
+
+
+        // --- SECTION 5: PORTFOLIO VIDEO NAVIGATION ---
+        (function () {
+            const track = document.getElementById('portfolioTrack');
+            const prevBtn = document.querySelector('.portfolio-prev');
+            const nextBtn = document.querySelector('.portfolio-next');
+            
+            if (!track || !prevBtn || !nextBtn) return;
+            
+            let currentIndex = 0;
+            const cards = track.querySelectorAll('.portfolio-video-card');
+            const totalCards = cards.length;
+            
+            function getVisibleCards() {
+                const width = window.innerWidth;
+                if (width > 992) return 3;
+                if (width > 768) return 2;
+                return 1;
+            }
+            
+            function getCardWidth() {
+                const card = cards[0];
+                if (!card) return 0;
+                const style = window.getComputedStyle(track);
+                const gap = parseInt(style.gap) || 30;
+                return card.offsetWidth + gap;
+            }
+            
+            function updateTrackPosition() {
+                const cardWidth = getCardWidth();
+                const offset = -currentIndex * cardWidth;
+                track.style.transform = `translateX(${offset}px)`;
+            }
+            
+            function goToNext() {
+                const visibleCards = getVisibleCards();
+                const maxIndex = totalCards - visibleCards;
+                
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateTrackPosition();
+            }
+            
+            function goToPrev() {
+                const visibleCards = getVisibleCards();
+                const maxIndex = totalCards - visibleCards;
+                
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = maxIndex;
+                }
+                updateTrackPosition();
+            }
+            
+            nextBtn.addEventListener('click', goToNext);
+            prevBtn.addEventListener('click', goToPrev);
+            
+            // Reset on resize
+            let resizeTimeout;
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(function () {
+                    currentIndex = 0;
+                    updateTrackPosition();
+                }, 250);
+            });
+        })();
+
+
+
+        // --- SECTION 7: WORKSHOP CAROUSEL ---
+        (function () {
+            const track = document.getElementById('workshopsTrack');
+            const prevBtn = document.querySelector('.workshop-arrow-left');
+            const nextBtn = document.querySelector('.workshop-arrow-right');
+            
+            if (!track || !prevBtn || !nextBtn) return;
+            
+            // Configuration
+            const CONFIG = {
+                autoScrollSpeed: 0.5,
+                manualScrollDuration: 500,
+                pauseDuration: 3000
+            };
+            
+            // State
+            let currentPosition = 0;
+            let isAutoScrolling = true;
+            let isPaused = false;
+            let animationId = null;
+            let pauseTimeout = null;
+            
+            function getVisiblePosters() {
+                const width = window.innerWidth;
+                if (width > 992) return 3;
+                if (width > 768) return 2;
+                return 1;
+            }
+            
+            function getPosterWidth() {
+                const poster = track.querySelector('.workshop-poster');
+                if (!poster) return 0;
+                const style = window.getComputedStyle(track);
+                const gap = parseInt(style.gap) || 20;
+                return poster.offsetWidth + gap;
+            }
+            
+            function getHalfWidth() {
+                const posters = track.querySelectorAll('.workshop-poster');
+                const posterWidth = getPosterWidth();
+                return (posters.length / 2) * posterWidth;
+            }
+            
+            function handleLoopBoundary() {
+                const halfWidth = getHalfWidth();
+                
+                if (Math.abs(currentPosition) >= halfWidth) {
+                    currentPosition = currentPosition + halfWidth;
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                    track.offsetHeight; // Force reflow
+                    track.style.transition = '';
+                }
+                
+                if (currentPosition > 0) {
+                    currentPosition = currentPosition - halfWidth;
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                    track.offsetHeight; // Force reflow
+                    track.style.transition = '';
+                }
+            }
+            
+            function smoothScrollTo(targetPosition, duration) {
+                const startPosition = currentPosition;
+                const distance = targetPosition - startPosition;
+                const startTime = performance.now();
+                
+                isAutoScrolling = false;
+                if (animationId) cancelAnimationFrame(animationId);
+                
+                function animate(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeProgress = 1 - Math.pow(1 - progress, 3);
+                    
+                    currentPosition = startPosition + (distance * easeProgress);
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                    
+                    if (progress < 1) {
+                        animationId = requestAnimationFrame(animate);
+                    } else {
+                        handleLoopBoundary();
+                        
+                        if (pauseTimeout) clearTimeout(pauseTimeout);
+                        pauseTimeout = setTimeout(() => {
+                            isAutoScrolling = true;
+                            if (!isPaused) autoScroll();
+                        }, CONFIG.pauseDuration);
+                    }
+                }
+                
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            function autoScroll() {
+                if (!isAutoScrolling || isPaused) return;
+                
+                currentPosition -= CONFIG.autoScrollSpeed;
+                handleLoopBoundary();
+                
+                track.style.transform = `translateX(${currentPosition}px)`;
+                animationId = requestAnimationFrame(autoScroll);
+            }
+            
+            // Arrow click handlers
+            prevBtn.addEventListener('click', function () {
+                if (animationId) cancelAnimationFrame(animationId);
+                if (pauseTimeout) clearTimeout(pauseTimeout);
+                
+                const posterWidth = getPosterWidth();
+                const targetPosition = currentPosition + posterWidth;
+                smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
+            });
+            
+            nextBtn.addEventListener('click', function () {
+                if (animationId) cancelAnimationFrame(animationId);
+                if (pauseTimeout) clearTimeout(pauseTimeout);
+                
+                const posterWidth = getPosterWidth();
+                const targetPosition = currentPosition - posterWidth;
+                smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
+            });
+            
+            // Pause on hover
+            track.addEventListener('mouseenter', function () {
+                isPaused = true;
+                if (animationId && isAutoScrolling) {
+                    cancelAnimationFrame(animationId);
+                }
+            });
+            
+            track.addEventListener('mouseleave', function () {
+                isPaused = false;
+                if (isAutoScrolling) {
+                    autoScroll();
+                }
+            });
+            
+            // Touch support
+            let touchStartX = 0;
+            
+            track.addEventListener('touchstart', function (e) {
+                touchStartX = e.changedTouches[0].screenX;
+                isPaused = true;
+                if (animationId && isAutoScrolling) {
+                    cancelAnimationFrame(animationId);
+                }
+            }, { passive: true });
+            
+            track.addEventListener('touchend', function (e) {
+                const touchEndX = e.changedTouches[0].screenX;
+                const swipeDistance = touchEndX - touchStartX;
+                
+                if (Math.abs(swipeDistance) > 50) {
+                    if (animationId) cancelAnimationFrame(animationId);
+                    if (pauseTimeout) clearTimeout(pauseTimeout);
+                    
+                    const posterWidth = getPosterWidth();
+                    const targetPosition = currentPosition + (swipeDistance > 0 ? posterWidth : -posterWidth);
+                    smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
+                }
+                
+                isPaused = false;
+                if (isAutoScrolling) {
+                    autoScroll();
+                }
+            }, { passive: true });
+            
+            // Start auto-scroll
+            autoScroll();
+        })();
+
+
+
+        // --- SECTION 8: PODCAST PLAYER ---
+        (function () {
+            const audio = document.getElementById('podcastAudio');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const playPauseIcon = document.getElementById('playPauseIcon');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const forwardBtn = document.getElementById('forwardBtn');
+            const backwardBtn = document.getElementById('backwardBtn');
+            const progressBar = document.getElementById('progressBar');
+            const progressFill = document.getElementById('progressFill');
+            const progressHandle = document.getElementById('progressHandle');
+            const currentTimeEl = document.getElementById('currentTime');
+            const totalTimeEl = document.getElementById('totalTime');
+            const volumeBtn = document.getElementById('volumeBtn');
+            const volumeIcon = document.getElementById('volumeIcon');
+            const volumeSlider = document.getElementById('volumeSlider');
+            const featuredImg = document.getElementById('featuredPodcastImg');
+            const featuredTitle = document.getElementById('featuredPodcastTitle');
+            const podcastItems = document.querySelectorAll('.podcast-list-item');
+            
+            if (!audio || !playPauseBtn) return;
+            
+            let isPlaying = false;
+            let isDragging = false;
+            let currentTrackIndex = -1;
+            
+            // Playlist
+            const playlist = [
+                {
+                    audio: 'assets/podcasts/audio/featured.mp3',
+                    image: 'assets/podcasts/featured-podcast.jpg',
+                    title: 'Positive Mindset: Roadmap towards Success, Exclusive'
+                }
+            ];
+            
+            // Add podcast items to playlist
+            podcastItems.forEach((item, index) => {
+                playlist.push({
+                    audio: item.dataset.audio,
+                    image: item.dataset.image,
+                    title: item.dataset.title
+                });
+            });
+            
+            // Format time
+            function formatTime(seconds) {
+                if (isNaN(seconds)) return '0:00';
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+            
+            // Update progress bar
+            function updateProgress() {
+                if (!isDragging && audio.duration) {
+                    const percent = (audio.currentTime / audio.duration) * 100;
+                    progressFill.style.width = `${percent}%`;
+                    progressHandle.style.left = `${percent}%`;
+                    currentTimeEl.textContent = formatTime(audio.currentTime);
+                }
+            }
+            
+            // Set progress from click
+            function setProgress(e) {
+                const rect = progressBar.getBoundingClientRect();
+                const percent = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+                audio.currentTime = percent * audio.duration;
+                progressFill.style.width = `${percent * 100}%`;
+                progressHandle.style.left = `${percent * 100}%`;
+            }
+            
+            // Play/Pause toggle
+            function togglePlayPause() {
+                if (isPlaying) {
+                    audio.pause();
+                    playPauseIcon.className = 'fa-solid fa-play';
+                    playPauseBtn.classList.remove('playing');
+                } else {
+                    audio.play();
+                    playPauseIcon.className = 'fa-solid fa-pause';
+                    playPauseBtn.classList.add('playing');
+                }
+                isPlaying = !isPlaying;
+            }
+            
+            // Load track
+            function loadTrack(index) {
+                if (index < 0 || index >= playlist.length) return;
+                
+                currentTrackIndex = index;
+                const track = playlist[index];
+                
+                audio.src = track.audio;
+                featuredImg.src = track.image;
+                featuredTitle.textContent = track.title;
+                
+                // Update active state in list
+                podcastItems.forEach((item, i) => {
+                    item.classList.toggle('active', i === index - 1);
+                });
+                
+                audio.load();
+                if (isPlaying) {
+                    audio.play();
+                }
+            }
+            
+            // Event Listeners
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            
+            audio.addEventListener('timeupdate', updateProgress);
+            
+            audio.addEventListener('loadedmetadata', function () {
+                totalTimeEl.textContent = formatTime(audio.duration);
+            });
+            
+            audio.addEventListener('ended', function () {
+                if (currentTrackIndex < playlist.length - 1) {
+                    loadTrack(currentTrackIndex + 1);
+                    audio.play();
+                } else {
+                    isPlaying = false;
+                    playPauseIcon.className = 'fa-solid fa-play';
+                    playPauseBtn.classList.remove('playing');
+                }
+            });
+            
+            // Progress bar interactions
+            progressBar.addEventListener('click', setProgress);
+            
+            progressHandle.addEventListener('mousedown', function (e) {
+                isDragging = true;
+                progressHandle.classList.add('dragging');
+                e.preventDefault();
+            });
+            
+            document.addEventListener('mousemove', function (e) {
+                if (isDragging) {
+                    setProgress(e);
+                }
+            });
+            
+            document.addEventListener('mouseup', function () {
+                if (isDragging) {
+                    isDragging = false;
+                    progressHandle.classList.remove('dragging');
+                }
+            });
+            
+            // Skip buttons
+            forwardBtn.addEventListener('click', function () {
+                audio.currentTime = Math.min(audio.currentTime + 30, audio.duration);
+            });
+            
+            backwardBtn.addEventListener('click', function () {
+                audio.currentTime = Math.max(audio.currentTime - 30, 0);
+            });
+            
+            // Next/Previous
+            nextBtn.addEventListener('click', function () {
+                const nextIndex = currentTrackIndex < playlist.length - 1 ? currentTrackIndex + 1 : 0;
+                loadTrack(nextIndex);
+                if (!isPlaying) togglePlayPause();
+            });
+            
+            prevBtn.addEventListener('click', function () {
+                if (audio.currentTime > 3) {
+                    audio.currentTime = 0;
+                } else {
+                    const prevIndex = currentTrackIndex > 0 ? currentTrackIndex - 1 : playlist.length - 1;
+                    loadTrack(prevIndex);
+                    if (!isPlaying) togglePlayPause();
+                }
+            });
+            
+            // Volume control
+            volumeSlider.addEventListener('input', function () {
+                audio.volume = this.value / 100;
+                updateVolumeIcon();
+            });
+            
+            volumeBtn.addEventListener('click', function () {
+                audio.muted = !audio.muted;
+                updateVolumeIcon();
+            });
+            
+            function updateVolumeIcon() {
+                if (audio.muted || audio.volume === 0) {
+                    volumeIcon.className = 'fa-solid fa-volume-xmark';
+                } else if (audio.volume < 0.5) {
+                    volumeIcon.className = 'fa-solid fa-volume-low';
+                } else {
+                    volumeIcon.className = 'fa-solid fa-volume-high';
+                }
+            }
+            
+            // Podcast list item clicks
+            podcastItems.forEach((item, index) => {
+                item.addEventListener('click', function () {
+                    loadTrack(index + 1);
+                    if (!isPlaying) togglePlayPause();
+                });
+            });
+            
+            // Initialize with featured track
+            currentTrackIndex = 0;
+            audio.volume = volumeSlider.value / 100;
+        })();
+
+
+
+    </script>
+
+
+</body>
+</html>
