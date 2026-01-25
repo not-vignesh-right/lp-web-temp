@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops & Seminars | LessonPlan</title>
+    <link rel="icon" href="assets/logo-removebg.png" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --primary-blue: #003366;
+            --accent-blue: #eef4fa;
+            --action-orange: #ff6600;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--primary-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .btn-primary {
+            background: var(--action-orange);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 26, 51, 0.9)), url('assets/sessions/session-3.jpg') center/cover;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--action-orange);
+            color: white;
+            padding: 16px 35px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #e65c00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .workshops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .workshop-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
+            transition: all 0.3s;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 51, 102, 0.15);
+        }
+
+        .workshop-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-blue), #001a33);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .workshop-image i {
+            font-size: 4rem;
+            color: var(--gold);
+        }
+
+        .workshop-content {
+            padding: 30px;
+        }
+
+        .workshop-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .workshop-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .workshop-duration {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--action-orange);
+            font-weight: 600;
+        }
+
+        .features {
+            background: var(--accent-blue);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--action-orange);
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, var(--primary-blue), #001a33);
+            padding: 80px 0;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            color: white;
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-author {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .cta {
+            background: var(--action-orange);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary-blue);
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="LessonPlan" class="logo-img">
+                    <span class="logo-text">LessonPlan</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about-us">About</a></li>
+                    <li><a href="index.html#company-verticals">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Workshops & <span>Seminars</span></h1>
+                <p>Experience transformative learning through our interactive workshops and seminars led by industry
+                    experts. Designed to inspire, educate, and empower.</p>
+                <a href="index.html#contact" class="hero-btn">
+                    <span>Book a Workshop</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Workshops</h2>
+                <p>Interactive sessions designed to create lasting impact</p>
+            </div>
+            <div class="workshops-grid">
+                <div class="workshop-card">
+                    <div class="workshop-image"><i class="fa-solid fa-microphone-lines"></i></div>
+                    <div class="workshop-content">
+                        <h3>Master Your Mind</h3>
+                        <p>An intensive workshop on mindset transformation, overcoming limiting beliefs, and unlocking
+                            your true potential.</p>
+                        <div class="workshop-duration"><i class="fa-regular fa-clock"></i> Half Day / Full Day</div>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-image"><i class="fa-solid fa-comments"></i></div>
+                    <div class="workshop-content">
+                        <h3>Communication Excellence</h3>
+                        <p>Learn the art of impactful communication, public speaking, and persuasive presentation
+                            skills.</p>
+                        <div class="workshop-duration"><i class="fa-regular fa-clock"></i> Full Day</div>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-image"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="workshop-content">
+                        <h3>Motivation & Success</h3>
+                        <p>Ignite your passion, set powerful goals, and develop the habits of highly successful
+                            individuals.</p>
+                        <div class="workshop-duration"><i class="fa-regular fa-clock"></i> Half Day</div>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-image"><i class="fa-solid fa-users"></i></div>
+                    <div class="workshop-content">
+                        <h3>Team Synergy</h3>
+                        <p>Build stronger teams through trust exercises, collaboration activities, and effective
+                            communication.</p>
+                        <div class="workshop-duration"><i class="fa-regular fa-clock"></i> Full Day</div>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-image"><i class="fa-solid fa-brain"></i></div>
+                    <div class="workshop-content">
+                        <h3>Emotional Intelligence</h3>
+                        <p>Develop self-awareness, empathy, and relationship management skills for personal and
+                            professional success.</p>
+                        <div class="workshop-duration"><i class="fa-regular fa-clock"></i> Half Day</div>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-image"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="workshop-content">
+                        <h3>Work-Life Harmony</h3>
+                        <p>Learn strategies for managing stress, maintaining balance, and achieving fulfillment in all
+                            areas of life.</p>
+                        <div class="workshop-duration"><i class="fa-regular fa-clock"></i> Half Day</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Our Workshops?</h2>
+                <p>What makes our sessions unique and impactful</p>
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <div>
+                        <h4>Expert Facilitators</h4>
+                        <p>Sessions led by industry veterans with decades of experience.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-hand-pointer"></i>
+                    <div>
+                        <h4>Interactive Learning</h4>
+                        <p>Hands-on activities, group discussions, and practical exercises.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-certificate"></i>
+                    <div>
+                        <h4>Certification</h4>
+                        <p>Receive certificates upon completion to showcase your achievements.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-sliders"></i>
+                    <div>
+                        <h4>Customizable</h4>
+                        <p>Workshops tailored to your organization's specific needs and goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <p class="testimonial-quote">"The workshop was absolutely transformative. Our entire team came back
+                    energized and with a completely new perspective on communication and teamwork."</p>
+                <p class="testimonial-author">— HR Director, Fortune 500 Company</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Team?</h2>
+            <p>Book our next workshop and experience the difference.</p>
+            <a href="index.html#contact" class="cta-btn"><span>Inquire Now</span><i
+                    class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LessonPlan</h4>
+                    <p>Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4><a href="index.html">Home</a><a href="index.html#about-us">About Us</a><a
+                        href="index.html#company-verticals">Services</a><a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4><a href="student-training.html">Student Training</a><a
+                        href="corporate-training.html">Corporate Training</a><a href="workshops.html">Workshops &
+                        Seminars</a><a href="life-coaching.html">Life Coaching</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-phone"></i> +91 805 051 2005</p>
+                    <p><i class="fa-solid fa-envelope"></i> lessonplan1025@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LessonPlan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

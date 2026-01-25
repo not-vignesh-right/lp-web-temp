@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LessonPlan</title>
+    <link rel="icon" href="assets/logo-removebg.png" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --primary-blue: #003366;
+            --accent-blue: #eef4fa;
+            --action-orange: #ff6600;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--primary-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .btn-primary {
+            background: var(--action-orange);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+        }
+
+        .btn-primary:hover {
+            background: #e65c00;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 26, 51, 0.9)), url('assets/hero-bg.jpg') center/cover;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Story Section */
+        .story {
+            background: var(--accent-blue);
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-text h2 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .story-text p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .story-image {
+            position: relative;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 51, 102, 0.15);
+        }
+
+        .story-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--action-orange);
+            color: white;
+            padding: 25px 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
+        }
+
+        .story-badge h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .story-badge p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Leaders Grid */
+        .leaders-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .leader-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--primary-blue);
+            transition: transform 0.3s;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .leader-card h4 {
+            color: var(--action-orange);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .leader-card .designation {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+            display: block;
+        }
+
+        .leader-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
+            transition: all 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--gold);
+            box-shadow: 0 20px 50px rgba(0, 51, 102, 0.12);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue), #001a33);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .value-icon i {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+
+        .value-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Mission Vision */
+        .mission-vision {
+            background: linear-gradient(135deg, var(--primary-blue), #001a33);
+            padding: 100px 0;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .mv-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mv-card h3 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mv-card h3 i {
+            font-size: 1.5rem;
+        }
+
+        .mv-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .mv-quote {
+            margin-top: 15px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--accent-blue);
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            color: var(--primary-blue);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-item h3 span {
+            color: var(--action-orange);
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .cta {
+            background: var(--action-orange);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary-blue);
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .story-badge {
+                position: static;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="LessonPlan" class="logo-img">
+                    <span class="logo-text">LessonPlan</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#company-verticals">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>About <span>LessonPlan</span></h1>
+            <p>We are a forward-thinking EdTech company committed to transforming education through innovative learning
+                solutions.</p>
+        </div>
+    </section>
+
+    <section class="section story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Our Story</h2>
+                    <p>Lesson Plan Pvt Ltd is a forward-thinking EdTech company committed to transforming education
+                        through innovative learning solutions. We aim to bridge the gap between academic knowledge and
+                        real-world skills, empowering students, educators, and professionals.</p>
+                    <p>Our team comprises experts from Research to Mentoring, dedicated to making a difference in
+                        Effective Teaching & Learning strategies. We cater to the current needs in academics with a
+                        unique proposition.</p>
+
+                    <div class="leaders-grid">
+                        <div class="leader-card">
+                            <h4>S. Patil</h4>
+                            <span class="designation">Founder & CEO</span>
+                            <p>Passionate Teacher & Educationist with over a decade of research experience in Cancer
+                                Biology. Also Co-Founder at T3-Molecular Genetics Pvt Ltd. Mentored over 200
+                                organizations.</p>
+                        </div>
+                        <div class="leader-card">
+                            <h4>Ashwini R J</h4>
+                            <span class="designation">Co-Founder & Director</span>
+                            <p>Believes that "Every child can be Sculpted". Focused on delivering the best based on
+                                skills and expertise in education.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="assets/student-confidence.jpg" alt="Our Story">
+                    <div class="story-badge">
+                        <h3>2016</h3>
+                        <p>Year Founded</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide us</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-star"></i></div>
+                    <h3>Uniqueness</h3>
+                    <p>"Every child is unique; we need to figure out the spark within them."</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Empathy & Support</h3>
+                    <p>Understanding students' silence and fears to provide belief and confidence.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>Resilience</h3>
+                    <p>Teaching students how to rise again after failure and succeed through perseverance.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Unity</h3>
+                    <p>Uniting under the same mission to revolutionize education and learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
+                    <p>“Teach to Learn & Learn to Teach, India Chapter”</p>
+                    <p class="mv-quote">We aim to figure out the spark within every child, understand their hesitations,
+                        and provide them with the belief that they are unique and capable.</p>
+                </div>
+                <div class="mv-card">
+                    <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
+                    <p>To be the catalyst for personal and professional growth, creating a world where knowledge
+                        empowers and success is achievable by all. To make a difference in Effective Teaching & Learning
+                        strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>200<span>+</span></h3>
+                    <p>Organizations Mentored</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8,000<span>+</span></h3>
+                    <p>Training Hours</p>
+                </div>
+                <div class="stat-item">
+                    <h3>60,000<span>+</span></h3>
+                    <p>Success Stories</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2L<span>+</span></h3>
+                    <p>Students Impacted</p>
+                </div>
+                <div class="stat-item">
+                    <h3>30<span>+</span></h3>
+                    <p>Expert Courses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Future?</h2>
+            <br>
+            <a href="index.html#contact" class="cta-btn"><span>Get in Touch</span><i
+                    class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LessonPlan</h4>
+                    <p>Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a
+                        href="index.html#company-verticals">Services</a><a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4><a href="student-training.html">Student Training</a><a
+                        href="corporate-training.html">Corporate Training</a><a href="workshops.html">Workshops &
+                        Seminars</a><a href="life-coaching.html">Life Coaching</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-phone"></i> +91 805 051 2005</p>
+                    <p><i class="fa-solid fa-envelope"></i> lessonplan1025@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LessonPlan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

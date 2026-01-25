@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | LessonPlan</title>
+    <link rel="icon" href="assets/logo-removebg.png" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --primary-blue: #003366;
+            --accent-blue: #eef4fa;
+            --action-orange: #ff6600;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--primary-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .btn-primary {
+            background: var(--action-orange);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 26, 51, 0.9)), url('assets/hero-bg.jpg') center/cover;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px 20px;
+            background: linear-gradient(to top, rgba(0, 51, 102, 0.9), transparent);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Featured Gallery */
+        .featured-item {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        @media (max-width: 768px) {
+            .featured-item {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--gold);
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            background: linear-gradient(135deg, var(--primary-blue), #001a33);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="LessonPlan" class="logo-img">
+                    <span class="logo-text">LessonPlan</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about-us">About</a></li>
+                    <li><a href="index.html#company-verticals">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our <span>Gallery</span></h1>
+            <p>Capturing moments of transformation, learning, and success from our training sessions and events.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Training Sessions & Events</h2>
+                <p>A glimpse into our impactful training programs</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item featured-item" onclick="openLightbox('assets/gallery/classroomsession.jpeg')">
+                    <img src="assets/gallery/classroomsession.jpeg" alt="Classroom Session">
+                    <div class="gallery-overlay">
+                        <h4>Interactive Classroom Session</h4>
+                        <p>Engaging training with students</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/gallery/awardceremony.jpeg')">
+                    <img src="assets/gallery/awardceremony.jpeg" alt="Award Ceremony">
+                    <div class="gallery-overlay">
+                        <h4>Award Ceremony</h4>
+                        <p>Recognizing excellence</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/gallery/studentgroup.jpeg')">
+                    <img src="assets/gallery/studentgroup.jpeg" alt="Student Group">
+                    <div class="gallery-overlay">
+                        <h4>Student Batch</h4>
+                        <p>Building future leaders</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/gallery/campustour.jpeg')">
+                    <img src="assets/gallery/campustour.jpeg" alt="Campus Tour">
+                    <div class="gallery-overlay">
+                        <h4>Campus Engagement</h4>
+                        <p>Connecting with students</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/gallery/classroomsession2.jpeg')">
+                    <img src="assets/gallery/classroomsession2.jpeg" alt="Classroom Session 2">
+                    <div class="gallery-overlay">
+                        <h4>Workshop in Progress</h4>
+                        <p>Hands-on learning experience</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/gallery/awardceremony2.jpeg')">
+                    <img src="assets/gallery/awardceremony2.jpeg" alt="Award Ceremony 2">
+                    <div class="gallery-overlay">
+                        <h4>Achievement Recognition</h4>
+                        <p>Celebrating success</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/gallery/studentgroup2.jpeg')">
+                    <img src="assets/gallery/studentgroup2.jpeg" alt="Student Group 2">
+                    <div class="gallery-overlay">
+                        <h4>Team Spirit</h4>
+                        <p>United in learning</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/gallery/campustour2.jpeg')">
+                    <img src="assets/gallery/campustour2.jpeg" alt="Campus Tour 2">
+                    <div class="gallery-overlay">
+                        <h4>Campus Workshop</h4>
+                        <p>Inspiring the next generation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Events Conducted</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Colleges Visited</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Corporate Partners</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10,000+</h3>
+                    <p>Photos Captured</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Image" id="lightbox-img">
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LessonPlan</h4>
+                    <p>Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4><a href="index.html">Home</a><a href="index.html#about-us">About Us</a><a
+                        href="index.html#company-verticals">Services</a><a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4><a href="student-training.html">Student Training</a><a
+                        href="corporate-training.html">Corporate Training</a><a href="workshops.html">Workshops &
+                        Seminars</a><a href="life-coaching.html">Life Coaching</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-phone"></i> +91 805 051 2005</p>
+                    <p><i class="fa-solid fa-envelope"></i> lessonplan1025@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LessonPlan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Close on clicking outside image
+        document.getElementById('lightbox').addEventListener('click', function (e) {
+            if (e.target === this) closeLightbox();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | LessonPlan</title>
+    <link rel="icon" href="assets/logo-removebg.png" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --primary-blue: #003366;
+            --accent-blue: #eef4fa;
+            --action-orange: #ff6600;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--primary-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .btn-primary {
+            background: var(--action-orange);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 26, 51, 0.9)), url('assets/hero-bg.jpg') center/cover;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .vertical-section {
+            margin-bottom: 60px;
+        }
+
+        .vertical-title {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card h3 i {
+            color: var(--action-orange);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .course-list {
+            list-style: none;
+        }
+
+        .course-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .course-list li::before {
+            content: '•';
+            color: var(--action-orange);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .stats-banner {
+            background: var(--accent-blue);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+        }
+
+        .cta {
+            background: var(--action-orange);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary-blue);
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="LessonPlan" class="logo-img">
+                    <span class="logo-text">LessonPlan</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our <span>Services</span></h1>
+            <p>Comprehensive solutions across Consultation, R&D, and Educational Materials designed to transform
+                learning.</p>
+        </div>
+    </section>
+
+    <!-- Vertical 1: Consultation & Solutions -->
+    <section class="section">
+        <div class="container">
+            <h2 class="vertical-title">1. Educational Consultation & Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Student Programs</h3>
+                    <p>Empowering students with skills for success.</p>
+                    <ul class="course-list">
+                        <li>Memory Mastery Program</li>
+                        <li>Effective Learning Workshops</li>
+                        <li>Competitive vs Academic Prep</li>
+                        <li>Mindset to Skillset</li>
+                        <li>STEM Studio Hands-on Learning</li>
+                    </ul>
+                    <a href="student-training.html"
+                        style="color: var(--action-orange); font-size: 0.9rem; font-weight: 600; text-decoration: none; margin-top: 10px; display: inline-block;">View
+                        Details &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-briefcase"></i> Career Guidance</h3>
+                    <p>Strategic guidance for professional growth.</p>
+                    <ul class="course-list">
+                        <li>Career Direction Workshop</li>
+                        <li>Professional Career Counseling</li>
+                        <li>CareerIQ: Intelligent Counseling</li>
+                        <li>Public Speaking Excellence</li>
+                        <li>Entrepreneurship: Idea to Website</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-building"></i> Corporate Training</h3>
+                    <p>Enhancing organizational effectiveness.</p>
+                    <ul class="course-list">
+                        <li>Corporate Growth Workshop</li>
+                        <li>Performance Accelerator</li>
+                        <li>Leadership & Teamwork</li>
+                        <li>Strategic Marketing</li>
+                        <li>Stress-Free Mindset</li>
+                    </ul>
+                    <a href="corporate-training.html"
+                        style="color: var(--action-orange); font-size: 0.9rem; font-weight: 600; text-decoration: none; margin-top: 10px; display: inline-block;">View
+                        Details &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-chalkboard-user"></i> Faculty Development</h3>
+                    <p>Empowering educators for modern classrooms.</p>
+                    <ul class="course-list">
+                        <li>TeachSmart Program</li>
+                        <li>Classroom Management Pro</li>
+                        <li>Effective Teaching Excellence</li>
+                        <li>Evaluation Methodology</li>
+                        <li>Curriculum Design Workshop</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-hands-holding-child"></i> Parenting</h3>
+                    <p>Because every effort counts.</p>
+                    <ul class="course-list">
+                        <li>Parenting with Purpose</li>
+                        <li>Parenting Mastery Techniques</li>
+                        <li>Parenting Essentials Workshop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vertical 2: R&D Projects -->
+    <section class="section" style="background: var(--accent-blue);">
+        <div class="container">
+            <h2 class="vertical-title">2. Educational R&D Projects</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-flask"></i> Research & Innovation</h3>
+                    <p>We are constantly evolving educational methodologies through rigorous research and development.
+                    </p>
+                    <ul class="course-list">
+                        <li>Development of Novel Teaching Strategies</li>
+                        <li>NEP Based Conceptual Learning Models</li>
+                        <li>Learning Trend Analysis (Past, Present & Future)</li>
+                        <li>Statistical Analysis of Dropout Rates & Feedback</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-book-open"></i> Publications</h3>
+                    <p>Contributing to the academic community through high-quality educational resources.</p>
+                    <ul class="course-list">
+                        <li>Research Articles & Key Findings</li>
+                        <li>Educational Books & Worksheets</li>
+                        <li>Policy Development Surveys</li>
+                        <li>Filing Patents for Methodologies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vertical 3: Kits & Materials -->
+    <section class="section">
+        <div class="container">
+            <h2 class="vertical-title">3. Educational Kits & Materials</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-shapes"></i> Proprietary Materials</h3>
+                    <p>Designed to increase creativity and conceptual understanding using various tricks and logics.</p>
+                    <ul class="course-list">
+                        <li>3D Structures & Models</li>
+                        <li>Tricks, Logics & Mind Maps</li>
+                        <li>Daily Practice Papers (DPP)</li>
+                        <li>Act & Gaming Based Learning</li>
+                        <li>Self-Learning Models</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-box-open"></i> Product Catalogue</h3>
+                    <p>Specialized resources for different age groups (9th-12th, Graduate, Post-Graduate).</p>
+                    <ul class="course-list">
+                        <li>Question Banks & Practice Sheets</li>
+                        <li>Teachers & Parents Manuals</li>
+                        <li>Experiential Learning Manuals</li>
+                        <li>Competitive Exam Practice Sheets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>30<span>+</span></h3>
+                    <p>Expert Designed Courses</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200<span>+</span></h3>
+                    <p>Organizations Mentored</p>
+                </div>
+                <div class="stat-item">
+                    <h3>60,000<span>+</span></h3>
+                    <p>Success Stories</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2L<span>+</span></h3>
+                    <p>Students Impacted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <br>
+            <a href="index.html#contact" class="cta-btn"><span>Contact Us Now</span><i
+                    class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LessonPlan</h4>
+                    <p>Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a
+                        href="services.html">Services</a><a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4><a href="student-training.html">Student Training</a><a
+                        href="corporate-training.html">Corporate Training</a><a href="workshops.html">Workshops &
+                        Seminars</a><a href="life-coaching.html">Life Coaching</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-phone"></i> +91 805 051 2005</p>
+                    <p><i class="fa-solid fa-envelope"></i> lessonplan1025@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LessonPlan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,12 +31,15 @@
         :root {
             /* Palette */
             --primary-white: #ffffff;
-            --primary-blue: #003366; /* Deep Professional Blue */
-            --accent-blue: #eef4fa;  /* Very Light Blue for backgrounds */
-            --action-orange: #ff6600; /* Energetic Orange for contrast */
+            --primary-blue: #003366;
+            /* Deep Professional Blue */
+            --accent-blue: #eef4fa;
+            /* Very Light Blue for backgrounds */
+            --action-orange: #ff6600;
+            /* Energetic Orange for contrast */
             --text-dark: #333333;
             --text-light: #666666;
-            
+
             /* Styling */
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 10px 20px rgba(0, 51, 102, 0.15);
@@ -70,7 +73,9 @@
             padding: 0 20px;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: var(--primary-blue);
             font-weight: 700;
         }
@@ -139,7 +144,7 @@
         /* --- HEADER --- */
         header {
             background-color: var(--primary-white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -201,12 +206,13 @@
         }
 
         /* --- HERO SECTION --- */
-        
+
         /* --- SECTION 1: HERO --- */
         .hero-section {
             position: relative;
             width: 100%;
-            height: calc(100vh - 70px); /* Viewport minus header height */
+            height: calc(100vh - 70px);
+            /* Viewport minus header height */
             min-height: 500px;
             display: flex;
             align-items: center;
@@ -238,11 +244,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                135deg,
-                rgba(0, 51, 102, 0.6) 0%,
-                rgba(0, 0, 0, 0.4) 100%
-            );
+            background: linear-gradient(135deg,
+                    rgba(0, 51, 102, 0.6) 0%,
+                    rgba(0, 0, 0, 0.4) 100%);
             z-index: 2;
         }
 
@@ -312,13 +316,14 @@
         /* --- HERO RESPONSIVE STYLES --- */
         @media (max-width: 992px) {
             .hero-section {
-                height: calc(100vh - 120px); /* Account for stacked nav */
+                height: calc(100vh - 120px);
+                /* Account for stacked nav */
             }
-            
+
             .hero-content h1 {
                 font-size: 2.8rem;
             }
-            
+
             .hero-video-container {
                 width: 240px;
                 height: 140px;
@@ -330,27 +335,27 @@
                 height: calc(100vh - 140px);
                 min-height: 600px;
             }
-            
+
             .hero-content h1 {
                 font-size: 2.2rem;
                 margin-bottom: 30px;
             }
-            
+
             .hero-content .btn-primary {
                 padding: 14px 32px;
                 font-size: 1rem;
             }
-            
+
             .hero-video-wrapper {
                 bottom: 20px;
                 left: 20px;
             }
-            
+
             .hero-video-container {
                 width: 200px;
                 height: 115px;
             }
-            
+
             .hero-video-title {
                 font-size: 0.85rem;
                 padding: 6px 12px;
@@ -361,35 +366,35 @@
             .hero-section {
                 min-height: 550px;
             }
-            
+
             .hero-content h1 {
                 font-size: 1.8rem;
                 margin-bottom: 25px;
             }
-            
+
             .hero-content .btn-primary {
                 padding: 12px 28px;
                 font-size: 0.95rem;
             }
-            
+
             .hero-video-wrapper {
                 bottom: 15px;
                 left: 15px;
                 right: 15px;
             }
-            
+
             .hero-video-container {
                 width: 160px;
                 height: 95px;
             }
-            
+
             .hero-video-title {
                 font-size: 0.8rem;
             }
         }
 
 
-        
+
         /* --- SECTION 2: SESSIONS CAROUSEL (ENHANCED) --- */
         .sessions-section {
             background-color: var(--primary-white);
@@ -453,11 +458,9 @@
             transform: translate(-50%, -50%);
             width: calc(100% + 20px);
             height: calc(100% + 20px);
-            background: radial-gradient(
-                ellipse at center,
-                rgba(212, 175, 55, 0.1) 0%,
-                transparent 70%
-            );
+            background: radial-gradient(ellipse at center,
+                    rgba(212, 175, 55, 0.1) 0%,
+                    transparent 70%);
             pointer-events: none;
             z-index: -1;
         }
@@ -708,21 +711,21 @@
             .sessions-title {
                 font-size: 2.2rem;
             }
-            
+
             .sessions-title-frame {
                 padding: 25px 40px;
             }
-            
+
             .frame-corner {
                 width: 25px;
                 height: 25px;
             }
-            
+
             .session-card {
                 width: 270px;
                 height: 380px;
             }
-            
+
             .sessions-controls {
                 padding: 0 30px;
             }
@@ -732,60 +735,60 @@
             .sessions-section {
                 padding: 60px 0;
             }
-            
+
             .sessions-title {
                 font-size: 1.7rem;
             }
-            
+
             .sessions-title-frame {
                 padding: 20px 30px;
             }
-            
+
             .frame-corner {
                 width: 20px;
                 height: 20px;
                 border-width: 2px;
             }
-            
+
             .sessions-controls {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 25px;
                 padding: 0 25px;
             }
-            
+
             .sessions-arrows {
                 align-self: flex-end;
             }
-            
+
             .sessions-subtitle {
                 font-size: 1.1rem;
             }
-            
+
             .session-card {
                 width: 250px;
                 height: 350px;
             }
-            
+
             .card-back-content {
                 padding: 25px 20px;
             }
-            
+
             .card-back-icon {
                 width: 50px;
                 height: 50px;
                 font-size: 1.2rem;
                 margin-bottom: 20px;
             }
-            
+
             .session-card-back h3 {
                 font-size: 1.3rem;
             }
-            
+
             .session-card-back p {
                 font-size: 0.9rem;
             }
-            
+
             .sessions-carousel-track {
                 padding-left: 25px;
                 gap: 20px;
@@ -796,52 +799,52 @@
             .sessions-title {
                 font-size: 1.4rem;
             }
-            
+
             .sessions-title-frame {
                 padding: 15px 20px;
             }
-            
+
             .sessions-subtitle {
                 font-size: 1rem;
             }
-            
+
             .sessions-subtitle-icon {
                 width: 30px;
             }
-            
+
             .arrow-btn {
                 width: 44px;
                 height: 44px;
                 font-size: 1rem;
             }
-            
+
             .session-card {
                 width: 230px;
                 height: 320px;
             }
-            
+
             .card-back-icon {
                 width: 45px;
                 height: 45px;
                 font-size: 1rem;
                 margin-bottom: 15px;
             }
-            
+
             .session-card-back h3 {
                 font-size: 1.15rem;
                 margin-bottom: 10px;
             }
-            
+
             .session-card-back p {
                 font-size: 0.85rem;
                 margin-bottom: 20px;
             }
-            
+
             .session-tag {
                 padding: 8px 20px;
                 font-size: 0.8rem;
             }
-            
+
             .sessions-carousel-track {
                 padding-left: 20px;
                 gap: 15px;
@@ -886,13 +889,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                to top,
-                rgba(0, 0, 0, 0.75) 0%,
-                rgba(0, 0, 0, 0.4) 40%,
-                rgba(0, 0, 0, 0.1) 70%,
-                transparent 100%
-            );
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.75) 0%,
+                    rgba(0, 0, 0, 0.4) 40%,
+                    rgba(0, 0, 0, 0.1) 70%,
+                    transparent 100%);
             z-index: 2;
         }
 
@@ -915,14 +916,12 @@
             position: relative;
             padding: 40px 60px;
             margin-bottom: 35px;
-            background: linear-gradient(
-                135deg,
-                rgba(212, 175, 55, 0.15) 0%,
-                rgba(212, 175, 55, 0.05) 100%
-            );
+            background: linear-gradient(135deg,
+                    rgba(212, 175, 55, 0.15) 0%,
+                    rgba(212, 175, 55, 0.05) 100%);
             border: 3px solid #D4AF37;
             border-radius: 4px;
-            box-shadow: 
+            box-shadow:
                 0 0 40px rgba(212, 175, 55, 0.2),
                 inset 0 0 30px rgba(212, 175, 55, 0.05);
         }
@@ -996,11 +995,11 @@
             .student-power-title {
                 font-size: 2.6rem;
             }
-            
+
             .student-power-subtitle {
                 font-size: 1.2rem;
             }
-            
+
             .student-power-box {
                 padding: 35px 50px;
             }
@@ -1010,30 +1009,30 @@
             .student-power-section {
                 min-height: 550px;
             }
-            
+
             .student-power-content {
                 margin-bottom: 8vh;
             }
-            
+
             .student-power-box {
                 padding: 30px 35px;
                 margin-bottom: 30px;
             }
-            
+
             .student-power-title {
                 font-size: 2rem;
             }
-            
+
             .student-power-subtitle {
                 font-size: 1rem;
                 letter-spacing: 1.5px;
             }
-            
+
             .student-power-btn {
                 padding: 16px 40px;
                 font-size: 1.05rem;
             }
-            
+
             .student-power-box::before,
             .student-power-box::after {
                 width: 15px;
@@ -1045,45 +1044,45 @@
             .student-power-section {
                 min-height: 500px;
             }
-            
+
             .student-power-content {
                 margin-bottom: 6vh;
                 padding: 0 15px;
             }
-            
+
             .student-power-box {
                 padding: 25px 25px;
                 margin-bottom: 25px;
                 border-width: 2px;
             }
-            
+
             .student-power-title {
                 font-size: 1.6rem;
                 line-height: 1.3;
             }
-            
+
             .student-power-subtitle {
                 font-size: 0.9rem;
                 letter-spacing: 1px;
             }
-            
+
             .student-power-btn {
                 padding: 14px 35px;
                 font-size: 1rem;
             }
-            
+
             .student-power-box::before,
             .student-power-box::after {
                 width: 12px;
                 height: 12px;
                 border-width: 2px;
             }
-            
+
             .student-power-box::before {
                 top: -4px;
                 left: -4px;
             }
-            
+
             .student-power-box::after {
                 bottom: -4px;
                 right: -4px;
@@ -1168,7 +1167,7 @@
             width: 100%;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(0, 51, 102, 0.15),
                 0 10px 30px rgba(0, 0, 0, 0.1);
         }
@@ -1238,13 +1237,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(255, 255, 255, 0.3) 0%,
-                rgba(255, 255, 255, 0.7) 40%,
-                rgba(255, 255, 255, 0.95) 80%,
-                rgba(255, 255, 255, 1) 100%
-            );
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.3) 0%,
+                    rgba(255, 255, 255, 0.7) 40%,
+                    rgba(255, 255, 255, 0.95) 80%,
+                    rgba(255, 255, 255, 1) 100%);
             pointer-events: none;
         }
 
@@ -1253,7 +1250,7 @@
             .empowering-title {
                 font-size: 2.8rem;
             }
-            
+
             .empowering-container {
                 gap: 50px;
             }
@@ -1264,37 +1261,37 @@
                 min-height: auto;
                 padding: 80px 0;
             }
-            
+
             .empowering-container {
                 flex-direction: column;
                 padding: 0 30px;
                 gap: 50px;
             }
-            
+
             .empowering-content {
                 flex: 0 0 100%;
                 max-width: 100%;
                 padding-right: 0;
                 text-align: center;
             }
-            
+
             .empowering-title {
                 font-size: 2.5rem;
             }
-            
+
             .empowering-accent {
                 margin: 0 auto;
             }
-            
+
             .empowering-accent::after {
                 left: 90px;
             }
-            
+
             .empowering-image-wrapper {
                 flex: 0 0 100%;
                 max-width: 600px;
             }
-            
+
             .empowering-image-container::after {
                 width: 60px;
                 height: 60px;
@@ -1307,32 +1304,32 @@
             .empowering-section {
                 padding: 60px 0;
             }
-            
+
             .empowering-container {
                 padding: 0 25px;
                 gap: 40px;
             }
-            
+
             .empowering-title {
                 font-size: 2rem;
                 margin-bottom: 25px;
             }
-            
+
             .empowering-image-container {
                 border-radius: 12px;
             }
-            
+
             .empowering-image-container::before {
                 border-radius: 12px;
             }
-            
+
             .empowering-image-container::after {
                 width: 50px;
                 height: 50px;
                 border-width: 3px;
                 border-radius: 0 12px 0 0;
             }
-            
+
             .empowering-image-reflection {
                 height: 60px;
                 border-radius: 0 0 12px 12px;
@@ -1343,40 +1340,40 @@
             .empowering-section {
                 padding: 50px 0;
             }
-            
+
             .empowering-container {
                 padding: 0 20px;
                 gap: 35px;
             }
-            
+
             .empowering-title {
                 font-size: 1.7rem;
                 margin-bottom: 20px;
             }
-            
+
             .empowering-title span {
                 margin-top: 5px;
             }
-            
+
             .empowering-accent {
                 width: 60px;
                 height: 4px;
             }
-            
+
             .empowering-accent::after {
                 left: 70px;
                 width: 15px;
                 height: 4px;
             }
-            
+
             .empowering-image-container {
                 border-radius: 10px;
             }
-            
+
             .empowering-image-container::before {
                 border-radius: 10px;
             }
-            
+
             .empowering-image-container::after {
                 width: 40px;
                 height: 40px;
@@ -1385,7 +1382,7 @@
                 border-width: 3px;
                 border-radius: 0 10px 0 0;
             }
-            
+
             .empowering-image-reflection {
                 height: 50px;
                 border-radius: 0 0 10px 10px;
@@ -1452,10 +1449,13 @@
         }
 
         @keyframes arrowPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateX(0);
                 opacity: 0.7;
             }
+
             50% {
                 transform: translateX(5px);
                 opacity: 1;
@@ -1533,11 +1533,11 @@
             width: 100%;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 
+            box-shadow:
                 0 20px 50px rgba(0, 51, 102, 0.12),
                 0 8px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: #1a2230;
         }
 
@@ -1556,7 +1556,7 @@
 
         .portfolio-video-container:hover {
             transform: translateY(-10px);
-            box-shadow: 
+            box-shadow:
                 0 30px 70px rgba(0, 51, 102, 0.18),
                 0 15px 35px rgba(0, 0, 0, 0.12);
         }
@@ -1646,7 +1646,7 @@
             .portfolio-title {
                 font-size: 2.4rem;
             }
-            
+
             .portfolio-video-card {
                 min-width: calc(33.333% - 20px);
             }
@@ -1656,34 +1656,34 @@
             .portfolio-section {
                 padding: 80px 0 60px;
             }
-            
+
             .portfolio-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 25px;
                 margin-bottom: 50px;
             }
-            
+
             .portfolio-nav {
                 align-self: flex-end;
             }
-            
+
             .portfolio-title {
                 font-size: 2.2rem;
             }
-            
+
             .portfolio-videos-track {
                 gap: 25px;
             }
-            
+
             .portfolio-video-card {
                 min-width: calc(50% - 12.5px);
             }
-            
+
             .portfolio-video-container {
                 border-radius: 16px;
             }
-            
+
             .portfolio-video-container::before {
                 border-radius: 16px;
             }
@@ -1693,44 +1693,44 @@
             .portfolio-section {
                 padding: 60px 0 50px;
             }
-            
+
             .portfolio-header {
                 margin-bottom: 40px;
             }
-            
+
             .portfolio-title-wrapper {
                 gap: 15px;
             }
-            
+
             .portfolio-title-line {
                 width: 30px;
             }
-            
+
             .portfolio-title {
                 font-size: 1.9rem;
             }
-            
+
             .portfolio-arrow-btn {
                 width: 44px;
                 height: 44px;
             }
-            
+
             .portfolio-videos-wrapper {
                 margin-bottom: 60px;
             }
-            
+
             .portfolio-videos-track {
                 gap: 20px;
             }
-            
+
             .portfolio-video-card {
                 min-width: calc(100% - 40px);
             }
-            
+
             .portfolio-video-container {
                 border-radius: 14px;
             }
-            
+
             .portfolio-video-badge {
                 width: 40px;
                 height: 40px;
@@ -1739,20 +1739,20 @@
                 top: 15px;
                 left: 15px;
             }
-            
+
             .milestones-header {
                 gap: 20px;
             }
-            
+
             .milestones-line {
                 max-width: 80px;
             }
-            
+
             .milestones-title {
                 font-size: 1.2rem;
                 letter-spacing: 2px;
             }
-            
+
             .milestones-awards-container::before,
             .milestones-awards-container::after {
                 width: 50px;
@@ -1763,45 +1763,45 @@
             .portfolio-section {
                 padding: 50px 0 40px;
             }
-            
+
             .portfolio-title-line {
                 display: none;
             }
-            
+
             .portfolio-title {
                 font-size: 1.6rem;
             }
-            
+
             .portfolio-title-arrow {
                 font-size: 1rem;
             }
-            
+
             .portfolio-nav-label {
                 display: none;
             }
-            
+
             .portfolio-arrows {
                 gap: 10px;
             }
-            
+
             .portfolio-arrow-btn {
                 width: 40px;
                 height: 40px;
                 font-size: 0.9rem;
             }
-            
+
             .portfolio-videos-wrapper {
                 margin-bottom: 50px;
             }
-            
+
             .portfolio-video-card {
                 min-width: 100%;
             }
-            
+
             .portfolio-video-container {
                 border-radius: 12px;
             }
-            
+
             .portfolio-video-badge {
                 width: 35px;
                 height: 35px;
@@ -1810,44 +1810,44 @@
                 top: 12px;
                 left: 12px;
             }
-            
+
             .milestones-line {
                 max-width: 50px;
             }
-            
+
             .milestones-title {
                 font-size: 1rem;
                 letter-spacing: 1.5px;
             }
-            
+
             .milestones-awards-container::before,
             .milestones-awards-container::after {
                 width: 30px;
             }
         }
 
-        
+
 
         /* Hi, me adding new section below */
         @media (max-width: 992px) {
             .portfolio-videos-wrapper {
                 padding: 10px 0;
             }
-            
+
             .portfolio-videos-track {
                 gap: 25px;
                 padding: 10px 0;
             }
-            
+
             .portfolio-video-card {
                 min-width: calc(50% - 12.5px);
                 padding: 8px 0;
             }
-            
+
             .portfolio-video-container {
                 border-radius: 16px;
             }
-            
+
             .portfolio-video-container::before {
                 border-radius: 16px;
             }
@@ -1858,21 +1858,21 @@
                 margin-bottom: 60px;
                 padding: 8px 0;
             }
-            
+
             .portfolio-videos-track {
                 gap: 20px;
                 padding: 8px 0;
             }
-            
+
             .portfolio-video-card {
                 min-width: calc(100% - 40px);
                 padding: 6px 0;
             }
-            
+
             .portfolio-video-container {
                 border-radius: 14px;
             }
-            
+
             .portfolio-video-container:hover {
                 transform: translateY(-8px);
             }
@@ -1882,16 +1882,16 @@
             .portfolio-videos-wrapper {
                 margin-bottom: 50px;
             }
-            
+
             .portfolio-video-card {
                 min-width: 100%;
                 padding: 5px 0;
             }
-            
+
             .portfolio-video-container {
                 border-radius: 12px;
             }
-            
+
             .portfolio-video-container:hover {
                 transform: translateY(-6px);
             }
@@ -1935,7 +1935,7 @@
             width: 100%;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(0, 51, 102, 0.15),
                 0 10px 30px rgba(0, 0, 0, 0.1);
         }
@@ -2005,13 +2005,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(255, 255, 255, 0.3) 0%,
-                rgba(255, 255, 255, 0.7) 40%,
-                rgba(255, 255, 255, 0.95) 80%,
-                rgba(255, 255, 255, 1) 100%
-            );
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.3) 0%,
+                    rgba(255, 255, 255, 0.7) 40%,
+                    rgba(255, 255, 255, 0.95) 80%,
+                    rgba(255, 255, 255, 1) 100%);
             pointer-events: none;
         }
 
@@ -2076,7 +2074,7 @@
             .superpower-title {
                 font-size: 2.8rem;
             }
-            
+
             .superpower-container {
                 gap: 50px;
             }
@@ -2087,37 +2085,37 @@
                 min-height: auto;
                 padding: 80px 0;
             }
-            
+
             .superpower-container {
                 flex-direction: column-reverse;
                 padding: 0 30px;
                 gap: 50px;
             }
-            
+
             .superpower-content {
                 flex: 0 0 100%;
                 max-width: 100%;
                 padding-left: 0;
                 text-align: center;
             }
-            
+
             .superpower-title {
                 font-size: 2.5rem;
             }
-            
+
             .superpower-accent {
                 margin: 0 auto;
             }
-            
+
             .superpower-accent::before {
                 left: -30px;
             }
-            
+
             .superpower-image-wrapper {
                 flex: 0 0 100%;
                 max-width: 600px;
             }
-            
+
             .superpower-image-container::after {
                 width: 60px;
                 height: 60px;
@@ -2130,37 +2128,37 @@
             .superpower-section {
                 padding: 60px 0;
             }
-            
+
             .superpower-container {
                 padding: 0 25px;
                 gap: 40px;
             }
-            
+
             .superpower-title {
                 font-size: 2rem;
                 margin-bottom: 25px;
             }
-            
+
             .superpower-title span::after {
                 height: 3px;
                 bottom: -3px;
             }
-            
+
             .superpower-image-container {
                 border-radius: 12px;
             }
-            
+
             .superpower-image-container::before {
                 border-radius: 12px;
             }
-            
+
             .superpower-image-container::after {
                 width: 50px;
                 height: 50px;
                 border-width: 3px;
                 border-radius: 12px 0 0 0;
             }
-            
+
             .superpower-image-reflection {
                 height: 60px;
                 border-radius: 0 0 12px 12px;
@@ -2171,45 +2169,45 @@
             .superpower-section {
                 padding: 50px 0;
             }
-            
+
             .superpower-container {
                 padding: 0 20px;
                 gap: 35px;
             }
-            
+
             .superpower-title {
                 font-size: 1.7rem;
                 margin-bottom: 20px;
             }
-            
+
             .superpower-title span {
                 letter-spacing: 1px;
             }
-            
+
             .superpower-title span::after {
                 height: 3px;
                 bottom: -2px;
             }
-            
+
             .superpower-accent {
                 width: 60px;
                 height: 4px;
             }
-            
+
             .superpower-accent::before {
                 left: -25px;
                 width: 15px;
                 height: 4px;
             }
-            
+
             .superpower-image-container {
                 border-radius: 10px;
             }
-            
+
             .superpower-image-container::before {
                 border-radius: 10px;
             }
-            
+
             .superpower-image-container::after {
                 width: 40px;
                 height: 40px;
@@ -2218,7 +2216,7 @@
                 border-width: 3px;
                 border-radius: 10px 0 0 0;
             }
-            
+
             .superpower-image-reflection {
                 height: 50px;
                 border-radius: 0 0 10px 10px;
@@ -2242,7 +2240,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 102, 0, 0.03) 0%, transparent 50%);
             pointer-events: none;
@@ -2459,6 +2457,7 @@
             0% {
                 background-position: 0% center;
             }
+
             100% {
                 background-position: 200% center;
             }
@@ -2568,7 +2567,7 @@
             aspect-ratio: 3 / 4;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 
+            box-shadow:
                 0 15px 40px rgba(0, 0, 0, 0.3),
                 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2590,7 +2589,7 @@
 
         .workshop-poster-inner:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(0, 0, 0, 0.4),
                 0 10px 30px rgba(212, 175, 55, 0.2);
         }
@@ -2614,11 +2613,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(
-                180deg,
-                transparent 50%,
-                rgba(10, 22, 40, 0.8) 100%
-            );
+            background: linear-gradient(180deg,
+                    transparent 50%,
+                    rgba(10, 22, 40, 0.8) 100%);
             pointer-events: none;
             z-index: 2;
         }
@@ -2655,12 +2652,10 @@
             left: -100%;
             width: 200%;
             height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.1) 50%,
-                transparent 100%
-            );
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.1) 50%,
+                    transparent 100%);
             animation: bannerShine 4s linear infinite;
         }
 
@@ -2668,6 +2663,7 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(50%);
             }
@@ -2707,21 +2703,21 @@
                 gap: 50px;
                 padding: 0 30px;
             }
-            
+
             .mentor-left {
                 flex: 0 0 40%;
                 max-width: 40%;
             }
-            
+
             .mentor-right {
                 flex: 0 0 56%;
                 max-width: 56%;
             }
-            
+
             .workshop-title-line-2 {
                 font-size: 2.5rem;
             }
-            
+
             .callout-text {
                 font-size: 1.4rem;
             }
@@ -2731,42 +2727,42 @@
             .mentor-content-wrapper {
                 padding: 60px 0 50px;
             }
-            
+
             .mentor-container {
                 flex-direction: column;
                 gap: 50px;
                 padding: 0 25px;
             }
-            
+
             .mentor-left {
                 flex: 0 0 100%;
                 max-width: 100%;
                 order: 2;
             }
-            
+
             .mentor-right {
                 flex: 0 0 100%;
                 max-width: 100%;
                 order: 1;
             }
-            
+
             .mentor-callout-box {
                 max-width: 500px;
             }
-            
+
             .mentor-cta-btn {
                 align-self: flex-start;
             }
-            
+
             .workshop-title-line-2 {
                 font-size: 2.2rem;
                 letter-spacing: 3px;
             }
-            
+
             .workshop-poster {
                 width: calc((100% - 40px) / 3);
             }
-            
+
             .mission-text {
                 font-size: 1.3rem;
             }
@@ -2776,94 +2772,94 @@
             .mentor-content-wrapper {
                 padding: 50px 0 40px;
             }
-            
+
             .mentor-container {
                 gap: 40px;
                 padding: 0 20px;
             }
-            
+
             .mentor-left {
                 gap: 25px;
             }
-            
+
             .mentor-callout-box {
                 padding: 25px;
             }
-            
+
             .callout-text {
                 font-size: 1.3rem;
             }
-            
+
             .mentor-impact-title {
                 font-size: 1.3rem;
             }
-            
+
             .mentor-stats-para {
                 font-size: 0.95rem;
             }
-            
+
             .mentor-next-level {
                 font-size: 1.05rem;
             }
-            
+
             .mentor-cta-btn {
                 padding: 14px 30px;
                 font-size: 0.9rem;
             }
-            
+
             .workshop-title-block {
                 padding: 20px;
             }
-            
+
             .workshop-title-line-1 {
                 font-size: 0.85rem;
                 letter-spacing: 2px;
             }
-            
+
             .workshop-title-line-2 {
                 font-size: 1.8rem;
                 letter-spacing: 2px;
             }
-            
+
             .workshop-title-line-3 {
                 font-size: 1rem;
             }
-            
+
             .workshop-title-line-3 span {
                 font-size: 1.2rem;
             }
-            
+
             .workshops-heading {
                 font-size: 1.1rem;
             }
-            
+
             .workshop-arrow {
                 width: 44px;
                 height: 44px;
                 font-size: 0.9rem;
             }
-            
+
             .workshop-poster {
                 width: calc((100% - 20px) / 2);
             }
-            
+
             .workshops-carousel-track {
                 gap: 15px;
             }
-            
+
             .mission-banner {
                 padding: 20px 25px;
             }
-            
+
             .mission-text {
                 font-size: 1.1rem;
                 letter-spacing: 0.5px;
             }
-            
+
             .mission-banner-content {
                 gap: 20px;
             }
-            
+
             .mission-icon-left,
             .mission-icon-right {
                 font-size: 1rem;
@@ -2874,20 +2870,20 @@
             .mentor-content-wrapper {
                 padding: 40px 0 30px;
             }
-            
+
             .mentor-container {
                 gap: 35px;
                 padding: 0 15px;
             }
-            
+
             .mentor-left {
                 gap: 20px;
             }
-            
+
             .mentor-callout-box {
                 padding: 20px;
             }
-            
+
             .callout-icon {
                 width: 38px;
                 height: 38px;
@@ -2895,44 +2891,44 @@
                 top: -12px;
                 right: 20px;
             }
-            
+
             .mentor-callout-box::before {
                 width: 15px;
                 height: 15px;
                 top: -8px;
                 left: 25px;
             }
-            
+
             .mentor-callout-box::after {
                 width: 10px;
                 height: 10px;
                 top: -5px;
                 left: 50px;
             }
-            
+
             .callout-text {
                 font-size: 1.15rem;
             }
-            
+
             .mentor-impact-title {
                 font-size: 1.15rem;
                 padding-left: 15px;
             }
-            
+
             .mentor-impact-title::before {
                 width: 4px;
             }
-            
+
             .mentor-stats-para {
                 font-size: 0.9rem;
                 line-height: 1.7;
             }
-            
+
             .mentor-next-level {
                 font-size: 1rem;
                 padding: 12px 0;
             }
-            
+
             .mentor-cta-btn {
                 padding: 12px 25px;
                 font-size: 0.85rem;
@@ -2940,53 +2936,53 @@
                 width: 100%;
                 justify-content: center;
             }
-            
+
             .workshop-title-block {
                 padding: 15px;
             }
-            
+
             .workshop-title-line-1 {
                 font-size: 0.75rem;
                 letter-spacing: 1.5px;
                 margin-bottom: 10px;
             }
-            
+
             .workshop-title-line-2 {
                 font-size: 1.5rem;
                 letter-spacing: 2px;
                 margin-bottom: 10px;
             }
-            
+
             .workshop-title-line-3 {
                 font-size: 0.9rem;
             }
-            
+
             .workshop-title-line-3 span {
                 font-size: 1.1rem;
             }
-            
+
             .workshops-header {
                 gap: 15px;
             }
-            
+
             .workshops-heading {
                 font-size: 1rem;
             }
-            
+
             .workshop-arrow {
                 width: 40px;
                 height: 40px;
                 font-size: 0.85rem;
             }
-            
+
             .workshop-poster {
                 width: calc(100% - 10px);
             }
-            
+
             .workshops-carousel-track {
                 gap: 12px;
             }
-            
+
             .poster-number {
                 width: 35px;
                 height: 35px;
@@ -2995,20 +2991,20 @@
                 bottom: 12px;
                 right: 12px;
             }
-            
+
             .mission-banner {
                 padding: 18px 20px;
             }
-            
+
             .mission-text {
                 font-size: 0.95rem;
                 letter-spacing: 0;
             }
-            
+
             .mission-banner-content {
                 gap: 15px;
             }
-            
+
             .mission-icon-left,
             .mission-icon-right {
                 font-size: 0.85rem;
@@ -3106,7 +3102,7 @@
             background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 
+            box-shadow:
                 0 20px 60px rgba(0, 51, 102, 0.08),
                 0 8px 25px rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0, 51, 102, 0.05);
@@ -3532,17 +3528,17 @@
             .podcast-content {
                 gap: 50px;
             }
-            
+
             .podcast-player-column {
                 flex: 0 0 40%;
                 max-width: 40%;
             }
-            
+
             .podcast-list-column {
                 flex: 0 0 56%;
                 max-width: 56%;
             }
-            
+
             .podcast-section-title {
                 font-size: 2.2rem;
                 letter-spacing: 3px;
@@ -3553,31 +3549,31 @@
             .podcast-section {
                 padding: 80px 0;
             }
-            
+
             .podcast-content {
                 flex-direction: column;
                 gap: 50px;
             }
-            
+
             .podcast-player-column {
                 flex: 0 0 100%;
                 max-width: 100%;
             }
-            
+
             .featured-podcast-card {
                 max-width: 450px;
                 margin: 0 auto;
             }
-            
+
             .podcast-list-column {
                 flex: 0 0 100%;
                 max-width: 100%;
             }
-            
+
             .podcast-section-title {
                 font-size: 2rem;
             }
-            
+
             .podcast-header-line {
                 width: 60px;
             }
@@ -3587,78 +3583,78 @@
             .podcast-section {
                 padding: 60px 0;
             }
-            
+
             .podcast-section-header {
                 margin-bottom: 40px;
                 gap: 20px;
             }
-            
+
             .podcast-section-title {
                 font-size: 1.6rem;
                 letter-spacing: 2px;
             }
-            
+
             .podcast-header-line {
                 width: 40px;
             }
-            
+
             .featured-podcast-card {
                 padding: 25px;
                 max-width: 100%;
             }
-            
+
             .featured-podcast-image {
                 border-radius: 14px;
                 margin-bottom: 20px;
             }
-            
+
             .featured-podcast-title {
                 font-size: 1.15rem;
             }
-            
+
             .podcast-controls {
                 gap: 12px;
             }
-            
+
             .podcast-secondary-btn {
                 width: 42px;
                 height: 42px;
             }
-            
+
             .podcast-primary-btn {
                 width: 60px;
                 height: 60px;
                 font-size: 1.3rem;
             }
-            
+
             .podcast-list-item {
                 padding: 15px;
                 gap: 15px;
             }
-            
+
             .podcast-item-image {
                 width: 70px;
                 height: 70px;
                 border-radius: 10px;
             }
-            
+
             .podcast-item-title {
                 font-size: 1.05rem;
             }
-            
+
             .podcast-item-subtitle {
                 font-size: 0.9rem;
             }
-            
+
             .podcast-item-play-btn {
                 padding: 10px 18px;
                 font-size: 0.85rem;
             }
-            
+
             .podcast-item-play-btn span {
                 display: none;
             }
-            
+
             .podcast-item-play-btn i {
                 font-size: 1rem;
             }
@@ -3668,121 +3664,121 @@
             .podcast-section {
                 padding: 50px 0;
             }
-            
+
             .podcast-section-header {
                 gap: 15px;
             }
-            
+
             .podcast-section-title {
                 font-size: 1.3rem;
                 letter-spacing: 1.5px;
             }
-            
+
             .podcast-header-line {
                 width: 25px;
             }
-            
+
             .featured-podcast-card {
                 padding: 20px;
                 border-radius: 16px;
             }
-            
+
             .featured-podcast-image {
                 border-radius: 12px;
                 margin-bottom: 18px;
             }
-            
+
             .podcast-badge {
                 padding: 6px 12px;
                 font-size: 0.75rem;
             }
-            
+
             .featured-podcast-title {
                 font-size: 1.05rem;
             }
-            
+
             .featured-podcast-artist {
                 font-size: 0.9rem;
             }
-            
+
             .podcast-progress-container {
                 margin-bottom: 20px;
             }
-            
+
             .podcast-time-display {
                 font-size: 0.8rem;
             }
-            
+
             .podcast-controls {
                 gap: 10px;
                 margin-bottom: 18px;
             }
-            
+
             .podcast-secondary-btn {
                 width: 38px;
                 height: 38px;
                 font-size: 0.9rem;
             }
-            
+
             .podcast-secondary-btn .control-label {
                 font-size: 0.5rem;
                 bottom: 6px;
             }
-            
+
             .podcast-primary-btn {
                 width: 55px;
                 height: 55px;
                 font-size: 1.2rem;
             }
-            
+
             .volume-slider-wrapper {
                 width: 100px;
             }
-            
+
             .volume-btn {
                 width: 36px;
                 height: 36px;
                 font-size: 0.9rem;
             }
-            
+
             .podcast-list-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
             }
-            
+
             .podcast-list-title {
                 font-size: 1.2rem;
             }
-            
+
             .podcast-list {
                 gap: 12px;
             }
-            
+
             .podcast-list-item {
                 padding: 12px;
                 gap: 12px;
                 border-radius: 12px;
             }
-            
+
             .podcast-list-item:hover {
                 transform: translateX(5px);
             }
-            
+
             .podcast-item-image {
                 width: 60px;
                 height: 60px;
                 border-radius: 8px;
             }
-            
+
             .podcast-item-title {
                 font-size: 0.95rem;
             }
-            
+
             .podcast-item-subtitle {
                 font-size: 0.8rem;
             }
-            
+
             .podcast-item-play-btn {
                 width: 40px;
                 height: 40px;
@@ -3794,7 +3790,7 @@
 
 
 
-    
+
         /* --- SOLUTIONS GRID --- */
         .solutions {
             padding: 80px 0;
@@ -3866,7 +3862,8 @@
             color: var(--text-light);
             font-size: 0.95rem;
             margin-bottom: 25px;
-            min-height: 48px; /* Alignment fix */
+            min-height: 48px;
+            /* Alignment fix */
         }
 
         .card-btn {
@@ -3900,11 +3897,16 @@
             color: var(--text-light);
         }
 
-        
+
 
         @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
         }
 
         /* --- CONTACT SECTION --- */
@@ -3934,7 +3936,7 @@
             color: var(--primary-blue);
         }
 
-        .form-group input, 
+        .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 12px;
@@ -3943,7 +3945,7 @@
             font-size: 1rem;
         }
 
-        .form-group input:focus, 
+        .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-blue);
@@ -3980,7 +3982,7 @@
             margin-bottom: 20px;
             display: inline-block;
         }
-        
+
         .footer-mission {
             font-size: 1rem;
             opacity: 0.9;
@@ -4033,7 +4035,7 @@
             color: var(--primary-white);
         }
 
-        
+
         .footer-map {
             flex: 1;
             min-width: 300px;
@@ -4088,7 +4090,7 @@
         .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
             opacity: 0.6;
         }
@@ -4109,16 +4111,80 @@
             .footer-content {
                 flex-direction: column;
             }
+
+            /* Company Verticals Responsive */
+            #company-verticals>.container>div:last-child {
+                grid-template-columns: 1fr !important;
+            }
         }
-        
+
         @media (max-width: 480px) {
             .grid-container {
                 grid-template-columns: 1fr;
             }
-           
+
+            /* --- Milestones Enhancement --- */
+            .milestones-awards-wrapper {
+                padding: 60px 0;
+                display: flex;
+                justify-content: center;
+                background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+            }
+
+            .milestones-awards-container {
+                max-width: 1200px;
+                width: 90%;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 20px 60px rgba(0, 51, 102, 0.15);
+                border: 1px solid rgba(0, 51, 102, 0.05);
+                position: relative;
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+            }
+
+            .milestones-awards-container:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 30px 70px rgba(0, 51, 102, 0.2);
+            }
+
+            .milestones-awards-image {
+                width: 100%;
+                height: auto;
+                display: block;
+                transition: transform 0.5s ease;
+            }
+
+            .milestones-awards-container:hover .milestones-awards-image {
+                transform: scale(1.02);
+            }
+
+            /* Add a "Milestones" label overlay */
+            .milestones-awards-container::after {
+                content: 'Our Journey of Excellence';
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(255, 255, 255, 0.9);
+                padding: 10px 30px;
+                border-radius: 50px;
+                color: var(--primary-blue);
+                font-weight: 700;
+                font-size: 1.2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                transition: opacity 0.4s ease, bottom 0.4s ease;
+            }
+
+            .milestones-awards-container:hover::after {
+                opacity: 1;
+                bottom: 40px;
+            }
+
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -4131,19 +4197,18 @@
                     <img src="assets/logo.png" alt="logo" class="logo-img">
                     <span class="logo-text">LessonPlan</span>
                 </div>
-                
+
 
                 <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-us">About us</a></li>
+                    <li><a href="#company-verticals">Company verticals</a></li>
+                    <li><a href="#master-your-mind">Training & workshop</a></li>
+                    <li><a href="#about">Gallery</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
 
-                    <!-- We will link the href section later -->
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Company verticals</a></li>
-                    <li><a href="#">Training & workshop</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Portfolio</a></li>
-
-                    <li><a href="#contact" class="btn-primary" style="padding: 8px 20px; color: white; border-radius: 999px;">Contact</a></li>
+                    <li><a href="#contact" class="btn-primary"
+                            style="padding: 8px 20px; color: white; border-radius: 999px;">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -4151,21 +4216,21 @@
 
     <!-- Section 1: Hero -->
     <section id="home" class="hero-section">
-        
+
         <!-- Background Image -->
         <div class="hero-background">
             <img src="assets/hero-bg.jpg" alt="LessonPlan Hero Background">
         </div>
-        
+
         <!-- Dark Overlay for Text Readability -->
         <div class="hero-overlay"></div>
-        
+
         <!-- Central Content -->
         <div class="hero-content">
             <h1>Your breakthrough begins HERE.</h1>
             <a href="#contact" class="btn btn-primary">Book your session</a>
         </div>
-        
+
         <!-- Video Component (Bottom Left) -->
         <div class="hero-video-wrapper">
             <div class="hero-video-container">
@@ -4176,14 +4241,178 @@
             </div>
             <!-- <p class="hero-video-title">Unleash the POWER WITHIN YOU</p> -->
         </div>
-        
+
     </section>
 
 
-    <!-- Section 2: Sessions Carousel -->
+    <!-- Section 2: About Us -->
+    <section id="about-us" style="padding: 80px 0; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Empowering minds, transforming futures</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: var(--primary-blue); font-size: 1.8rem; margin-bottom: 20px;">Who We Are</h3>
+                    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 15px;">LessonPlan is a premier
+                        educational platform dedicated to transforming learning experiences. With over a decade of
+                        expertise, we have empowered thousands of students and professionals to achieve their true
+                        potential.</p>
+                    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 15px;">Our innovative approach
+                        combines cutting-edge methodology with personalized mentoring, ensuring every learner receives
+                        the guidance they need to excel.</p>
+                    <div style="display: flex; gap: 30px; margin-top: 30px;">
+                        <div style="text-align: center;">
+                            <span
+                                style="display: block; font-size: 2.5rem; font-weight: 700; color: var(--action-orange);">200+</span>
+                            <span style="color: var(--text-light); font-size: 0.9rem;">Organizations</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <span
+                                style="display: block; font-size: 2.5rem; font-weight: 700; color: var(--action-orange);">8,000+</span>
+                            <span style="color: var(--text-light); font-size: 0.9rem;">Training Hours</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <span
+                                style="display: block; font-size: 2.5rem; font-weight: 700; color: var(--action-orange);">2
+                                Lakh+</span>
+                            <span style="color: var(--text-light); font-size: 0.9rem;">Students Impacted</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <div
+                        style="background: linear-gradient(135deg, var(--primary-blue) 0%, #001a33 100%); padding: 40px; border-radius: 16px; color: white;">
+                        <h4 style="color: #D4AF37; margin-bottom: 20px; font-size: 1.4rem;">Our Mission</h4>
+                        <p style="line-height: 1.8; opacity: 0.9;">“Teach to Learn & Learn to Teach” - We aim to figure
+                            out the spark within every child, understand their hesitations, and provide them with the
+                            belief that they are unique.</p>
+                        <h4 style="color: #D4AF37; margin: 25px 0 15px; font-size: 1.4rem;">Our Vision</h4>
+                        <p style="line-height: 1.8; opacity: 0.9;">To be the catalyst for personal and professional
+                            growth, creating a world where knowledge empowers and success is achievable by all.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 3: Company Verticals -->
+    <section id="company-verticals"
+        style="padding: 100px 0; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 60px;">
+                <h2>Company Verticals</h2>
+                <p>Comprehensive solutions across multiple domains</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;" class="grid-container">
+
+                <!-- Educational Consultation & Solutions -->
+                <div class="vertical-card"
+                    style="background: linear-gradient(135deg, rgba(0,51,102,0.95), rgba(0,26,51,0.95)), url('assets/sessions/session-1.jpg') center/cover; border-radius: 20px; padding: 50px 30px; color: white; min-height: 480px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s ease; cursor: pointer;"
+                    onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 60px rgba(0,51,102,0.3)'"
+                    onmouseout="this.style.transform='none'; this.style.boxShadow='none'">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4AF37, #aa8a2e); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-graduation-cap" style="font-size: 1.5rem; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 1.4rem; margin: 0;">Educational Consultation & Solutions
+                            </h3>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.9); line-height: 1.7; font-size: 1rem;">Mentoring, training,
+                            workshops, Mega Educational Drives, Career guidance, Teacher training, and academic support.
+                        </p>
+                        <hr style="border-color: rgba(255,255,255,0.2); margin: 15px 0;">
+                        <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                            <li style="margin-bottom: 5px;"><i class="fa-solid fa-check"
+                                    style="color: #D4AF37; margin-right: 8px;"></i>Student Training</li>
+                            <li style="margin-bottom: 5px;"><i class="fa-solid fa-check"
+                                    style="color: #D4AF37; margin-right: 8px;"></i>Corporate Training</li>
+                            <li style="margin-bottom: 5px;"><i class="fa-solid fa-check"
+                                    style="color: #D4AF37; margin-right: 8px;"></i>Workshops & Seminars</li>
+                        </ul>
+                    </div>
+                    <a href="services.html"
+                        style="display: inline-flex; align-items: center; gap: 10px; color: #D4AF37; text-decoration: none; font-weight: 600; font-size: 1rem; margin-top: 25px; transition: all 0.3s ease;"
+                        onmouseover="this.style.gap='15px'" onmouseout="this.style.gap='10px'">
+                        Explore Services <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Educational R&D Projects -->
+                <div class="vertical-card"
+                    style="background: linear-gradient(135deg, rgba(0,51,102,0.95), rgba(0,26,51,0.95)), url('assets/sessions/session-2.jpg') center/cover; border-radius: 20px; padding: 50px 30px; color: white; min-height: 480px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s ease; cursor: pointer;"
+                    onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 60px rgba(0,51,102,0.3)'"
+                    onmouseout="this.style.transform='none'; this.style.boxShadow='none'">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4AF37, #aa8a2e); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-flask" style="font-size: 1.5rem; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 1.4rem; margin: 0;">Educational R&D Projects</h3>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.9); line-height: 1.7; font-size: 1rem;">Development of novel
+                            teaching strategies, NEP-based conceptual learning kits, surveys for policy development, and
+                            publication of educational materials.</p>
+                        <hr style="border-color: rgba(255,255,255,0.2); margin: 15px 0;">
+                        <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                            <li style="margin-bottom: 5px;"><i class="fa-solid fa-check"
+                                    style="color: #D4AF37; margin-right: 8px;"></i>Novel Teaching Strategies</li>
+                            <li style="margin-bottom: 5px;"><i class="fa-solid fa-check"
+                                    style="color: #D4AF37; margin-right: 8px;"></i>Learning Methodology Surveys</li>
+                        </ul>
+                    </div>
+                    <a href="services.html"
+                        style="display: inline-flex; align-items: center; gap: 10px; color: #D4AF37; text-decoration: none; font-weight: 600; font-size: 1rem; margin-top: 25px; transition: all 0.3s ease;"
+                        onmouseover="this.style.gap='15px'" onmouseout="this.style.gap='10px'">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Educational Kits and Materials -->
+                <div class="vertical-card"
+                    style="background: linear-gradient(135deg, rgba(0,51,102,0.95), rgba(0,26,51,0.95)), url('assets/sessions/session-3.jpg') center/cover; border-radius: 20px; padding: 50px 30px; color: white; min-height: 480px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s ease; cursor: pointer;"
+                    onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 60px rgba(0,51,102,0.3)'"
+                    onmouseout="this.style.transform='none'; this.style.boxShadow='none'">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4AF37, #aa8a2e); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-shapes" style="font-size: 1.5rem; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 1.4rem; margin: 0;">Educational Kits & Materials</h3>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.9); line-height: 1.7; font-size: 1rem;">Proprietary
+                            educational kits including 3D models, worksheets, charts, and activity-based learning
+                            materials designed for conceptual understanding.</p>
+                        <hr style="border-color: rgba(255,255,255,0.2); margin: 15px 0;">
+                        <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                            <li style="margin-bottom: 5px;"><i class="fa-solid fa-check"
+                                    style="color: #D4AF37; margin-right: 8px;"></i>3D Models & Structures</li>
+                            <li style="margin-bottom: 5px;"><i class="fa-solid fa-check"
+                                    style="color: #D4AF37; margin-right: 8px;"></i>Worksheets & Charts</li>
+                        </ul>
+                    </div>
+                    <a href="services.html"
+                        style="display: inline-flex; align-items: center; gap: 10px; color: #D4AF37; text-decoration: none; font-weight: 600; font-size: 1rem; margin-top: 25px; transition: all 0.3s ease;"
+                        onmouseover="this.style.gap='15px'" onmouseout="this.style.gap='10px'">
+                        View Products <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 4: Sessions Carousel -->
     <section id="sessions" class="sessions-section">
         <div class="container">
-            
+
             <!-- Section Title with Golden Frame -->
             <div class="sessions-title-wrapper">
                 <div class="sessions-title-frame">
@@ -4194,7 +4423,7 @@
                     <h2 class="sessions-title">Because Growth Starts With the Right Session.</h2>
                 </div>
             </div>
-            
+
             <!-- Controls Row: Subtitle Left, Arrows Right -->
             <div class="sessions-controls">
                 <div class="sessions-subtitle-wrapper">
@@ -4210,274 +4439,547 @@
                     </button>
                 </div>
             </div>
-            
+
         </div>
-        
+
         <!-- Carousel Container (Full Width) -->
         <div class="sessions-carousel-wrap">
             <div class="sessions-carousel-track" id="sessionsTrack">
-                
+
                 <!-- Card 1 -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-1.jpg" alt="Leadership Coaching">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Leadership Coaching</span>
+                            </div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-crown"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-crown"></i></div>
                                 <h3>Leadership Coaching</h3>
-                                <p>Develop essential leadership skills and unlock your potential to inspire and guide teams effectively.</p>
-                                <span class="session-tag">90 Minutes</span>
+                                <p>Develop essential leadership skills and unlock your potential to inspire and guide
+                                    teams effectively.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 2 -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-2.jpg" alt="Career Strategy">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Career Strategy</span></div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-compass"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-compass"></i></div>
                                 <h3>Career Strategy</h3>
-                                <p>Chart your professional path with personalized guidance and actionable career development plans.</p>
-                                <span class="session-tag">60 Minutes</span>
+                                <p>Chart your professional path with personalized guidance and actionable career
+                                    development plans.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 3 -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-3.jpg" alt="Communication Mastery">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Communication Mastery</span>
+                            </div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-comments"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-comments"></i></div>
                                 <h3>Communication Mastery</h3>
                                 <p>Master the art of impactful communication for professional and personal success.</p>
-                                <span class="session-tag">75 Minutes</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 4 -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-4.jpg" alt="Mindset Transformation">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Mindset Transformation</span>
+                            </div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-brain"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-brain"></i></div>
                                 <h3>Mindset Transformation</h3>
-                                <p>Break limiting beliefs and cultivate a growth mindset for lasting personal transformation.</p>
-                                <span class="session-tag">90 Minutes</span>
+                                <p>Break limiting beliefs and cultivate a growth mindset for lasting personal
+                                    transformation.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 5 -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-5.jpg" alt="Team Building">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Team Building</span></div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-users-gear"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-users-gear"></i></div>
                                 <h3>Team Building</h3>
-                                <p>Foster collaboration and strengthen team dynamics through proven engagement strategies.</p>
-                                <span class="session-tag">120 Minutes</span>
+                                <p>Foster collaboration and strengthen team dynamics through proven engagement
+                                    strategies.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 6 -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-6.jpg" alt="Executive Presence">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Executive Presence</span>
+                            </div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-user-tie"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-user-tie"></i></div>
                                 <h3>Executive Presence</h3>
-                                <p>Command attention and build credibility with refined executive presence techniques.</p>
-                                <span class="session-tag">60 Minutes</span>
+                                <p>Command attention and build credibility with refined executive presence techniques.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- Card 7 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-1.jpg" alt="Public Speaking">
+                            <div class="card-front-overlay"><span class="card-front-hint">Public Speaking</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-microphone"></i></div>
+                                <h3>Public Speaking</h3>
+                                <p>Overcome stage fright and deliver powerful presentations that captivate any audience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-2.jpg" alt="Stress Management">
+                            <div class="card-front-overlay"><span class="card-front-hint">Stress Management</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-heart"></i></div>
+                                <h3>Stress Management</h3>
+                                <p>Learn effective techniques to manage stress and maintain peak performance under
+                                    pressure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-3.jpg" alt="Time Management">
+                            <div class="card-front-overlay"><span class="card-front-hint">Time Management</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-clock"></i></div>
+                                <h3>Time Management</h3>
+                                <p>Master productivity techniques and optimize your daily routine for maximum
+                                    efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-4.jpg" alt="Emotional Intelligence">
+                            <div class="card-front-overlay"><span class="card-front-hint">Emotional Intelligence</span>
+                            </div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-face-smile"></i></div>
+                                <h3>Emotional Intelligence</h3>
+                                <p>Develop self-awareness and empathy to build stronger personal and professional
+                                    relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-5.jpg" alt="Goal Setting">
+                            <div class="card-front-overlay"><span class="card-front-hint">Goal Setting</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-bullseye"></i></div>
+                                <h3>Goal Setting</h3>
+                                <p>Create actionable goals and develop strategies to achieve your dreams systematically.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-6.jpg" alt="Negotiation Skills">
+                            <div class="card-front-overlay"><span class="card-front-hint">Negotiation Skills</span>
+                            </div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-handshake"></i></div>
+                                <h3>Negotiation Skills</h3>
+                                <p>Learn win-win negotiation strategies for successful business and personal outcomes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-1.jpg" alt="Conflict Resolution">
+                            <div class="card-front-overlay"><span class="card-front-hint">Conflict Resolution</span>
+                            </div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                                <h3>Conflict Resolution</h3>
+                                <p>Turn disagreements into opportunities for growth with proven conflict management
+                                    techniques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-2.jpg" alt="Creative Thinking">
+                            <div class="card-front-overlay"><span class="card-front-hint">Creative Thinking</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                                <h3>Creative Thinking</h3>
+                                <p>Unlock your creative potential and develop innovative problem-solving approaches.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-3.jpg" alt="Interview Mastery">
+                            <div class="card-front-overlay"><span class="card-front-hint">Interview Mastery</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                <h3>Interview Mastery</h3>
+                                <p>Ace every interview with confidence, preparation techniques, and impressive
+                                    presentation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 16 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-4.jpg" alt="Presentation Skills">
+                            <div class="card-front-overlay"><span class="card-front-hint">Presentation Skills</span>
+                            </div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-tv"></i></div>
+                                <h3>Presentation Skills</h3>
+                                <p>Create and deliver impactful presentations that engage and persuade your audience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 17 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-5.jpg" alt="Networking Mastery">
+                            <div class="card-front-overlay"><span class="card-front-hint">Networking Mastery</span>
+                            </div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-network-wired"></i></div>
+                                <h3>Networking Mastery</h3>
+                                <p>Build meaningful professional connections and expand your influence effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 18 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-6.jpg" alt="Personal Branding">
+                            <div class="card-front-overlay"><span class="card-front-hint">Personal Branding</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-star"></i></div>
+                                <h3>Personal Branding</h3>
+                                <p>Define and communicate your unique value proposition to stand out in your field.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 19 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-1.jpg" alt="Decision Making">
+                            <div class="card-front-overlay"><span class="card-front-hint">Decision Making</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-chess"></i></div>
+                                <h3>Decision Making</h3>
+                                <p>Develop critical thinking and make confident decisions under any circumstance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 20 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-2.jpg" alt="Work-Life Balance">
+                            <div class="card-front-overlay"><span class="card-front-hint">Work-Life Balance</span></div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-yin-yang"></i></div>
+                                <h3>Work-Life Balance</h3>
+                                <p>Achieve harmony between professional ambitions and personal well-being effectively.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 21 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-3.jpg" alt="Resilience Training">
+                            <div class="card-front-overlay"><span class="card-front-hint">Resilience Training</span>
+                            </div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-shield"></i></div>
+                                <h3>Resilience Training</h3>
+                                <p>Build mental toughness and bounce back stronger from life's challenges and setbacks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 22 -->
+                <div class="session-card">
+                    <div class="session-card-inner">
+                        <div class="session-card-front">
+                            <img src="assets/sessions/session-4.jpg" alt="Confidence Building">
+                            <div class="card-front-overlay"><span class="card-front-hint">Confidence Building</span>
+                            </div>
+                        </div>
+                        <div class="session-card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                                <h3>Confidence Building</h3>
+                                <p>Develop unshakeable self-confidence and project your best self in every situation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Duplicate Set for Infinite Loop -->
                 <!-- Card 1 Duplicate -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-1.jpg" alt="Leadership Coaching">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Leadership Coaching</span>
+                            </div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-crown"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-crown"></i></div>
                                 <h3>Leadership Coaching</h3>
-                                <p>Develop essential leadership skills and unlock your potential to inspire and guide teams effectively.</p>
-                                <span class="session-tag">90 Minutes</span>
+                                <p>Develop essential leadership skills and unlock your potential to inspire and guide
+                                    teams effectively.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 2 Duplicate -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-2.jpg" alt="Career Strategy">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Career Strategy</span></div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-compass"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-compass"></i></div>
                                 <h3>Career Strategy</h3>
-                                <p>Chart your professional path with personalized guidance and actionable career development plans.</p>
-                                <span class="session-tag">60 Minutes</span>
+                                <p>Chart your professional path with personalized guidance and actionable career
+                                    development plans.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 3 Duplicate -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-3.jpg" alt="Communication Mastery">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Communication Mastery</span>
+                            </div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-comments"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-comments"></i></div>
                                 <h3>Communication Mastery</h3>
                                 <p>Master the art of impactful communication for professional and personal success.</p>
-                                <span class="session-tag">75 Minutes</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 4 Duplicate -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-4.jpg" alt="Mindset Transformation">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Mindset Transformation</span>
+                            </div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-brain"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-brain"></i></div>
                                 <h3>Mindset Transformation</h3>
-                                <p>Break limiting beliefs and cultivate a growth mindset for lasting personal transformation.</p>
-                                <span class="session-tag">90 Minutes</span>
+                                <p>Break limiting beliefs and cultivate a growth mindset for lasting personal
+                                    transformation.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 5 Duplicate -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-5.jpg" alt="Team Building">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Team Building</span></div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-users-gear"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-users-gear"></i></div>
                                 <h3>Team Building</h3>
-                                <p>Foster collaboration and strengthen team dynamics through proven engagement strategies.</p>
-                                <span class="session-tag">120 Minutes</span>
+                                <p>Foster collaboration and strengthen team dynamics through proven engagement
+                                    strategies.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 6 Duplicate -->
                 <div class="session-card">
                     <div class="session-card-inner">
                         <div class="session-card-front">
                             <img src="assets/sessions/session-6.jpg" alt="Executive Presence">
-                            
+                            <div class="card-front-overlay"><span class="card-front-hint">Executive Presence</span>
+                            </div>
                         </div>
                         <div class="session-card-back">
                             <div class="card-back-content">
-                                <div class="card-back-icon">
-                                    <i class="fa-solid fa-user-tie"></i>
-                                </div>
+                                <div class="card-back-icon"><i class="fa-solid fa-user-tie"></i></div>
                                 <h3>Executive Presence</h3>
-                                <p>Command attention and build credibility with refined executive presence techniques.</p>
-                                <span class="session-tag">60 Minutes</span>
+                                <p>Command attention and build credibility with refined executive presence techniques.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        
+
     </section>
 
 
     <!-- Section 3: Student Power -->
     <section id="student-power" class="student-power-section">
-        
+
         <!-- Background Image -->
         <div class="student-power-background">
             <img src="assets/student-power-bg.jpg" alt="Student Power Background">
         </div>
-        
+
         <!-- Overlay for better text readability -->
         <div class="student-power-overlay"></div>
-        
+
         <!-- Content Container (Bottom 40%) -->
         <div class="student-power-content">
-            
+
             <!-- Golden Box with Titles -->
             <div class="student-power-box">
                 <h2 class="student-power-title">
@@ -4486,19 +4988,19 @@
                 </h2>
                 <p class="student-power-subtitle">From Potential to Performance</p>
             </div>
-            
+
             <!-- CTA Button -->
             <a href="#contact" class="btn btn-primary student-power-btn">Enroll Now</a>
-            
+
         </div>
-        
+
     </section>
 
 
     <!-- Section 4: Empowering Students -->
     <section id="empowering-students" class="empowering-section">
         <div class="empowering-container">
-            
+
             <!-- Left Content (40%) -->
             <div class="empowering-content">
                 <h2 class="empowering-title">
@@ -4507,18 +5009,19 @@
                 </h2>
                 <div class="empowering-accent"></div>
             </div>
-            
+
             <!-- Right Image (60%) -->
             <div class="empowering-image-wrapper">
                 <div class="empowering-image-container">
-                    <img src="assets/student-confidence.jpg" alt="Students learning with confidence" class="empowering-image">
+                    <img src="assets/student-confidence.jpg" alt="Students learning with confidence"
+                        class="empowering-image">
                 </div>
                 <!-- Mirror Reflection -->
                 <div class="empowering-image-reflection">
                     <img src="assets/student-confidence.jpg" alt="" aria-hidden="true">
                 </div>
             </div>
-            
+
         </div>
     </section>
 
@@ -4527,10 +5030,10 @@
     <!-- Section 5: Portfolio -->
     <section id="portfolio" class="portfolio-section">
         <div class="container">
-            
+
             <!-- Header Row -->
             <div class="portfolio-header">
-                
+
                 <!-- Left: Title with decorative elements -->
                 <div class="portfolio-title-wrapper">
                     <span class="portfolio-title-line"></span>
@@ -4539,7 +5042,7 @@
                         <i class="fa-solid fa-angles-right"></i>
                     </span>
                 </div>
-                
+
                 <!-- Right: Navigation Arrows -->
                 <div class="portfolio-nav">
                     <span class="portfolio-nav-label">Explore</span>
@@ -4552,13 +5055,13 @@
                         </button>
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <!-- Video Showcase -->
             <div class="portfolio-videos-wrapper">
                 <div class="portfolio-videos-track" id="portfolioTrack">
-                    
+
                     <!-- Video 1 -->
                     <div class="portfolio-video-card">
                         <div class="portfolio-video-container">
@@ -4566,10 +5069,10 @@
                                 <source src="assets/portfolio/portfolio-1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            
+
                         </div>
                     </div>
-                    
+
                     <!-- Video 2 -->
                     <div class="portfolio-video-card">
                         <div class="portfolio-video-container">
@@ -4577,10 +5080,10 @@
                                 <source src="assets/portfolio/portfolio-2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            
+
                         </div>
                     </div>
-                    
+
                     <!-- Video 3 -->
                     <div class="portfolio-video-card">
                         <div class="portfolio-video-container">
@@ -4588,13 +5091,13 @@
                                 <source src="assets/portfolio/portfolio-3.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            
+
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            
+
             <!-- Milestones Section -->
             <div class="portfolio-milestones">
                 <div class="milestones-header">
@@ -4603,59 +5106,35 @@
                     <span class="milestones-line milestones-line-right"></span>
                 </div>
             </div>
-            
+
         </div>
-        
+
         <!-- Full-width Awards Image -->
         <div class="milestones-awards-wrapper">
             <div class="milestones-awards-container">
-                <img src="assets/portfolio/milestones-awards.jpg" alt="Our Awards and Achievements" class="milestones-awards-image">
+                <img src="assets/portfolio/milestones-awards.jpg" alt="Our Awards and Achievements"
+                    class="milestones-awards-image">
             </div>
         </div>
-        
+
     </section>
 
 
 
-    <!-- Section 6: Superpower Learning -->
-    <section id="superpower-learning" class="superpower-section">
-        <div class="superpower-container">
-            
-            <!-- Left Image (60%) -->
-            <div class="superpower-image-wrapper">
-                <div class="superpower-image-container">
-                    <img src="assets/superpower-learning.jpg" alt="Turn learning into a superpower" class="superpower-image">
-                </div>
-                <!-- Mirror Reflection -->
-                <div class="superpower-image-reflection">
-                    <img src="assets/superpower-learning.jpg" alt="" aria-hidden="true">
-                </div>
-            </div>
-            
-            <!-- Right Content (40%) -->
-            <div class="superpower-content">
-                <h2 class="superpower-title">
-                    Turn Learning<br>
-                    Into a <span>SUPERPOWER</span>
-                </h2>
-                <!-- <div class="superpower-accent"></div> -->
-            </div>
-            
-        </div>
-    </section>
+    <!-- Section 6: Superpower Learning - REMOVED AS REQUESTED -->
 
 
 
     <!-- Section 7: Master Your Mind -->
     <section id="master-your-mind" class="mentor-section">
-        
+
         <!-- Main Content Area -->
         <div class="mentor-content-wrapper">
             <div class="mentor-container">
-                
+
                 <!-- Left Column (40%) -->
                 <div class="mentor-left">
-                    
+
                     <!-- Mentor Callout Box -->
                     <div class="mentor-callout-box">
                         <span class="callout-icon">
@@ -4663,195 +5142,175 @@
                         </span>
                         <h3 class="callout-text">Because the Right Mentor<br>Changes Everything</h3>
                     </div>
-                    
+
                     <!-- Platform Impact Title -->
                     <h4 class="mentor-impact-title">One platform, Endless impact</h4>
-                    
+
                     <!-- Stats Paragraph -->
                     <p class="mentor-stats-para">
-                        With <strong>30+</strong> expertly designed courses, we have mentored <strong>200+</strong> organizations, delivered <strong>8,000+</strong> hours of transformative training, inspired through <strong>60,000+</strong> success stories, and positively impacted <strong>2 lakh+</strong> students, shaping confident minds and future-ready leaders.
+                        With <strong>30+</strong> expertly designed courses, we have mentored <strong>200+</strong>
+                        organizations, delivered <strong>8,000+</strong> hours of transformative training, inspired
+                        through <strong>60,000+</strong> success stories, and positively impacted <strong>2
+                            lakh+</strong> students, shaping confident minds and future-ready leaders.
                     </p>
-                    
+
                     <!-- Next Level Quote -->
                     <p class="mentor-next-level">Your Next Level Is One Course Away</p>
-                    
+
                     <!-- CTA Button -->
                     <a href="#contact" class="mentor-cta-btn">
                         <span>Book Your Appointment</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    
+
                 </div>
-                
+
                 <!-- Right Column (60%) -->
                 <div class="mentor-right">
-                    
+
                     <!-- Multi-line Styled Title -->
                     <div class="workshop-title-block">
                         <p class="workshop-title-line-1">Education beyond classroom series presents</p>
                         <h2 class="workshop-title-line-2">MASTER YOUR MIND</h2>
                         <p class="workshop-title-line-3">by <span>S. PATIL</span></p>
                     </div>
-                    
+
                     <!-- Workshops Section -->
                     <div class="workshops-section">
-                        
+
                         <!-- Workshops Header -->
                         <div class="workshops-header">
                             <h4 class="workshops-heading">Explore our workshops</h4>
                             <div class="workshops-heading-line"></div>
                         </div>
-                        
+
                         <!-- Workshop Carousel -->
                         <div class="workshops-carousel-container">
-                            
+
                             <!-- Left Arrow -->
                             <button class="workshop-arrow workshop-arrow-left" aria-label="Previous workshops">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
-                            
+
                             <!-- Carousel Track -->
                             <div class="workshops-carousel-wrapper">
                                 <div class="workshops-carousel-track" id="workshopsTrack">
-                                    
+
                                     <!-- Poster 1 -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-1.jpg" alt="Workshop 1">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">01</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 2 -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-2.jpg" alt="Workshop 2">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">02</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 3 -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-3.jpg" alt="Workshop 3">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">03</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 4 -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-4.jpg" alt="Workshop 4">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">04</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 5 -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-5.jpg" alt="Workshop 5">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">05</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 6 -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-6.jpg" alt="Workshop 6">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">06</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Duplicate Set for Infinite Loop -->
                                     <!-- Poster 1 Duplicate -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-1.jpg" alt="Workshop 1">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">01</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 2 Duplicate -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-2.jpg" alt="Workshop 2">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">02</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 3 Duplicate -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-3.jpg" alt="Workshop 3">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">03</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 4 Duplicate -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-4.jpg" alt="Workshop 4">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">04</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 5 Duplicate -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-5.jpg" alt="Workshop 5">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">05</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Poster 6 Duplicate -->
                                     <div class="workshop-poster">
                                         <div class="workshop-poster-inner">
                                             <img src="assets/workshops/workshop-6.jpg" alt="Workshop 6">
-                                            <div class="workshop-poster-overlay">
-                                                <span class="poster-number">06</span>
-                                            </div>
+                                            <div class="workshop-poster-overlay"></div>
                                         </div>
                                     </div>
-                                    
+
+
                                 </div>
                             </div>
-                            
+
                             <!-- Right Arrow -->
                             <button class="workshop-arrow workshop-arrow-right" aria-label="Next workshops">
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
-                            
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </div>
-        
+
         <!-- Bottom Mission Banner -->
         <div class="mission-banner">
             <div class="mission-banner-content">
@@ -4860,7 +5319,7 @@
                 <span class="mission-icon-right"><i class="fa-solid fa-star"></i></span>
             </div>
         </div>
-        
+
     </section>
 
 
@@ -4868,26 +5327,27 @@
     <!-- Section 8: PATIL'S PODCAST -->
     <section id="podcast" class="podcast-section">
         <div class="container">
-            
+
             <!-- Section Title -->
             <div class="podcast-section-header">
                 <span class="podcast-header-line"></span>
                 <h2 class="podcast-section-title">PATIL'S PODCAST</h2>
                 <span class="podcast-header-line"></span>
             </div>
-            
+
             <!-- Main Content -->
             <div class="podcast-content">
-                
+
                 <!-- Left Column: Featured Player (40%) -->
                 <div class="podcast-player-column">
-                    
+
                     <!-- Featured Podcast Card -->
                     <div class="featured-podcast-card">
-                        
+
                         <!-- Album Art -->
                         <div class="featured-podcast-image">
-                            <img src="assets/podcasts/featured-podcast.jpg" alt="Positive Mindset Podcast" id="featuredPodcastImg">
+                            <img src="assets/podcasts/featured-podcast.jpg" alt="Positive Mindset Podcast"
+                                id="featuredPodcastImg">
                             <div class="podcast-image-overlay">
                                 <span class="podcast-badge">
                                     <i class="fa-solid fa-podcast"></i>
@@ -4895,13 +5355,14 @@
                                 </span>
                             </div>
                         </div>
-                        
+
                         <!-- Podcast Title -->
                         <div class="featured-podcast-info">
-                            <h3 class="featured-podcast-title" id="featuredPodcastTitle">Positive Mindset: Roadmap towards Success, Exclusive</h3>
+                            <h3 class="featured-podcast-title" id="featuredPodcastTitle">Positive Mindset: Roadmap
+                                towards Success, Exclusive</h3>
                             <p class="featured-podcast-artist">S. PATIL</p>
                         </div>
-                        
+
                         <!-- Progress Bar -->
                         <div class="podcast-progress-container">
                             <div class="podcast-progress-bar" id="progressBar">
@@ -4913,59 +5374,67 @@
                                 <span class="podcast-total-time" id="totalTime">0:00</span>
                             </div>
                         </div>
-                        
+
                         <!-- Controls -->
                         <div class="podcast-controls">
-                            <button class="podcast-control-btn podcast-secondary-btn" id="prevBtn" aria-label="Previous track">
+                            <button class="podcast-control-btn podcast-secondary-btn" id="prevBtn"
+                                aria-label="Previous track">
                                 <i class="fa-solid fa-backward-step"></i>
                             </button>
-                            <button class="podcast-control-btn podcast-secondary-btn" id="backwardBtn" aria-label="Rewind 30 seconds">
+                            <button class="podcast-control-btn podcast-secondary-btn" id="backwardBtn"
+                                aria-label="Rewind 30 seconds">
                                 <i class="fa-solid fa-rotate-left"></i>
                                 <span class="control-label">30</span>
                             </button>
-                            <button class="podcast-control-btn podcast-primary-btn" id="playPauseBtn" aria-label="Play or Pause">
+                            <button class="podcast-control-btn podcast-primary-btn" id="playPauseBtn"
+                                aria-label="Play or Pause">
                                 <i class="fa-solid fa-play" id="playPauseIcon"></i>
                             </button>
-                            <button class="podcast-control-btn podcast-secondary-btn" id="forwardBtn" aria-label="Forward 30 seconds">
+                            <button class="podcast-control-btn podcast-secondary-btn" id="forwardBtn"
+                                aria-label="Forward 30 seconds">
                                 <i class="fa-solid fa-rotate-right"></i>
                                 <span class="control-label">30</span>
                             </button>
-                            <button class="podcast-control-btn podcast-secondary-btn" id="nextBtn" aria-label="Next track">
+                            <button class="podcast-control-btn podcast-secondary-btn" id="nextBtn"
+                                aria-label="Next track">
                                 <i class="fa-solid fa-forward-step"></i>
                             </button>
                         </div>
-                        
+
                         <!-- Volume Control -->
                         <div class="podcast-volume-container">
                             <button class="volume-btn" id="volumeBtn" aria-label="Toggle mute">
                                 <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
                             </button>
                             <div class="volume-slider-wrapper">
-                                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+                                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100"
+                                    value="80">
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                     <!-- Hidden Audio Element -->
                     <audio id="podcastAudio" preload="metadata">
                         <source src="assets/podcasts/audio/featured.mp3" type="audio/mpeg">
                     </audio>
-                    
+
                 </div>
-                
+
                 <!-- Right Column: Podcast List (60%) -->
                 <div class="podcast-list-column">
-                    
+
                     <div class="podcast-list-header">
                         <h4 class="podcast-list-title">All Episodes</h4>
                         <span class="podcast-list-count">4 Episodes</span>
                     </div>
-                    
+
                     <div class="podcast-list">
-                        
+
                         <!-- Podcast 1 -->
-                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-1.mp3" data-image="assets/podcasts/podcast-1.jpg" data-title="The Mentor: Where Vision Meets Direction">
+                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-1.mp3"
+                            data-image="assets/podcasts/podcast-1.jpg"
+                            data-title="The Mentor: Where Vision Meets Direction">
                             <div class="podcast-item-image">
                                 <img src="assets/podcasts/podcast-1.jpg" alt="The Mentor">
                             </div>
@@ -4978,9 +5447,11 @@
                                 <span>Listen</span>
                             </button>
                         </div>
-                        
+
                         <!-- Podcast 2 -->
-                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-2.mp3" data-image="assets/podcasts/podcast-2.jpg" data-title="Learning Excellence: Strategic Guidance for Real Results">
+                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-2.mp3"
+                            data-image="assets/podcasts/podcast-2.jpg"
+                            data-title="Learning Excellence: Strategic Guidance for Real Results">
                             <div class="podcast-item-image">
                                 <img src="assets/podcasts/podcast-2.jpg" alt="Learning Excellence">
                             </div>
@@ -4993,9 +5464,11 @@
                                 <span>Listen</span>
                             </button>
                         </div>
-                        
+
                         <!-- Podcast 3 -->
-                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-3.mp3" data-image="assets/podcasts/podcast-3.jpg" data-title="Empower to Excel: Skills for Classrooms, Careers & Life">
+                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-3.mp3"
+                            data-image="assets/podcasts/podcast-3.jpg"
+                            data-title="Empower to Excel: Skills for Classrooms, Careers & Life">
                             <div class="podcast-item-image">
                                 <img src="assets/podcasts/podcast-3.jpg" alt="Empower to Excel">
                             </div>
@@ -5008,9 +5481,11 @@
                                 <span>Listen</span>
                             </button>
                         </div>
-                        
+
                         <!-- Podcast 4 -->
-                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-4.mp3" data-image="assets/podcasts/podcast-4.jpg" data-title="Skills That Work: From Mindset to Skillset">
+                        <div class="podcast-list-item" data-audio="assets/podcasts/audio/podcast-4.mp3"
+                            data-image="assets/podcasts/podcast-4.jpg"
+                            data-title="Skills That Work: From Mindset to Skillset">
                             <div class="podcast-item-image">
                                 <img src="assets/podcasts/podcast-4.jpg" alt="Skills That Work">
                             </div>
@@ -5023,13 +5498,13 @@
                                 <span>Listen</span>
                             </button>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
     </section>
 
@@ -5043,9 +5518,9 @@
                 <h2>Contact Us</h2>
                 <p>Have questions? We are here to help.</p>
             </div>
-            
+
             <div class="contact-box">
-                
+
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="d2050207-f865-4e9a-86e3-9df50075c2c5">
                     <input type="hidden" name="subject" value="New Contact Form Submission - LessonPlan">
@@ -5065,14 +5540,28 @@
 
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                        <textarea id="message" name="message" rows="4" placeholder="How can we help you?"
+                            required></textarea>
                     </div>
 
                     <div id="form-status" aria-live="polite" style="margin: 12px 0;"></div>
 
-                    <button id="send-btn" type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    <button id="send-btn" type="submit" class="btn btn-primary" style="width: 100%;">Send
+                        Message</button>
                 </form>
 
+                <!-- Alternative: Google Forms Enquiry -->
+                <div style="margin-top: 25px; text-align: center; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                    <p style="color: var(--text-light); margin-bottom: 15px; font-size: 0.95rem;">Prefer a detailed
+                        enquiry form?</p>
+                    <a href="https://forms.gle/YOUR_GOOGLE_FORM_ID" target="_blank" rel="noopener noreferrer"
+                        style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 28px; background: linear-gradient(135deg, #4285F4, #34A853); color: white; text-decoration: none; font-weight: 600; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(66, 133, 244, 0.4)'"
+                        onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 15px rgba(66, 133, 244, 0.3)'">
+                        <i class="fa-brands fa-google" style="font-size: 1.1rem;"></i>
+                        Fill Enquiry Form
+                    </a>
+                </div>
 
 
             </div>
@@ -5084,18 +5573,45 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    
-                    
                     <div class="footer-logo">
                         <img src="assets/logo-removebg.png" alt="LessonPlan logo" class="footer-logo-img">
                         <span class="footer-logo-text">LessonPlan</span>
                     </div>
-
-
                     <p class="footer-mission">
-                        Our mission is to make learning intuitive and accessible for everyone. Revolutionizing education through connected knowledge graphs.
+                        Empowering minds, transforming futures. Your breakthrough begins here. We revolutionize
+                        education through transformative training experiences.
                     </p>
                 </div>
+
+                <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+                    <h3 style="color: var(--action-orange); margin-bottom: 10px; font-size: 1.1rem;">Quick Links</h3>
+                    <a href="index.html"
+                        style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">Home</a>
+                    <a href="about.html"
+                        style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">About
+                        Us</a>
+                    <a href="gallery.html"
+                        style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">Gallery</a>
+                    <a href="#contact"
+                        style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">Contact</a>
+                </div>
+
+                <div class="footer-services" style="display: flex; flex-direction: column; gap: 10px;">
+                    <h3 style="color: var(--action-orange); margin-bottom: 10px; font-size: 1.1rem;">Our Services</h3>
+                    <a href="student-training.html"
+                        style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">Student
+                        Training</a>
+                    <a href="corporate-training.html"
+                        style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">Corporate
+                        Training</a>
+                    <a href="workshops.html"
+                        style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">Workshops &
+                        Seminars</a>
+                    <a href="life-coaching.html"
+                        style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">Life
+                        Coaching</a>
+                </div>
+
                 <div class="footer-right">
                     <div class="contact-details">
                         <h3>Get in Touch</h3>
@@ -5109,34 +5625,15 @@
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
-                            <span>2nd Floor, Bhagya Lakshmi Complex 10/B, Kogilu Main Road, Prakruthi Nagar, Yelahanka, Bengaluru-560064</span>
+                            <span>2nd Floor, Bhagya Lakshmi Complex 10/B, Kogilu Main Road, Prakruthi Nagar, Yelahanka,
+                                Bengaluru-560064</span>
                         </div>
                     </div>
                 </div>
 
-
-            <div class="footer-map">
-                <div class="contact-details">
-                    <h3>Location</h3>
-
-                    <iframe
-                        class="map-embed"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d242.87059297496359!2d77.61568903607713!3d13.10365345219281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1765698292488!5m2!1sen!2sin"
-                        width="100%"
-                        height="220"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-
-                </div>
-            </div>
-
-
             </div>
             <div class="copyright">
-                &copy; 2025 LessonPlan. All rights reserved.
+                &copy; 2026 LessonPlan. All rights reserved.
             </div>
         </div>
     </footer>
@@ -5152,52 +5649,52 @@
             if (!form) return;
 
             form.addEventListener("submit", async function (e) {
-            e.preventDefault();
+                e.preventDefault();
 
-            statusEl.textContent = "Sending...";
-            statusEl.style.color = "#333";
-            sendBtn.disabled = true;
+                statusEl.textContent = "Sending...";
+                statusEl.style.color = "#333";
+                sendBtn.disabled = true;
 
-            try {
-                const formData = new FormData(form);
+                try {
+                    const formData = new FormData(form);
 
-                const res = await fetch(form.action, {
-                method: "POST",
-                body: formData,
-                headers: { "Accept": "application/json" }
-                });
+                    const res = await fetch(form.action, {
+                        method: "POST",
+                        body: formData,
+                        headers: { "Accept": "application/json" }
+                    });
 
-                const data = await res.json().catch(() => ({}));
+                    const data = await res.json().catch(() => ({}));
 
-                if (res.ok && data.success) {
-                statusEl.textContent = "Message sent successfully.";
-                statusEl.style.color = "#0b7a0b";
-                form.reset();
-                } else {
-                statusEl.textContent = (data && data.message)
-                    ? data.message
-                    : "Failed to send. Please try again.";
-                statusEl.style.color = "#b00020";
+                    if (res.ok && data.success) {
+                        statusEl.textContent = "Message sent successfully.";
+                        statusEl.style.color = "#0b7a0b";
+                        form.reset();
+                    } else {
+                        statusEl.textContent = (data && data.message)
+                            ? data.message
+                            : "Failed to send. Please try again.";
+                        statusEl.style.color = "#b00020";
+                    }
+                } catch (err) {
+                    console.error(err);
+                    statusEl.textContent = "Network error. Please try again.";
+                    statusEl.style.color = "#b00020";
+                } finally {
+                    sendBtn.disabled = false;
                 }
-            } catch (err) {
-                console.error(err);
-                statusEl.textContent = "Network error. Please try again.";
-                statusEl.style.color = "#b00020";
-            } finally {
-                sendBtn.disabled = false;
-            }
             });
         })();
 
 
         (function () {
             function resetToHome() {
-            if (window.location.hash) {
-                // Remove #... without adding a new history entry
-                history.replaceState(null, document.title, window.location.pathname + window.location.search);
-                // Go to top
-                window.scrollTo(0, 0);
-            }
+                if (window.location.hash) {
+                    // Remove #... without adding a new history entry
+                    history.replaceState(null, document.title, window.location.pathname + window.location.search);
+                    // Go to top
+                    window.scrollTo(0, 0);
+                }
             }
 
             window.addEventListener("load", resetToHome);
@@ -5208,13 +5705,13 @@
 
         (function () {
             function forceTop() {
-            // Force to top after layout/anchor behaviors
-            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+                // Force to top after layout/anchor behaviors
+                window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
-            // Extra forcing for some browsers
-            requestAnimationFrame(() => window.scrollTo(0, 0));
-            setTimeout(() => window.scrollTo(0, 0), 0);
-            setTimeout(() => window.scrollTo(0, 0), 50);
+                // Extra forcing for some browsers
+                requestAnimationFrame(() => window.scrollTo(0, 0));
+                setTimeout(() => window.scrollTo(0, 0), 0);
+                setTimeout(() => window.scrollTo(0, 0), 50);
             }
 
             window.addEventListener("load", forceTop);
@@ -5227,9 +5724,9 @@
             const track = document.getElementById('sessionsTrack');
             const leftBtn = document.querySelector('.sessions-section .arrow-left');
             const rightBtn = document.querySelector('.sessions-section .arrow-right');
-            
+
             if (!track || !leftBtn || !rightBtn) return;
-            
+
             // Configuration
             const CONFIG = {
                 autoScrollSpeed: 0.8,      // Pixels per frame
@@ -5237,46 +5734,46 @@
                 manualScrollDuration: 600, // Milliseconds for manual scroll animation
                 pauseDuration: 3000        // Pause duration after manual scroll
             };
-            
+
             // State
             let currentPosition = 0;
             let isAutoScrolling = true;
             let isPaused = false;
             let animationId = null;
             let pauseTimeout = null;
-            
+
             // Calculate half width for infinite loop reset
             function getHalfWidth() {
                 return track.scrollWidth / 2;
             }
-            
+
             // Smooth scroll to position
             function smoothScrollTo(targetPosition, duration) {
                 const startPosition = currentPosition;
                 const distance = targetPosition - startPosition;
                 const startTime = performance.now();
-                
+
                 isAutoScrolling = false;
-                
+
                 function animate(currentTime) {
                     const elapsed = currentTime - startTime;
                     const progress = Math.min(elapsed / duration, 1);
-                    
+
                     // Easing function: easeOutCubic
                     const easeProgress = 1 - Math.pow(1 - progress, 3);
-                    
+
                     currentPosition = startPosition + (distance * easeProgress);
                     track.style.transform = `translateX(${currentPosition}px)`;
-                    
+
                     if (progress < 1) {
                         animationId = requestAnimationFrame(animate);
                     } else {
                         // Handle infinite loop boundaries
                         handleLoopBoundary();
-                        
+
                         // Clear any existing pause timeout
                         if (pauseTimeout) clearTimeout(pauseTimeout);
-                        
+
                         // Resume auto-scroll after pause
                         pauseTimeout = setTimeout(() => {
                             isAutoScrolling = true;
@@ -5284,61 +5781,61 @@
                         }, CONFIG.pauseDuration);
                     }
                 }
-                
+
                 if (animationId) cancelAnimationFrame(animationId);
                 animationId = requestAnimationFrame(animate);
             }
-            
+
             // Handle infinite loop boundary
             function handleLoopBoundary() {
                 const halfWidth = getHalfWidth();
-                
+
                 // If scrolled past the duplicate set, reset to beginning
                 if (Math.abs(currentPosition) >= halfWidth) {
                     currentPosition = currentPosition + halfWidth;
                     track.style.transform = `translateX(${currentPosition}px)`;
                 }
-                
+
                 // If scrolled before start, reset to end of first set
                 if (currentPosition > 0) {
                     currentPosition = currentPosition - halfWidth;
                     track.style.transform = `translateX(${currentPosition}px)`;
                 }
             }
-            
+
             // Auto scroll animation
             function autoScroll() {
                 if (!isAutoScrolling || isPaused) return;
-                
+
                 currentPosition -= CONFIG.autoScrollSpeed;
-                
+
                 // Reset position for infinite loop
                 const halfWidth = getHalfWidth();
                 if (Math.abs(currentPosition) >= halfWidth) {
                     currentPosition = 0;
                 }
-                
+
                 track.style.transform = `translateX(${currentPosition}px)`;
                 animationId = requestAnimationFrame(autoScroll);
             }
-            
+
             // Arrow click handlers
             leftBtn.addEventListener('click', function () {
                 if (animationId) cancelAnimationFrame(animationId);
                 if (pauseTimeout) clearTimeout(pauseTimeout);
-                
+
                 const targetPosition = currentPosition + CONFIG.manualScrollAmount;
                 smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
             });
-            
+
             rightBtn.addEventListener('click', function () {
                 if (animationId) cancelAnimationFrame(animationId);
                 if (pauseTimeout) clearTimeout(pauseTimeout);
-                
+
                 const targetPosition = currentPosition - CONFIG.manualScrollAmount;
                 smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
             });
-            
+
             // Pause on hover
             track.addEventListener('mouseenter', function () {
                 isPaused = true;
@@ -5346,18 +5843,18 @@
                     cancelAnimationFrame(animationId);
                 }
             });
-            
+
             track.addEventListener('mouseleave', function () {
                 isPaused = false;
                 if (isAutoScrolling) {
                     autoScroll();
                 }
             });
-            
+
             // Touch support for mobile
             let touchStartX = 0;
             let touchEndX = 0;
-            
+
             track.addEventListener('touchstart', function (e) {
                 touchStartX = e.changedTouches[0].screenX;
                 isPaused = true;
@@ -5365,15 +5862,15 @@
                     cancelAnimationFrame(animationId);
                 }
             }, { passive: true });
-            
+
             track.addEventListener('touchend', function (e) {
                 touchEndX = e.changedTouches[0].screenX;
                 const swipeDistance = touchEndX - touchStartX;
-                
+
                 if (Math.abs(swipeDistance) > 50) {
                     if (animationId) cancelAnimationFrame(animationId);
                     if (pauseTimeout) clearTimeout(pauseTimeout);
-                    
+
                     const targetPosition = currentPosition + (swipeDistance > 0 ? CONFIG.manualScrollAmount : -CONFIG.manualScrollAmount);
                     smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
                 } else {
@@ -5383,10 +5880,10 @@
                     }
                 }
             }, { passive: true });
-            
+
             // Start auto-scroll
             autoScroll();
-        })();        
+        })();
 
 
         // --- SECTION 5: PORTFOLIO VIDEO NAVIGATION ---
@@ -5394,20 +5891,20 @@
             const track = document.getElementById('portfolioTrack');
             const prevBtn = document.querySelector('.portfolio-prev');
             const nextBtn = document.querySelector('.portfolio-next');
-            
+
             if (!track || !prevBtn || !nextBtn) return;
-            
+
             let currentIndex = 0;
             const cards = track.querySelectorAll('.portfolio-video-card');
             const totalCards = cards.length;
-            
+
             function getVisibleCards() {
                 const width = window.innerWidth;
                 if (width > 992) return 3;
                 if (width > 768) return 2;
                 return 1;
             }
-            
+
             function getCardWidth() {
                 const card = cards[0];
                 if (!card) return 0;
@@ -5415,17 +5912,17 @@
                 const gap = parseInt(style.gap) || 30;
                 return card.offsetWidth + gap;
             }
-            
+
             function updateTrackPosition() {
                 const cardWidth = getCardWidth();
                 const offset = -currentIndex * cardWidth;
                 track.style.transform = `translateX(${offset}px)`;
             }
-            
+
             function goToNext() {
                 const visibleCards = getVisibleCards();
                 const maxIndex = totalCards - visibleCards;
-                
+
                 if (currentIndex < maxIndex) {
                     currentIndex++;
                 } else {
@@ -5433,11 +5930,11 @@
                 }
                 updateTrackPosition();
             }
-            
+
             function goToPrev() {
                 const visibleCards = getVisibleCards();
                 const maxIndex = totalCards - visibleCards;
-                
+
                 if (currentIndex > 0) {
                     currentIndex--;
                 } else {
@@ -5445,10 +5942,10 @@
                 }
                 updateTrackPosition();
             }
-            
+
             nextBtn.addEventListener('click', goToNext);
             prevBtn.addEventListener('click', goToPrev);
-            
+
             // Reset on resize
             let resizeTimeout;
             window.addEventListener('resize', function () {
@@ -5467,30 +5964,30 @@
             const track = document.getElementById('workshopsTrack');
             const prevBtn = document.querySelector('.workshop-arrow-left');
             const nextBtn = document.querySelector('.workshop-arrow-right');
-            
+
             if (!track || !prevBtn || !nextBtn) return;
-            
+
             // Configuration
             const CONFIG = {
                 autoScrollSpeed: 0.5,
                 manualScrollDuration: 500,
                 pauseDuration: 3000
             };
-            
+
             // State
             let currentPosition = 0;
             let isAutoScrolling = true;
             let isPaused = false;
             let animationId = null;
             let pauseTimeout = null;
-            
+
             function getVisiblePosters() {
                 const width = window.innerWidth;
                 if (width > 992) return 3;
                 if (width > 768) return 2;
                 return 1;
             }
-            
+
             function getPosterWidth() {
                 const poster = track.querySelector('.workshop-poster');
                 if (!poster) return 0;
@@ -5498,16 +5995,16 @@
                 const gap = parseInt(style.gap) || 20;
                 return poster.offsetWidth + gap;
             }
-            
+
             function getHalfWidth() {
                 const posters = track.querySelectorAll('.workshop-poster');
                 const posterWidth = getPosterWidth();
                 return (posters.length / 2) * posterWidth;
             }
-            
+
             function handleLoopBoundary() {
                 const halfWidth = getHalfWidth();
-                
+
                 if (Math.abs(currentPosition) >= halfWidth) {
                     currentPosition = currentPosition + halfWidth;
                     track.style.transition = 'none';
@@ -5515,7 +6012,7 @@
                     track.offsetHeight; // Force reflow
                     track.style.transition = '';
                 }
-                
+
                 if (currentPosition > 0) {
                     currentPosition = currentPosition - halfWidth;
                     track.style.transition = 'none';
@@ -5524,28 +6021,28 @@
                     track.style.transition = '';
                 }
             }
-            
+
             function smoothScrollTo(targetPosition, duration) {
                 const startPosition = currentPosition;
                 const distance = targetPosition - startPosition;
                 const startTime = performance.now();
-                
+
                 isAutoScrolling = false;
                 if (animationId) cancelAnimationFrame(animationId);
-                
+
                 function animate(currentTime) {
                     const elapsed = currentTime - startTime;
                     const progress = Math.min(elapsed / duration, 1);
                     const easeProgress = 1 - Math.pow(1 - progress, 3);
-                    
+
                     currentPosition = startPosition + (distance * easeProgress);
                     track.style.transform = `translateX(${currentPosition}px)`;
-                    
+
                     if (progress < 1) {
                         animationId = requestAnimationFrame(animate);
                     } else {
                         handleLoopBoundary();
-                        
+
                         if (pauseTimeout) clearTimeout(pauseTimeout);
                         pauseTimeout = setTimeout(() => {
                             isAutoScrolling = true;
@@ -5553,39 +6050,39 @@
                         }, CONFIG.pauseDuration);
                     }
                 }
-                
+
                 animationId = requestAnimationFrame(animate);
             }
-            
+
             function autoScroll() {
                 if (!isAutoScrolling || isPaused) return;
-                
+
                 currentPosition -= CONFIG.autoScrollSpeed;
                 handleLoopBoundary();
-                
+
                 track.style.transform = `translateX(${currentPosition}px)`;
                 animationId = requestAnimationFrame(autoScroll);
             }
-            
+
             // Arrow click handlers
             prevBtn.addEventListener('click', function () {
                 if (animationId) cancelAnimationFrame(animationId);
                 if (pauseTimeout) clearTimeout(pauseTimeout);
-                
+
                 const posterWidth = getPosterWidth();
                 const targetPosition = currentPosition + posterWidth;
                 smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
             });
-            
+
             nextBtn.addEventListener('click', function () {
                 if (animationId) cancelAnimationFrame(animationId);
                 if (pauseTimeout) clearTimeout(pauseTimeout);
-                
+
                 const posterWidth = getPosterWidth();
                 const targetPosition = currentPosition - posterWidth;
                 smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
             });
-            
+
             // Pause on hover
             track.addEventListener('mouseenter', function () {
                 isPaused = true;
@@ -5593,17 +6090,17 @@
                     cancelAnimationFrame(animationId);
                 }
             });
-            
+
             track.addEventListener('mouseleave', function () {
                 isPaused = false;
                 if (isAutoScrolling) {
                     autoScroll();
                 }
             });
-            
+
             // Touch support
             let touchStartX = 0;
-            
+
             track.addEventListener('touchstart', function (e) {
                 touchStartX = e.changedTouches[0].screenX;
                 isPaused = true;
@@ -5611,26 +6108,26 @@
                     cancelAnimationFrame(animationId);
                 }
             }, { passive: true });
-            
+
             track.addEventListener('touchend', function (e) {
                 const touchEndX = e.changedTouches[0].screenX;
                 const swipeDistance = touchEndX - touchStartX;
-                
+
                 if (Math.abs(swipeDistance) > 50) {
                     if (animationId) cancelAnimationFrame(animationId);
                     if (pauseTimeout) clearTimeout(pauseTimeout);
-                    
+
                     const posterWidth = getPosterWidth();
                     const targetPosition = currentPosition + (swipeDistance > 0 ? posterWidth : -posterWidth);
                     smoothScrollTo(targetPosition, CONFIG.manualScrollDuration);
                 }
-                
+
                 isPaused = false;
                 if (isAutoScrolling) {
                     autoScroll();
                 }
             }, { passive: true });
-            
+
             // Start auto-scroll
             autoScroll();
         })();
@@ -5657,13 +6154,13 @@
             const featuredImg = document.getElementById('featuredPodcastImg');
             const featuredTitle = document.getElementById('featuredPodcastTitle');
             const podcastItems = document.querySelectorAll('.podcast-list-item');
-            
+
             if (!audio || !playPauseBtn) return;
-            
+
             let isPlaying = false;
             let isDragging = false;
             let currentTrackIndex = -1;
-            
+
             // Playlist
             const playlist = [
                 {
@@ -5672,7 +6169,7 @@
                     title: 'Positive Mindset: Roadmap towards Success, Exclusive'
                 }
             ];
-            
+
             // Add podcast items to playlist
             podcastItems.forEach((item, index) => {
                 playlist.push({
@@ -5681,7 +6178,7 @@
                     title: item.dataset.title
                 });
             });
-            
+
             // Format time
             function formatTime(seconds) {
                 if (isNaN(seconds)) return '0:00';
@@ -5689,7 +6186,7 @@
                 const secs = Math.floor(seconds % 60);
                 return `${mins}:${secs.toString().padStart(2, '0')}`;
             }
-            
+
             // Update progress bar
             function updateProgress() {
                 if (!isDragging && audio.duration) {
@@ -5699,7 +6196,7 @@
                     currentTimeEl.textContent = formatTime(audio.currentTime);
                 }
             }
-            
+
             // Set progress from click
             function setProgress(e) {
                 const rect = progressBar.getBoundingClientRect();
@@ -5708,7 +6205,7 @@
                 progressFill.style.width = `${percent * 100}%`;
                 progressHandle.style.left = `${percent * 100}%`;
             }
-            
+
             // Play/Pause toggle
             function togglePlayPause() {
                 if (isPlaying) {
@@ -5722,38 +6219,38 @@
                 }
                 isPlaying = !isPlaying;
             }
-            
+
             // Load track
             function loadTrack(index) {
                 if (index < 0 || index >= playlist.length) return;
-                
+
                 currentTrackIndex = index;
                 const track = playlist[index];
-                
+
                 audio.src = track.audio;
                 featuredImg.src = track.image;
                 featuredTitle.textContent = track.title;
-                
+
                 // Update active state in list
                 podcastItems.forEach((item, i) => {
                     item.classList.toggle('active', i === index - 1);
                 });
-                
+
                 audio.load();
                 if (isPlaying) {
                     audio.play();
                 }
             }
-            
+
             // Event Listeners
             playPauseBtn.addEventListener('click', togglePlayPause);
-            
+
             audio.addEventListener('timeupdate', updateProgress);
-            
+
             audio.addEventListener('loadedmetadata', function () {
                 totalTimeEl.textContent = formatTime(audio.duration);
             });
-            
+
             audio.addEventListener('ended', function () {
                 if (currentTrackIndex < playlist.length - 1) {
                     loadTrack(currentTrackIndex + 1);
@@ -5764,45 +6261,45 @@
                     playPauseBtn.classList.remove('playing');
                 }
             });
-            
+
             // Progress bar interactions
             progressBar.addEventListener('click', setProgress);
-            
+
             progressHandle.addEventListener('mousedown', function (e) {
                 isDragging = true;
                 progressHandle.classList.add('dragging');
                 e.preventDefault();
             });
-            
+
             document.addEventListener('mousemove', function (e) {
                 if (isDragging) {
                     setProgress(e);
                 }
             });
-            
+
             document.addEventListener('mouseup', function () {
                 if (isDragging) {
                     isDragging = false;
                     progressHandle.classList.remove('dragging');
                 }
             });
-            
+
             // Skip buttons
             forwardBtn.addEventListener('click', function () {
                 audio.currentTime = Math.min(audio.currentTime + 30, audio.duration);
             });
-            
+
             backwardBtn.addEventListener('click', function () {
                 audio.currentTime = Math.max(audio.currentTime - 30, 0);
             });
-            
+
             // Next/Previous
             nextBtn.addEventListener('click', function () {
                 const nextIndex = currentTrackIndex < playlist.length - 1 ? currentTrackIndex + 1 : 0;
                 loadTrack(nextIndex);
                 if (!isPlaying) togglePlayPause();
             });
-            
+
             prevBtn.addEventListener('click', function () {
                 if (audio.currentTime > 3) {
                     audio.currentTime = 0;
@@ -5812,18 +6309,18 @@
                     if (!isPlaying) togglePlayPause();
                 }
             });
-            
+
             // Volume control
             volumeSlider.addEventListener('input', function () {
                 audio.volume = this.value / 100;
                 updateVolumeIcon();
             });
-            
+
             volumeBtn.addEventListener('click', function () {
                 audio.muted = !audio.muted;
                 updateVolumeIcon();
             });
-            
+
             function updateVolumeIcon() {
                 if (audio.muted || audio.volume === 0) {
                     volumeIcon.className = 'fa-solid fa-volume-xmark';
@@ -5833,7 +6330,7 @@
                     volumeIcon.className = 'fa-solid fa-volume-high';
                 }
             }
-            
+
             // Podcast list item clicks
             podcastItems.forEach((item, index) => {
                 item.addEventListener('click', function () {
@@ -5841,7 +6338,7 @@
                     if (!isPlaying) togglePlayPause();
                 });
             });
-            
+
             // Initialize with featured track
             currentTrackIndex = 0;
             audio.volume = volumeSlider.value / 100;
@@ -5853,4 +6350,5 @@
 
 
 </body>
+
 </html>
