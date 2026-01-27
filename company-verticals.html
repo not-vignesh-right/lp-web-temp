@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Verticals | LessonPlan</title>
+    <link rel="icon" href="assets/logo-removebg.png" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --primary-blue: #003366;
+            --accent-blue: #eef4fa;
+            --action-orange: #ff6600;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 26, 51, 0.9)), url('assets/hero-bg.jpg') center/cover;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Verticals Grid */
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .vertical-card {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 26, 51, 0.95));
+            border-radius: 20px;
+            padding: 50px 35px;
+            color: white;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vertical-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+        }
+
+        .vertical-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 51, 102, 0.3);
+        }
+
+        .vertical-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold), #aa8a2e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .vertical-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .vertical-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .vertical-card p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .vertical-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .vertical-card ul li {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .vertical-card ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        .vertical-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+
+        .vertical-link:hover {
+            gap: 15px;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--action-orange);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary-blue);
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .verticals-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="assets/logo.png" alt="logo" class="logo-img">
+                    <span class="logo-text">LessonPlan</span>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="company-verticals.html">Company verticals</a></li>
+                    <li><a href="workshops.html">Training & workshop</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html" class="btn-primary"
+                            style="padding: 8px 20px; color: white; border-radius: 999px;">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Company <span>Verticals</span></h1>
+            <p>Comprehensive solutions across multiple domains to transform education and empower learners at every
+                level.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Service Domains</h2>
+                <p>Explore our specialized verticals designed for maximum impact</p>
+            </div>
+
+            <div class="verticals-grid">
+                <!-- Educational Consultation -->
+                <div class="vertical-card">
+                    <div>
+                        <div class="vertical-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>Educational Consultation & Solutions</h3>
+                        <p>Mentoring, training, workshops, Mega Educational Drives, Career guidance, Teacher training,
+                            and academic support.</p>
+                        <ul>
+                            <li>Student Training Programs</li>
+                            <li>Corporate Training Solutions</li>
+                            <li>Workshops & Seminars</li>
+                            <li>Career Counseling</li>
+                        </ul>
+                    </div>
+                    <a href="services.html" class="vertical-link">Explore Services <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- R&D Projects -->
+                <div class="vertical-card">
+                    <div>
+                        <div class="vertical-icon"><i class="fa-solid fa-flask"></i></div>
+                        <h3>Educational R&D Projects</h3>
+                        <p>Development of novel teaching strategies, NEP-based conceptual learning kits, surveys for
+                            policy development.</p>
+                        <ul>
+                            <li>Novel Teaching Strategies</li>
+                            <li>Learning Methodology Surveys</li>
+                            <li>Educational Publications</li>
+                            <li>Policy Development Research</li>
+                        </ul>
+                    </div>
+                    <a href="services.html" class="vertical-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Educational Kits -->
+                <div class="vertical-card">
+                    <div>
+                        <div class="vertical-icon"><i class="fa-solid fa-shapes"></i></div>
+                        <h3>Educational Kits & Materials</h3>
+                        <p>Proprietary educational kits including 3D models, worksheets, charts, and activity-based
+                            learning materials.</p>
+                        <ul>
+                            <li>3D Models & Structures</li>
+                            <li>Worksheets & Charts</li>
+                            <li>Activity-Based Kits</li>
+                            <li>Conceptual Learning Tools</li>
+                        </ul>
+                    </div>
+                    <a href="services.html" class="vertical-link">View Products <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Institution?</h2>
+            <br>
+            <a href="contact.html" class="cta-btn"><span>Get in Touch</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LessonPlan</h4>
+                    <p>Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="company-verticals.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <a href="student-training.html">Student Training</a>
+                    <a href="corporate-training.html">Corporate Training</a>
+                    <a href="workshops.html">Workshops & Seminars</a>
+                    <a href="life-coaching.html">Life Coaching</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-phone"></i> +91 805 051 2005</p>
+                    <p><i class="fa-solid fa-envelope"></i> lessonplan1025@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LessonPlan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

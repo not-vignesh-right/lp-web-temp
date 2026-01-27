@@ -1,0 +1,13 @@
+/* Stats Row Refactor */
+.stats-row {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .stats-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

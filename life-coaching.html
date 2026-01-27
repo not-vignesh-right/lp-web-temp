@@ -7,6 +7,9 @@
     <title>Life Coaching | LessonPlan</title>
     <link rel="icon" href="assets/logo-removebg.png" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <style>
         :root {
             --primary-white: #ffffff;
@@ -41,63 +44,7 @@
             padding: 0 20px;
         }
 
-        header {
-            background: var(--primary-blue);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            height: 45px;
-            filter: brightness(0) invert(1);
-        }
-
-        .logo-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        .btn-primary {
-            background: var(--action-orange);
-            color: white !important;
-            padding: 10px 25px;
-            border-radius: 50px;
-        }
 
         .hero {
             background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 26, 51, 0.9)), url('assets/sessions/session-4.jpg') center/cover;
@@ -433,16 +380,20 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">
-                    <img src="assets/logo.png" alt="LessonPlan" class="logo-img">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="logo" class="logo-img">
                     <span class="logo-text">LessonPlan</span>
-                </a>
+                </div>
+
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about-us">About</a></li>
-                    <li><a href="index.html#company-verticals">Services</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="company-verticals.html">Company verticals</a></li>
+                    <li><a href="workshops.html">Training & workshop</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="index.html#contact" class="btn-primary">Contact</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html" class="btn-primary"
+                            style="padding: 8px 20px; color: white; border-radius: 999px;">Contact</a></li>
                 </ul>
             </nav>
         </div>
