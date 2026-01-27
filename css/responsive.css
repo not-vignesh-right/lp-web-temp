@@ -605,7 +605,7 @@
         }
 
         /* Podcast Section Responsive */
-        .podcast-container {
+        .podcast-content {
             flex-direction: column;
             gap: 30px;
         }

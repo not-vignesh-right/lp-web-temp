@@ -79,23 +79,46 @@
 
 // Hamburger Menu Toggle
 (function () {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const initNav = () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function () {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
+        if (hamburger && navLinks) {
+            // Remove any existing listeners to prevent duplicates if function runs twice
+            const newHamburger = hamburger.cloneNode(true);
+            hamburger.parentNode.replaceChild(newHamburger, hamburger);
 
-        // Close menu when a link is clicked
-        const links = navLinks.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
+            newHamburger.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation(); // Stop event bubbling
+                navLinks.classList.toggle('active');
+                newHamburger.classList.toggle('active');
+                console.log('Hamburger clicked'); // Debug
             });
-        });
+
+            // Close menu when a link is clicked
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    newHamburger.classList.remove('active');
+                });
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!newHamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    newHamburger.classList.remove('active');
+                }
+            });
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNav);
+    } else {
+        initNav();
     }
 })();
 
