@@ -592,37 +592,42 @@
         /* Previously nav flex-direction rule removed in favor of hamburger logic above */
 
         .footer-content {
-            display: flex;
-            /* Changed from grid to flex for better column control on mobile if needed, or stick to grid */
-            flex-direction: column;
+            display: flex !important;
+            flex-direction: column !important;
             gap: 30px;
+        }
+
+        .footer-left,
+        .footer-right,
+        .footer-links {
+            width: 100% !important;
+            max-width: 100% !important;
+            flex: none !important;
         }
 
         /* Podcast Section Responsive */
         .podcast-content {
-            flex-direction: column;
+            display: flex !important;
+            flex-direction: column !important;
             gap: 30px;
         }
 
-        .podcast-card,
+        .podcast-player-column,
         .podcast-list-column {
-            width: 100%;
-            max-width: 100%;
+            flex: none !important;
+            width: 100% !important;
+            max-width: 100% !important;
         }
 
-        .podcast-card {
-            padding: 30px 20px;
-        }
-
-        .podcast-cover {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1/1;
+        .featured-podcast-card {
+            padding: 20px;
         }
 
         .podcast-controls {
+            display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         /* Superpower Section Responsive */
@@ -644,19 +649,26 @@
 
         /* Mentor Section Responsive */
         .mentor-container {
-            grid-template-columns: 1fr;
-            /* Switch to single column */
-            gap: 40px;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 30px;
+            padding: 0 20px;
         }
 
         .mentor-left,
         .mentor-right {
-            width: 100%;
+            flex: none !important;
+            width: 100% !important;
+            max-width: 100% !important;
             padding: 0;
         }
 
         .mentor-callout-box {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+        }
+
+        .workshop-title-block {
+            text-align: center;
         }
 
         /* Contact Section Responsive */
