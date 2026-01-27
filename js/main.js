@@ -98,3 +98,31 @@
         });
     }
 })();
+
+// Scroll Reveal Animation (IntersectionObserver)
+(function () {
+    // Elements to reveal
+    // Selecting major sections and cards for animation
+    const revealElements = document.querySelectorAll('section, .card, .session-card, .footer-content, .hero-content');
+
+    const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    };
+
+    const revealOptions = {
+        threshold: 0.15, // Trigger when 15% of element is visible
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+    revealElements.forEach(el => {
+        el.classList.add('reveal'); // Add base class for initial state
+        revealObserver.observe(el);
+    });
+})();
