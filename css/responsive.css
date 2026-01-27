@@ -604,6 +604,43 @@
             gap: 30px;
         }
 
+        /* Podcast Section Responsive */
+        .podcast-container {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .podcast-card,
+        .podcast-list-column {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .podcast-card {
+            padding: 30px 20px;
+        }
+
+        .podcast-cover {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+        }
+
+        .podcast-controls {
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Section Responsive */
+        .contact-box {
+            padding: 30px 20px;
+            width: 100%;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+        }
+
         /* Company Verticals Responsive */
         #company-verticals>.container>div:last-child {
             grid-template-columns: 1fr !important;
