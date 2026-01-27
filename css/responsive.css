@@ -28,7 +28,7 @@
         }
 
         .nav-links {
-            display: flex;
+            display: none;
             flex-direction: column;
             position: absolute;
             top: 100%;
@@ -38,18 +38,12 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             padding: 20px 0;
             border-radius: 0 0 15px 15px;
-            transform: translateY(-20px);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
             z-index: 1000;
             gap: 0;
         }
 
         .nav-links.active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
+            display: flex;
         }
 
         .nav-links li {
