@@ -631,6 +631,40 @@
             flex-wrap: wrap;
         }
 
+        /* Superpower Section Responsive */
+        .superpower-container {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .superpower-image-wrapper,
+        .superpower-content {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .superpower-image-wrapper {
+            height: 300px;
+            /* Limit height on mobile */
+        }
+
+        /* Mentor Section Responsive */
+        .mentor-container {
+            grid-template-columns: 1fr;
+            /* Switch to single column */
+            gap: 40px;
+        }
+
+        .mentor-left,
+        .mentor-right {
+            width: 100%;
+            padding: 0;
+        }
+
+        .mentor-callout-box {
+            margin-bottom: 30px;
+        }
+
         /* Contact Section Responsive */
         .contact-box {
             padding: 30px 20px;
