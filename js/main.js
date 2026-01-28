@@ -13,10 +13,13 @@
 
         // Initial Loading handled inside try block
         sendBtn.disabled = true;
-        sendBtn.disabled = true;
 
         try {
             const formData = new FormData(form);
+
+            // Show Loading State
+            statusEl.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending message...';
+            statusEl.className = 'loading';
 
             const res = await fetch(form.action, {
                 method: "POST",
