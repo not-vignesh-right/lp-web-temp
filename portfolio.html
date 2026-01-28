@@ -108,37 +108,180 @@
         </div>
     </section>
 
-    <!-- Podcast Section -->
-    <section class="section" style="background: var(--accent-blue);">
+    <!-- Section: Podcast -->
+    <section id="podcast" class="podcast-section">
         <div class="container">
-            <div class="section-header">
-                <h2>LessonPlan Podcasts</h2>
-                <p>Listen to insights, success stories, and expert guidance on personal and professional growth</p>
+            <div class="podcast-section-header">
+                <span class="podcast-header-line"></span>
+                <h2 class="podcast-section-title">PODCAST</h2>
+                <span class="podcast-header-line"></span>
             </div>
 
-            <div class="podcast-grid">
-                <!-- Podcast 1 -->
-                <div class="podcast-card">
-                    <h3>Voice of Students</h3>
-                    <p>Real stories from students about their transformation journey with LessonPlan</p>
-                    <div class="podcast-player">
-                        <audio controls>
-                            <source src="assets/podcast1.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
+            <!-- Tabs Navigation -->
+            <div class="podcast-tabs">
+                <button class="podcast-tab active" data-tab="students">Students Series</button>
+                <button class="podcast-tab" data-tab="parents">Parents Series</button>
+                <button class="podcast-tab" data-tab="mentor">Mentor Series</button>
+            </div>
+
+            <div class="podcast-tab-content active" id="students-content">
+                <div class="podcast-content-wrapper">
+                    <!-- Player Column -->
+                    <div class="podcast-player-column">
+                        <div class="featured-podcast-card">
+                            <div class="featured-podcast-image">
+                                <img src="assets/podcasts/podcast-1.jpg" alt="Student Series" id="studentPlayerImg"
+                                    loading="lazy">
+                                <div class="podcast-image-overlay">
+                                    <span class="podcast-badge"><i class="fa-solid fa-podcast"></i> Now Playing</span>
+                                </div>
+                            </div>
+                            <div class="featured-podcast-info">
+                                <h3 class="featured-podcast-title" id="studentPlayerTitle">Introduction to Student
+                                    Series
+                                </h3>
+                                <p class="featured-podcast-artist">S. PATIL</p>
+                            </div>
+                            <div class="podcast-progress-container">
+                                <div class="podcast-progress-bar" id="studentProgressBar">
+                                    <div class="podcast-progress-fill" id="studentProgressFill"></div>
+                                    <div class="podcast-progress-handle" id="studentProgressHandle"></div>
+                                </div>
+                                <div class="podcast-time-display">
+                                    <span id="studentCurrentTime">0:00</span>
+                                    <span id="studentTotalTime">0:00</span>
+                                </div>
+                            </div>
+                            <div class="podcast-controls">
+                                <button class="podcast-control-btn podcast-secondary-btn" id="studentPrevBtn"><i
+                                        class="fa-solid fa-backward-step"></i></button>
+                                <button class="podcast-control-btn podcast-secondary-btn" id="studentBackwardBtn"><i
+                                        class="fa-solid fa-rotate-left"></i><span
+                                        class="control-label">10</span></button>
+                                <button class="podcast-control-btn podcast-primary-btn" id="studentPlayPauseBtn"><i
+                                        class="fa-solid fa-play" id="studentPlayPauseIcon"></i></button>
+                                <button class="podcast-control-btn podcast-secondary-btn" id="studentForwardBtn"><i
+                                        class="fa-solid fa-rotate-right"></i><span
+                                        class="control-label">10</span></button>
+                                <button class="podcast-control-btn podcast-secondary-btn" id="studentNextBtn"><i
+                                        class="fa-solid fa-forward-step"></i></button>
+                            </div>
+                            <div class="podcast-volume-container">
+                                <button class="volume-btn" id="studentVolumeBtn"><i class="fa-solid fa-volume-high"
+                                        id="studentVolumeIcon"></i></button>
+                                <div class="volume-slider-wrapper"><input type="range" class="volume-slider"
+                                        id="studentVolumeSlider" min="0" max="100" value="80"></div>
+                            </div>
+                        </div>
+                        <audio id="studentAudio" preload="metadata">
+                            <source
+                                src="assets/podcasts/Prodcast Audio/Students series/Student centric series  Intro.mp3"
+                                type="audio/mpeg">
                         </audio>
+                    </div>
+
+                    <!-- List Column -->
+                    <div class="podcast-list-column">
+                        <div class="podcast-list-header">
+                            <h4 class="podcast-list-title">Episodes</h4>
+                            <span class="podcast-list-count">6 Episodes</span>
+                        </div>
+                        <div class="podcast-list" id="studentPlaylist">
+                            <!-- Intro -->
+                            <div class="podcast-list-item active"
+                                data-audio="assets/podcasts/Prodcast Audio/Students series/Student centric series  Intro.mp3"
+                                data-image="assets/podcasts/podcast-1.jpg" data-title="Introduction to Student Series">
+                                <div class="podcast-item-image"><img src="assets/podcasts/podcast-1.jpg" alt="Intro"
+                                        loading="lazy"></div>
+                                <div class="podcast-item-info">
+                                    <h5 class="podcast-item-title">Introduction</h5>
+                                    <p class="podcast-item-subtitle">Welcome to Student Series</p>
+                                </div>
+                                <button class="podcast-item-play-btn"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                            <!-- Ep 1 -->
+                            <div class="podcast-list-item"
+                                data-audio="assets/podcasts/Prodcast Audio/Students series/SC-Marks vs Skills-Episode 1.mp3"
+                                data-image="assets/podcasts/podcast-2.jpg" data-title="Episode 1: Marks vs Skills">
+                                <div class="podcast-item-image"><img src="assets/podcasts/podcast-2.jpg" alt="Ep 1"
+                                        loading="lazy"></div>
+                                <div class="podcast-item-info">
+                                    <h5 class="podcast-item-title">Ep 1: Marks vs Skills</h5>
+                                    <p class="podcast-item-subtitle">Understanding the balance</p>
+                                </div>
+                                <button class="podcast-item-play-btn"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                            <!-- Ep 2 -->
+                            <div class="podcast-list-item"
+                                data-audio="assets/podcasts/Prodcast Audio/Students series/SC-Smart study- Episode 2.mp3"
+                                data-image="assets/podcasts/podcast-3.jpg"
+                                data-title="Episode 2: Smart Study Techniques">
+                                <div class="podcast-item-image"><img src="assets/podcasts/podcast-3.jpg" alt="Ep 2"
+                                        loading="lazy"></div>
+                                <div class="podcast-item-info">
+                                    <h5 class="podcast-item-title">Ep 2: Smart Study Techniques</h5>
+                                    <p class="podcast-item-subtitle">Study smarter, not harder</p>
+                                </div>
+                                <button class="podcast-item-play-btn"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                            <!-- Ep 3 -->
+                            <div class="podcast-list-item"
+                                data-audio="assets/podcasts/Prodcast Audio/Students series/SC-Rote learning-Episode 3.mp3"
+                                data-image="assets/podcasts/podcast-4.jpg"
+                                data-title="Episode 3: Overcoming Rote Learning">
+                                <div class="podcast-item-image"><img src="assets/podcasts/podcast-4.jpg" alt="Ep 3"
+                                        loading="lazy"></div>
+                                <div class="podcast-item-info">
+                                    <h5 class="podcast-item-title">Ep 3: Overcoming Rote Learning</h5>
+                                    <p class="podcast-item-subtitle">Deep understanding strategies</p>
+                                </div>
+                                <button class="podcast-item-play-btn"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                            <!-- Ep 4 -->
+                            <div class="podcast-list-item"
+                                data-audio="assets/podcasts/Prodcast Audio/Students series/SC-Competitive aspirants-Episode 4.mp3"
+                                data-image="assets/podcasts/featured-podcast.jpg"
+                                data-title="Episode 4: For Competitive Aspirants">
+                                <div class="podcast-item-image"><img src="assets/podcasts/featured-podcast.jpg"
+                                        alt="Ep 4" loading="lazy"></div>
+                                <div class="podcast-item-info">
+                                    <h5 class="podcast-item-title">Ep 4: Competitive Aspirants</h5>
+                                    <p class="podcast-item-subtitle">Preparing for the big league</p>
+                                </div>
+                                <button class="podcast-item-play-btn"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                            <!-- Ep 5 -->
+                            <div class="podcast-list-item"
+                                data-audio="assets/podcasts/Prodcast Audio/Students series/SC-Memory hacks-Episode 5.mp3"
+                                data-image="assets/podcasts/podcast-1.jpg" data-title="Episode 5: Memory Hacks">
+                                <div class="podcast-item-image"><img src="assets/podcasts/podcast-1.jpg" alt="Ep 5"
+                                        loading="lazy"></div>
+                                <div class="podcast-item-info">
+                                    <h5 class="podcast-item-title">Ep 5: Memory Hacks</h5>
+                                    <p class="podcast-item-subtitle">Boost your retention</p>
+                                </div>
+                                <button class="podcast-item-play-btn"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Podcast 2 -->
-                <div class="podcast-card">
-                    <h3>Career Growth Insights</h3>
-                    <p>Expert advice on career development and professional excellence</p>
-                    <div class="podcast-player">
-                        <audio controls>
-                            <source src="assets/podcast2.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
+            <!-- Parents Tab -->
+            <div class="podcast-tab-content" id="parents-content">
+                <div class="coming-soon-placeholder">
+                    <div class="coming-soon-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3>Parents Series Coming Soon</h3>
+                    <p>Stay tuned for insightful episodes dedicated to parenting.</p>
+                </div>
+            </div>
+
+            <!-- Mentor Tab -->
+            <div class="podcast-tab-content" id="mentor-content">
+                <div class="coming-soon-placeholder">
+                    <div class="coming-soon-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3>Mentor Series Coming Soon</h3>
+                    <p>Expert insights for mentors and educators are on the way.</p>
                 </div>
             </div>
         </div>
@@ -280,6 +423,7 @@
     </div>
 
     <script src="js/main.js" defer></script>
+    <script src="js/podcast.js" defer></script>
     <script src="js/stats-counter.js"></script>
     <script>
         // Modal Logic

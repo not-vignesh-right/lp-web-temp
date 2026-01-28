@@ -1,41 +1,68 @@
-/* --- PODCAST PLAYER --- */
-(function () {
-    const audio = document.getElementById('podcastAudio');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const playPauseIcon = document.getElementById('playPauseIcon');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const forwardBtn = document.getElementById('forwardBtn');
-    const backwardBtn = document.getElementById('backwardBtn');
-    const progressBar = document.getElementById('progressBar');
-    const progressFill = document.getElementById('progressFill');
-    const progressHandle = document.getElementById('progressHandle');
-    const currentTimeEl = document.getElementById('currentTime');
-    const totalTimeEl = document.getElementById('totalTime');
-    const volumeBtn = document.getElementById('volumeBtn');
-    const volumeIcon = document.getElementById('volumeIcon');
-    const volumeSlider = document.getElementById('volumeSlider');
-    const featuredImg = document.getElementById('featuredPodcastImg');
-    const featuredTitle = document.getElementById('featuredPodcastTitle');
-    const podcastItems = document.querySelectorAll('.podcast-list-item');
+/* --- PODCAST SECTION LOGIC --- */
 
-    if (!audio || !playPauseBtn) return;
+document.addEventListener('DOMContentLoaded', () => {
+    initTabs();
+    initStudentPlayer();
+});
+
+/* --- TABS LOGIC --- */
+function initTabs() {
+    const tabs = document.querySelectorAll('.podcast-tab');
+    const contents = document.querySelectorAll('.podcast-tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            tab.classList.add('active');
+
+            // Hide all content
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Show target content
+            const targetId = `${tab.dataset.tab}-content`;
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+}
+
+/* --- STUDENT SERIES PLAYER --- */
+function initStudentPlayer() {
+    const audio = document.getElementById('studentAudio');
+    const playPauseBtn = document.getElementById('studentPlayPauseBtn');
+    const playPauseIcon = document.getElementById('studentPlayPauseIcon');
+    const prevBtn = document.getElementById('studentPrevBtn');
+    const nextBtn = document.getElementById('studentNextBtn');
+    const forwardBtn = document.getElementById('studentForwardBtn');
+    const backwardBtn = document.getElementById('studentBackwardBtn');
+    const progressBar = document.getElementById('studentProgressBar');
+    const progressFill = document.getElementById('studentProgressFill');
+    const progressHandle = document.getElementById('studentProgressHandle');
+    const currentTimeEl = document.getElementById('studentCurrentTime');
+    const totalTimeEl = document.getElementById('studentTotalTime');
+    const volumeBtn = document.getElementById('studentVolumeBtn');
+    const volumeIcon = document.getElementById('studentVolumeIcon');
+    const volumeSlider = document.getElementById('studentVolumeSlider');
+    const playerImg = document.getElementById('studentPlayerImg');
+    const playerTitle = document.getElementById('studentPlayerTitle');
+
+    // Select items specifically within the student playlist
+    const playlistContainer = document.getElementById('studentPlaylist');
+    if (!playlistContainer || !audio) return;
+
+    const podcastItems = playlistContainer.querySelectorAll('.podcast-list-item');
 
     let isPlaying = false;
     let isDragging = false;
-    let currentTrackIndex = -1;
+    let currentTrackIndex = 0;
 
-    // Playlist
-    const playlist = [
-        {
-            audio: 'assets/podcasts/audio/featured.mp3',
-            image: 'assets/podcasts/featured-podcast.jpg',
-            title: 'Positive Mindset: Roadmap towards Success, Exclusive'
-        }
-    ];
-
-    // Add podcast items to playlist
-    podcastItems.forEach((item, index) => {
+    // Build playlist data from DOM
+    const playlist = [];
+    podcastItems.forEach(item => {
         playlist.push({
             audio: item.dataset.audio,
             image: item.dataset.image,
@@ -43,7 +70,7 @@
         });
     });
 
-    // Format time
+    // Helper: Format Time
     function formatTime(seconds) {
         if (isNaN(seconds)) return '0:00';
         const mins = Math.floor(seconds / 60);
@@ -51,7 +78,7 @@
         return `${mins}:${secs.toString().padStart(2, '0')}`;
     }
 
-    // Update progress bar
+    // Helper: Update Progress
     function updateProgress() {
         if (!isDragging && audio.duration) {
             const percent = (audio.currentTime / audio.duration) * 100;
@@ -61,7 +88,7 @@
         }
     }
 
-    // Set progress from click
+    // Helper: Set Progress
     function setProgress(e) {
         const rect = progressBar.getBoundingClientRect();
         const percent = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
@@ -70,7 +97,7 @@
         progressHandle.style.left = `${percent * 100}%`;
     }
 
-    // Play/Pause toggle
+    // Toggle Play/Pause
     function togglePlayPause() {
         if (isPlaying) {
             audio.pause();
@@ -84,20 +111,24 @@
         isPlaying = !isPlaying;
     }
 
-    // Load track
+    // Load Track
     function loadTrack(index) {
         if (index < 0 || index >= playlist.length) return;
-
         currentTrackIndex = index;
         const track = playlist[index];
 
         audio.src = track.audio;
-        featuredImg.src = track.image;
-        featuredTitle.textContent = track.title;
+        playerImg.src = track.image;
+        playerTitle.textContent = track.title;
 
-        // Update active state in list
+        // Update active class in list
         podcastItems.forEach((item, i) => {
-            item.classList.toggle('active', i === index - 1);
+            item.classList.toggle('active', i === index);
+            // Also update the play button icon inside the list item
+            const itemBtnIcon = item.querySelector('.podcast-item-play-btn i');
+            if (itemBtnIcon) {
+                itemBtnIcon.className = i === index && isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+            }
         });
 
         audio.load();
@@ -106,124 +137,121 @@
         }
     }
 
-    // Event Listeners
+    // --- EVENT LISTENERS ---
+
+    // Play/Pause
     playPauseBtn.addEventListener('click', togglePlayPause);
 
+    // Audio Events
     audio.addEventListener('timeupdate', updateProgress);
-
-    audio.addEventListener('loadedmetadata', function () {
+    audio.addEventListener('loadedmetadata', () => {
         totalTimeEl.textContent = formatTime(audio.duration);
     });
-
-    audio.addEventListener('ended', function () {
+    audio.addEventListener('ended', () => {
         if (currentTrackIndex < playlist.length - 1) {
             loadTrack(currentTrackIndex + 1);
-            audio.play();
         } else {
             isPlaying = false;
             playPauseIcon.className = 'fa-solid fa-play';
             playPauseBtn.classList.remove('playing');
         }
     });
+    // Update play icons when play/pause state changes via main button
+    audio.addEventListener('play', () => {
+        isPlaying = true;
+        playPauseIcon.className = 'fa-solid fa-pause';
+        playPauseBtn.classList.add('playing');
+        updateListIcons();
+    });
+    audio.addEventListener('pause', () => {
+        isPlaying = false;
+        playPauseIcon.className = 'fa-solid fa-play';
+        playPauseBtn.classList.remove('playing');
+        updateListIcons();
+    });
 
-    // Progress bar interactions
+    function updateListIcons() {
+        podcastItems.forEach((item, i) => {
+            const icon = item.querySelector('.podcast-item-play-btn i');
+            if (icon) {
+                if (i === currentTrackIndex && isPlaying) {
+                    icon.className = 'fa-solid fa-pause';
+                } else {
+                    icon.className = 'fa-solid fa-play';
+                }
+            }
+        });
+    }
+
+    // Progress Bar
     progressBar.addEventListener('click', setProgress);
 
-    progressHandle.addEventListener('mousedown', function (e) {
+    // Dragging Logic
+    progressHandle.addEventListener('mousedown', (e) => {
         isDragging = true;
         progressHandle.classList.add('dragging');
         e.preventDefault();
     });
-
-    document.addEventListener('mousemove', function (e) {
-        if (isDragging) {
-            setProgress(e);
-        }
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) setProgress(e);
+    });
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        progressHandle.classList.remove('dragging');
     });
 
-    document.addEventListener('mouseup', function () {
-        if (isDragging) {
-            isDragging = false;
-            progressHandle.classList.remove('dragging');
-        }
+    // Navigation Buttons
+    forwardBtn.addEventListener('click', () => {
+        audio.currentTime = Math.min(audio.currentTime + 10, audio.duration);
     });
-
-    // Skip buttons
-    forwardBtn.addEventListener('click', function () {
-        audio.currentTime = Math.min(audio.currentTime + 30, audio.duration);
+    backwardBtn.addEventListener('click', () => {
+        audio.currentTime = Math.max(audio.currentTime - 10, 0);
     });
-
-    backwardBtn.addEventListener('click', function () {
-        audio.currentTime = Math.max(audio.currentTime - 30, 0);
-    });
-
-    // Next/Previous
-    nextBtn.addEventListener('click', function () {
-        const nextIndex = currentTrackIndex < playlist.length - 1 ? currentTrackIndex + 1 : 0;
+    nextBtn.addEventListener('click', () => {
+        const nextIndex = (currentTrackIndex + 1) % playlist.length;
         loadTrack(nextIndex);
     });
-
-    prevBtn.addEventListener('click', function () {
-        const prevIndex = currentTrackIndex > 0 ? currentTrackIndex - 1 : playlist.length - 1;
+    prevBtn.addEventListener('click', () => {
+        const prevIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
         loadTrack(prevIndex);
     });
 
-    // Volume control
-    volumeBtn.addEventListener('click', function () {
-        if (audio.muted) {
-            audio.muted = false;
-            volumeIcon.className = 'fa-solid fa-volume-high';
-            volumeSlider.value = audio.volume * 100;
-        } else {
-            audio.muted = true;
-            volumeIcon.className = 'fa-solid fa-volume-xmark';
-            volumeSlider.value = 0;
-        }
+    // Volume
+    volumeBtn.addEventListener('click', () => {
+        audio.muted = !audio.muted;
+        volumeIcon.className = audio.muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
+        volumeSlider.value = audio.muted ? 0 : audio.volume * 100;
+    });
+    volumeSlider.addEventListener('input', (e) => {
+        const val = e.target.value;
+        audio.volume = val / 100;
+        audio.muted = (val == 0);
+        if (val == 0) volumeIcon.className = 'fa-solid fa-volume-xmark';
+        else if (val < 50) volumeIcon.className = 'fa-solid fa-volume-low';
+        else volumeIcon.className = 'fa-solid fa-volume-high';
     });
 
-    volumeSlider.addEventListener('input', function (e) {
-        const value = e.target.value;
-        audio.volume = value / 100;
-        audio.muted = false;
-
-        if (value == 0) {
-            volumeIcon.className = 'fa-solid fa-volume-xmark';
-        } else if (value < 50) {
-            volumeIcon.className = 'fa-solid fa-volume-low';
-        } else {
-            volumeIcon.className = 'fa-solid fa-volume-high';
-        }
-    });
-
-    // List Item Interactions
+    // Playlist Item Clicking
     podcastItems.forEach((item, index) => {
-        // Play button inside item
-        const btn = item.querySelector('.podcast-item-play-btn');
-        btn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            if (currentTrackIndex === index + 1 && isPlaying) {
+        item.addEventListener('click', () => {
+            if (currentTrackIndex === index) {
                 togglePlayPause();
             } else {
-                isPlaying = true; // Set playing state for next track
-                playPauseIcon.className = 'fa-solid fa-pause';
-                playPauseBtn.classList.add('playing');
-                loadTrack(index + 1);
+                isPlaying = true;
+                loadTrack(index);
             }
-        });
-
-        // Click anywhere on item
-        item.addEventListener('click', function () {
-            if (currentTrackIndex === index + 1) return;
-            isPlaying = true;
-            playPauseIcon.className = 'fa-solid fa-pause';
-            playPauseBtn.classList.add('playing');
-            loadTrack(index + 1);
         });
     });
 
-    // Initial load
-    loadTrack(0);
-    isPlaying = false; // Reset initial state to paused
-    playPauseIcon.className = 'fa-solid fa-play';
-    playPauseBtn.classList.remove('playing');
-})();
+    // Initial state
+    // Don't auto-play on load, just set up the first track
+    // loadTrack(0) is called at bottom, but we set isPlaying=false before.
+    // However, existing loadTrack checks isPlaying. 
+    // Let's manually set src without playing.
+    if (playlist.length > 0) {
+        audio.src = playlist[0].audio;
+        playerImg.src = playlist[0].image;
+        playerTitle.textContent = playlist[0].title;
+        // Don't call loadTrack(0) here to avoid auto-play if my logic is slightly off
+    }
+}
