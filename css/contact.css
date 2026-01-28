@@ -258,13 +258,7 @@
     box-shadow: none;
 }
 
-#form-status {
-    text-align: center;
-    margin-top: 20px;
-    font-weight: 600;
-    min-height: 24px;
-    font-size: 1rem;
-}
+
 
 /* Map Section */
 .map-section {

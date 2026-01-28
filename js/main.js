@@ -11,8 +11,8 @@
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        statusEl.textContent = "Sending...";
-        statusEl.style.color = "#333";
+        // Initial Loading handled inside try block
+        sendBtn.disabled = true;
         sendBtn.disabled = true;
 
         try {
@@ -24,22 +24,34 @@
                 headers: { "Accept": "application/json" }
             });
 
-            const data = await res.json().catch(() => ({}));
+            // Try parsing JSON, but fallback to text if it fails
+            let data = {};
+            try {
+                data = await res.json();
+            } catch (jsonErr) {
+                // Response was likely text/html (legacy success page)
+            }
 
-            if (res.ok && (data.success === true || data.success === "true")) {
-                statusEl.textContent = "Message sent successfully.";
-                statusEl.style.color = "#0b7a0b";
-                form.reset();
+            // FormSubmit returns 200 OK for success. 
+            // If data.success exists, check it. Otherwise, assume 200 is success.
+            if (res.ok) {
+                if (data.success === false || data.success === "false") {
+                    statusEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${data.message || "Failed to send. Please try again."}`;
+                    statusEl.className = 'error';
+                } else {
+                    // Success case (JSON success=true or just HTTP 200)
+                    statusEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully! We will contact you shortly.';
+                    statusEl.className = 'success';
+                    form.reset();
+                }
             } else {
-                statusEl.textContent = (data && data.message)
-                    ? data.message
-                    : "Failed to send. Please try again.";
-                statusEl.style.color = "#b00020";
+                statusEl.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Failed to send. Please try again later.';
+                statusEl.className = 'error';
             }
         } catch (err) {
-            console.error(err);
-            statusEl.textContent = "Network error. Please try again.";
-            statusEl.style.color = "#b00020";
+            console.error("Form error:", err);
+            statusEl.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Network error. Please check your connection.';
+            statusEl.className = 'error';
         } finally {
             sendBtn.disabled = false;
         }
