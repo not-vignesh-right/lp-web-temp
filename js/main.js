@@ -33,18 +33,20 @@
             }
 
             // FormSubmit returns 200 OK for success. 
-            // STRICT CHECK: Ensure we actually got a success flag.
-            if (res.ok && (data.success === true || data.success === "true")) {
-                statusEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully! We will contact you shortly.';
-                statusEl.className = 'success';
-                form.reset();
+            // PERMISSIVE CHECK: If 200 OK, assume success unless explicitly false.
+            if (res.ok) {
+                if (data.success === false || data.success === "false") {
+                    statusEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${data.message || "Failed to send. Please try again."}`;
+                    statusEl.className = 'error';
+                } else {
+                    // Success case (JSON success=true OR HTML 200 OK which fails JSON parse)
+                    statusEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully! We will contact you shortly.';
+                    statusEl.className = 'success';
+                    form.reset();
+                }
             } else {
-                // If we get here, it means we got a 200 OK but NO success flag (likely HTML response for Captcha/Activation)
-                // OR we got a non-200 error.
-                let msg = "Submission received, but we couldn't confirm delivery. Please checking your email to activate the form if this is the first time.";
-                if (data.message) msg = data.message;
-
-                statusEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${msg}`;
+                // Non-200 Error
+                statusEl.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Failed to send. Please try again later.';
                 statusEl.className = 'error';
             }
         } catch (err) {
