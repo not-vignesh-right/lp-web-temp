@@ -1,5 +1,19 @@
+# Large video files - exclude from Git
+assets/HERO VIDEO.mp4
+assets/STUDENT POWER BACKGROUND VIDEO.mp4
+assets/*.mp4
+
+# Node modules
 node_modules/
-.DS_Store
-*.log
-.vercel
+
+# Environment variables
 .env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
