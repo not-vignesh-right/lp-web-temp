@@ -26,7 +26,7 @@
 
             const data = await res.json().catch(() => ({}));
 
-            if (res.ok && data.success) {
+            if (res.ok && (data.success === true || data.success === "true")) {
                 statusEl.textContent = "Message sent successfully.";
                 statusEl.style.color = "#0b7a0b";
                 form.reset();

@@ -1,0 +1,396 @@
+/* --- PORTFOLIO SPECIFIC STYLES --- */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: url('../assets/hero-bg.jpg') center/cover no-repeat;
+    padding: 120px 0;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 26, 51, 0.95));
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 span {
+    color: var(--gold, #D4AF37);
+    position: relative;
+    display: inline-block;
+}
+
+.hero h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--action-orange, #ff6600);
+    border-radius: 2px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* Video Grid layout */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.video-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
+    /* Softer shadow */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.video-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(0, 51, 102, 0.15);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #1a2230;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.08);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 102, 0, 0.9);
+    /* Action Orange */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7);
+}
+
+.video-card:hover .play-overlay {
+    background: var(--action-orange, #ff6600);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 0 10px rgba(255, 102, 0, 0.2);
+}
+
+.play-overlay i {
+    font-size: 28px;
+    color: white;
+    margin-left: 4px;
+    /* Optical centering for play icon */
+}
+
+.video-info {
+    padding: 25px;
+    background: white;
+    position: relative;
+    z-index: 2;
+}
+
+.video-info h4 {
+    color: var(--primary-blue, #003366);
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.video-info p {
+    color: var(--text-light, #666666);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Badges */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.badge-live {
+    background: #ff0000;
+}
+
+.badge-short {
+    background: var(--action-orange, #ff6600);
+}
+
+/* Podcast Section */
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.podcast-card {
+    background: white;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0, 51, 102, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.podcast-card:hover {
+    transform: translateY(-5px);
+}
+
+.podcast-card h3 {
+    color: var(--primary-blue, #003366);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.podcast-card p {
+    color: var(--text-light, #666666);
+    margin-bottom: 25px;
+}
+
+.podcast-player audio {
+    width: 100%;
+    border-radius: 30px;
+    outline: none;
+}
+
+/* Milestones Section */
+.milestones {
+    background: var(--accent-blue, #eef4fa);
+    padding: 80px 0;
+}
+
+.milestones-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.milestones-line {
+    flex: 1;
+    max-width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue, #003366));
+}
+
+.milestones-line-right {
+    background: linear-gradient(90deg, var(--primary-blue, #003366), transparent);
+}
+
+.milestones-title {
+    font-size: 2.2rem;
+    color: var(--primary-blue, #003366);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.award-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
+    transition: all 0.3s;
+    border-top: 4px solid var(--gold, #D4AF37);
+    position: relative;
+    overflow: hidden;
+}
+
+.award-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 51, 102, 0.12);
+}
+
+.award-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--gold, #D4AF37), #aa8a2e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.award-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.award-card h3 {
+    color: var(--primary-blue, #003366);
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.award-card p {
+    color: var(--text-light, #666666);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Stats Overlay Animation */
+.stats-animated-section {
+    position: relative;
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--primary-blue, #003366) 0%, #001a33 100%);
+    color: white;
+    overflow: hidden;
+}
+
+.stats-animated-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.stats-animated-item .counter-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--gold, #D4AF37);
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.stats-animated-item .stats-animated-label {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.5px;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    background: black;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    aspect-ratio: 16/9;
+}
+
+.video-modal iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: var(--action-orange, #ff6600);
+    color: white;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.4);
+}
+
+.video-modal-close:hover {
+    background: white;
+    color: var(--action-orange, #ff6600);
+    transform: rotate(90deg);
+}

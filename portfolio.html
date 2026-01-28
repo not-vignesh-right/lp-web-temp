@@ -5,410 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | LessonPlan</title>
-    <link rel="icon" href="assets/logo-removebg.png" sizes="any">
+    <link rel="icon" type="image/png" href="assets/logo-removebg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/portfolio.css"> <!-- New Enhanced Styles -->
     <link rel="stylesheet" href="css/responsive.css">
-    <style>
-        :root {
-            --primary-white: #ffffff;
-            --primary-blue: #003366;
-            --accent-blue: #eef4fa;
-            --action-orange: #ff6600;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --gold: #D4AF37;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--primary-white);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-
-
-        .hero {
-            background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 26, 51, 0.9)), url('assets/hero-bg.jpg') center/cover;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            color: white;
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            color: var(--primary-blue);
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        /* Video Grid */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .video-card {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 51, 102, 0.1);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .video-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0, 51, 102, 0.15);
-        }
-
-        .video-thumbnail {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16/9;
-            overflow: hidden;
-            background: #1a2230;
-        }
-
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .video-card:hover .video-thumbnail img {
-            transform: scale(1.05);
-        }
-
-        .play-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
-            background: rgba(255, 102, 0, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .play-overlay i {
-            font-size: 28px;
-            color: white;
-            margin-left: 4px;
-        }
-
-        .video-card:hover .play-overlay {
-            background: var(--action-orange);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .live-badge,
-        .shorts-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #ff0000;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-
-        .shorts-badge {
-            background: var(--action-orange);
-        }
-
-        .video-card video {
-            width: 100%;
-            aspect-ratio: 16/9;
-            display: block;
-            background: #1a2230;
-        }
-
-        .video-info {
-            background: white;
-            padding: 20px;
-        }
-
-        .video-info h4 {
-            color: var(--primary-blue);
-            margin-bottom: 8px;
-        }
-
-        .video-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* Video Modal/Lightbox */
-        .video-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .video-modal.active {
-            display: flex;
-        }
-
-        .video-modal-content {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            aspect-ratio: 16/9;
-        }
-
-        .video-modal iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
-        }
-
-        .video-modal-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            background: var(--action-orange);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .video-modal-close:hover {
-            background: #ff7722;
-            transform: rotate(90deg);
-        }
-
-        /* Milestones Section */
-        .milestones {
-            background: var(--accent-blue);
-            padding: 80px 0;
-        }
-
-        .milestones-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .milestones-line {
-            flex: 1;
-            max-width: 150px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary-blue));
-        }
-
-        .milestones-line-right {
-            background: linear-gradient(90deg, var(--primary-blue), transparent);
-        }
-
-        .milestones-title {
-            font-size: 2rem;
-            color: var(--primary-blue);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .award-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
-            transition: all 0.3s;
-            border-top: 4px solid var(--gold);
-        }
-
-        .award-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 51, 102, 0.12);
-        }
-
-        .award-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--gold), #aa8a2e);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-
-        .award-icon i {
-            font-size: 2rem;
-            color: white;
-        }
-
-        .award-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 10px;
-        }
-
-        .award-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Stats Banner */
-        .stats-banner {
-            background: linear-gradient(135deg, var(--primary-blue), #001a33);
-            padding: 60px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            color: var(--gold);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .stat-item p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        footer {
-            background: var(--primary-blue);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h4 {
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <nav>
@@ -426,7 +32,7 @@
                     <li><a href="company-verticals.html">Company verticals</a></li>
                     <li><a href="workshops.html">Training & workshop</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
                     <li><a href="contact.html" class="btn-primary"
                             style="padding: 8px 20px; color: white; border-radius: 999px;">Contact</a></li>
                 </ul>
@@ -434,14 +40,18 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Our <span>Portfolio</span></h1>
-            <p>Explore our work, achievements, and the impact we've made across educational institutions.</p>
+            <div class="hero-content-wrap">
+                <h1>Our <span>Portfolio</span></h1>
+                <p>Explore our work, achievements, and the impact we've made across educational institutions.</p>
+            </div>
         </div>
     </section>
 
-    <section class="section">
+    <!-- Featured Videos Section -->
+    <section class="section section-padding">
         <div class="container">
             <div class="section-header">
                 <h2>Featured Videos</h2>
@@ -452,7 +62,7 @@
                 <!-- Video 1: YouTube -->
                 <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/0V3Kx1d3S68')">
                     <div class="video-thumbnail">
-                        <img src="https://img.youtube.com/vi/0V3Kx1d3S68/maxresdefault.jpg" alt="Training Session">
+                        <img src="https://img.youtube.com/vi/0V3Kx1d3S68/maxresdefault.jpg" alt="Leadership Workshop">
                         <div class="play-overlay">
                             <i class="fa-solid fa-play"></i>
                         </div>
@@ -467,7 +77,7 @@
                 <div class="video-card"
                     onclick="openVideoModal('https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F100063981163002%2Fvideos%2F1045635127579183%2F&show_text=false')">
                     <div class="video-thumbnail">
-                        <img src="assets/video-thumb-2.jpg" alt="Student Session"
+                        <img src="assets/video-thumb-2.jpg" alt="Student Orientation"
                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22225%22%3E%3Crect fill=%22%23003366%22 width=%22400%22 height=%22225%22/%3E%3Ctext fill=%22%23fff%22 font-size=%2220%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3EStudent Orientation%3C/text%3E%3C/svg%3E'">
                         <div class="play-overlay">
                             <i class="fa-brands fa-facebook-f"></i>
@@ -482,11 +92,11 @@
                 <!-- Video 3: YouTube Live -->
                 <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/-bQ_LXcT8Ho')">
                     <div class="video-thumbnail">
-                        <img src="https://img.youtube.com/vi/-bQ_LXcT8Ho/maxresdefault.jpg" alt="Live Session">
+                        <img src="https://img.youtube.com/vi/-bQ_LXcT8Ho/maxresdefault.jpg" alt="Faculty Development">
                         <div class="play-overlay">
                             <i class="fa-solid fa-play"></i>
                         </div>
-                        <div class="live-badge">LIVE SESSION</div>
+                        <div class="badge badge-live">LIVE SESSION</div>
                     </div>
                     <div class="video-info">
                         <h4>Faculty Development</h4>
@@ -497,11 +107,11 @@
                 <!-- Video 4: YouTube Short -->
                 <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/CFNPltjIWRY')">
                     <div class="video-thumbnail">
-                        <img src="https://img.youtube.com/vi/CFNPltjIWRY/maxresdefault.jpg" alt="Quick Tips">
+                        <img src="https://img.youtube.com/vi/CFNPltjIWRY/maxresdefault.jpg" alt="Skill Development">
                         <div class="play-overlay">
                             <i class="fa-solid fa-play"></i>
                         </div>
-                        <div class="shorts-badge">SHORT</div>
+                        <div class="badge badge-short">SHORT</div>
                     </div>
                     <div class="video-info">
                         <h4>Skill Development</h4>
@@ -520,17 +130,13 @@
                 <p>Listen to insights, success stories, and expert guidance on personal and professional growth</p>
             </div>
 
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto;">
+            <div class="podcast-grid">
                 <!-- Podcast 1 -->
-                <div
-                    style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 15px 40px rgba(0, 51, 102, 0.1);">
-                    <h3 style="color: var(--primary-blue); margin-bottom: 15px; font-size: 1.3rem;">Voice of Students
-                    </h3>
-                    <p style="color: var(--text-light); margin-bottom: 20px;">Real stories from students about their
-                        transformation journey with LessonPlan</p>
+                <div class="podcast-card">
+                    <h3>Voice of Students</h3>
+                    <p>Real stories from students about their transformation journey with LessonPlan</p>
                     <div class="podcast-player">
-                        <audio controls style="width: 100%; border-radius: 25px;">
+                        <audio controls>
                             <source src="assets/podcast1.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
@@ -538,14 +144,11 @@
                 </div>
 
                 <!-- Podcast 2 -->
-                <div
-                    style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 15px 40px rgba(0, 51, 102, 0.1);">
-                    <h3 style="color: var(--primary-blue); margin-bottom: 15px; font-size: 1.3rem;">Career Growth
-                        Insights</h3>
-                    <p style="color: var(--text-light); margin-bottom: 20px;">Expert advice on career development and
-                        professional excellence</p>
+                <div class="podcast-card">
+                    <h3>Career Growth Insights</h3>
+                    <p>Expert advice on career development and professional excellence</p>
                     <div class="podcast-player">
-                        <audio controls style="width: 100%; border-radius: 25px;">
+                        <audio controls>
                             <source src="assets/podcast2.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
@@ -555,6 +158,7 @@
         </div>
     </section>
 
+    <!-- Milestones Section -->
     <section class="milestones">
         <div class="container">
             <div class="milestones-header">
@@ -588,6 +192,7 @@
         </div>
     </section>
 
+    <!-- Stats Section -->
     <div class="stats-animated-section">
         <div class="stats-animated-grid">
             <div class="stats-animated-item">
@@ -609,35 +214,71 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>LessonPlan</h4>
-                    <p>Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/logo_with_name.png" alt="LessonPlan" class="footer-logo-img">
+                    </div>
+                    <p class="footer-mission">Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=61582919596153" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/lessonplan_patil/?hl=en" target="_blank"
+                                rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="company-verticals.html">Services</a>
-                    <a href="contact.html">Contact</a>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="company-verticals.html">Company Verticals</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Our Services</h4>
-                    <a href="student-training.html">Student Training</a>
-                    <a href="corporate-training.html">Corporate Training</a>
-                    <a href="workshops.html">Workshops & Seminars</a>
-                    <a href="life-coaching.html">Life Coaching</a>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@lessonplan.co.in">info@lessonplan.co.in</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+918050512005">+91-8050512005</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Above omega clinic, Kogilu,<br>Yelahanka, Bangalore - 560064</span>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <p><i class="fa-solid fa-phone"></i> +91 805 051 2005</p>
-                    <p><i class="fa-solid fa-envelope"></i> lessonplan1025@gmail.com</p>
+
+                <div class="footer-map">
+                    <h3>Find Us</h3>
+                    <div class="map-embed">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7958385.697123817!2d67.8597948!3d13.1035883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1965d1981a6d%3A0xf11b8cf923c51725!2sOMEGA%20CLINICS!5e0!3m2!1sen!2sin!4v1769604735683!5m2!1sen!2sin"
+                            width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LessonPlan. All rights reserved.</p>
+                <div class="copyright">&copy; 2026 LessonPlan. All rights reserved.</div>
             </div>
         </div>
     </footer>
@@ -655,16 +296,26 @@
     <script src="js/main.js" defer></script>
     <script src="js/stats-counter.js"></script>
     <script>
+        // Modal Logic
         function openVideoModal(videoUrl) {
             const modal = document.getElementById('videoModal');
             const videoFrame = document.getElementById('videoFrame');
-            videoFrame.src = videoUrl + '?autoplay=1';
+
+            // Auto-play adaptation
+            if (videoUrl.includes('youtube.com')) {
+                if (!videoUrl.includes('?')) videoUrl += '?autoplay=1';
+                else videoUrl += '&autoplay=1';
+            } else if (videoUrl.includes('facebook') && !videoUrl.includes('autoplay')) {
+                videoUrl += '&autoplay=true';
+            }
+
+            videoFrame.src = videoUrl;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
         function closeVideoModal(event) {
-            // Only close if clicking outside the video or on close button
+            // Close if clicked on overlay (ID match) or Close Button
             if (event.target.id === 'videoModal' || event.target.closest('.video-modal-close')) {
                 const modal = document.getElementById('videoModal');
                 const videoFrame = document.getElementById('videoFrame');
@@ -674,10 +325,15 @@
             }
         }
 
-        // Close modal on Escape key
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
-                closeVideoModal({ target: { id: 'videoModal' } });
+                const modal = document.getElementById('videoModal');
+                if (modal.classList.contains('active')) {
+                    const videoFrame = document.getElementById('videoFrame');
+                    videoFrame.src = '';
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
             }
         });
     </script>
