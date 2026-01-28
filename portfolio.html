@@ -102,11 +102,76 @@
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 51, 102, 0.1);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            position: relative;
         }
 
         .video-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 60px rgba(0, 51, 102, 0.15);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: #1a2230;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 102, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .play-overlay i {
+            font-size: 28px;
+            color: white;
+            margin-left: 4px;
+        }
+
+        .video-card:hover .play-overlay {
+            background: var(--action-orange);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .live-badge,
+        .shorts-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff0000;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .shorts-badge {
+            background: var(--action-orange);
         }
 
         .video-card video {
@@ -129,6 +194,62 @@
         .video-info p {
             color: var(--text-light);
             font-size: 0.9rem;
+        }
+
+        /* Video Modal/Lightbox */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .video-modal.active {
+            display: flex;
+        }
+
+        .video-modal-content {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+        }
+
+        .video-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .video-modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: var(--action-orange);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .video-modal-close:hover {
+            background: #ff7722;
+            transform: rotate(90deg);
         }
 
         /* Milestones Section */
@@ -328,40 +449,106 @@
             </div>
 
             <div class="video-grid">
-                <div class="video-card">
-                    <video controls poster="assets/video-thumb-1.jpg">
-                        <source src="assets/portfolio/video1.mp4" type="video/mp4">
-                    </video>
+                <!-- Video 1: YouTube -->
+                <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/0V3Kx1d3S68')">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/0V3Kx1d3S68/maxresdefault.jpg" alt="Training Session">
+                        <div class="play-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
                     <div class="video-info">
                         <h4>Leadership Workshop</h4>
                         <p>Highlights from our corporate leadership training</p>
                     </div>
                 </div>
-                <div class="video-card">
-                    <video controls poster="assets/video-thumb-2.jpg">
-                        <source src="assets/portfolio/video2.mp4" type="video/mp4">
-                    </video>
+
+                <!-- Video 2: Facebook -->
+                <div class="video-card"
+                    onclick="openVideoModal('https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F100063981163002%2Fvideos%2F1045635127579183%2F&show_text=false')">
+                    <div class="video-thumbnail">
+                        <img src="assets/video-thumb-2.jpg" alt="Student Session"
+                            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22225%22%3E%3Crect fill=%22%23003366%22 width=%22400%22 height=%22225%22/%3E%3Ctext fill=%22%23fff%22 font-size=%2220%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3EStudent Orientation%3C/text%3E%3C/svg%3E'">
+                        <div class="play-overlay">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                    </div>
                     <div class="video-info">
                         <h4>Student Orientation</h4>
                         <p>Career guidance session for college students</p>
                     </div>
                 </div>
-                <div class="video-card">
-                    <video controls poster="assets/video-thumb-3.jpg">
-                        <source src="assets/portfolio/video3.mp4" type="video/mp4">
-                    </video>
+
+                <!-- Video 3: YouTube Live -->
+                <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/-bQ_LXcT8Ho')">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/-bQ_LXcT8Ho/maxresdefault.jpg" alt="Live Session">
+                        <div class="play-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="live-badge">LIVE SESSION</div>
+                    </div>
                     <div class="video-info">
                         <h4>Faculty Development</h4>
                         <p>Training teachers for modern education</p>
                     </div>
                 </div>
-                <div class="video-card">
-                    <video controls poster="assets/video-thumb-4.jpg">
-                        <source src="assets/portfolio/video4.mp4" type="video/mp4">
-                    </video>
+
+                <!-- Video 4: YouTube Short -->
+                <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/CFNPltjIWRY')">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/CFNPltjIWRY/maxresdefault.jpg" alt="Quick Tips">
+                        <div class="play-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="shorts-badge">SHORT</div>
+                    </div>
                     <div class="video-info">
                         <h4>Skill Development</h4>
                         <p>Empowering students with essential skills</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Section -->
+    <section class="section" style="background: var(--accent-blue);">
+        <div class="container">
+            <div class="section-header">
+                <h2>LessonPlan Podcasts</h2>
+                <p>Listen to insights, success stories, and expert guidance on personal and professional growth</p>
+            </div>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto;">
+                <!-- Podcast 1 -->
+                <div
+                    style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 15px 40px rgba(0, 51, 102, 0.1);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 15px; font-size: 1.3rem;">Voice of Students
+                    </h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">Real stories from students about their
+                        transformation journey with LessonPlan</p>
+                    <div class="podcast-player">
+                        <audio controls style="width: 100%; border-radius: 25px;">
+                            <source src="assets/podcast1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Podcast 2 -->
+                <div
+                    style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 15px 40px rgba(0, 51, 102, 0.1);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 15px; font-size: 1.3rem;">Career Growth
+                        Insights</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">Expert advice on career development and
+                        professional excellence</p>
+                    <div class="podcast-player">
+                        <audio controls style="width: 100%; border-radius: 25px;">
+                            <source src="assets/podcast2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
                     </div>
                 </div>
             </div>
@@ -454,8 +641,46 @@
             </div>
         </div>
     </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">
+        <div class="video-modal-content">
+            <button class="video-modal-close" onclick="closeVideoModal(event)">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <iframe id="videoFrame" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+        </div>
+    </div>
+
     <script src="js/main.js" defer></script>
     <script src="js/stats-counter.js"></script>
+    <script>
+        function openVideoModal(videoUrl) {
+            const modal = document.getElementById('videoModal');
+            const videoFrame = document.getElementById('videoFrame');
+            videoFrame.src = videoUrl + '?autoplay=1';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal(event) {
+            // Only close if clicking outside the video or on close button
+            if (event.target.id === 'videoModal' || event.target.closest('.video-modal-close')) {
+                const modal = document.getElementById('videoModal');
+                const videoFrame = document.getElementById('videoFrame');
+                videoFrame.src = '';
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeVideoModal({ target: { id: 'videoModal' } });
+            }
+        });
+    </script>
 </body>
 
 </html>
