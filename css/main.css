@@ -153,18 +153,11 @@ nav {
 }
 
 .logo-img {
-    height: 45px;
+    height: 50px;
     width: auto;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary-blue);
-}
-
-.logo i {
-    color: var(--action-orange);
+    max-width: 268px;
+    aspect-ratio: 3647 / 681;
+    object-fit: contain;
 }
 
 .nav-links {

@@ -24,8 +24,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="assets/logo.png" alt="logo" class="logo-img">
-                    <span class="logo-text">LessonPlan</span>
+                    <img src="assets/logo_with_name.png" alt="LessonPlan" class="logo-img">
                 </div>
 
                 <div class="hamburger">
@@ -72,8 +71,8 @@
 
         <div class="hero-video-wrapper">
             <div class="hero-video-container">
-                <video autoplay muted loop playsinline>
-                    <source src="assets/hero-video.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline controls>
+                    <source src="assets/HERO VIDEO.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -595,7 +594,13 @@
     <!-- Section: Student Power -->
     <section id="student-power" class="student-power-section">
         <div class="student-power-background">
-            <img src="assets/student-power-bg.jpg" alt="Student Power Background" loading="lazy">
+            <video id="studentPowerVideo" muted loop playsinline>
+                <source src="assets/STUDENT POWER BACKGROUND VIDEO.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <audio id="studentPowerAudio" loop>
+                <source src="assets/STUDENT POWER BACKGROUND VIDEO.mp4" type="video/mp4">
+            </audio>
         </div>
         <div class="student-power-overlay"></div>
         <div class="student-power-content">
@@ -990,6 +995,8 @@
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="d2050207-f865-4e9a-86e3-9df50075c2c5">
                     <input type="hidden" name="subject" value="New Contact Form Submission - LessonPlan">
+                    <input type="hidden" name="redirect" value="https://lessonplan.vercel.app/index.html">
+                    <input type="hidden" name="email_to" value="info@lessonplan.co.in">
                     <input type="checkbox" name="botcheck" style="display:none;">
 
                     <div class="form-group">
@@ -1017,32 +1024,69 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-left">
+                <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="assets/logo-removebg.png" alt="LessonPlan logo" class="footer-logo-img">
-                        <span class="footer-logo-text">LessonPlan</span>
+                        <img src="assets/logo_with_name.png" alt="LessonPlan" class="footer-logo-img">
                     </div>
                     <p class="footer-mission">Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=61582919596153" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/lessonplan_patil/?hl=en" target="_blank"
+                                rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
-                    <h3 style="color: var(--action-orange); margin-bottom: 10px; font-size: 1.1rem;">Quick Links</h3>
-                    <a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Home</a>
-                    <a href="about.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">About Us</a>
-                    <a href="gallery.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Gallery</a>
-                    <a href="#contact" style="color: rgba(255,255,255,0.8); text-decoration: none;">Contact</a>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="company-verticals.html">Company Verticals</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="footer-right">
-                    <div class="contact-details">
-                        <h3>Get in Touch</h3>
-                        <div class="contact-item"><i class="fa-solid fa-phone"></i><span>+91 (805) 051-2005</span></div>
-                        <div class="contact-item"><i
-                                class="fa-solid fa-envelope"></i><span>lessonplan1025@gmail.com</span></div>
-                        <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Yelahanka,
-                                Bengaluru-560064</span></div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@lessonplan.co.in">info@lessonplan.co.in</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+918050512005">+91-8050512005</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Above omega clinic, Kogilu,<br>Yelahanka, Bangalore - 560064</span>
+                    </div>
+                </div>
+
+                <div class="footer-map">
+                    <h3>Find Us</h3>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5234862971893!2d77.5916814!3d13.0922333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae23c8a9b0e3e7%3A0x7c0e0f8e9c8d9e0f!2sOmega%20Clinic%2C%20Omega%20Pharma%2C%20Bhagya%20Lakshmi%20Complex%2C%20Kogilu%20Main%20Rd%2C%20Yelahanka!5e0!3m2!1sen!2sin!4v1706429855000!5m2!1sen!2sin"
+                            width="100%" height="200" style="border:0; border-radius: 8px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="LessonPlan Location - Above Omega Clinic, Kogilu, Yelahanka, Bangalore">
+                        </iframe>
                     </div>
                 </div>
             </div>
-            <div class="copyright">&copy; 2026 LessonPlan. All rights reserved.</div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2026 LessonPlan. All rights reserved.</div>
+            </div>
         </div>
     </footer>
 
@@ -1051,6 +1095,7 @@
     <script src="js/carousel.js" defer></script>
     <script src="js/podcast.js" defer></script>
     <script src="js/stats-counter.js" defer></script>
+    <script src="js/video-scroll.js" defer></script>
 </body>
 
 </html>
