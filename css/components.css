@@ -902,7 +902,8 @@
 .portfolio-video-container::after {
     content: '';
     display: block;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
 }
 
 .portfolio-milestones {
@@ -2681,7 +2682,7 @@ footer::before {
 }
 
 .footer-links a::before {
-    content: 'â–¸';
+    content: '\203A';
     position: absolute;
     left: 0;
     color: var(--action-orange);
@@ -2809,7 +2810,9 @@ footer::before {
     .footer-contact .contact-item {
         font-size: 0.9rem;
     }
-}/* --- SHARED PREMIUM FORM STYLES --- */
+}
+
+/* --- SHARED PREMIUM FORM STYLES --- */
 .form-wrapper-premium {
     background: white;
     padding: 50px;
@@ -2946,7 +2949,7 @@ footer::before {
         grid-template-columns: 1fr;
         gap: 0;
     }
-    
+
     .form-wrapper-premium {
         padding: 30px 20px;
     }
@@ -3028,6 +3031,7 @@ footer::before {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -3223,8 +3227,15 @@ footer::before {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .coming-soon-placeholder h3 {
@@ -3246,14 +3257,18 @@ footer::before {
         flex-direction: column;
         gap: 30px;
     }
-    .podcast-player-column, .podcast-list-column {
+
+    .podcast-player-column,
+    .podcast-list-column {
         flex: auto;
         max-width: 100%;
     }
+
     .podcast-tabs {
         flex-wrap: wrap;
         gap: 10px;
     }
+
     .podcast-tab {
         flex: 1;
         min-width: 120px;
