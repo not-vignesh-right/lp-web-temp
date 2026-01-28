@@ -33,19 +33,18 @@
             }
 
             // FormSubmit returns 200 OK for success. 
-            // If data.success exists, check it. Otherwise, assume 200 is success.
-            if (res.ok) {
-                if (data.success === false || data.success === "false") {
-                    statusEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${data.message || "Failed to send. Please try again."}`;
-                    statusEl.className = 'error';
-                } else {
-                    // Success case (JSON success=true or just HTTP 200)
-                    statusEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully! We will contact you shortly.';
-                    statusEl.className = 'success';
-                    form.reset();
-                }
+            // STRICT CHECK: Ensure we actually got a success flag.
+            if (res.ok && (data.success === true || data.success === "true")) {
+                statusEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent successfully! We will contact you shortly.';
+                statusEl.className = 'success';
+                form.reset();
             } else {
-                statusEl.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Failed to send. Please try again later.';
+                // If we get here, it means we got a 200 OK but NO success flag (likely HTML response for Captcha/Activation)
+                // OR we got a non-200 error.
+                let msg = "Submission received, but we couldn't confirm delivery. Please checking your email to activate the form if this is the first time.";
+                if (data.message) msg = data.message;
+
+                statusEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${msg}`;
                 statusEl.className = 'error';
             }
         } catch (err) {
