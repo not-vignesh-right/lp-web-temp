@@ -139,8 +139,39 @@ function initStudentPlayer() {
 
     // --- EVENT LISTENERS ---
 
+    // Skip Intro
+    function skipIntro() {
+        if (audio) {
+            audio.currentTime = 90; // 1:30
+            if (!isPlaying) {
+                togglePlayPause();
+            }
+        }
+    }
+
+    // Event Listeners for UI
+    const skipIntroBtn = document.getElementById('studentSkipIntroBtn');
+    if (skipIntroBtn) {
+        skipIntroBtn.addEventListener('click', skipIntro);
+    }
+
+    // Listen for global media playing event to pause this player
+    window.addEventListener('media:playing', (e) => {
+        if (e.detail.source !== 'studentAudio' && isPlaying) {
+            togglePlayPause(); // This will pause and update UI
+        }
+    });
+
     // Play/Pause
-    playPauseBtn.addEventListener('click', togglePlayPause);
+    playPauseBtn.addEventListener('click', () => {
+        if (!isPlaying) {
+            // We are about to play, notify others
+            if (window.notifyMediaPlaying) {
+                window.notifyMediaPlaying('studentAudio');
+            }
+        }
+        togglePlayPause();
+    });
 
     // Audio Events
     audio.addEventListener('timeupdate', updateProgress);
@@ -235,8 +266,14 @@ function initStudentPlayer() {
     podcastItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             if (currentTrackIndex === index) {
+                if (!isPlaying && window.notifyMediaPlaying) {
+                    window.notifyMediaPlaying('studentAudio');
+                }
                 togglePlayPause();
             } else {
+                if (window.notifyMediaPlaying) {
+                    window.notifyMediaPlaying('studentAudio');
+                }
                 isPlaying = true;
                 loadTrack(index);
             }

@@ -167,6 +167,7 @@
                                         class="fa-solid fa-forward-step"></i></button>
                             </div>
                             <div class="podcast-volume-container">
+                                <button class="skip-intro-btn" id="studentSkipIntroBtn">Skip Intro (1:30)</button>
                                 <button class="volume-btn" id="studentVolumeBtn"><i class="fa-solid fa-volume-high"
                                         id="studentVolumeIcon"></i></button>
                                 <div class="volume-slider-wrapper"><input type="range" class="volume-slider"
@@ -411,6 +412,11 @@
             const modal = document.getElementById('videoModal');
             const videoFrame = document.getElementById('videoFrame');
 
+            // Notify global media manager
+            if (window.notifyMediaPlaying) {
+                window.notifyMediaPlaying('videoModal');
+            }
+
             // Auto-play adaptation
             if (videoUrl.includes('youtube.com')) {
                 if (!videoUrl.includes('?')) videoUrl += '?autoplay=1';
@@ -426,7 +432,14 @@
 
         function closeVideoModal(event) {
             // Close if clicked on overlay (ID match) or Close Button
-            if (event.target.id === 'videoModal' || event.target.closest('.video-modal-close')) {
+            if (event && event.target && (event.target.id === 'videoModal' || event.target.closest('.video-modal-close'))) {
+                const modal = document.getElementById('videoModal');
+                const videoFrame = document.getElementById('videoFrame');
+                videoFrame.src = '';
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else if (!event) {
+                // Programmatic close
                 const modal = document.getElementById('videoModal');
                 const videoFrame = document.getElementById('videoFrame');
                 videoFrame.src = '';
@@ -435,14 +448,21 @@
             }
         }
 
+        // Listen for other media playing to close this modal
+        window.addEventListener('media:playing', (e) => {
+            if (e.detail.source !== 'videoModal') {
+                const modal = document.getElementById('videoModal');
+                if (modal.classList.contains('active')) {
+                    closeVideoModal(); // Close modal to stop video sound
+                }
+            }
+        });
+
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 const modal = document.getElementById('videoModal');
                 if (modal.classList.contains('active')) {
-                    const videoFrame = document.getElementById('videoFrame');
-                    videoFrame.src = '';
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
+                    closeVideoModal();
                 }
             }
         });

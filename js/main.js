@@ -165,3 +165,39 @@
         revealObserver.observe(el);
     });
 })();
+
+// Global Media Playback Control
+(function () {
+    // Custom Event Name
+    const MEDIA_PLAYING_EVENT = 'media:playing';
+
+    // Global helper to dispatch event
+    window.notifyMediaPlaying = function (sourceId) {
+        const event = new CustomEvent(MEDIA_PLAYING_EVENT, {
+            detail: { source: sourceId }
+        });
+        window.dispatchEvent(event);
+    };
+
+    // Listen for global media events to pause generic audio/video elements
+    window.addEventListener(MEDIA_PLAYING_EVENT, (e) => {
+        const sourceId = e.detail.source;
+
+        // Select all audio and video elements on the page
+        const mediaElements = document.querySelectorAll('audio, video');
+
+        mediaElements.forEach(media => {
+            // If this media element is the source, ignore it
+            if (media.id === sourceId) return;
+
+            // Also check if the media is inside a container that might be the source
+            if (media.closest(`#${sourceId}`)) return;
+
+            // Pause if playing
+            if (!media.paused) {
+                console.log(`Pausing ${media.id || 'media'} due to playback from ${sourceId}`);
+                media.pause();
+            }
+        });
+    });
+})();

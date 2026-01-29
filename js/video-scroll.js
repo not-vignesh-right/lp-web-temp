@@ -8,84 +8,99 @@
 
     if (!video || !section) return;
 
+    // State tracking
+    let isSectionVisible = false;
+    let audioUnlocked = false;
+
     // Intersection Observer options
+    // Using 0.6 (60%) to ensure it feels responsive but doesn't trigger too early
     const observerOptions = {
-        root: null, // viewport
+        root: null,
         rootMargin: '0px',
-        threshold: 0.5 // Trigger when 50% of section is visible
+        threshold: 0.6
     };
 
-    // Callback function for intersection
+    // Callback for intersection
     const handleIntersection = (entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Section is at least 50% visible - play video and audio
-                video.play().catch(err => {
-                    console.log('Video autoplay failed:', err);
-                });
+            isSectionVisible = entry.isIntersecting;
 
-                if (audio) {
-                    // Try to play audio, but it might be blocked by browser
-                    audio.play().catch(err => {
-                        console.log('Audio autoplay blocked by browser. User interaction needed.');
-                    });
+            if (entry.isIntersecting) {
+                // Play video
+                video.play().then(() => {
+                    if (window.notifyMediaPlaying) {
+                        window.notifyMediaPlaying('studentPowerVideo');
+                    }
+                }).catch(e => console.log('Video play failed:', e));
+
+                // Try play audio if unlocked
+                if (audio && audioUnlocked) {
+                    audio.play().catch(e => console.log('Audio play failed:', e));
+                } else if (audio) {
+                    // Try blindly in case policy allows
+                    audio.play().catch(() => { });
                 }
             } else {
-                // Section is not visible - pause video and audio
+                // Pause everything
                 video.pause();
-                if (audio) {
-                    audio.pause();
-                }
+                if (audio) audio.pause();
             }
         });
     };
 
-    // Create observer
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-    // Start observing the section
     observer.observe(section);
 
-    // Handle user interaction to enable audio (for browsers that block autoplay)
-    let audioUnlocked = false;
+    // Audio Unlocker: Runs on first interaction
     const unlockAudio = () => {
         if (!audioUnlocked && audio) {
             audio.play().then(() => {
-                audioUnlocked = true;
-                // If video is playing, sync audio
-                if (!video.paused) {
+                audioUnlocked = true; // Context unlocked
+
+                // If section is effectively visible/playing, keep playing
+                if (isSectionVisible && !video.paused) {
                     audio.currentTime = video.currentTime;
+                    if (window.notifyMediaPlaying) {
+                        window.notifyMediaPlaying('studentPowerVideo');
+                    }
+                } else {
+                    // Otherwise pause immediately (silently unlocked)
+                    audio.pause();
                 }
-            }).catch(err => {
-                console.log('Audio still blocked:', err);
-            });
+            }).catch(e => console.log('Unlock failed:', e));
         }
     };
+    document.addEventListener('click', unlockAudio);
+    document.addEventListener('touchstart', unlockAudio);
 
-    // Try to unlock audio on first user interaction
-    document.addEventListener('click', unlockAudio, { once: true });
-    document.addEventListener('touchstart', unlockAudio, { once: true });
+    // Robust Sync Loop
+    // This ensures that if the video is playing, the audio IS playing (once unlocked).
+    // It fixes cases where audio might get desynced or fail to start.
+    setInterval(() => {
+        if (!audio || !isSectionVisible) return;
 
-    // Sync audio with video time
-    if (audio) {
-        video.addEventListener('play', () => {
+        if (!video.paused) {
+            // Video is playing. Audio should be playing.
             if (audioUnlocked) {
-                audio.currentTime = video.currentTime;
-                audio.play().catch(err => console.log('Audio play failed:', err));
+                if (audio.paused) {
+                    audio.currentTime = video.currentTime;
+                    audio.play().catch(e => console.log('Sync play failed:', e));
+                } else if (Math.abs(audio.currentTime - video.currentTime) > 0.3) {
+                    audio.currentTime = video.currentTime;
+                }
             }
-        });
+        } else {
+            // Video paused. Audio should be paused.
+            if (!audio.paused) audio.pause();
+        }
+    }, 500); // Check every 500ms
 
-        video.addEventListener('pause', () => {
-            if (audio) {
-                audio.pause();
-            }
-        });
+    // Global Pause
+    window.addEventListener('media:playing', (e) => {
+        if (e.detail.source !== 'studentPowerVideo') {
+            video.pause();
+            if (audio) audio.pause();
+        }
+    });
 
-        // Keep audio and video in sync
-        video.addEventListener('timeupdate', () => {
-            if (audio && !audio.paused && Math.abs(audio.currentTime - video.currentTime) > 0.3) {
-                audio.currentTime = video.currentTime;
-            }
-        });
-    }
 })();
