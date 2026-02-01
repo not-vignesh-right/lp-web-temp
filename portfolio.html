@@ -29,6 +29,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="company-verticals.html">Company verticals</a></li>
                     <li><a href="workshops.html">Training & workshop</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
@@ -58,50 +59,39 @@
                 <p>Watch highlights from our training sessions and events</p>
             </div>
 
-            <div class="video-grid">
-                <!-- Video 1: YouTube -->
-                <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/0V3Kx1d3S68')">
-                    <div class="video-thumbnail">
-                        <img src="https://img.youtube.com/vi/0V3Kx1d3S68/maxresdefault.jpg" alt="Leadership Workshop">
-                        <div class="play-overlay">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
+            <div class="video-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Video 1: Cloudinary (Inline) -->
+                <div class="video-card"
+                    style="cursor: default; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    <div style="border-radius: 8px; overflow: hidden; position: relative; padding-top: 56.25%;">
+                        <video muted loop playsinline controls
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                            <source
+                                src="https://res.cloudinary.com/dbbu2fpkz/video/upload/v1769849022/Edited_UK1_news_LP_bmvc85.mp4"
+                                type="video/mp4">
+                        </video>
                     </div>
-                    <div class="video-info">
-                        <h4>Leadership Workshop</h4>
-                        <p>Highlights from our corporate leadership training</p>
-                    </div>
-                </div>
-
-
-
-                <!-- Video 3: YouTube Live -->
-                <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/-bQ_LXcT8Ho')">
-                    <div class="video-thumbnail">
-                        <img src="https://img.youtube.com/vi/-bQ_LXcT8Ho/maxresdefault.jpg" alt="Faculty Development">
-                        <div class="play-overlay">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                        <div class="badge badge-live">LIVE SESSION</div>
-                    </div>
-                    <div class="video-info">
-                        <h4>Faculty Development</h4>
-                        <p>Training teachers for modern education</p>
+                    <div class="video-info" style="margin-top: 15px;">
+                        <h4>Techniques for Effective learning</h4>
+                        <p>Science-Backed Methods to Learn Faster, Deeper, and Smarter</p>
                     </div>
                 </div>
 
-                <!-- Video 4: YouTube Short -->
-                <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/CFNPltjIWRY')">
-                    <div class="video-thumbnail">
-                        <img src="https://img.youtube.com/vi/CFNPltjIWRY/maxresdefault.jpg" alt="Skill Development">
-                        <div class="play-overlay">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                        <div class="badge badge-short">SHORT</div>
+                <!-- Video 2: YouTube (Inline) -->
+                <div class="video-card"
+                    style="cursor: default; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    <div style="border-radius: 8px; overflow: hidden; position: relative; padding-top: 56.25%;">
+                        <iframe
+                            src="https://www.youtube.com/embed/-bQ_LXcT8Ho?mute=1&loop=1&playlist=-bQ_LXcT8Ho&controls=1"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                    <div class="video-info">
-                        <h4>Skill Development</h4>
-                        <p>Empowering students with essential skills</p>
+                    <div class="video-info" style="margin-top: 15px;">
+                        <h4>Retention & Memory hacks</h4>
+                        <p>Optimizing Memory for Smarter Learning</p>
                     </div>
                 </div>
             </div>
@@ -297,28 +287,58 @@
                 <span class="milestones-line milestones-line-right"></span>
             </div>
 
-            <div class="awards-grid">
-                <div class="award-card">
-                    <div class="award-icon"><i class="fa-solid fa-trophy"></i></div>
-                    <h3>Best EdTech Startup</h3>
-                    <p>Recognized for innovation in education technology</p>
+            <div class="stats-animated-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
+                <div class="stats-animated-item"
+                    style="display: flex; align-items: baseline; gap: 10px; justify-content: center;">
+                    <span class="counter-number" data-target="4+"
+                        style="color: var(--action-orange); font-size: 2.5rem; font-weight: 800;">0</span>
+                    <span class="stats-animated-label"
+                        style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 700; text-transform: uppercase;">Statewide
+                        Impact</span>
                 </div>
-                <div class="award-card">
-                    <div class="award-icon"><i class="fa-solid fa-star"></i></div>
-                    <h3>Excellence in Training</h3>
-                    <p>Award for outstanding training methodologies</p>
+                <div class="stats-animated-item"
+                    style="display: flex; align-items: baseline; gap: 10px; justify-content: center;">
+                    <span class="counter-number" data-target="20+"
+                        style="color: var(--action-orange); font-size: 2.5rem; font-weight: 800;">0</span>
+                    <span class="stats-animated-label"
+                        style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 700; text-transform: uppercase;">District
+                        Outreached</span>
                 </div>
-                <div class="award-card">
-                    <div class="award-icon"><i class="fa-solid fa-medal"></i></div>
-                    <h3>Impact Award 2024</h3>
-                    <p>For transforming 2 lakh+ student lives</p>
+                <div class="stats-animated-item"
+                    style="display: flex; align-items: baseline; gap: 10px; justify-content: center;">
+                    <span class="counter-number" data-target="150+"
+                        style="color: var(--action-orange); font-size: 2.5rem; font-weight: 800;">0</span>
+                    <span class="stats-animated-label"
+                        style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 700; text-transform: uppercase;">Motivational
+                        Talks</span>
                 </div>
-                <div class="award-card">
-                    <div class="award-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <h3>ISO Certified</h3>
-                    <p>Quality management certification</p>
+                <div class="stats-animated-item"
+                    style="display: flex; align-items: baseline; gap: 10px; justify-content: center;">
+                    <span class="counter-number" data-target="200+"
+                        style="color: var(--action-orange); font-size: 2.5rem; font-weight: 800;">0</span>
+                    <span class="stats-animated-label"
+                        style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 700; text-transform: uppercase;">Org
+                        Mentored</span>
+                </div>
+                <div class="stats-animated-item"
+                    style="display: flex; align-items: baseline; gap: 10px; justify-content: center;">
+                    <span class="counter-number" data-target="8000+"
+                        style="color: var(--action-orange); font-size: 2.5rem; font-weight: 800;">0</span>
+                    <span class="stats-animated-label"
+                        style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 700; text-transform: uppercase;">Hours
+                        of Training</span>
+                </div>
+                <div class="stats-animated-item"
+                    style="display: flex; align-items: baseline; gap: 10px; justify-content: center;">
+                    <span class="counter-number" data-target="1 Lakh+"
+                        style="color: var(--action-orange); font-size: 2.5rem; font-weight: 800;">0</span>
+                    <span class="stats-animated-label"
+                        style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 700; text-transform: uppercase;">students
+                        Impacted</span>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -344,6 +364,14 @@
                                 rel="noopener noreferrer" aria-label="Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
+                            <a href="https://www.linkedin.com/in/lessonplan-private-limited-0109a23a9" target="_blank"
+                                rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://wa.me/918050512005" target="_blank" rel="noopener noreferrer"
+                                aria-label="WhatsApp" class="whatsapp-highlight">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -353,10 +381,12 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="company-verticals.html">Company Verticals</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
                     </ul>
                 </div>
 
@@ -370,6 +400,10 @@
                         <i class="fa-solid fa-phone"></i>
                         <a href="tel:+918050512005">+91-8050512005</a>
                     </div>
+                    <div class="contact-item whatsapp-highlight">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://wa.me/918050512005" target="_blank">WhatsApp Us</a>
+                    </div>
                     <div class="contact-item">
                         <i class="fa-solid fa-location-dot"></i>
                         <span>Above omega clinic, Kogilu,<br>Yelahanka, Bangalore - 560064</span>
@@ -380,7 +414,7 @@
                     <h3>Find Us</h3>
                     <div class="map-embed">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7958385.697123817!2d67.8597948!3d13.1035883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1965d1981a6d%3A0xf11b8cf923c51725!2sOMEGA%20CLINICS!5e0!3m2!1sen!2sin!4v1769604735683!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.931515703902!2d77.61319017484375!3d13.103524987224088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae199598348e37%3A0xe5b05703a757dd25!2sLesson%20Plan%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1769865245228!5m2!1sen!2sin"
                             width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen=""
                             loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
@@ -388,10 +422,19 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">&copy; 2026 LessonPlan. All rights reserved.</div>
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 15px;">By using or visiting
+                    this site, you automatically agree to our <a href="terms-conditions.html"
+                        style="color: var(--action-orange); text-decoration: none;">Terms & Conditions</a>.</p>
+                <div class="copyright">&copy; 2026 LessonPlan Pvt Ltd. All rights reserved. Copyright Reserved.</div>
             </div>
         </div>
     </footer>
+
+    <!-- Sticky WhatsApp Icon -->
+    <a href="https://wa.me/918050512005" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Video Modal -->
     <div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">

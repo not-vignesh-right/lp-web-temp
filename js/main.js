@@ -140,6 +140,9 @@
 
 // Scroll Reveal Animation (IntersectionObserver)
 (function () {
+    // Disable on Terms & Conditions page to prevent text visibility issues
+    if (window.location.href.includes('terms-conditions')) return;
+
     // Elements to reveal
     // Selecting major sections and cards for animation
     const revealElements = document.querySelectorAll('section, .card, .session-card, .footer-content, .hero-content');
