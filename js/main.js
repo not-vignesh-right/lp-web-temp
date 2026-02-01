@@ -196,6 +196,9 @@
             // Also check if the media is inside a container that might be the source
             if (media.closest(`#${sourceId}`)) return;
 
+            // Custom exception: Allow Student Power video and audio to play together
+            if (sourceId === 'studentPowerVideo' && media.id === 'studentPowerAudio') return;
+
             // Pause if playing
             if (!media.paused) {
                 console.log(`Pausing ${media.id || 'media'} due to playback from ${sourceId}`);

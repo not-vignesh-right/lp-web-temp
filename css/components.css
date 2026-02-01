@@ -514,6 +514,8 @@
     margin-bottom: 10vh;
     width: 100%;
     max-width: 900px;
+    transform: translateY(-100px);
+    /* Moved up as requested */
 }
 
 .student-power-box {
@@ -2415,6 +2417,11 @@ footer {
     background: linear-gradient(135deg, var(--primary-blue), #001a33);
     margin-top: 30px;
     border-radius: 12px;
+    border: 4px solid #D4AF37;
+    /* Thick Golden Border */
+    padding: 60px 20px;
+    /* Increased padding */
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
 }
 
 .stats-animated-grid {
@@ -2456,7 +2463,27 @@ footer {
     }
 }
 
-/* --- COMPANY VERTICALS PAGE STYLES --- */
+/* Vertical Card Sub-text */
+.vertical-sub-text {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--action-orange);
+    margin-top: -10px;
+    /* Pull closer to title */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* --- STATS ANIMATED SECTION --- */
+.stats-animated-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--primary-blue), #001a33);
+    margin-top: 30px;
+    border-radius: 12px;
+    border: 4px solid #D4AF37;
+    /* Thick Golden Border */
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
 
 /* Hero Section (Specific to Verticals) */
 .verticals-hero {
