@@ -1,14 +1,14 @@
-# Career Roadmap - Stream Umbrella Layout (draft for Patil Sir)
+# Career Roadmap - Stream Umbrella Layout (working note)
 
-Source: Patil Sir call, 2026-10-17. Goal: one reviewed content document that later drives the mind-map feature.
+Goal: one reviewed content document that later drives the mind-map feature.
 
-## Rules from the call
+## Design rules
 - Start the pathway at **Class 6** (Olympiads), not 10th. Anyone from Class 6 to 12 (and after) can enter.
 - Every stream is an **umbrella**; clicking it opens the next level one node at a time.
 - Do not limit to Science / Commerce / Arts. Find the other major umbrellas too.
 - Nodes must state prerequisites (e.g. "Advanced Maths required from here", basic vs advanced Maths in Class 10).
 - Every exam/scholarship node needs only: **when (month, how often a year)**, **pattern table**, **eligibility**. Anything more goes to the Inquiry form.
-- Data must be human-reviewed before it goes live (AI can hallucinate eligibility cut-offs).
+- Data must be human-reviewed before it goes live (eligibility cut-offs and dates must be confirmed against official notifications).
 
 ## Level 0 - Entry
 Search box ("design", "doctor") **or** guided path: Current class -> Interest -> Stream.
@@ -40,14 +40,14 @@ Note: Design, Law, Defence and Health appear under more than one stream; model t
 ## Level 3+ - Career nodes
 Entrance exam(s) -> course -> specialisation -> job roles / higher studies. Each exam node gets the 3-part sidebar (see prompt file).
 
-## Sidebar content per exam node (from the call)
+## Sidebar content per exam node
 1. Frequency (e.g. "once a year")
 2. Tentative month
 3. Pattern table: sections, number of questions, marks, negative marking (e.g. NEET: 180 questions, Physics 45 / Chemistry 45 / Biology 90 - verify)
 4. Minimum eligibility (e.g. NEET qualifying %)
 5. "Want more? -> Inquiry form"
 
-## Open questions for Patil Sir
+## Open questions for review
 - Final list of umbrellas beyond Science/Commerce/Arts - is the table above acceptable?
 - Which board(s) and which state (Karnataka-specific exams like KCET, COMEDK)?
 - OK to ship Word + PDF (6-10 pages) and a 1-page gist per career?

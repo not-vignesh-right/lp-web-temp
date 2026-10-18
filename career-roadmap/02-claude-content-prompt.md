@@ -1,6 +1,6 @@
 # Prompt to generate the career content document
 
-Paste everything below the line into Claude, once per umbrella/stream (e.g. "Science - PCB"). Replace the bracketed items. Review every output by hand before it is shared with Patil Sir.
+Use everything below the line as the content brief, once per umbrella/stream (e.g. "Science - PCB"). Replace the bracketed items. Review every output by hand before it is shared for review.
 
 ---
 
@@ -37,7 +37,7 @@ You are a career-guidance researcher for LessonPlan, an education company in Ban
 
 ---
 
-## Review checklist (before sending to Patil Sir)
+## Review checklist (before submission)
 - [ ] Every [VERIFY] resolved against the official site
 - [ ] Dates and frequency checked for the current year
 - [ ] Pattern tables match the latest official notification
