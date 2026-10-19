@@ -168,6 +168,7 @@
         state.cols = levels.length;
 
         el.reset.hidden = state.chain.length === 0;
+        syncTalkLinks();
         if (el.download) el.download.hidden = state.chain.length === 0;
         var names = state.chain.map(function (r) { return r.label; });
         el.sub.textContent = names.length ? 'Your path: ' + names.join('  >  ') + '.  Tap a chosen bubble to change it.' : 'Tap a bubble to open it. New bubbles appear as you go.';
@@ -235,7 +236,7 @@
     /* ---------- tapping bubbles ---------- */
     function pick(level, ref) {
         if (!ref.live) {
-            setTip('This guide is coming soon. Ask a counsellor and we will help you right away.', 'Talk to us', 'contact.html?topic=' + encodeURIComponent(ref.label) + '&from=career-roadmap');
+            setTip('This guide is coming soon. Ask a counsellor and we will help you right away.', 'Talk to us', talkUrl(ref.label));
             return;
         }
         if (ref.type === 'next') { startOver(ref.note, true); return; }
@@ -259,6 +260,17 @@
         }
     }
     el.reset.addEventListener('click', function () { startOver('', false); });
+
+    /* ---------- contact links, pre-filled with the visitor's route ---------- */
+    function routeText() { return state.chain.map(function (r) { return r.label; }).join(' > '); }
+    function talkUrl(topic) {
+        var t = topic || (state.chain.length ? state.chain[state.chain.length - 1].label : 'Career guidance');
+        return 'contact.html?topic=' + encodeURIComponent(t) + '&path=' + encodeURIComponent(routeText() || 'Career Roadmap') + '&from=career-roadmap';
+    }
+    function syncTalkLinks() {
+        var a = document.getElementById('crCtaTalk');
+        if (a) a.href = talkUrl('');
+    }
 
     /* ---------- download my roadmap (PDF) ---------- */
     function pdfData() {
@@ -304,7 +316,7 @@
             document.body.appendChild(a); a.click(); a.remove();
             setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
         }).catch(function () {
-            setTip('The PDF could not be made right now. Please check your internet and try again.', 'Talk to us', 'contact.html?topic=Career+Roadmap+PDF&from=career-roadmap');
+            setTip('The PDF could not be made right now. Please check your internet and try again.', 'Talk to us', talkUrl('Career Roadmap PDF'));
         }).then(function () {
             busy = false; btns.forEach(function (b) { if (b) b.disabled = false; });
             if (el.download) el.download.innerHTML = old;
@@ -368,7 +380,7 @@
 
         var actions = h('div', 'cr-d-actions');
         var ask = h('a', 'btn btn-primary', isCareer ? 'Talk to a counsellor' : 'Ask about ' + x.name.split(' (')[0]);
-        ask.href = 'contact.html?topic=' + encodeURIComponent(topic) + '&path=' + encodeURIComponent(pathTitle) + '&from=career-roadmap';
+        ask.href = talkUrl(topic);
         actions.appendChild(ask);
         var dlb = h('button', 'btn btn-secondary', 'Download my roadmap (PDF)'); dlb.type = 'button';
         dlb.addEventListener('click', downloadRoadmap);
@@ -450,7 +462,7 @@
         state.index.search.some(function (s) { return s.k.some(function (k) { if (hit(q, k)) { found = s; return true; } return false; }); });
         if (!found) {
             el.msg.appendChild(document.createTextNode('We do not have that one yet. Try doctor, engineer, architect, CA or lawyer, or '));
-            var a = h('a', 'cr-d-link', 'ask a counsellor'); a.href = 'contact.html?topic=' + encodeURIComponent(el.query.value) + '&from=career-roadmap';
+            var a = h('a', 'cr-d-link', 'ask a counsellor'); a.href = talkUrl(el.query.value);
             el.msg.appendChild(a); el.msg.appendChild(document.createTextNode('.'));
             return;
         }
