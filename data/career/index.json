@@ -992,12 +992,6 @@
   ],
   "downloads": [
     {
-      "title": "Complete guide (all streams)",
-      "blurb": "82 pages with contents and bookmarks",
-      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Complete-Guide.pdf",
-      "main": true
-    },
-    {
       "title": "Foundation (Class 6 to 10)",
       "blurb": "Olympiads, NMMS, NTSE, Sainik School (5 pages)",
       "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Foundation-Class6-10.pdf"
@@ -1066,6 +1060,14 @@
       "title": "Sports and Arts",
       "blurb": "Khelo India, BPEd, fine arts (5 pages)",
       "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Sports-Arts.pdf"
+    }
+  ],
+  "downloadsHidden": [
+    {
+      "title": "Complete guide (all streams)",
+      "blurb": "82 pages with contents and bookmarks",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Complete-Guide.pdf",
+      "main": true
     }
   ]
 }
