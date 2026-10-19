@@ -104,8 +104,7 @@
         <section class="cr-hero">
             <div class="container">
                 <h1>Career Roadmap: <span>Class 6 to Career</span></h1>
-                <p class="cr-hero-sub">Pick a goal and see every entrance exam, eligibility rule, course and career on
-                    one clear route.</p>
+                <p class="cr-hero-sub">Type a goal, or tap your way from Class 6 to college and beyond. Every exam, course and career, step by step.</p>
 
                 <form class="cr-search" id="crSearch" role="search" autocomplete="off">
                     <label for="crQuery" class="cr-sr">Type a career you want</label>
@@ -124,42 +123,38 @@
             </div>
         </section>
 
-        <section class="cr-picker section-padding section-bg-light" id="pathways">
+        <section class="cr-explorer" id="explorer" aria-labelledby="crPrompt">
             <div class="container">
-                <div class="section-header">
-                    <h2>Choose a pathway</h2>
-                    <p>Fourteen pathways cover school years, every stream and the major career fields.</p>
+                <div class="cr-top">
+                    <div>
+                        <h2 id="crPrompt">What do you want to become?</h2>
+                        <p class="cr-top-sub" id="crSub">Tap a bubble to open it. New bubbles appear as you go.</p>
+                    </div>
+                    <button type="button" class="btn btn-secondary cr-reset" id="crReset" hidden>Start over</button>
                 </div>
-                <div class="cr-cards" id="crCards"></div>
+
+                <div class="cr-split" id="crSplit">
+                    <div class="cr-mapwrap">
+                        <div class="cr-scroll" id="crScroll">
+                            <div class="cr-map" id="crMap"></div>
+                        </div>
+                        <div class="cr-tip" id="crTip" aria-live="polite"></div>
+                    </div>
+
+                    <aside class="cr-side" id="crSide" hidden aria-label="Details">
+                        <button type="button" class="cr-side-close" id="crClose" aria-label="Close details"><i
+                                class="fa-solid fa-xmark"></i></button>
+                        <div id="crSideBody"></div>
+                    </aside>
+                </div>
                 <noscript>
                     <p class="cr-noscript">This page needs JavaScript to show the interactive map. Please
                         <a href="contact.html">contact LessonPlan</a> for the career guides.</p>
                 </noscript>
-            </div>
-        </section>
-
-        <section class="cr-explorer section-padding" id="explorer" hidden>
-            <div class="container">
-                <div class="cr-bar">
-                    <div>
-                        <h2 id="crTitle"></h2>
-                        <p id="crIntro" class="cr-intro"></p>
-                    </div>
-                    <button type="button" class="btn btn-secondary cr-back" id="crBack" hidden>Show all routes</button>
-                </div>
-                <ul class="cr-legend" aria-hidden="true">
-                    <li><i class="cr-dot cr-dot--stage"></i> Stage</li>
-                    <li><i class="cr-dot cr-dot--exam"></i> Exam</li>
-                    <li><i class="cr-dot cr-dot--course"></i> Degree or course</li>
-                    <li><i class="cr-dot cr-dot--career"></i> Career</li>
-                </ul>
-                <p class="cr-hint" id="crHint"></p>
-                <div class="cr-stage" id="crStage"></div>
                 <p class="cr-disclaimer">Dates, patterns and eligibility change every year. Please confirm on the
                     official website of the conducting body before you apply.</p>
             </div>
         </section>
-
         <section class="cr-faq section-padding section-bg-light" id="faq">
             <div class="container">
                 <div class="section-header">
@@ -168,9 +163,7 @@
                 <div class="cr-faq-grid">
                     <div class="cr-faq-item">
                         <h3>How does it work?</h3>
-                        <p>Pick a pathway or type a career. Choose a career on the map and the page shows its single
-                            route from Class 10 to the job. Open any orange exam for its frequency, month, pattern and
-                            eligibility.</p>
+                        <p>Tap a stream like Science. Bubbles open one step at a time: subjects, exams, courses and careers. Or type a career in the search box and the whole route opens for you.</p>
                     </div>
                     <div class="cr-faq-item">
                         <h3>Are the dates final?</h3>
@@ -198,11 +191,6 @@
     </main>
 
     <div class="cr-backdrop" id="crBackdrop" hidden></div>
-    <aside class="cr-drawer" id="crDrawer" role="dialog" aria-modal="true" aria-labelledby="crDrawerTitle" hidden>
-        <button type="button" class="cr-drawer-close" id="crClose" aria-label="Close details"><i
-                class="fa-solid fa-xmark"></i></button>
-        <div id="crDrawerBody"></div>
-    </aside>
 
     <!-- Footer -->
     <footer>

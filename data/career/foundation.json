@@ -1,0 +1,20 @@
+{
+  "id": "foundation",
+  "title": "Class 6 to 10",
+  "intro": "Tests and scholarships for school years. Tap one to see what it is.",
+  "levelTitles": { "exam": "Tests and scholarships", "stage": "A big choice", "next": "What comes next?" },
+  "nodes": [
+    { "id": "sof", "type": "exam", "label": "Olympiads (SOF)", "exam": "sof-olympiads" },
+    { "id": "ioqm", "type": "exam", "label": "Maths Olympiad (IOQM)", "exam": "ioqm" },
+    { "id": "nmms", "type": "exam", "label": "NMMS scholarship", "exam": "nmms" },
+    { "id": "aissee", "type": "exam", "label": "Sainik School test", "exam": "aissee" },
+    { "id": "nsejs", "type": "exam", "label": "Junior Science Olympiad", "exam": "nsejs" },
+    { "id": "ntse", "type": "exam", "label": "NTSE", "exam": "ntse" },
+    { "id": "mathpick", "type": "stage", "label": "Pick Standard Maths", "note": "In CBSE, Class 10 has Standard Maths and Basic Maths. Standard Maths keeps every stream open, so pick it if you are not sure." },
+    { "id": "pick", "type": "next", "label": "Pick your stream after Class 10", "note": "After Class 10 you choose Science, Commerce, Arts or another field. Tap Start over and pick a stream." }
+  ],
+  "edges": [
+    ["sof", "pick"], ["ioqm", "pick"], ["nmms", "pick"], ["aissee", "pick"],
+    ["nsejs", "pick"], ["ntse", "pick"], ["mathpick", "pick"]
+  ]
+}

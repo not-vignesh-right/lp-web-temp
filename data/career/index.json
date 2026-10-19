@@ -1,36 +1,395 @@
 {
   "updated": "2026-27 cycle",
   "pathways": [
-    { "id": "foundation", "title": "Foundation (Class 6-10)", "type": "foundation", "icon": "fa-seedling", "blurb": "Olympiads, scholarships and the Class 10 decision.", "tags": ["c6", "c9"], "live": false },
-    { "id": "science-pcb", "title": "Science PCB", "type": "stream", "icon": "fa-dna", "blurb": "Medicine, nursing, pharmacy, life sciences, veterinary.", "tags": ["a10"], "live": true, "file": "science-pcb.json" },
-    { "id": "science-pcm", "title": "Science PCM", "type": "stream", "icon": "fa-atom", "blurb": "Engineering, architecture, defence technical, research.", "tags": ["a10"], "live": true, "file": "science-pcm.json" },
-    { "id": "commerce", "title": "Commerce", "type": "stream", "icon": "fa-chart-line", "blurb": "CA, CS, CMA, management, law, economics.", "tags": ["a10"], "live": true, "file": "commerce.json" },
-    { "id": "arts", "title": "Arts and Humanities", "type": "stream", "icon": "fa-landmark", "blurb": "Civil services, psychology, media, teaching, liberal arts.", "tags": ["a10"], "live": false },
-    { "id": "law", "title": "Law", "type": "umbrella", "icon": "fa-scale-balanced", "blurb": "Advocate, judge, corporate counsel.", "tags": ["a12"], "live": false },
-    { "id": "defence", "title": "Defence", "type": "umbrella", "icon": "fa-shield-halved", "blurb": "Sainik School, NDA, CDS, Agniveer.", "tags": ["c6", "a10", "a12"], "live": false },
-    { "id": "design", "title": "Design and Architecture", "type": "umbrella", "icon": "fa-pen-ruler", "blurb": "Product, UX, fashion, architecture.", "tags": ["a12"], "live": false },
-    { "id": "hospitality", "title": "Hospitality, Aviation and Maritime", "type": "umbrella", "icon": "fa-plane", "blurb": "Hotels, pilot, cabin crew, merchant navy.", "tags": ["a12"], "live": false },
-    { "id": "health", "title": "Health and Allied", "type": "umbrella", "icon": "fa-heart-pulse", "blurb": "Nursing, pharmacy, allied health, AYUSH.", "tags": ["a12"], "live": false },
-    { "id": "agri", "title": "Agriculture, Veterinary and Forestry", "type": "umbrella", "icon": "fa-wheat-awn", "blurb": "Agri-science, veterinary, forest services.", "tags": ["a12"], "live": false },
-    { "id": "polytechnic", "title": "Polytechnic and ITI", "type": "umbrella", "icon": "fa-screwdriver-wrench", "blurb": "Diploma and trades after Class 8 or 10.", "tags": ["a10"], "live": false },
-    { "id": "skills", "title": "Skills and Entrepreneurship", "type": "umbrella", "icon": "fa-lightbulb", "blurb": "Skill courses, start-ups, self-employment.", "tags": ["a10", "a12"], "live": false },
-    { "id": "sports-arts", "title": "Sports and Performing Arts", "type": "umbrella", "icon": "fa-medal", "blurb": "Sports, physical education, music, dance, fine arts.", "tags": ["a10", "a12"], "live": false }
+    {
+      "id": "foundation",
+      "file": "foundation.json"
+    },
+    {
+      "id": "science-pcb",
+      "file": "science-pcb.json"
+    },
+    {
+      "id": "science-pcm",
+      "file": "science-pcm.json"
+    },
+    {
+      "id": "commerce",
+      "file": "commerce.json"
+    }
   ],
+  "doors": [
+    {
+      "id": "foundation",
+      "title": "Class 6 to 10",
+      "icon": "fa-seedling",
+      "live": true,
+      "blurb": "Start here if you are in school.",
+      "groups": [
+        {
+          "id": "f68",
+          "label": "Class 6 to 8",
+          "sub": "Olympiads and school tests",
+          "pathway": "foundation",
+          "entry": [
+            "sof",
+            "ioqm",
+            "nmms",
+            "aissee"
+          ]
+        },
+        {
+          "id": "f910",
+          "label": "Class 9 to 10",
+          "sub": "Tests and the big choice",
+          "pathway": "foundation",
+          "entry": [
+            "nsejs",
+            "ntse",
+            "mathpick"
+          ]
+        }
+      ],
+      "groupTitle": "Pick your class"
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "icon": "fa-atom",
+      "live": true,
+      "blurb": "Doctors, engineers, scientists and more.",
+      "groups": [
+        {
+          "id": "pcm",
+          "label": "PCM",
+          "sub": "Physics, Chemistry, Maths",
+          "pathway": "science-pcm"
+        },
+        {
+          "id": "pcb",
+          "label": "PCB",
+          "sub": "Physics, Chemistry, Biology",
+          "pathway": "science-pcb"
+        },
+        {
+          "id": "pcmb",
+          "label": "PCMB",
+          "sub": "Maths and Biology together",
+          "pathway": null
+        },
+        {
+          "id": "pcmc",
+          "label": "PCMC",
+          "sub": "Maths and Computer Science",
+          "pathway": null
+        }
+      ],
+      "groupTitle": "Pick your subjects"
+    },
+    {
+      "id": "commerce",
+      "title": "Commerce",
+      "icon": "fa-chart-line",
+      "live": true,
+      "blurb": "Accounts, business, banking and law.",
+      "groups": [
+        {
+          "id": "commerce",
+          "label": "Commerce",
+          "sub": "Accounts, Business, Economics",
+          "pathway": "commerce"
+        }
+      ]
+    },
+    {
+      "id": "arts",
+      "title": "Arts",
+      "icon": "fa-landmark",
+      "live": false,
+      "blurb": "Civil services, psychology, media, teaching."
+    },
+    {
+      "id": "law",
+      "title": "Law",
+      "icon": "fa-scale-balanced",
+      "live": false,
+      "blurb": "Advocate, judge, corporate counsel."
+    },
+    {
+      "id": "defence",
+      "title": "Defence",
+      "icon": "fa-shield-halved",
+      "live": false,
+      "blurb": "Sainik School, NDA, Army, Navy, Air Force."
+    },
+    {
+      "id": "design",
+      "title": "Design",
+      "icon": "fa-pen-ruler",
+      "live": false,
+      "blurb": "Product, app, fashion and architecture."
+    },
+    {
+      "id": "aviation",
+      "title": "Hotels, Flying, Ships",
+      "icon": "fa-plane",
+      "live": false,
+      "blurb": "Hotel manager, pilot, ship officer."
+    },
+    {
+      "id": "health",
+      "title": "Health",
+      "icon": "fa-heart-pulse",
+      "live": false,
+      "blurb": "Nursing, pharmacy, therapy, AYUSH."
+    },
+    {
+      "id": "agri",
+      "title": "Farming and Animals",
+      "icon": "fa-wheat-awn",
+      "live": false,
+      "blurb": "Agri-science, vets, forests."
+    },
+    {
+      "id": "trades",
+      "title": "Diploma and ITI",
+      "icon": "fa-screwdriver-wrench",
+      "live": false,
+      "blurb": "Skills you can start after Class 8 or 10."
+    },
+    {
+      "id": "skills",
+      "title": "Skills and Business",
+      "icon": "fa-lightbulb",
+      "live": false,
+      "blurb": "Start-ups and skill courses."
+    },
+    {
+      "id": "sports",
+      "title": "Sports and Arts",
+      "icon": "fa-medal",
+      "live": false,
+      "blurb": "Sports, music, dance, painting."
+    }
+  ],
+  "classStarts": {
+    "c6": {
+      "door": "foundation",
+      "group": "f68"
+    },
+    "c9": {
+      "door": "foundation",
+      "group": "f910"
+    }
+  },
   "search": [
-    { "k": ["doctor", "mbbs", "medicine", "surgeon", "dentist", "bds", "ayush", "neet"], "path": "science-pcb", "node": "doctor" },
-    { "k": ["nurse", "nursing"], "path": "science-pcb", "node": "nurse" },
-    { "k": ["pharmacist", "pharmacy", "pharma"], "path": "science-pcb", "node": "pharmacist" },
-    { "k": ["researcher", "scientist biology", "biotech", "life science", "microbiology"], "path": "science-pcb", "node": "researcher" },
-    { "k": ["vet", "veterinary", "veterinarian", "animal doctor"], "path": "science-pcb", "node": "vet" },
-    { "k": ["physiotherapist", "physiotherapy", "allied health", "lab technician", "optometrist"], "path": "science-pcb", "node": "allied-career" },
-    { "k": ["engineer", "engineering", "btech", "software", "computer science", "jee", "coding", "ai engineer"], "path": "science-pcm", "node": "engineer" },
-    { "k": ["architect", "architecture", "barch"], "path": "science-pcm", "node": "architect" },
-    { "k": ["army", "navy", "air force", "defence officer", "nda", "soldier", "military"], "path": "science-pcm", "node": "officer" },
-    { "k": ["scientist", "physicist", "mathematician", "research"], "path": "science-pcm", "node": "scientist" },
-    { "k": ["ca", "chartered accountant", "accountant", "audit"], "path": "commerce", "node": "ca-career" },
-    { "k": ["company secretary", "cs"], "path": "commerce", "node": "cs-career" },
-    { "k": ["cost accountant", "cma"], "path": "commerce", "node": "cma-career" },
-    { "k": ["manager", "mba", "bba", "management", "business", "banker", "bank", "finance"], "path": "commerce", "node": "manager" },
-    { "k": ["lawyer", "law", "advocate", "judge", "clat"], "path": "commerce", "node": "lawyer" }
+    {
+      "k": [
+        "doctor",
+        "mbbs",
+        "medicine",
+        "surgeon",
+        "dentist",
+        "bds",
+        "ayush",
+        "neet"
+      ],
+      "path": "science-pcb",
+      "node": "doctor"
+    },
+    {
+      "k": [
+        "nurse",
+        "nursing"
+      ],
+      "path": "science-pcb",
+      "node": "nurse"
+    },
+    {
+      "k": [
+        "pharmacist",
+        "pharmacy",
+        "pharma"
+      ],
+      "path": "science-pcb",
+      "node": "pharmacist"
+    },
+    {
+      "k": [
+        "researcher",
+        "biotech",
+        "life science",
+        "microbiology"
+      ],
+      "path": "science-pcb",
+      "node": "researcher"
+    },
+    {
+      "k": [
+        "vet",
+        "veterinary",
+        "veterinarian",
+        "animal doctor"
+      ],
+      "path": "science-pcb",
+      "node": "vet"
+    },
+    {
+      "k": [
+        "physiotherapist",
+        "physiotherapy",
+        "allied health",
+        "lab technician",
+        "optometrist"
+      ],
+      "path": "science-pcb",
+      "node": "allied-career"
+    },
+    {
+      "k": [
+        "engineer",
+        "engineering",
+        "btech",
+        "software",
+        "computer science",
+        "jee",
+        "coding"
+      ],
+      "path": "science-pcm",
+      "node": "engineer"
+    },
+    {
+      "k": [
+        "architect",
+        "architecture",
+        "barch"
+      ],
+      "path": "science-pcm",
+      "node": "architect"
+    },
+    {
+      "k": [
+        "army",
+        "navy",
+        "air force",
+        "defence officer",
+        "nda",
+        "soldier",
+        "military"
+      ],
+      "path": "science-pcm",
+      "node": "officer"
+    },
+    {
+      "k": [
+        "scientist",
+        "physicist",
+        "mathematician"
+      ],
+      "path": "science-pcm",
+      "node": "scientist"
+    },
+    {
+      "k": [
+        "ca",
+        "chartered accountant",
+        "accountant",
+        "audit"
+      ],
+      "path": "commerce",
+      "node": "ca-career"
+    },
+    {
+      "k": [
+        "company secretary",
+        "cs"
+      ],
+      "path": "commerce",
+      "node": "cs-career"
+    },
+    {
+      "k": [
+        "cost accountant",
+        "cma"
+      ],
+      "path": "commerce",
+      "node": "cma-career"
+    },
+    {
+      "k": [
+        "manager",
+        "mba",
+        "bba",
+        "management",
+        "business",
+        "banker",
+        "bank",
+        "finance"
+      ],
+      "path": "commerce",
+      "node": "manager"
+    },
+    {
+      "k": [
+        "lawyer",
+        "law",
+        "advocate",
+        "judge",
+        "clat"
+      ],
+      "path": "commerce",
+      "node": "lawyer"
+    },
+    {
+      "k": [
+        "olympiad",
+        "olympiads"
+      ],
+      "path": "foundation",
+      "node": "sof"
+    },
+    {
+      "k": [
+        "maths olympiad",
+        "imo",
+        "ioqm",
+        "rmo",
+        "inmo"
+      ],
+      "path": "foundation",
+      "node": "ioqm"
+    },
+    {
+      "k": [
+        "scholarship",
+        "nmms"
+      ],
+      "path": "foundation",
+      "node": "nmms"
+    },
+    {
+      "k": [
+        "sainik",
+        "sainik school"
+      ],
+      "path": "foundation",
+      "node": "aissee"
+    },
+    {
+      "k": [
+        "ntse",
+        "talent"
+      ],
+      "path": "foundation",
+      "node": "ntse"
+    },
+    {
+      "k": [
+        "junior science",
+        "nsejs"
+      ],
+      "path": "foundation",
+      "node": "nsejs"
+    }
   ]
 }

@@ -1,33 +1,36 @@
-/* Career Roadmap page: pathway picker, all-routes map, single-route view, exam drawer, search. */
+/* Career Roadmap page: a step-by-step map. Tap a bubble and its next step opens.
+   Search opens a whole route at once. Exams and careers open a side panel. */
 (function () {
     'use strict';
 
     var BASE = 'data/career/';
-    var cardsEl = document.getElementById('crCards');
-    if (!cardsEl) return;
+    var mapEl = document.getElementById('crMap');
+    if (!mapEl) return;
 
     var el = {
         explorer: document.getElementById('explorer'),
-        title: document.getElementById('crTitle'),
-        intro: document.getElementById('crIntro'),
-        hint: document.getElementById('crHint'),
-        stage: document.getElementById('crStage'),
-        back: document.getElementById('crBack'),
+        split: document.getElementById('crSplit'),
+        scroll: document.getElementById('crScroll'),
+        sub: document.getElementById('crSub'),
+        tip: document.getElementById('crTip'),
+        reset: document.getElementById('crReset'),
+        side: document.getElementById('crSide'),
+        sideBody: document.getElementById('crSideBody'),
+        close: document.getElementById('crClose'),
+        backdrop: document.getElementById('crBackdrop'),
         form: document.getElementById('crSearch'),
         query: document.getElementById('crQuery'),
         msg: document.getElementById('crSearchMsg'),
-        chips: document.getElementById('crChips'),
-        drawer: document.getElementById('crDrawer'),
-        drawerBody: document.getElementById('crDrawerBody'),
-        backdrop: document.getElementById('crBackdrop'),
-        close: document.getElementById('crClose')
+        chips: document.getElementById('crChips')
     };
 
-    var TYPE_LABEL = { stage: 'stage', exam: 'entrance exam', course: 'degree or course', career: 'career' };
-    var state = { index: null, exams: null, cache: {}, path: null, focus: null, opener: null };
+    var ICON = { group: 'fa-layer-group', stage: 'fa-flag', exam: 'fa-file-pen', course: 'fa-graduation-cap', career: 'fa-star', next: 'fa-arrow-right' };
+    var TITLES = { door: 'Pick a stream', group: 'Pick your subjects', stage: 'Next step', exam: 'How do you get in?', course: 'What will you study?', career: 'What can you become?', next: 'What next?' };
+    var state = { index: null, exams: null, cache: {}, chain: [], hi: null, side: null, cols: 0 };
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var small = function () { return window.innerWidth <= 900; };
 
-    /* ---------- helpers ---------- */
+    /* ---------- small helpers ---------- */
     function h(tag, cls, text) {
         var n = document.createElement(tag);
         if (cls) n.className = cls;
@@ -35,10 +38,7 @@
         return n;
     }
     function getJSON(url) {
-        return fetch(url).then(function (r) {
-            if (!r.ok) throw new Error('HTTP ' + r.status);
-            return r.json();
-        });
+        return fetch(url).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
     }
     function prepare(d) {
         d.byId = {}; d.out = {}; d.inn = {};
@@ -53,378 +53,385 @@
         var seen = {}; seen[start] = 1;
         var stack = [start];
         while (stack.length) {
-            var x = stack.pop();
-            (map[x] || []).forEach(function (y) { if (!seen[y]) { seen[y] = 1; stack.push(y); } });
+            (map[stack.pop()] || []).forEach(function (y) { if (!seen[y]) { seen[y] = 1; stack.push(y); } });
         }
         return seen;
     }
-    function related(d, id) {
-        var a = walk(d.inn, id), b = walk(d.out, id);
-        for (var k in b) a[k] = 1;
-        return a;
-    }
     function pathMeta(id) {
-        for (var i = 0; i < state.index.pathways.length; i++) {
-            if (state.index.pathways[i].id === id) return state.index.pathways[i];
-        }
+        for (var i = 0; i < state.index.pathways.length; i++) if (state.index.pathways[i].id === id) return state.index.pathways[i];
         return null;
     }
-    function loadPath(meta) {
-        if (state.cache[meta.id]) return Promise.resolve(state.cache[meta.id]);
-        return getJSON(BASE + meta.file).then(function (d) {
-            state.cache[meta.id] = prepare(d);
-            return state.cache[meta.id];
+    function loadPath(id) {
+        if (state.cache[id]) return Promise.resolve(state.cache[id]);
+        return getJSON(BASE + pathMeta(id).file).then(function (d) { state.cache[id] = prepare(d); return state.cache[id]; });
+    }
+    function doorById(id) { return state.index.doors.filter(function (d) { return d.id === id; })[0]; }
+
+    /* ---------- bubbles (refs) ---------- */
+    function doorRef(d) {
+        return { key: 'door:' + d.id, kind: 'door', type: 'door', label: d.title, sub: d.blurb, icon: d.icon, live: d.live, door: d };
+    }
+    function groupRef(door, g) {
+        return { key: 'group:' + g.id, kind: 'group', type: 'group', label: g.label, sub: g.sub, icon: ICON.group, live: !!g.pathway, door: door, group: g, path: g.pathway };
+    }
+    function nodeRef(d, n, door, group) {
+        return { key: 'n:' + d.id + ':' + n.id, kind: 'node', type: n.type, label: n.label, note: n.note, exam: n.exam, id: n.id, pathId: d.id, pathData: d, door: door, group: group, live: true, icon: ICON[n.type] };
+    }
+    function entryIds(d, g) {
+        if (g.entry) return { ids: g.entry, tips: [] };
+        var ids = [], tips = [], q = ['choose'], start = d.byId.choose;
+        if (start && start.note) tips.push(start.note);
+        while (q.length) {
+            var cur = q.shift();
+            (d.out[cur] || []).forEach(function (id) {
+                var m = d.byId[id];
+                if (m.type === 'stage') { if (m.note) tips.push(m.note); q.push(id); }
+                else if (ids.indexOf(id) < 0) ids.push(id);
+            });
+        }
+        return { ids: ids, tips: tips };
+    }
+    function entries(door, g, parent) {
+        return loadPath(g.pathway).then(function (d) {
+            var e = entryIds(d, g);
+            parent.levelTitles = d.levelTitles || null;
+            parent.tip = e.tips.join(' ');
+            return e.ids.map(function (id) { return nodeRef(d, d.byId[id], door, g); });
         });
     }
-    function setHash(path, focus) {
-        var q = '?path=' + encodeURIComponent(path) + (focus ? '&node=' + encodeURIComponent(focus) : '');
+    function kidsOf(ref) {
+        if (ref.kids) return Promise.resolve(ref.kids);
+        var p;
+        if (ref.kind === 'door') {
+            var gs = ref.door.groups || [];
+            if (gs.length === 1 && gs[0].pathway) { ref.skipGroup = gs[0]; p = entries(ref.door, gs[0], ref); }
+            else p = Promise.resolve(gs.map(function (g) { return groupRef(ref.door, g); }));
+        } else if (ref.kind === 'group') {
+            p = ref.path ? entries(ref.door, ref.group, ref) : Promise.resolve([]);
+        } else {
+            var d = ref.pathData;
+            p = Promise.resolve((d.out[ref.id] || []).map(function (id) { return nodeRef(d, d.byId[id], ref.door, ref.group); }));
+        }
+        return p.then(function (k) { ref.kids = k; return k; });
+    }
+    function colTitle(parent, kids) {
+        var type = kids[0].type;
+        if (parent === null) return TITLES.door;
+        if (type === 'group' && parent.door && parent.door.groupTitle) return parent.door.groupTitle;
+        var lt = parent.levelTitles || (parent.pathData && parent.pathData.levelTitles);
+        return (lt && lt[type]) || TITLES[type];
+    }
+
+    /* ---------- drawing ---------- */
+    function nodeEl(ref, level) {
+        var sel = state.chain[level];
+        var b = h('button', 'cr-node cr-node--' + ref.type);
+        b.type = 'button';
+        b.setAttribute('data-key', ref.key);
+        var ico = h('span', 'cr-node-ico'); ico.setAttribute('aria-hidden', 'true');
+        ico.appendChild(h('i', 'fa-solid ' + ref.icon));
+        b.appendChild(ico);
+        var txt = h('span', 'cr-node-txt');
+        txt.appendChild(h('strong', '', ref.label));
+        if (ref.sub) txt.appendChild(h('small', '', ref.sub));
+        b.appendChild(txt);
+        if (!ref.live) { b.classList.add('is-soon'); b.appendChild(h('span', 'cr-soon', 'Soon')); }
+        if (sel) {
+            if (sel.key === ref.key) { b.classList.add('is-selected'); b.setAttribute('aria-expanded', 'true'); }
+            else b.classList.add('is-dim');
+        }
+        if (state.hi && state.hi[ref.key]) b.classList.add('is-route');
+        b.addEventListener('click', function () { pick(level, ref, b); });
+        return b;
+    }
+    function render(animate) {
+        var prev = state.cols;
+        mapEl.textContent = '';
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', 'cr-links'); svg.setAttribute('aria-hidden', 'true');
+        mapEl.appendChild(svg);
+
+        var cols = [];
+        cols.push({ parent: null, kids: state.index.doors.map(doorRef) });
+        state.chain.forEach(function (ref) { if (ref.kids && ref.kids.length) cols.push({ parent: ref, kids: ref.kids }); });
+        cols.forEach(function (c, i) {
+            var col = h('div', 'cr-col');
+            if (animate && i >= prev && i > 0) col.classList.add('is-new');
+            var title = h('p', 'cr-col-title', colTitle(c.parent, c.kids));
+            col.appendChild(title);
+            c.kids.forEach(function (ref) { col.appendChild(nodeEl(ref, i)); });
+            if (small() && i < cols.length - 1) {
+                col.classList.add('is-done');
+                var chg = h('button', 'cr-change', 'Change'); chg.type = 'button';
+                chg.addEventListener('click', function () { col.classList.toggle('is-open'); chg.textContent = col.classList.contains('is-open') ? 'Hide' : 'Change'; });
+                title.appendChild(chg);
+            }
+            mapEl.appendChild(col);
+        });
+        state.cols = cols.length;
+
+        el.reset.hidden = state.chain.length === 0;
+        var names = state.chain.map(function (r) { return r.label; });
+        el.sub.textContent = names.length ? 'Your path: ' + names.join('  >  ') : 'Tap a bubble to open it. New bubbles appear as you go.';
+        requestAnimationFrame(function () { drawLinks(svg); if (animate) revealNewest(); });
+        if (window.ResizeObserver && !render.ro) {
+            render.ro = new ResizeObserver(function () { var s = mapEl.querySelector('.cr-links'); if (s) drawLinks(s); });
+            render.ro.observe(mapEl);
+        }
+        updateUrl();
+    }
+    function drawLinks(svg) {
+        svg.textContent = '';
+        if (getComputedStyle(svg).display === 'none') return;
+        var r = mapEl.getBoundingClientRect();
+        var colEls = mapEl.querySelectorAll('.cr-col');
+        state.chain.forEach(function (ref, i) {
+            var from = colEls[i] && colEls[i].querySelector('[data-key="' + ref.key + '"]');
+            var next = colEls[i + 1];
+            if (!from || !next) return;
+            var A = from.getBoundingClientRect();
+            Array.prototype.forEach.call(next.querySelectorAll('.cr-node'), function (to) {
+                var B = to.getBoundingClientRect();
+                var x1 = A.right - r.left, y1 = A.top + A.height / 2 - r.top, x2 = B.left - r.left, y2 = B.top + B.height / 2 - r.top, mx = (x1 + x2) / 2;
+                var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                p.setAttribute('d', 'M' + x1 + ' ' + y1 + ' C' + mx + ' ' + y1 + ' ' + mx + ' ' + y2 + ' ' + x2 + ' ' + y2);
+                p.setAttribute('class', 'is-live');
+                svg.appendChild(p);
+            });
+        });
+    }
+    function revealNewest() {
+        var cols = mapEl.querySelectorAll('.cr-col');
+        var last = cols[cols.length - 1];
+        if (!last) return;
+        if (small()) { last.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'nearest' }); }
+        else { el.scroll.scrollLeft = el.scroll.scrollWidth; }
+    }
+    function setTip(text, linkText, href) {
+        el.tip.textContent = '';
+        if (!text) return;
+        el.tip.appendChild(document.createTextNode(text));
+        if (linkText) {
+            el.tip.appendChild(document.createTextNode(' '));
+            var a = h('a', 'cr-d-link', linkText); a.href = href;
+            el.tip.appendChild(a);
+        }
+    }
+    function updateUrl() {
+        var last = state.chain[state.chain.length - 1];
+        var q = (last && last.kind === 'node') ? '?path=' + encodeURIComponent(last.pathId) + '&node=' + encodeURIComponent(last.id) : '';
         if (location.search !== q) history.replaceState(null, '', location.pathname + q);
     }
 
-    /* ---------- pathway picker ---------- */
-    function renderCards() {
-        cardsEl.textContent = '';
-        state.index.pathways.forEach(function (p) {
-            var card = p.live ? h('button', 'cr-card') : h('div', 'cr-card is-soon');
-            card.setAttribute('data-id', p.id);
-            card.setAttribute('data-tags', (p.tags || []).join(' '));
-            var icon = h('span', 'cr-card-icon');
-            icon.setAttribute('aria-hidden', 'true');
-            icon.appendChild(h('i', 'fa-solid ' + p.icon));
-            card.appendChild(icon);
-            card.appendChild(h('h3', '', p.title));
-            card.appendChild(h('p', '', p.blurb));
-            if (p.live) {
-                card.type = 'button';
-                card.appendChild(h('span', 'cr-card-go', 'Open the map'));
-                card.addEventListener('click', function () { openPath(p.id, null, true); });
-            } else {
-                card.setAttribute('aria-disabled', 'true');
-                card.appendChild(h('span', 'cr-card-soon', 'Guide in preparation'));
+    /* ---------- tapping bubbles ---------- */
+    function pick(level, ref) {
+        if (!ref.live) {
+            setTip('This guide is coming soon. Ask a counsellor and we will help you right away.', 'Talk to us', 'contact.html?topic=' + encodeURIComponent(ref.label) + '&from=career-roadmap');
+            return;
+        }
+        if (ref.type === 'next') { startOver(ref.note, true); return; }
+        var cur = state.chain[level];
+        if (cur && cur.key === ref.key && level === state.chain.length - 1) {
+            state.chain = state.chain.slice(0, level); state.hi = null; closeSide(); setTip(''); render(false); return;
+        }
+        state.chain = state.chain.slice(0, level); state.chain.push(ref); state.hi = null;
+        kidsOf(ref).then(function () {
+            render(true);
+            var panel = ref.kind === 'node' && (ref.type === 'exam' || ref.type === 'career');
+            if (panel) showSide(ref); else closeSide();
+            setTip(panel ? '' : (ref.kind === 'node' ? ref.note : ref.tip) || '');
+        });
+    }
+    function startOver(tip, pulse) {
+        state.chain = []; state.hi = null; closeSide(); setTip(tip || ''); render(false);
+        if (pulse) {
+            Array.prototype.forEach.call(mapEl.querySelectorAll('.cr-node--door'), function (n) { n.classList.add('cr-pulse'); });
+            el.explorer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        }
+    }
+    el.reset.addEventListener('click', function () { startOver('', false); });
+
+    /* ---------- side panel ---------- */
+    function showSide(ref) {
+        state.side = ref;
+        var b = el.sideBody; b.textContent = '';
+        var isCareer = ref.type === 'career';
+        var kind = h('span', 'cr-d-kind' + (isCareer ? ' cr-d-kind--career' : ''), isCareer ? 'Career' : 'Entrance exam');
+        b.appendChild(kind);
+
+        var pathTitle = (ref.door.title === 'Science' && ref.group && ref.group.label ? 'Science ' + ref.group.label : ref.door.title);
+        var topic, x = null;
+        if (isCareer) {
+            topic = ref.label;
+            var t = h('h3', 'cr-d-title', ref.label); t.id = 'crSideTitle'; b.appendChild(t);
+            if (ref.note) b.appendChild(h('p', 'cr-d-simple', ref.note));
+            b.appendChild(h('div', 'cr-d-label', 'Your route'));
+            var ol = h('ol', 'cr-steps');
+            state.chain.forEach(function (r) { ol.appendChild(h('li', '', r.label)); });
+            b.appendChild(ol);
+            b.appendChild(h('div', 'cr-d-label', 'Want a plan made just for you?'));
+            b.appendChild(h('p', 'cr-d-text', 'Talk to a LessonPlan counsellor. We will help you pick the right steps and exams for ' + ref.label + '.'));
+        } else {
+            x = state.exams[ref.exam];
+            if (!x) { closeSide(); return; }
+            topic = x.name;
+            var t2 = h('h3', 'cr-d-title', x.name); t2.id = 'crSideTitle'; b.appendChild(t2);
+            if (x.simple) b.appendChild(h('p', 'cr-d-simple', x.simple));
+            b.appendChild(h('p', 'cr-d-body', x.body));
+            var chips = h('div', 'cr-d-chips');
+            chips.appendChild(h('span', 'cr-d-chip cr-d-chip--freq', x.frequency));
+            chips.appendChild(h('span', 'cr-d-chip cr-d-chip--month', x.month));
+            if (x.mode) chips.appendChild(h('span', 'cr-d-chip cr-d-chip--mode', x.mode));
+            b.appendChild(chips);
+            var table = h('table', 'cr-table'), thead = h('thead'), hr = h('tr');
+            ['Section', 'Questions', 'Marks'].forEach(function (s) { hr.appendChild(h('th', '', s)); });
+            thead.appendChild(hr); table.appendChild(thead);
+            var tbody = h('tbody');
+            x.rows.forEach(function (r) { var tr = h('tr'); r.forEach(function (c) { tr.appendChild(h('td', '', c)); }); tbody.appendChild(tr); });
+            table.appendChild(tbody); b.appendChild(table);
+            if (x.total) b.appendChild(h('p', 'cr-d-text', x.total));
+            b.appendChild(h('div', 'cr-d-label', 'Marking')); b.appendChild(h('p', 'cr-d-text', x.marking));
+            b.appendChild(h('div', 'cr-d-label', 'Who can apply')); b.appendChild(h('p', 'cr-d-text', x.eligibility));
+            if (x.leads) { b.appendChild(h('div', 'cr-d-label', 'Leads to')); b.appendChild(h('p', 'cr-d-text', x.leads)); }
+            if (x.official) {
+                var lp = h('p', 'cr-d-text'); lp.style.marginTop = '12px';
+                var link = h('a', 'cr-d-link', 'Official website');
+                link.href = x.official; link.target = '_blank'; link.rel = 'noopener noreferrer';
+                lp.appendChild(link); b.appendChild(lp);
             }
-            cardsEl.appendChild(card);
-        });
-    }
-    function markActiveCard() {
-        Array.prototype.forEach.call(cardsEl.children, function (c) {
-            c.classList.toggle('is-active', c.getAttribute('data-id') === state.path);
-        });
-    }
-    el.chips.addEventListener('click', function (e) {
-        var b = e.target.closest('.cr-chip');
-        if (!b) return;
-        var on = b.getAttribute('aria-pressed') === 'true';
-        Array.prototype.forEach.call(el.chips.children, function (c) { c.setAttribute('aria-pressed', 'false'); });
-        var tag = on ? null : b.getAttribute('data-tag');
-        if (!on) b.setAttribute('aria-pressed', 'true');
-        Array.prototype.forEach.call(cardsEl.children, function (c) {
-            var tags = (c.getAttribute('data-tags') || '').split(' ');
-            c.classList.toggle('is-dim', !!tag && tags.indexOf(tag) === -1);
-        });
-        document.getElementById('pathways').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-    });
-
-    /* ---------- open a pathway ---------- */
-    function scrollToExplorer() {
-        el.explorer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-    }
-    function openPath(id, focus, userAction) {
-        var meta = pathMeta(id);
-        if (!meta || !meta.live) return Promise.resolve();
-        el.explorer.hidden = false;
-        el.stage.textContent = '';
-        el.stage.appendChild(h('p', 'cr-intro', 'Loading the map...'));
-        return loadPath(meta).then(function (d) {
-            state.path = id;
-            markActiveCard();
-            el.title.textContent = d.title + ': Class 10 to career';
-            el.intro.textContent = d.intro;
-            var n = focus && d.byId[focus];
-            if (n && n.type === 'exam') { renderMap(d); openExam(n, null); }
-            else if (n && n.type !== 'stage') { showRoute(d, n.id); }
-            else { renderMap(d); }
-            if (userAction) { scrollToExplorer(); }
-        }).catch(function () {
-            el.stage.textContent = '';
-            var p = h('p', 'cr-intro', 'The map could not load. Please check your connection and try again, or ');
-            var a = h('a', 'cr-d-link', 'talk to LessonPlan');
-            a.href = 'contact.html?topic=Career+guidance&from=career-roadmap';
-            p.appendChild(a); p.appendChild(document.createTextNode('.'));
-            el.stage.appendChild(p);
-        });
-    }
-
-    /* ---------- all routes map ---------- */
-    function makeNode(d, n) {
-        var b = h('button', 'cr-node cr-node--' + n.type, n.label);
-        b.type = 'button';
-        b.setAttribute('data-id', n.id);
-        b.setAttribute('aria-label', n.label + ', ' + TYPE_LABEL[n.type]);
-        if (n.note) b.title = n.note;
-        b.addEventListener('click', function () {
-            if (n.type === 'exam') { openExam(n, b); }
-            else if (n.type === 'stage') { el.hint.textContent = n.note || ''; }
-            else { showRoute(d, n.id); }
-        });
-        return b;
-    }
-    function renderMap(d) {
-        state.focus = null;
-        setHash(d.id, null);
-        el.back.hidden = true;
-        el.hint.textContent = 'Tap a career to see its single route. Tap an orange exam for its details.';
-        var scroll = h('div', 'cr-scroll');
-        var map = h('div', 'cr-map');
-        map.style.setProperty('--cols', d.lanes.length);
-        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('class', 'cr-links');
-        svg.setAttribute('aria-hidden', 'true');
-        map.appendChild(svg);
-        d.lanes.forEach(function (lane) {
-            var col = h('div', 'cr-lane');
-            col.appendChild(h('div', 'cr-lane-label', lane.label));
-            var box = h('div', 'cr-lane-nodes');
-            d.nodes.filter(function (n) { return n.lane === lane.id; }).forEach(function (n) { box.appendChild(makeNode(d, n)); });
-            col.appendChild(box);
-            map.appendChild(col);
-        });
-        scroll.appendChild(map);
-        el.stage.textContent = '';
-        el.stage.appendChild(scroll);
-        var draw = function () { drawLinks(d, map, svg); };
-        requestAnimationFrame(draw);
-        if (window.ResizeObserver) new ResizeObserver(draw).observe(map);
-        else window.addEventListener('resize', draw);
-        bindHover(d, map, svg);
-    }
-    function drawLinks(d, map, svg) {
-        var r = map.getBoundingClientRect();
-        svg.textContent = '';
-        if (!r.width || getComputedStyle(svg).display === 'none') return;
-        d.edges.forEach(function (e) {
-            var a = map.querySelector('.cr-node[data-id="' + e[0] + '"]');
-            var b = map.querySelector('.cr-node[data-id="' + e[1] + '"]');
-            if (!a || !b) return;
-            var A = a.getBoundingClientRect(), B = b.getBoundingClientRect();
-            var x1 = A.right - r.left, y1 = A.top + A.height / 2 - r.top;
-            var x2 = B.left - r.left, y2 = B.top + B.height / 2 - r.top, mx = (x1 + x2) / 2;
-            var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            p.setAttribute('d', 'M' + x1 + ' ' + y1 + ' C' + mx + ' ' + y1 + ' ' + mx + ' ' + y2 + ' ' + x2 + ' ' + y2);
-            p.setAttribute('data-from', e[0]); p.setAttribute('data-to', e[1]);
-            svg.appendChild(p);
-        });
-    }
-    function bindHover(d, map, svg) {
-        function on(id) {
-            var rel = related(d, id);
-            Array.prototype.forEach.call(svg.children, function (p) {
-                var hit = rel[p.getAttribute('data-from')] && rel[p.getAttribute('data-to')];
-                p.classList.toggle('is-on', !!hit); p.classList.toggle('is-dim', !hit);
-            });
-            Array.prototype.forEach.call(map.querySelectorAll('.cr-node'), function (n) {
-                n.classList.toggle('is-dim', !rel[n.getAttribute('data-id')]);
-            });
-        }
-        function off() {
-            Array.prototype.forEach.call(svg.children, function (p) { p.classList.remove('is-on', 'is-dim'); });
-            Array.prototype.forEach.call(map.querySelectorAll('.cr-node'), function (n) { n.classList.remove('is-dim'); });
-        }
-        Array.prototype.forEach.call(map.querySelectorAll('.cr-node'), function (n) {
-            var id = n.getAttribute('data-id');
-            n.addEventListener('mouseenter', function () { on(id); });
-            n.addEventListener('focus', function () { on(id); });
-            n.addEventListener('mouseleave', off);
-            n.addEventListener('blur', off);
-        });
-    }
-
-    /* ---------- one route ---------- */
-    function showRoute(d, id) {
-        var focus = d.byId[id];
-        state.focus = id;
-        setHash(d.id, id);
-        var set = related(d, id);
-        el.back.hidden = false;
-        el.hint.textContent = focus.type === 'career'
-            ? 'Your route to ' + focus.label + '. Tap an orange exam for its details.'
-            : 'Routes through ' + focus.label + '. Tap an orange exam for its details.';
-        var lanes = d.lanes.filter(function (l) {
-            return d.nodes.some(function (n) { return n.lane === l.id && set[n.id]; });
-        });
-        var route = h('div', 'cr-route');
-        route.style.setProperty('--cols', lanes.length);
-        lanes.forEach(function (lane, i) {
-            var stop = h('div', 'cr-stop');
-            stop.style.setProperty('--i', i);
-            stop.appendChild(h('div', 'cr-stop-num', String(i + 1)));
-            stop.appendChild(h('div', 'cr-stop-label', lane.label));
-            var body = h('div', 'cr-stop-body');
-            var items = d.nodes.filter(function (n) { return n.lane === lane.id && set[n.id]; });
-            items.forEach(function (n, j) {
-                if (j) body.appendChild(h('div', 'cr-or', 'or'));
-                var pill = makeNode(d, n);
-                pill.classList.toggle('is-focus', n.id === id);
-                body.appendChild(pill);
-                if (n.note) body.appendChild(h('p', 'cr-note', n.note));
-            });
-            stop.appendChild(body);
-            route.appendChild(stop);
-        });
-        var scroll = h('div', 'cr-scroll');
-        scroll.appendChild(route);
-        el.stage.textContent = '';
-        el.stage.appendChild(scroll);
-    }
-    el.back.addEventListener('click', function () {
-        var d = state.cache[state.path];
-        if (d) renderMap(d);
-    });
-
-    /* ---------- exam drawer ---------- */
-    function openExam(node, opener) {
-        var x = state.exams[node.exam];
-        if (!x) return;
-        var meta = pathMeta(state.path);
-        state.opener = opener || null;
-        var b = el.drawerBody;
-        b.textContent = '';
-        var title = h('h3', 'cr-d-title', x.name);
-        title.id = 'crDrawerTitle';
-        b.appendChild(title);
-        b.appendChild(h('p', 'cr-d-body', x.body));
-        var chips = h('div', 'cr-d-chips');
-        chips.appendChild(h('span', 'cr-d-chip cr-d-chip--freq', x.frequency));
-        chips.appendChild(h('span', 'cr-d-chip cr-d-chip--month', x.month));
-        if (x.mode) chips.appendChild(h('span', 'cr-d-chip cr-d-chip--mode', x.mode));
-        b.appendChild(chips);
-
-        var table = h('table', 'cr-table');
-        var head = h('tr');
-        ['Section', 'Questions', 'Marks'].forEach(function (t) { head.appendChild(h('th', '', t)); });
-        var thead = h('thead'); thead.appendChild(head); table.appendChild(thead);
-        var tbody = h('tbody');
-        x.rows.forEach(function (r) {
-            var tr = h('tr');
-            r.forEach(function (c) { tr.appendChild(h('td', '', c)); });
-            tbody.appendChild(tr);
-        });
-        table.appendChild(tbody);
-        b.appendChild(table);
-        if (x.total) b.appendChild(h('p', 'cr-d-text', x.total));
-
-        b.appendChild(h('div', 'cr-d-label', 'Marking'));
-        b.appendChild(h('p', 'cr-d-text', x.marking));
-        b.appendChild(h('div', 'cr-d-label', 'Who can apply'));
-        b.appendChild(h('p', 'cr-d-text', x.eligibility));
-        if (x.leads) {
-            b.appendChild(h('div', 'cr-d-label', 'Leads to'));
-            b.appendChild(h('p', 'cr-d-text', x.leads));
-        }
-        if (x.official) {
-            var lp = h('p', 'cr-d-text');
-            var link = h('a', 'cr-d-link', 'Official website');
-            link.href = x.official; link.target = '_blank'; link.rel = 'noopener noreferrer';
-            lp.appendChild(link);
-            lp.style.marginTop = '12px';
-            b.appendChild(lp);
         }
 
         var actions = h('div', 'cr-d-actions');
-        var ask = h('a', 'btn btn-primary', 'Ask about ' + x.name.split(' (')[0]);
-        ask.href = 'contact.html?topic=' + encodeURIComponent(x.name) +
-            '&path=' + encodeURIComponent(meta ? meta.title : '') + '&from=career-roadmap';
+        var ask = h('a', 'btn btn-primary', isCareer ? 'Talk to a counsellor' : 'Ask about ' + x.name.split(' (')[0]);
+        ask.href = 'contact.html?topic=' + encodeURIComponent(topic) + '&path=' + encodeURIComponent(pathTitle) + '&from=career-roadmap';
         actions.appendChild(ask);
+        var meta = pathMeta(ref.pathId);
         if (meta && meta.guide) {
-            var dl = h('a', 'btn btn-secondary', 'Download guide (PDF)');
-            dl.href = meta.guide; dl.setAttribute('download', '');
+            var dl = h('a', 'btn btn-secondary', 'Download guide (PDF)'); dl.href = meta.guide; dl.setAttribute('download', '');
             actions.appendChild(dl);
         } else {
-            var off = h('span', 'btn btn-secondary cr-btn-off', 'Guide download soon');
-            off.setAttribute('aria-disabled', 'true');
+            var off = h('span', 'btn btn-secondary cr-btn-off', 'Guide download soon'); off.setAttribute('aria-disabled', 'true');
             actions.appendChild(off);
         }
         b.appendChild(actions);
         b.appendChild(h('p', 'cr-d-note', 'Details are for the ' + state.index.updated + '. Dates and rules change every year, so confirm on the official website.'));
 
-        el.drawer.hidden = false; el.backdrop.hidden = false;
-        requestAnimationFrame(function () {
-            el.drawer.classList.add('is-open'); el.backdrop.classList.add('is-open');
-            el.close.focus();
-        });
+        el.side.hidden = false; el.split.classList.add('has-side');
+        if (small()) {
+            el.backdrop.hidden = false;
+            requestAnimationFrame(function () { el.backdrop.classList.add('is-open'); el.close.focus(); });
+        }
+        el.side.scrollTop = 0;
         document.addEventListener('keydown', onKey);
     }
-    function closeDrawer() {
-        el.drawer.classList.remove('is-open'); el.backdrop.classList.remove('is-open');
+    function closeSide() {
+        if (el.side.hidden) return;
+        el.side.hidden = true; el.split.classList.remove('has-side');
+        el.backdrop.classList.remove('is-open'); el.backdrop.hidden = true;
         document.removeEventListener('keydown', onKey);
-        setTimeout(function () { el.drawer.hidden = true; el.backdrop.hidden = true; }, reduced ? 0 : 280);
-        if (state.opener && document.contains(state.opener)) state.opener.focus();
+        state.side = null;
     }
-    function onKey(e) {
-        if (e.key === 'Escape') { closeDrawer(); return; }
-        if (e.key !== 'Tab') return;
-        var f = el.drawer.querySelectorAll('a[href], button:not([disabled])');
-        if (!f.length) return;
-        var first = f[0], last = f[f.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    }
-    el.close.addEventListener('click', closeDrawer);
-    el.backdrop.addEventListener('click', closeDrawer);
+    function onKey(e) { if (e.key === 'Escape') closeSide(); }
+    el.close.addEventListener('click', closeSide);
+    el.backdrop.addEventListener('click', closeSide);
 
-    /* ---------- search ---------- */
+    /* ---------- open a whole route (search, shared link) ---------- */
+    function findGroup(pathId, nodeId) {
+        var best = null;
+        state.index.doors.forEach(function (door) {
+            (door.groups || []).forEach(function (g) {
+                if (g.pathway !== pathId) return;
+                if (!best || (g.entry && g.entry.indexOf(nodeId) > -1)) best = { door: door, group: g };
+            });
+        });
+        return best;
+    }
+    function openTarget(pathId, nodeId) {
+        return loadPath(pathId).then(function (d) {
+            var node = d.byId[nodeId], fg = findGroup(pathId, nodeId);
+            if (!node || !fg) return false;
+            var e = entryIds(d, fg.group), parents = [], seen = {};
+            // walk back from the target to one of the first bubbles
+            (function back(id, trail) {
+                if (parents.length) return;
+                if (e.ids.indexOf(id) > -1) { parents = [id].concat(trail); return; }
+                (d.inn[id] || []).forEach(function (p) { if (!seen[p + '>' + id]) { seen[p + '>' + id] = 1; back(p, [id].concat(trail)); } });
+            }(nodeId, []));
+            if (!parents.length) return false;
+            var dRef = doorRef(fg.door), chain = [dRef];
+            if (!(fg.door.groups.length === 1)) chain.push(groupRef(fg.door, fg.group));
+            parents.forEach(function (id) { chain.push(nodeRef(d, d.byId[id], fg.door, fg.group)); });
+            var hi = {}; var anc = walk(d.inn, nodeId);
+            Object.keys(anc).forEach(function (id) { hi['n:' + d.id + ':' + id] = 1; });
+            return chain.reduce(function (p, ref) { return p.then(function () { return kidsOf(ref); }); }, Promise.resolve()).then(function () {
+                state.chain = chain; state.hi = hi;
+                var last = chain[chain.length - 1];
+                var panel = last.type === 'exam' || last.type === 'career';
+                render(true);
+                if (panel) showSide(last); else closeSide();
+                setTip(panel ? '' : last.note || '');
+                return true;
+            });
+        });
+    }
+
+    /* ---------- search and class buttons ---------- */
     function hit(q, k) {
         if (k.length <= 3) return (' ' + q.replace(/[^a-z0-9 ]/g, ' ') + ' ').indexOf(' ' + k + ' ') > -1;
         return q.indexOf(k) > -1 || (q.length >= 4 && k.indexOf(q) > -1);
     }
+    function goExplorer() { el.explorer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); }
     el.form.addEventListener('submit', function (e) {
         e.preventDefault();
         var q = el.query.value.toLowerCase().trim();
         el.msg.textContent = '';
-        if (!q) { el.msg.textContent = 'Type a career, for example doctor or engineer.'; return; }
+        if (!q) { el.msg.textContent = 'Type a job you like, for example doctor or engineer.'; return; }
         var found = null;
-        state.index.search.some(function (s) {
-            return s.k.some(function (k) { if (hit(q, k)) { found = s; return true; } return false; });
-        });
-        if (found) {
-            var meta = pathMeta(found.path);
-            el.msg.textContent = 'Showing the route in ' + meta.title + '.';
-            openPath(found.path, found.node, true);
-        } else {
-            el.msg.appendChild(document.createTextNode('We do not have that yet. Try doctor, engineer, architect, CA or lawyer, or '));
-            var a = h('a', 'cr-d-link', 'talk to a counsellor');
-            a.href = 'contact.html?topic=' + encodeURIComponent(el.query.value) + '&from=career-roadmap';
+        state.index.search.some(function (s) { return s.k.some(function (k) { if (hit(q, k)) { found = s; return true; } return false; }); });
+        if (!found) {
+            el.msg.appendChild(document.createTextNode('We do not have that one yet. Try doctor, engineer, architect, CA or lawyer, or '));
+            var a = h('a', 'cr-d-link', 'ask a counsellor'); a.href = 'contact.html?topic=' + encodeURIComponent(el.query.value) + '&from=career-roadmap';
             el.msg.appendChild(a); el.msg.appendChild(document.createTextNode('.'));
+            return;
+        }
+        openTarget(found.path, found.node).then(function (ok) {
+            if (ok) { el.msg.textContent = 'Here is your whole route.'; goExplorer(); }
+        });
+    });
+    el.chips.addEventListener('click', function (e) {
+        var b = e.target.closest('.cr-chip'); if (!b) return;
+        var tag = b.getAttribute('data-tag'), cs = state.index.classStarts[tag];
+        if (cs) {
+            var door = doorById(cs.door), g = door.groups.filter(function (x) { return x.id === cs.group; })[0];
+            var dRef = doorRef(door), gRef = groupRef(door, g);
+            kidsOf(dRef).then(function () { return kidsOf(gRef); }).then(function () {
+                state.chain = [dRef, gRef]; state.hi = null; render(true); closeSide(); setTip(''); goExplorer();
+            });
+        } else if (tag === 'a10') {
+            startOver('After Class 10 you choose a stream. Pick one below.', true);
+        } else if (tag === 'a12') {
+            startOver('After Class 12 you can pick a stream or a field like Law, Defence or Design. Some are coming soon.', true);
         }
     });
 
     /* ---------- start ---------- */
-    function linkTarget() {
-        var q = new URLSearchParams(location.search);
-        var path = q.get('path'), node = q.get('node');
-        if (!path && location.hash) { var m = location.hash.replace('#', '').split('/'); path = m[0]; node = m[1]; }
-        var p = path && pathMeta(path);
-        return (p && p.live) ? { path: path, node: node || null } : null;
-    }
-    function firstLoadFromLink() {
-        var t = linkTarget();
-        if (!t) return;
-        openPath(t.path, t.node, false).then(function () {
-            var go = function () {
-                var top = el.explorer.getBoundingClientRect().top + window.pageYOffset - 70;
-                window.scrollTo(0, top);
-            };
-            if (document.readyState === 'complete') { setTimeout(go, 300); }
-            else { window.addEventListener('load', function () { setTimeout(go, 300); setTimeout(go, 900); }, { once: true }); }
-        });
-    }    Promise.all([getJSON(BASE + 'index.json'), getJSON(BASE + 'exams.json')]).then(function (r) {
+    Promise.all([getJSON(BASE + 'index.json'), getJSON(BASE + 'exams.json')]).then(function (r) {
         state.index = r[0]; state.exams = r[1];
-        renderCards();
-        firstLoadFromLink();
+        var q = new URLSearchParams(location.search), path = q.get('path'), node = q.get('node');
+        render(false);
+        if (path && node && pathMeta(path)) {
+            openTarget(path, node).then(function (ok) {
+                if (!ok) return;
+                var go = function () { window.scrollTo(0, el.explorer.getBoundingClientRect().top + window.pageYOffset - 70); };
+                if (document.readyState === 'complete') setTimeout(go, 300);
+                else window.addEventListener('load', function () { setTimeout(go, 300); setTimeout(go, 900); }, { once: true });
+            });
+        }
     }).catch(function () {
-        cardsEl.textContent = '';
-        var p = h('p', 'cr-noscript', 'The pathways could not load. Please open this page through the website, or ');
-        var a = h('a', 'cr-d-link', 'contact LessonPlan');
-        a.href = 'contact.html'; p.appendChild(a); p.appendChild(document.createTextNode('.'));
-        cardsEl.appendChild(p);
+        mapEl.textContent = '';
+        var p = h('p', 'cr-noscript', 'The map could not load. Please open this page through the website, or ');
+        var a = h('a', 'cr-d-link', 'contact LessonPlan'); a.href = 'contact.html';
+        p.appendChild(a); p.appendChild(document.createTextNode('.'));
+        mapEl.appendChild(p);
     });
 }());
