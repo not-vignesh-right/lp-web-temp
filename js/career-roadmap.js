@@ -145,54 +145,74 @@
         return b;
     }
     function render(animate) {
-        var prev = state.cols;
+        var prevRows = state.cols;
         mapEl.textContent = '';
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', 'cr-links'); svg.setAttribute('aria-hidden', 'true');
+        mapEl.appendChild(svg);
 
-        var cols = [];
-        cols.push({ parent: null, kids: state.index.doors.map(doorRef) });
-        state.chain.forEach(function (ref) { if (ref.kids && ref.kids.length) cols.push({ parent: ref, kids: ref.kids }); });
-        cols.forEach(function (c, i) {
-            var isNew = animate && i >= prev && i > 0;
-            if (i > 0) mapEl.appendChild(joinEl(c.parent, isNew));
-            var col = h('div', 'cr-col');
-            if (isNew) col.classList.add('is-new');
-            var title = h('p', 'cr-col-title', colTitle(c.parent, c.kids));
-            col.appendChild(title);
-            var grid = h('div', 'cr-grid');
-            c.kids.forEach(function (ref) { grid.appendChild(nodeEl(ref, i)); });
-            col.appendChild(grid);
-            if (small() && i < cols.length - 1) {
-                col.classList.add('is-done');
-                var chg = h('button', 'cr-change', 'Change'); chg.type = 'button';
-                chg.addEventListener('click', function () { col.classList.toggle('is-open'); chg.textContent = col.classList.contains('is-open') ? 'Hide' : 'Change'; });
-                title.appendChild(chg);
-            }
-            mapEl.appendChild(col);
+        var levels = [{ parent: null, kids: state.index.doors.map(doorRef) }];
+        state.chain.forEach(function (ref) { if (ref.kids && ref.kids.length) levels.push({ parent: ref, kids: ref.kids }); });
+        var cur = levels.length - 1;
+        levels.forEach(function (lv, i) {
+            var row = h('div', 'cr-row' + (i < cur ? ' is-single' : ''));
+            if (animate && i >= prevRows && i > 0) row.classList.add('is-new');
+            row.appendChild(h('p', 'cr-cap', colTitle(lv.parent, lv.kids)));
+            var nodes = h('div', 'cr-nodes');
+            var kids = i < cur ? [state.chain[i]] : lv.kids;
+            kids.forEach(function (ref) { nodes.appendChild(nodeEl(ref, i)); });
+            row.appendChild(nodes);
+            mapEl.appendChild(row);
         });
-        state.cols = cols.length;
+        state.cols = levels.length;
 
         el.reset.hidden = state.chain.length === 0;
         var names = state.chain.map(function (r) { return r.label; });
-        el.sub.textContent = names.length ? 'Your path: ' + names.join('  >  ') : 'Tap a bubble to open it. New bubbles appear as you go.';
-        if (animate) setTimeout(revealNewest, 80);
+        el.sub.textContent = names.length ? 'Your path: ' + names.join('  >  ') + '.  Tap a chosen bubble to change it.' : 'Tap a bubble to open it. New bubbles appear as you go.';
+        setTimeout(function () { drawLinks(svg); }, 30);
+        if (animate) setTimeout(revealNewest, 90);
         updateUrl();
     }
-    function joinEl(parent, isNew) {
-        var j = h('div', 'cr-join' + (isNew ? ' is-new' : ''));
-        j.setAttribute('aria-hidden', 'true');
-        var pill = h('span', 'cr-join-pill');
-        pill.appendChild(h('i', 'fa-solid fa-arrow-down'));
-        pill.appendChild(document.createTextNode(' ' + parent.label));
-        j.appendChild(pill);
-        return j;
+    function nearestByX(list, n) {
+        var nx = n.getBoundingClientRect().left + n.offsetWidth / 2, best = list[0], bd = 1e9;
+        list.forEach(function (c) { var d = Math.abs(c.getBoundingClientRect().left + c.offsetWidth / 2 - nx); if (d < bd) { bd = d; best = c; } });
+        return best;
     }
+    function drawLinks(svg) {
+        svg.textContent = '';
+        var r = mapEl.getBoundingClientRect();
+        var rows = mapEl.querySelectorAll('.cr-row');
+        function link(from, to) {
+            var A = from.getBoundingClientRect(), B = to.getBoundingClientRect();
+            var x1 = A.left + A.width / 2 - r.left, y1 = A.bottom - r.top, x2 = B.left + B.width / 2 - r.left, y2 = B.top - r.top, dy = Math.max(16, (y2 - y1) * 0.5);
+            var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            p.setAttribute('d', 'M' + x1 + ' ' + y1 + ' C' + x1 + ' ' + (y1 + dy) + ' ' + x2 + ' ' + (y2 - dy) + ' ' + x2 + ' ' + y2);
+            svg.appendChild(p);
+        }
+        for (var k = 0; k < rows.length - 1; k++) {
+            var from = rows[k].querySelector('.cr-node.is-selected');
+            if (!from) continue;
+            var kids = Array.prototype.slice.call(rows[k + 1].querySelectorAll('.cr-node'));
+            var lines = [];
+            kids.forEach(function (n) {
+                var t = Math.round(n.getBoundingClientRect().top), g = null;
+                lines.forEach(function (l) { if (Math.abs(l.t - t) < 8) g = l; });
+                if (g) g.n.push(n); else lines.push({ t: t, n: [n] });
+            });
+            lines.sort(function (a, b) { return a.t - b.t; });
+            lines.forEach(function (line, li) {
+                line.n.forEach(function (n) { link(li === 0 ? from : nearestByX(lines[li - 1].n, n), n); });
+            });
+        }
+    }
+    window.addEventListener('resize', function () { var s = mapEl.querySelector('.cr-links'); if (s) drawLinks(s); });
     function revealNewest() {
-        var cols = mapEl.querySelectorAll('.cr-col');
-        var last = cols[cols.length - 1];
+        var rows = mapEl.querySelectorAll('.cr-row');
+        var last = rows[rows.length - 1];
         if (!last) return;
         var r = last.getBoundingClientRect(), head = 96;
         if (r.top > window.innerHeight * 0.55 || r.top < head) {
-            window.scrollTo({ top: window.pageYOffset + r.top - head - 30, behavior: reduced ? 'auto' : 'smooth' });
+            window.scrollTo({ top: window.pageYOffset + r.top - head - 40, behavior: reduced ? 'auto' : 'smooth' });
         }
     }    function setTip(text, linkText, href) {
         el.tip.textContent = '';
@@ -218,7 +238,7 @@
         }
         if (ref.type === 'next') { startOver(ref.note, true); return; }
         var cur = state.chain[level];
-        if (cur && cur.key === ref.key && level === state.chain.length - 1) {
+        if (cur && cur.key === ref.key) {
             state.chain = state.chain.slice(0, level); state.hi = null; closeSide(); setTip(''); render(false); return;
         }
         state.chain = state.chain.slice(0, level); state.chain.push(ref); state.hi = null;
