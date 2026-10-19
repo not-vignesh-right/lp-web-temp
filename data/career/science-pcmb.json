@@ -128,6 +128,12 @@
       "note": "Biotechnology, microbiology, genetics, teaching and PhD."
     },
     {
+      "id": "nest",
+      "type": "exam",
+      "label": "NEST (NISER)",
+      "exam": "nest"
+    },
+    {
       "id": "jee",
       "lane": "l3",
       "type": "exam",
@@ -210,6 +216,36 @@
       "type": "career",
       "label": "Scientist",
       "note": "Physics, chemistry, maths and research careers."
+    },
+    {
+      "id": "jeeadv",
+      "type": "exam",
+      "label": "JEE Advanced (IITs)",
+      "exam": "jee-advanced"
+    },
+    {
+      "id": "comedk",
+      "type": "exam",
+      "label": "COMEDK (private colleges)",
+      "exam": "comedk"
+    },
+    {
+      "id": "cmi",
+      "type": "exam",
+      "label": "CMI and ISI tests",
+      "exam": "cmi-isi"
+    },
+    {
+      "id": "privateengg",
+      "type": "exam",
+      "label": "VITEEE, SRMJEEE (private)",
+      "exam": "private-engg"
+    },
+    {
+      "id": "mathcs",
+      "type": "course",
+      "label": "BSc Maths or CS at CMI, B.Stat and B.Math at ISI",
+      "note": "3 years. Maths, statistics and data science. A strong path to research."
     }
   ],
   "edges": [
@@ -235,6 +271,10 @@
     ],
     [
       "boards",
+      "nest"
+    ],
+    [
+      "boards",
       "jee"
     ],
     [
@@ -248,6 +288,22 @@
     [
       "boards",
       "nda"
+    ],
+    [
+      "boards",
+      "jeeadv"
+    ],
+    [
+      "boards",
+      "comedk"
+    ],
+    [
+      "boards",
+      "cmi"
+    ],
+    [
+      "boards",
+      "privateengg"
     ],
     [
       "neet",
@@ -302,6 +358,10 @@
       "researcher"
     ],
     [
+      "nest",
+      "bsc"
+    ],
+    [
       "jee",
       "btech"
     ],
@@ -343,6 +403,30 @@
     ],
     [
       "msbs",
+      "scientist"
+    ],
+    [
+      "jeeadv",
+      "btech"
+    ],
+    [
+      "comedk",
+      "btech"
+    ],
+    [
+      "privateengg",
+      "btech"
+    ],
+    [
+      "nest",
+      "msbs"
+    ],
+    [
+      "cmi",
+      "mathcs"
+    ],
+    [
+      "mathcs",
       "scientist"
     ]
   ]

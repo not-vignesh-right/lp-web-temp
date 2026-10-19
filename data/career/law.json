@@ -22,6 +22,12 @@
       "exam": "slat"
     },
     {
+      "id": "lsat",
+      "type": "exam",
+      "label": "LSAT-India",
+      "exam": "lsat"
+    },
+    {
       "id": "kslu",
       "type": "stage",
       "label": "Karnataka State Law University",
@@ -111,6 +117,10 @@
     ],
     [
       "slat",
+      "balb"
+    ],
+    [
+      "lsat",
       "balb"
     ],
     [

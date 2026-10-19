@@ -108,7 +108,8 @@
             "sof",
             "ioqm",
             "nmms",
-            "aissee"
+            "aissee",
+            "rimc"
           ]
         },
         {
@@ -216,7 +217,8 @@
             "ailet",
             "slat",
             "kslu",
-            "anydeg"
+            "anydeg",
+            "lsat"
           ]
         }
       ]
@@ -234,7 +236,8 @@
           "sub": "Sainik School, Class 6 or 9",
           "pathway": "defence",
           "entry": [
-            "aissee"
+            "aissee",
+            "rimc"
           ]
         },
         {
@@ -988,6 +991,43 @@
       ],
       "path": "science-pcmc",
       "node": "software"
+    },
+    {
+      "k": [
+        "actuary",
+        "actuarial"
+      ],
+      "path": "commerce",
+      "node": "actuary"
+    },
+    {
+      "k": [
+        "rimc",
+        "military college"
+      ],
+      "path": "foundation",
+      "node": "rimc"
+    },
+    {
+      "k": [
+        "comedk",
+        "iit",
+        "jee advanced",
+        "iitian"
+      ],
+      "path": "science-pcm",
+      "node": "jeeadv"
+    },
+    {
+      "k": [
+        "cmi",
+        "isi",
+        "statistician",
+        "statistics",
+        "mathematics"
+      ],
+      "path": "science-pcm",
+      "node": "mathcs"
     }
   ],
   "downloads": [

@@ -10,6 +10,18 @@
       "exam": "aissee"
     },
     {
+      "id": "rimc",
+      "type": "exam",
+      "label": "RIMC entrance (Class 8)",
+      "exam": "rimc"
+    },
+    {
+      "id": "rimccourse",
+      "type": "course",
+      "label": "RIMC, Dehradun (Class 8 to 12)",
+      "note": "A military college school. It prepares you for NDA."
+    },
+    {
       "id": "agniveer",
       "type": "exam",
       "label": "Agniveer",
@@ -167,6 +179,14 @@
     ],
     [
       "sainik",
+      "nda"
+    ],
+    [
+      "rimc",
+      "rimccourse"
+    ],
+    [
+      "rimccourse",
       "nda"
     ],
     [

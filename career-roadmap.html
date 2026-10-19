@@ -130,7 +130,10 @@
                         <h2 id="crPrompt">What do you want to become?</h2>
                         <p class="cr-top-sub" id="crSub">Tap a bubble to open it. New bubbles appear as you go.</p>
                     </div>
-                    <button type="button" class="btn btn-secondary cr-reset" id="crReset" hidden>Start over</button>
+                    <div class="cr-top-btns">
+                        <button type="button" class="btn btn-primary cr-save" id="crDownload" hidden><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Download my roadmap (PDF)</button>
+                        <button type="button" class="btn btn-secondary cr-reset" id="crReset" hidden>Start over</button>
+                    </div>
                 </div>
 
                 <div class="cr-split" id="crSplit">
@@ -151,8 +154,7 @@
                     <p class="cr-noscript">This page needs JavaScript to show the interactive map. Please
                         <a href="contact.html">contact LessonPlan</a> for the career guides.</p>
                 </noscript>
-                <p class="cr-disclaimer">Dates, patterns and eligibility change every year. Please confirm on the
-                    official website of the conducting body before you apply.</p>
+                <p class="cr-disclaimer">Cut-offs, past-year criteria, dates, patterns and eligibility shown here are approximate and may not be exact. They change every year. This page is for general guidance only. Please confirm on the official website of the conducting body before you apply.</p>
             </div>
         </section>
         <section class="cr-cal section-padding" id="calendar" aria-labelledby="crCalTitle">
@@ -166,6 +168,7 @@
                 <p class="cr-cal-note" id="crCalNote"></p>
             </div>
         </section>
+        <!-- Guide downloads (hidden for now; the visitor downloads their own roadmap instead)
         <section class="cr-dl section-padding section-bg-light" id="downloads" aria-labelledby="crDlTitle">
             <div class="container">
                 <div class="section-header">
@@ -175,7 +178,8 @@
                 <div class="cr-dl-grid" id="crDlGrid"></div>
             </div>
         </section>
-        <section class="cr-faq section-padding" id="faq">
+        -->
+        <section class="cr-faq section-padding section-bg-light" id="faq">
             <div class="container">
                 <div class="section-header">
                     <h2>Good to know</h2>
@@ -306,6 +310,7 @@
     </a>
 
     <script src="js/main.js" defer></script>
+    <script src="js/career-roadmap-pdf.js" defer></script>
     <script src="js/career-roadmap.js" defer></script>
 </body>
 

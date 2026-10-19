@@ -80,6 +80,11 @@
       "month": "April",
       "items": [
         {
+          "label": "SET, NPAT and college tests",
+          "path": "commerce",
+          "node": "setnpat"
+        },
+        {
           "label": "KCET",
           "path": "science-pcb",
           "node": "kcet"
@@ -119,6 +124,21 @@
     {
       "month": "May",
       "items": [
+        {
+          "label": "JEE Advanced",
+          "path": "science-pcm",
+          "node": "jeeadv"
+        },
+        {
+          "label": "COMEDK UGET",
+          "path": "science-pcm",
+          "node": "comedk"
+        },
+        {
+          "label": "CMI and ISI entrance tests",
+          "path": "science-pcm",
+          "node": "cmi"
+        },
         {
           "label": "NEET-UG",
           "path": "science-pcb",
@@ -168,6 +188,16 @@
           "label": "IISER Aptitude Test",
           "path": "science-pcb",
           "node": "iat"
+        },
+        {
+          "label": "NEST",
+          "path": "science-pcb",
+          "node": "nest"
+        },
+        {
+          "label": "ACET",
+          "path": "commerce",
+          "node": "acet"
         },
         {
           "label": "AIBE",

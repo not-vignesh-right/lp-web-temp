@@ -162,3 +162,9 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 .cr-dl-card--main { grid-column: 1 / -1; background: #003366; border-color: #003366; color: #fff; }
 .cr-dl-card--main .cr-dl-text small { color: #cfe0f2; }
 .cr-dl-card--main > i { color: #fff; }
+
+/* ---------- download my roadmap ---------- */
+.cr-top-btns { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.cr-top-btns .btn[hidden] { display: none; }
+.cr-save i { margin-right: 6px; }
+@media (max-width: 560px) { .cr-top-btns { width: 100%; } .cr-top-btns .btn { flex: 1 1 auto; text-align: center; } }

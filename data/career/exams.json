@@ -1100,5 +1100,126 @@
     "frequency": "Once a year",
     "month": "After Class 12 results",
     "eligibility": "Class 12 with about 50%."
+  },
+  "jee-advanced": {
+    "name": "JEE Advanced (IITs)",
+    "body": "One of the seven IITs in turn (IIT Roorkee in 2026)",
+    "simple": "The test for the IITs. You must do well in JEE Main first.",
+    "frequency": "Once a year",
+    "month": "May (2026: 17 May)",
+    "mode": "Computer based",
+    "pattern": "Two compulsory papers of 3 hours each, covering Physics, Chemistry and Maths. Marking changes by question type and by year.",
+    "total": "Two papers, 3 hours each",
+    "marking": "Changes every year. Read the official brochure.",
+    "eligibility": "Be among the top 2,50,000 candidates of JEE Main (BE/BTech). Class 12 first appeared no earlier than the previous year. At most 2 attempts in 2 years in a row.",
+    "official": "https://jeeadv.ac.in",
+    "leads": "IITs and related institutes through JoSAA counselling"
+  },
+  "comedk": {
+    "name": "COMEDK UGET",
+    "body": "COMEDK (private engineering colleges of Karnataka)",
+    "simple": "The test for many private engineering colleges in Karnataka.",
+    "frequency": "Once a year",
+    "month": "May (2026: 9 May)",
+    "mode": "Computer based",
+    "rows": [
+      [
+        "Physics",
+        "60",
+        "60"
+      ],
+      [
+        "Chemistry",
+        "60",
+        "60"
+      ],
+      [
+        "Maths",
+        "60",
+        "60"
+      ]
+    ],
+    "total": "180 marks (question count to be confirmed †)",
+    "marking": "No negative marking",
+    "eligibility": "Class 12 or 2nd PUC with Physics, Chemistry, Maths and English. About 45% marks for General category.†",
+    "official": "https://www.comedk.org",
+    "leads": "BE and BTech seats in COMEDK member colleges"
+  },
+  "nest": {
+    "name": "NEST (NISER and CEBS)",
+    "body": "NISER Bhubaneswar and UM-DAE CEBS Mumbai",
+    "simple": "The test for the 5-year integrated MSc at NISER and CEBS.",
+    "frequency": "Once a year",
+    "month": "About June",
+    "mode": "Computer based",
+    "pattern": "Computer based test with sections on general science, biology, chemistry, physics and maths. Check the official notice for marking.",
+    "eligibility": "Class 12 Science with good marks (about 60% for General category).†",
+    "official": "https://www.nestexam.in",
+    "leads": "5-year integrated MSc in science at NISER and UM-DAE CEBS"
+  },
+  "acet": {
+    "name": "ACET (Actuarial Entrance Test)",
+    "body": "Institute of Actuaries of India (IAI)",
+    "simple": "The first step to become an actuary, who works with risk and numbers.",
+    "frequency": "Once or twice a year",
+    "month": "June (2026: 13 June)",
+    "mode": "Online",
+    "pattern": "70 multiple-choice questions in 3 hours on Maths, Statistics, Data Interpretation, English and Logical Reasoning. The score is valid for 3 years.",
+    "eligibility": "Class 12 pass or appearing. Check the IAI notice for the subject rules.†",
+    "official": "https://www.actuariesindia.org",
+    "leads": "The actuary route and BSc Statistics or Actuarial Science"
+  },
+  "cmi-isi": {
+    "name": "CMI and ISI entrance tests",
+    "body": "Chennai Mathematical Institute and Indian Statistical Institute",
+    "simple": "Tests for top colleges in maths, statistics and computer science.",
+    "frequency": "Once a year",
+    "month": "May (2026: CMI on 2 May, ISI on 10 May)",
+    "mode": "Written tests",
+    "pattern": "CMI test: Part A objective (40 marks) and Part B written answers (80 marks).† ISI test: maths based. Check each institute for the latest pattern.",
+    "eligibility": "Class 12 pass. ISI wants Maths and English in Class 12. CMI has no minimum percentage.",
+    "official": "https://www.cmi.ac.in",
+    "leads": "BSc Maths or Computer Science at CMI, B.Stat and B.Math at ISI"
+  },
+  "private-engg": {
+    "name": "VITEEE, SRMJEEE and other private tests",
+    "body": "Private engineering universities",
+    "simple": "Many private universities run their own engineering tests.",
+    "frequency": "Once a year",
+    "month": "Varies by university",
+    "pattern": "Dates and patterns differ for each university. Check each one.†",
+    "eligibility": "Class 12 with Physics, Chemistry and Maths. Each university sets its own marks rule.",
+    "leads": "BE and BTech at private universities"
+  },
+  "set-npat": {
+    "name": "SET, NPAT and college tests",
+    "body": "Symbiosis, NMIMS, Christ and other colleges",
+    "simple": "Entrance tests for BBA and BMS at private colleges.",
+    "frequency": "Once a year",
+    "month": "March to May (check each college)",
+    "pattern": "Each college has its own test and dates. Registration windows change every year.†",
+    "eligibility": "Class 12 pass or appearing. Each college sets its own rules.",
+    "leads": "BBA and BMS degrees"
+  },
+  "rimc": {
+    "name": "RIMC entrance (Class 8)",
+    "body": "Rashtriya Indian Military College, Dehradun",
+    "simple": "A military college school you can join in Class 8.",
+    "frequency": "Check the RIMC notice",
+    "month": "Check the RIMC notice",
+    "pattern": "Written test followed by an interview. Check the official notice for details.†",
+    "eligibility": "Check the RIMC notice for age and class rules.†",
+    "official": "https://rimc.gov.in",
+    "leads": "Schooling at RIMC, then the NDA route"
+  },
+  "lsat": {
+    "name": "LSAT-India",
+    "body": "Law School Admission Council (LSAC)",
+    "simple": "A law entrance test accepted by some private law universities.",
+    "frequency": "Check the LSAC notice",
+    "month": "Winter and spring (check LSAC)",
+    "pattern": "Multiple-choice test of reasoning and reading. Check the current LSAC India notice.†",
+    "eligibility": "Class 12 pass for the 5-year law courses. Each college sets its own rules.",
+    "leads": "5-year law courses at colleges that accept it"
   }
 }

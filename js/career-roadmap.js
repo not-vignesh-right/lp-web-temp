@@ -14,6 +14,7 @@
         sub: document.getElementById('crSub'),
         tip: document.getElementById('crTip'),
         reset: document.getElementById('crReset'),
+        download: document.getElementById('crDownload'),
         side: document.getElementById('crSide'),
         sideBody: document.getElementById('crSideBody'),
         close: document.getElementById('crClose'),
@@ -167,6 +168,7 @@
         state.cols = levels.length;
 
         el.reset.hidden = state.chain.length === 0;
+        if (el.download) el.download.hidden = state.chain.length === 0;
         var names = state.chain.map(function (r) { return r.label; });
         el.sub.textContent = names.length ? 'Your path: ' + names.join('  >  ') + '.  Tap a chosen bubble to change it.' : 'Tap a bubble to open it. New bubbles appear as you go.';
         setTimeout(function () { drawLinks(svg); }, 30);
@@ -258,6 +260,58 @@
     }
     el.reset.addEventListener('click', function () { startOver('', false); });
 
+    /* ---------- download my roadmap (PDF) ---------- */
+    function pdfData() {
+        var levels = [{ parent: null, kids: state.index.doors.map(doorRef) }];
+        state.chain.forEach(function (ref) { if (ref.kids && ref.kids.length) levels.push({ parent: ref, kids: ref.kids }); });
+        var cur = levels.length - 1;
+        var out = levels.map(function (lv, i) {
+            var chosen = state.chain[i], single = i < cur;
+            var kids = single ? [chosen] : lv.kids;
+            return {
+                title: colTitle(lv.parent, lv.kids), hasSel: single || !!chosen,
+                items: kids.map(function (k) { return { label: k.label, type: k.type, sel: !!chosen && chosen.key === k.key }; })
+            };
+        });
+        var seen = {}, details = [];
+        function addDetail(ref) {
+            if (seen[ref.key] || (ref.type !== 'exam' && ref.type !== 'career')) return;
+            seen[ref.key] = 1;
+            if (ref.type === 'career') {
+                details.push({ type: 'career', title: ref.label, simple: ref.note, route: state.chain.map(function (r) { return r.label; }) });
+            } else {
+                var x = state.exams[ref.exam]; if (!x) return;
+                details.push({ type: 'exam', title: x.name, simple: x.simple, body: x.body, facts: [x.frequency, x.month, x.mode].filter(Boolean),
+                    rows: x.rows, total: x.total, pattern: x.pattern, marking: x.marking, eligibility: x.eligibility, leads: x.leads, official: x.official });
+            }
+        }
+        state.chain.forEach(addDetail);
+        var last = levels[cur], extra = 0;
+        if (last) last.kids.forEach(function (k) { if (extra < 8 && !seen[k.key] && (k.type === 'exam' || k.type === 'career')) { extra++; addDetail(k); } });
+        return { path: state.chain.map(function (r) { return r.label; }), levels: out, details: details, updated: state.index.updated };
+    }
+    var busy = false;
+    function downloadRoadmap() {
+        if (busy || !window.CRPdf || !state.chain.length) return;
+        busy = true;
+        var btns = [el.download].concat(Array.prototype.slice.call(document.querySelectorAll('.cr-d-actions button')));
+        var old = el.download ? el.download.innerHTML : '';
+        btns.forEach(function (b) { if (b) b.disabled = true; });
+        if (el.download) el.download.textContent = 'Making your PDF...';
+        window.CRPdf.make(pdfData()).then(function (bytes) {
+            var url = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+            var a = document.createElement('a'); a.href = url; a.download = 'LessonPlan-My-Career-Roadmap.pdf';
+            document.body.appendChild(a); a.click(); a.remove();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+        }).catch(function () {
+            setTip('The PDF could not be made right now. Please check your internet and try again.', 'Talk to us', 'contact.html?topic=Career+Roadmap+PDF&from=career-roadmap');
+        }).then(function () {
+            busy = false; btns.forEach(function (b) { if (b) b.disabled = false; });
+            if (el.download) el.download.innerHTML = old;
+        });
+    }
+    if (el.download) el.download.addEventListener('click', downloadRoadmap);
+
     /* ---------- side panel ---------- */
     function showSide(ref) {
         state.side = ref;
@@ -316,19 +370,11 @@
         var ask = h('a', 'btn btn-primary', isCareer ? 'Talk to a counsellor' : 'Ask about ' + x.name.split(' (')[0]);
         ask.href = 'contact.html?topic=' + encodeURIComponent(topic) + '&path=' + encodeURIComponent(pathTitle) + '&from=career-roadmap';
         actions.appendChild(ask);
-        var meta = pathMeta(ref.pathId);
-        var gl = meta && (meta.guides || (meta.guide ? [{ label: 'Download guide (PDF)', href: meta.guide }] : null));
-        if (gl && gl.length) {
-            gl.forEach(function (g) {
-                var dl = h('a', 'btn btn-secondary', gl.length > 1 ? g.label : 'Download guide (PDF)'); dl.href = g.href; dl.setAttribute('download', '');
-                actions.appendChild(dl);
-            });
-        } else {
-            var off = h('span', 'btn btn-secondary cr-btn-off', 'Guide download soon'); off.setAttribute('aria-disabled', 'true');
-            actions.appendChild(off);
-        }
+        var dlb = h('button', 'btn btn-secondary', 'Download my roadmap (PDF)'); dlb.type = 'button';
+        dlb.addEventListener('click', downloadRoadmap);
+        actions.appendChild(dlb);
         b.appendChild(actions);
-        b.appendChild(h('p', 'cr-d-note', 'Details are for the ' + state.index.updated + '. Dates and rules change every year, so confirm on the official website.'));
+        b.appendChild(h('p', 'cr-d-note', 'Details are for the ' + state.index.updated + '. Cut-offs, past-year criteria and dates are approximate and may not be exact. They change every year, so confirm on the official website.'));
 
         el.side.hidden = false; el.split.classList.add('has-side');
         if (small()) {
