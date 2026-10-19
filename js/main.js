@@ -207,3 +207,35 @@
         });
     });
 })();
+
+// Career Roadmap: pre-fill the contact form from ?topic=...&path=...&from=career-roadmap
+(function () {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("from") !== "career-roadmap") return;
+
+    const clean = (v) => (v || "").replace(/[\r\n]+/g, " ").trim().slice(0, 80);
+    const topic = clean(params.get("topic"));
+    const path = clean(params.get("path"));
+    const generic = !topic || topic === "Career guidance" || topic === "Career Roadmap";
+
+    const subject = form.querySelector("#subject");
+    const message = form.querySelector("#message");
+
+    if (subject && !subject.value) {
+        subject.value = generic ? "Career Roadmap enquiry" : "Career Roadmap enquiry - " + topic;
+    }
+    if (message && !message.value) {
+        message.value = generic
+            ? "I would like guidance on choosing the right career path."
+            : "I am interested in " + topic + (path && path !== "Career Roadmap" ? " (" + path + ")" : "") +
+              ". Please guide me on eligibility, dates and preparation.";
+    }
+
+    const note = document.createElement("p");
+    note.textContent = "You came from the Career Roadmap, so we have filled in your enquiry. Please add your name, phone and email.";
+    note.style.cssText = "background:#eef4fa;color:#003366;border-radius:8px;padding:10px 14px;margin:0 0 14px;font-size:0.95rem;";
+    form.parentNode.insertBefore(note, form);
+})();

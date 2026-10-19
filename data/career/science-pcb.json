@@ -1,0 +1,41 @@
+{
+  "id": "science-pcb",
+  "title": "Science PCB",
+  "intro": "Physics, Chemistry and Biology after Class 10. Pick a career to see its route.",
+  "lanes": [
+    { "id": "l1", "label": "After Class 10" },
+    { "id": "l2", "label": "Class 11-12" },
+    { "id": "l3", "label": "Entrance exams" },
+    { "id": "l4", "label": "Degree" },
+    { "id": "l5", "label": "Career" }
+  ],
+  "nodes": [
+    { "id": "choose", "lane": "l1", "type": "stage", "label": "Choose PCB", "note": "Add Maths as an optional subject to keep engineering open." },
+    { "id": "boards", "lane": "l2", "type": "stage", "label": "Boards and entrance prep", "note": "In Karnataka this is the 2-year PUC. Board marks count for the PCB percentage rule." },
+    { "id": "neet", "lane": "l3", "type": "exam", "label": "NEET-UG", "exam": "neet-ug" },
+    { "id": "kcet", "lane": "l3", "type": "exam", "label": "KCET", "exam": "kcet" },
+    { "id": "cuet", "lane": "l3", "type": "exam", "label": "CUET-UG", "exam": "cuet-ug" },
+    { "id": "iat", "lane": "l3", "type": "exam", "label": "IISER IAT", "exam": "iiser-iat" },
+    { "id": "mbbs", "lane": "l4", "type": "course", "label": "MBBS / BDS / AYUSH", "note": "About 4.5 to 5.5 years including internship." },
+    { "id": "vetc", "lane": "l4", "type": "course", "label": "BVSc and AH", "note": "Veterinary degree through NEET merit, about 5 years." },
+    { "id": "allied", "lane": "l4", "type": "course", "label": "BPT and allied health", "note": "NEET is reported to be required from 2026-27. Confirm with the institute." },
+    { "id": "nursing", "lane": "l4", "type": "course", "label": "BSc Nursing", "note": "4 years. In Karnataka admission is through KCET and KEA counselling." },
+    { "id": "bpharm", "lane": "l4", "type": "course", "label": "B.Pharm", "note": "4 years through KCET in Karnataka." },
+    { "id": "bsc", "lane": "l4", "type": "course", "label": "BSc Life Sciences / BS-MS", "note": "3 to 5 years. Research and industry route." },
+    { "id": "doctor", "lane": "l5", "type": "career", "label": "Doctor", "note": "Doctor, dentist, AYUSH physician. Specialise with NEET-PG after MBBS." },
+    { "id": "vet", "lane": "l5", "type": "career", "label": "Veterinarian", "note": "Livestock, pets, dairy and wildlife health." },
+    { "id": "allied-career", "lane": "l5", "type": "career", "label": "Physiotherapist / technologist", "note": "Rehabilitation, diagnostics and lab roles." },
+    { "id": "nurse", "lane": "l5", "type": "career", "label": "Nurse", "note": "Hospital, community and teaching roles." },
+    { "id": "pharmacist", "lane": "l5", "type": "career", "label": "Pharmacist", "note": "Hospital pharmacy, pharma industry, regulatory roles." },
+    { "id": "researcher", "lane": "l5", "type": "career", "label": "Researcher", "note": "Biotechnology, microbiology, genetics, teaching and PhD." }
+  ],
+  "edges": [
+    ["choose", "boards"],
+    ["boards", "neet"], ["boards", "kcet"], ["boards", "cuet"], ["boards", "iat"],
+    ["neet", "mbbs"], ["neet", "vetc"], ["neet", "allied"],
+    ["kcet", "nursing"], ["kcet", "bpharm"],
+    ["cuet", "bsc"], ["iat", "bsc"],
+    ["mbbs", "doctor"], ["vetc", "vet"], ["allied", "allied-career"],
+    ["nursing", "nurse"], ["bpharm", "pharmacist"], ["bsc", "researcher"]
+  ]
+}

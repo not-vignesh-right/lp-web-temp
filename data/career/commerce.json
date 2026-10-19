@@ -1,0 +1,41 @@
+{
+  "id": "commerce",
+  "title": "Commerce",
+  "intro": "Accountancy, Business Studies and Economics after Class 10. Pick a career to see its route.",
+  "lanes": [
+    { "id": "l1", "label": "After Class 10" },
+    { "id": "l2", "label": "Class 11-12" },
+    { "id": "l3", "label": "Entrance exams" },
+    { "id": "l4", "label": "Degree and course" },
+    { "id": "l5", "label": "Career" }
+  ],
+  "nodes": [
+    { "id": "choose", "lane": "l1", "type": "stage", "label": "Choose Commerce", "note": "Take Maths if you want Economics Hons, IPM or actuarial science later." },
+    { "id": "boards", "lane": "l2", "type": "stage", "label": "Boards and Foundation prep", "note": "BCom admission in Karnataka is mostly merit based on 2nd PUC marks." },
+    { "id": "caf", "lane": "l3", "type": "exam", "label": "CA Foundation", "exam": "ca-foundation" },
+    { "id": "cseet", "lane": "l3", "type": "exam", "label": "CSEET", "exam": "cseet" },
+    { "id": "cmaf", "lane": "l3", "type": "exam", "label": "CMA Foundation", "exam": "cma-foundation" },
+    { "id": "cuet", "lane": "l3", "type": "exam", "label": "CUET-UG", "exam": "cuet-ug" },
+    { "id": "ipmat", "lane": "l3", "type": "exam", "label": "IPMAT", "exam": "ipmat" },
+    { "id": "clat", "lane": "l3", "type": "exam", "label": "CLAT", "exam": "clat" },
+    { "id": "ca", "lane": "l4", "type": "course", "label": "CA course", "note": "Foundation, Intermediate, articleship and Final." },
+    { "id": "cs", "lane": "l4", "type": "course", "label": "CS course", "note": "Executive and Professional programmes with training." },
+    { "id": "cma", "lane": "l4", "type": "course", "label": "CMA course", "note": "Foundation, Intermediate and Final." },
+    { "id": "bcom", "lane": "l4", "type": "course", "label": "BCom / BBA", "note": "3 to 4 years. Often done alongside CA, CS or CMA." },
+    { "id": "ipm", "lane": "l4", "type": "course", "label": "IPM (BBA + MBA)", "note": "5-year integrated programme." },
+    { "id": "llb", "lane": "l4", "type": "course", "label": "BA LLB / BBA LLB", "note": "5 years at law universities." },
+    { "id": "ca-career", "lane": "l5", "type": "career", "label": "Chartered accountant", "note": "Audit, tax, finance and consulting." },
+    { "id": "cs-career", "lane": "l5", "type": "career", "label": "Company secretary", "note": "Corporate governance and compliance." },
+    { "id": "cma-career", "lane": "l5", "type": "career", "label": "Cost accountant", "note": "Costing, management accounting and finance." },
+    { "id": "manager", "lane": "l5", "type": "career", "label": "Manager / banker", "note": "Management, banking, finance and entrepreneurship." },
+    { "id": "lawyer", "lane": "l5", "type": "career", "label": "Lawyer", "note": "Advocate, corporate counsel, judge after judicial exams." }
+  ],
+  "edges": [
+    ["choose", "boards"],
+    ["boards", "caf"], ["boards", "cseet"], ["boards", "cmaf"], ["boards", "cuet"], ["boards", "ipmat"], ["boards", "clat"],
+    ["caf", "ca"], ["cseet", "cs"], ["cmaf", "cma"],
+    ["cuet", "bcom"], ["ipmat", "ipm"], ["clat", "llb"],
+    ["ca", "ca-career"], ["cs", "cs-career"], ["cma", "cma-career"],
+    ["bcom", "manager"], ["ipm", "manager"], ["llb", "lawyer"]
+  ]
+}

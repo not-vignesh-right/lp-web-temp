@@ -1,0 +1,36 @@
+{
+  "updated": "2026-27 cycle",
+  "pathways": [
+    { "id": "foundation", "title": "Foundation (Class 6-10)", "type": "foundation", "icon": "fa-seedling", "blurb": "Olympiads, scholarships and the Class 10 decision.", "tags": ["c6", "c9"], "live": false },
+    { "id": "science-pcb", "title": "Science PCB", "type": "stream", "icon": "fa-dna", "blurb": "Medicine, nursing, pharmacy, life sciences, veterinary.", "tags": ["a10"], "live": true, "file": "science-pcb.json" },
+    { "id": "science-pcm", "title": "Science PCM", "type": "stream", "icon": "fa-atom", "blurb": "Engineering, architecture, defence technical, research.", "tags": ["a10"], "live": true, "file": "science-pcm.json" },
+    { "id": "commerce", "title": "Commerce", "type": "stream", "icon": "fa-chart-line", "blurb": "CA, CS, CMA, management, law, economics.", "tags": ["a10"], "live": true, "file": "commerce.json" },
+    { "id": "arts", "title": "Arts and Humanities", "type": "stream", "icon": "fa-landmark", "blurb": "Civil services, psychology, media, teaching, liberal arts.", "tags": ["a10"], "live": false },
+    { "id": "law", "title": "Law", "type": "umbrella", "icon": "fa-scale-balanced", "blurb": "Advocate, judge, corporate counsel.", "tags": ["a12"], "live": false },
+    { "id": "defence", "title": "Defence", "type": "umbrella", "icon": "fa-shield-halved", "blurb": "Sainik School, NDA, CDS, Agniveer.", "tags": ["c6", "a10", "a12"], "live": false },
+    { "id": "design", "title": "Design and Architecture", "type": "umbrella", "icon": "fa-pen-ruler", "blurb": "Product, UX, fashion, architecture.", "tags": ["a12"], "live": false },
+    { "id": "hospitality", "title": "Hospitality, Aviation and Maritime", "type": "umbrella", "icon": "fa-plane", "blurb": "Hotels, pilot, cabin crew, merchant navy.", "tags": ["a12"], "live": false },
+    { "id": "health", "title": "Health and Allied", "type": "umbrella", "icon": "fa-heart-pulse", "blurb": "Nursing, pharmacy, allied health, AYUSH.", "tags": ["a12"], "live": false },
+    { "id": "agri", "title": "Agriculture, Veterinary and Forestry", "type": "umbrella", "icon": "fa-wheat-awn", "blurb": "Agri-science, veterinary, forest services.", "tags": ["a12"], "live": false },
+    { "id": "polytechnic", "title": "Polytechnic and ITI", "type": "umbrella", "icon": "fa-screwdriver-wrench", "blurb": "Diploma and trades after Class 8 or 10.", "tags": ["a10"], "live": false },
+    { "id": "skills", "title": "Skills and Entrepreneurship", "type": "umbrella", "icon": "fa-lightbulb", "blurb": "Skill courses, start-ups, self-employment.", "tags": ["a10", "a12"], "live": false },
+    { "id": "sports-arts", "title": "Sports and Performing Arts", "type": "umbrella", "icon": "fa-medal", "blurb": "Sports, physical education, music, dance, fine arts.", "tags": ["a10", "a12"], "live": false }
+  ],
+  "search": [
+    { "k": ["doctor", "mbbs", "medicine", "surgeon", "dentist", "bds", "ayush", "neet"], "path": "science-pcb", "node": "doctor" },
+    { "k": ["nurse", "nursing"], "path": "science-pcb", "node": "nurse" },
+    { "k": ["pharmacist", "pharmacy", "pharma"], "path": "science-pcb", "node": "pharmacist" },
+    { "k": ["researcher", "scientist biology", "biotech", "life science", "microbiology"], "path": "science-pcb", "node": "researcher" },
+    { "k": ["vet", "veterinary", "veterinarian", "animal doctor"], "path": "science-pcb", "node": "vet" },
+    { "k": ["physiotherapist", "physiotherapy", "allied health", "lab technician", "optometrist"], "path": "science-pcb", "node": "allied-career" },
+    { "k": ["engineer", "engineering", "btech", "software", "computer science", "jee", "coding", "ai engineer"], "path": "science-pcm", "node": "engineer" },
+    { "k": ["architect", "architecture", "barch"], "path": "science-pcm", "node": "architect" },
+    { "k": ["army", "navy", "air force", "defence officer", "nda", "soldier", "military"], "path": "science-pcm", "node": "officer" },
+    { "k": ["scientist", "physicist", "mathematician", "research"], "path": "science-pcm", "node": "scientist" },
+    { "k": ["ca", "chartered accountant", "accountant", "audit"], "path": "commerce", "node": "ca-career" },
+    { "k": ["company secretary", "cs"], "path": "commerce", "node": "cs-career" },
+    { "k": ["cost accountant", "cma"], "path": "commerce", "node": "cma-career" },
+    { "k": ["manager", "mba", "bba", "management", "business", "banker", "bank", "finance"], "path": "commerce", "node": "manager" },
+    { "k": ["lawyer", "law", "advocate", "judge", "clat"], "path": "commerce", "node": "lawyer" }
+  ]
+}

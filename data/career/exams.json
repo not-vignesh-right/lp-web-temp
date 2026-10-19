@@ -1,0 +1,106 @@
+{
+  "neet-ug": {
+    "name": "NEET-UG", "body": "National Testing Agency (NTA)", "frequency": "Once a year", "month": "May (2026 re-exam: 21 June)",
+    "mode": "Pen and paper (OMR)",
+    "rows": [["Physics", "45", "180"], ["Chemistry", "45", "180"], ["Botany", "45", "180"], ["Zoology", "45", "180"]],
+    "total": "180 questions, 720 marks", "marking": "+4 for correct, -1 for wrong",
+    "eligibility": "Class 12 with Physics, Chemistry, Biology and English. About 50% in PCB for General (40% for reserved categories). Age 17 or more by 31 December of the admission year.",
+    "official": "https://neet.nta.nic.in", "leads": "MBBS, BDS, AYUSH, BVSc and several allied courses"
+  },
+  "kcet": {
+    "name": "KCET (Karnataka)", "body": "Karnataka Examinations Authority (KEA)", "frequency": "Once a year", "month": "April",
+    "mode": "Offline OMR, English and Kannada",
+    "rows": [["Physics", "60", "60"], ["Chemistry", "60", "60"], ["Maths or Biology", "60", "60"]],
+    "total": "180 questions (three papers per candidate)", "marking": "1 mark each, no negative marking, 80 minutes per paper",
+    "eligibility": "2nd PUC or Class 12 with Physics, Chemistry and Maths or Biology. About 45% for General, 40% for reserved categories. Rank uses 50% KCET and 50% PUC marks.",
+    "official": "https://cetonline.karnataka.gov.in", "leads": "Engineering, B.Pharm, BSc Nursing, agriculture seats in Karnataka"
+  },
+  "cuet-ug": {
+    "name": "CUET-UG", "body": "National Testing Agency (NTA)", "frequency": "Once a year", "month": "May to June",
+    "mode": "Computer-based",
+    "rows": [["Each domain subject (60 minutes)", "50", "250"]],
+    "total": "Up to 5 subjects including language and general test", "marking": "+5 for correct, -1 for wrong",
+    "eligibility": "Class 12 pass. Each university sets its own subject combination.",
+    "official": "https://cuet.nta.nic.in", "leads": "BSc, BCom, BA and other degrees at central and many state universities"
+  },
+  "iiser-iat": {
+    "name": "IISER Aptitude Test (IAT)", "body": "IISER consortium", "frequency": "Once a year", "month": "June",
+    "mode": "Computer-based, 3 hours",
+    "rows": [["Biology", "15", "60"], ["Chemistry", "15", "60"], ["Maths", "15", "60"], ["Physics", "15", "60"]],
+    "total": "60 questions, 240 marks", "marking": "+4 for correct, -1 for wrong",
+    "eligibility": "Class 12 Science with at least three of Physics, Chemistry, Biology, Maths. Minimum 60% (55% for SC/ST/PwD).",
+    "official": "https://www.iiseradmission.in", "leads": "5-year BS-MS at IISERs"
+  },
+  "jee-main": {
+    "name": "JEE Main", "body": "National Testing Agency (NTA)", "frequency": "Two sessions a year", "month": "January and April",
+    "mode": "Computer-based, 3 hours",
+    "rows": [["Physics", "25", "100"], ["Chemistry", "25", "100"], ["Maths", "25", "100"]],
+    "total": "75 questions, 300 marks", "marking": "+4 for correct, -1 for wrong MCQ. Check the bulletin for numerical questions.",
+    "eligibility": "Class 12 passed or appearing. No minimum percentage to appear. NITs and IIITs usually ask for about 75% in Class 12 or a top 20 percentile.",
+    "official": "https://jeemain.nta.nic.in", "leads": "NITs, IIITs, other engineering colleges, JEE Advanced for IITs"
+  },
+  "bitsat": {
+    "name": "BITSAT", "body": "BITS Pilani", "frequency": "Two sessions a year", "month": "April and May",
+    "mode": "Computer-based, 3 hours",
+    "rows": [["Physics, Chemistry, Maths, English, Logical reasoning", "130", "390"]],
+    "total": "130 questions", "marking": "+3 for correct, -1 for wrong",
+    "eligibility": "Class 12 with Physics, Chemistry, Maths and English. High aggregate and per-subject minimums apply, so check the brochure.",
+    "official": "https://www.bitsadmission.com", "leads": "BE and BTech at BITS campuses"
+  },
+  "nda": {
+    "name": "NDA and NA (UPSC)", "body": "Union Public Service Commission (UPSC)", "frequency": "Twice a year", "month": "April and September",
+    "mode": "Written test, then 5-day SSB interview",
+    "rows": [["Mathematics (2.5 hours)", "-", "300"], ["General Ability Test (2.5 hours)", "-", "600"], ["SSB interview", "-", "900"]],
+    "total": "1800 marks in all", "marking": "Negative marking of one-third in the written papers",
+    "eligibility": "Class 12 pass. Army wing: any stream. Air Force and Navy: Physics and Maths. Unmarried, about 16.5 to 19.5 years of age.",
+    "official": "https://upsc.gov.in", "leads": "Army, Navy and Air Force officer training with a degree"
+  },
+  "nata": {
+    "name": "NATA (Architecture)", "body": "Council of Architecture", "frequency": "Several sessions in one cycle", "month": "April to June",
+    "mode": "Drawing test and online aptitude test, 3 hours",
+    "rows": [["Part A: Drawing and composition", "-", "80"], ["Part B: Aptitude", "-", "120"]],
+    "total": "200 marks", "marking": "No negative marking reported",
+    "eligibility": "Class 12 with Physics and Maths. About 45% aggregate for the Council of Architecture. Colleges often ask more.",
+    "official": "https://www.nata.in", "leads": "5-year B.Arch"
+  },
+  "ca-foundation": {
+    "name": "CA Foundation (ICAI)", "body": "Institute of Chartered Accountants of India", "frequency": "Three times a year", "month": "January, May or June, September",
+    "mode": "Written, offline",
+    "rows": [["Paper 1: Accounting", "-", "100"], ["Paper 2: Business Laws", "-", "100"], ["Paper 3: Quantitative Aptitude", "-", "100"], ["Paper 4: Business Economics", "-", "100"]],
+    "total": "400 marks. Papers 1 and 2 are descriptive, 3 and 4 are objective.", "marking": "0.25 negative in the objective papers. Pass needs 40% in each paper and 50% overall.",
+    "eligibility": "Class 12 pass. Register at least four months before the exam.",
+    "official": "https://www.icai.org", "leads": "CA Intermediate, articleship, CA Final"
+  },
+  "cseet": {
+    "name": "CSEET (ICSI)", "body": "Institute of Company Secretaries of India", "frequency": "Three sessions a year", "month": "February, June, October",
+    "mode": "Written",
+    "rows": [["Business Communication", "-", "100"], ["Fundamentals of Accounting", "-", "100"], ["Economic and Business Environment", "-", "100"], ["Business Laws and Management", "-", "100"]],
+    "total": "Revised pattern reported as four 100-mark papers", "marking": "Check the ICSI notification",
+    "eligibility": "Class 12 pass. Indian nationals.",
+    "official": "https://www.icsi.edu", "leads": "CS Executive and Professional programmes"
+  },
+  "cma-foundation": {
+    "name": "CMA Foundation (ICMAI)", "body": "Institute of Cost Accountants of India", "frequency": "Twice a year", "month": "June and December",
+    "mode": "Objective (OMR) papers",
+    "rows": [["Four papers, multiple choice", "-", "-"]],
+    "total": "4 papers", "marking": "Pass needs 40% in each paper and 50% overall",
+    "eligibility": "Class 12 pass, or appearing with provisional registration.",
+    "official": "https://eicmai.in", "leads": "CMA Intermediate and Final"
+  },
+  "ipmat": {
+    "name": "IPMAT (IIM Indore and Rohtak)", "body": "IIM Indore and IIM Rohtak", "frequency": "Once a year", "month": "May",
+    "mode": "Computer-based, 2 hours (Indore)",
+    "rows": [["Quantitative ability (MCQ)", "-", "-"], ["Quantitative ability (short answer)", "-", "-"], ["Verbal ability (MCQ)", "-", "-"]],
+    "total": "Three sections", "marking": "+4 for correct, -1 for wrong MCQ",
+    "eligibility": "Class 12 passed or appearing. Age and percentage rules differ for Indore and Rohtak, so check each.",
+    "official": "https://www.iimidr.ac.in", "leads": "5-year integrated management programme (BBA + MBA)"
+  },
+  "clat": {
+    "name": "CLAT (UG)", "body": "Consortium of National Law Universities", "frequency": "Once a year", "month": "December",
+    "mode": "Offline, 2 hours",
+    "rows": [["English language", "-", "-"], ["Current affairs and GK", "-", "-"], ["Legal reasoning", "-", "-"], ["Logical reasoning", "-", "-"], ["Quantitative techniques", "-", "-"]],
+    "total": "120 multiple-choice questions", "marking": "+1 for correct, -0.25 for wrong",
+    "eligibility": "Class 12 or equivalent, appearing candidates allowed. About 45% (40% for SC/ST).",
+    "official": "https://consortiumofnlus.ac.in", "leads": "BA LLB at National Law Universities and many private law schools"
+  }
+}
