@@ -147,19 +147,20 @@
     function render(animate) {
         var prev = state.cols;
         mapEl.textContent = '';
-        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('class', 'cr-links'); svg.setAttribute('aria-hidden', 'true');
-        mapEl.appendChild(svg);
 
         var cols = [];
         cols.push({ parent: null, kids: state.index.doors.map(doorRef) });
         state.chain.forEach(function (ref) { if (ref.kids && ref.kids.length) cols.push({ parent: ref, kids: ref.kids }); });
         cols.forEach(function (c, i) {
+            var isNew = animate && i >= prev && i > 0;
+            if (i > 0) mapEl.appendChild(joinEl(c.parent, isNew));
             var col = h('div', 'cr-col');
-            if (animate && i >= prev && i > 0) col.classList.add('is-new');
+            if (isNew) col.classList.add('is-new');
             var title = h('p', 'cr-col-title', colTitle(c.parent, c.kids));
             col.appendChild(title);
-            c.kids.forEach(function (ref) { col.appendChild(nodeEl(ref, i)); });
+            var grid = h('div', 'cr-grid');
+            c.kids.forEach(function (ref) { grid.appendChild(nodeEl(ref, i)); });
+            col.appendChild(grid);
             if (small() && i < cols.length - 1) {
                 col.classList.add('is-done');
                 var chg = h('button', 'cr-change', 'Change'); chg.type = 'button';
@@ -173,41 +174,27 @@
         el.reset.hidden = state.chain.length === 0;
         var names = state.chain.map(function (r) { return r.label; });
         el.sub.textContent = names.length ? 'Your path: ' + names.join('  >  ') : 'Tap a bubble to open it. New bubbles appear as you go.';
-        requestAnimationFrame(function () { drawLinks(svg); if (animate) revealNewest(); });
-        if (window.ResizeObserver && !render.ro) {
-            render.ro = new ResizeObserver(function () { var s = mapEl.querySelector('.cr-links'); if (s) drawLinks(s); });
-            render.ro.observe(mapEl);
-        }
+        if (animate) setTimeout(revealNewest, 80);
         updateUrl();
     }
-    function drawLinks(svg) {
-        svg.textContent = '';
-        if (getComputedStyle(svg).display === 'none') return;
-        var r = mapEl.getBoundingClientRect();
-        var colEls = mapEl.querySelectorAll('.cr-col');
-        state.chain.forEach(function (ref, i) {
-            var from = colEls[i] && colEls[i].querySelector('[data-key="' + ref.key + '"]');
-            var next = colEls[i + 1];
-            if (!from || !next) return;
-            var A = from.getBoundingClientRect();
-            Array.prototype.forEach.call(next.querySelectorAll('.cr-node'), function (to) {
-                var B = to.getBoundingClientRect();
-                var x1 = A.right - r.left, y1 = A.top + A.height / 2 - r.top, x2 = B.left - r.left, y2 = B.top + B.height / 2 - r.top, mx = (x1 + x2) / 2;
-                var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                p.setAttribute('d', 'M' + x1 + ' ' + y1 + ' C' + mx + ' ' + y1 + ' ' + mx + ' ' + y2 + ' ' + x2 + ' ' + y2);
-                p.setAttribute('class', 'is-live');
-                svg.appendChild(p);
-            });
-        });
+    function joinEl(parent, isNew) {
+        var j = h('div', 'cr-join' + (isNew ? ' is-new' : ''));
+        j.setAttribute('aria-hidden', 'true');
+        var pill = h('span', 'cr-join-pill');
+        pill.appendChild(h('i', 'fa-solid fa-arrow-down'));
+        pill.appendChild(document.createTextNode(' ' + parent.label));
+        j.appendChild(pill);
+        return j;
     }
     function revealNewest() {
         var cols = mapEl.querySelectorAll('.cr-col');
         var last = cols[cols.length - 1];
         if (!last) return;
-        if (small()) { last.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'nearest' }); }
-        else { el.scroll.scrollLeft = el.scroll.scrollWidth; }
-    }
-    function setTip(text, linkText, href) {
+        var r = last.getBoundingClientRect(), head = 96;
+        if (r.top > window.innerHeight * 0.55 || r.top < head) {
+            window.scrollTo({ top: window.pageYOffset + r.top - head - 30, behavior: reduced ? 'auto' : 'smooth' });
+        }
+    }    function setTip(text, linkText, href) {
         el.tip.textContent = '';
         if (!text) return;
         el.tip.appendChild(document.createTextNode(text));
@@ -319,7 +306,7 @@
         el.side.hidden = false; el.split.classList.add('has-side');
         if (small()) {
             el.backdrop.hidden = false;
-            requestAnimationFrame(function () { el.backdrop.classList.add('is-open'); el.close.focus(); });
+            setTimeout(function () { el.backdrop.classList.add('is-open'); el.close.focus(); }, 20);
         }
         el.side.scrollTop = 0;
         document.addEventListener('keydown', onKey);
