@@ -168,3 +168,10 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 .cr-top-btns .btn[hidden] { display: none; }
 .cr-save i { margin-right: 6px; }
 @media (max-width: 560px) { .cr-top-btns { width: 100%; } .cr-top-btns .btn { flex: 1 1 auto; text-align: center; } }
+
+/* ---------- responsive polish ---------- */
+.cr-chip { min-height: 40px; }
+.cr-d-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 900px) {
+    .cr-d-actions .btn { flex: 1 1 100%; width: 100%; text-align: center; justify-content: center; box-sizing: border-box; }
+}
