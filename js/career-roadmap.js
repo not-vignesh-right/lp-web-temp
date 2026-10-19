@@ -290,15 +290,19 @@
             chips.appendChild(h('span', 'cr-d-chip cr-d-chip--month', x.month));
             if (x.mode) chips.appendChild(h('span', 'cr-d-chip cr-d-chip--mode', x.mode));
             b.appendChild(chips);
-            var table = h('table', 'cr-table'), thead = h('thead'), hr = h('tr');
-            ['Section', 'Questions', 'Marks'].forEach(function (s) { hr.appendChild(h('th', '', s)); });
-            thead.appendChild(hr); table.appendChild(thead);
-            var tbody = h('tbody');
-            x.rows.forEach(function (r) { var tr = h('tr'); r.forEach(function (c) { tr.appendChild(h('td', '', c)); }); tbody.appendChild(tr); });
-            table.appendChild(tbody); b.appendChild(table);
+            if (x.rows && x.rows.length) {
+                var table = h('table', 'cr-table'), thead = h('thead'), hr = h('tr');
+                ['Section', 'Questions', 'Marks'].forEach(function (s) { hr.appendChild(h('th', '', s)); });
+                thead.appendChild(hr); table.appendChild(thead);
+                var tbody = h('tbody');
+                x.rows.forEach(function (r) { var tr = h('tr'); r.forEach(function (c) { tr.appendChild(h('td', '', c)); }); tbody.appendChild(tr); });
+                table.appendChild(tbody); b.appendChild(table);
+            } else if (x.pattern) {
+                b.appendChild(h('div', 'cr-d-label', 'Pattern')); b.appendChild(h('p', 'cr-d-text', x.pattern));
+            }
             if (x.total) b.appendChild(h('p', 'cr-d-text', x.total));
-            b.appendChild(h('div', 'cr-d-label', 'Marking')); b.appendChild(h('p', 'cr-d-text', x.marking));
-            b.appendChild(h('div', 'cr-d-label', 'Who can apply')); b.appendChild(h('p', 'cr-d-text', x.eligibility));
+            if (x.marking) { b.appendChild(h('div', 'cr-d-label', 'Marking')); b.appendChild(h('p', 'cr-d-text', x.marking)); }
+            if (x.eligibility) { b.appendChild(h('div', 'cr-d-label', 'Who can apply')); b.appendChild(h('p', 'cr-d-text', x.eligibility)); }
             if (x.leads) { b.appendChild(h('div', 'cr-d-label', 'Leads to')); b.appendChild(h('p', 'cr-d-text', x.leads)); }
             if (x.official) {
                 var lp = h('p', 'cr-d-text'); lp.style.marginTop = '12px';
@@ -313,9 +317,12 @@
         ask.href = 'contact.html?topic=' + encodeURIComponent(topic) + '&path=' + encodeURIComponent(pathTitle) + '&from=career-roadmap';
         actions.appendChild(ask);
         var meta = pathMeta(ref.pathId);
-        if (meta && meta.guide) {
-            var dl = h('a', 'btn btn-secondary', 'Download guide (PDF)'); dl.href = meta.guide; dl.setAttribute('download', '');
-            actions.appendChild(dl);
+        var gl = meta && (meta.guides || (meta.guide ? [{ label: 'Download guide (PDF)', href: meta.guide }] : null));
+        if (gl && gl.length) {
+            gl.forEach(function (g) {
+                var dl = h('a', 'btn btn-secondary', gl.length > 1 ? g.label : 'Download guide (PDF)'); dl.href = g.href; dl.setAttribute('download', '');
+                actions.appendChild(dl);
+            });
         } else {
             var off = h('span', 'btn btn-secondary cr-btn-off', 'Guide download soon'); off.setAttribute('aria-disabled', 'true');
             actions.appendChild(off);
@@ -417,13 +424,52 @@
         } else if (tag === 'a10') {
             startOver('After Class 10 you choose a stream. Pick one below.', true);
         } else if (tag === 'a12') {
-            startOver('After Class 12 you can pick a stream or a field like Law, Defence or Design. Some are coming soon.', true);
+            startOver('After Class 12 you can pick a stream or a field like Law, Defence or Design. Pick one below.', true);
         }
     });
+
+    /* ---------- calendar and downloads ---------- */
+    function renderCalendar(cal) {
+        var months = document.getElementById('crMonths'), list = document.getElementById('crCalList'), note = document.getElementById('crCalNote');
+        if (!months || !list) return;
+        note.textContent = cal.note || '';
+        var now = new Date().getMonth();
+        function show(i) {
+            Array.prototype.forEach.call(months.children, function (b, j) { b.classList.toggle('is-on', i === j); b.setAttribute('aria-selected', i === j ? 'true' : 'false'); });
+            list.textContent = '';
+            cal.months[i].items.forEach(function (it) {
+                var b = h('button', 'cr-cal-item', it.label); b.type = 'button';
+                b.addEventListener('click', function () {
+                    openTarget(it.path, it.node).then(function (ok) { if (ok) goExplorer(); });
+                });
+                list.appendChild(b);
+            });
+            if (!cal.months[i].items.length) list.appendChild(h('p', 'cr-cal-empty', 'No big exams this month.'));
+        }
+        cal.months.forEach(function (m, i) {
+            var b = h('button', 'cr-month', m.month.slice(0, 3)); b.type = 'button'; b.setAttribute('role', 'tab'); b.title = m.month;
+            b.addEventListener('click', function () { show(i); });
+            months.appendChild(b);
+        });
+        show(now);
+    }
+    function renderDownloads(list) {
+        var grid = document.getElementById('crDlGrid');
+        if (!grid || !list) return;
+        list.forEach(function (g) {
+            var a = h('a', 'cr-dl-card' + (g.main ? ' cr-dl-card--main' : '')); a.href = g.href; a.setAttribute('download', '');
+            a.appendChild(h('i', 'fa-solid fa-file-pdf'));
+            var t = h('span', 'cr-dl-text'); t.appendChild(h('strong', '', g.title)); t.appendChild(h('small', '', g.blurb)); a.appendChild(t);
+            a.appendChild(h('span', 'cr-dl-go', 'PDF'));
+            grid.appendChild(a);
+        });
+    }
 
     /* ---------- start ---------- */
     Promise.all([getJSON(BASE + 'index.json'), getJSON(BASE + 'exams.json')]).then(function (r) {
         state.index = r[0]; state.exams = r[1];
+        renderDownloads(state.index.downloads);
+        getJSON(BASE + 'calendar.json').then(renderCalendar).catch(function () {});
         var q = new URLSearchParams(location.search), path = q.get('path'), node = q.get('node');
         render(false);
         if (path && node && pathMeta(path)) {

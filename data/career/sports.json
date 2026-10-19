@@ -1,0 +1,127 @@
+{
+  "id": "sports",
+  "title": "Sports and Arts",
+  "intro": "Sports, physical education, painting, music, dance and theatre.",
+  "nodes": [
+    {
+      "id": "khelo",
+      "type": "exam",
+      "label": "Khelo India scholarship",
+      "exam": "khelo-india"
+    },
+    {
+      "id": "lnipe",
+      "type": "exam",
+      "label": "BPEd at LNIPE",
+      "exam": "lnipe-bped"
+    },
+    {
+      "id": "bfa",
+      "type": "exam",
+      "label": "Art college admission",
+      "exam": "bfa-admission"
+    },
+    {
+      "id": "music",
+      "type": "stage",
+      "label": "Music, dance or theatre classes",
+      "note": "Join classes and take grade exams. Many universities offer a BA in Music, Dance or Theatre by marks or audition."
+    },
+    {
+      "id": "bped",
+      "type": "course",
+      "label": "BPEd or Sports Science",
+      "note": "2 to 4 years. Train to coach and teach."
+    },
+    {
+      "id": "fa",
+      "type": "course",
+      "label": "BFA or BVA (fine arts)",
+      "note": "3 to 4 years of painting, sculpture and applied art."
+    },
+    {
+      "id": "perf",
+      "type": "course",
+      "label": "BA in Music, Dance or Theatre",
+      "note": "3 years of performance and teaching."
+    },
+    {
+      "id": "athlete",
+      "type": "career",
+      "label": "Athlete",
+      "note": "Compete for your school, state and country."
+    },
+    {
+      "id": "coach",
+      "type": "career",
+      "label": "Coach or PE teacher",
+      "note": "Train players and teach sport in schools."
+    },
+    {
+      "id": "sportsci",
+      "type": "career",
+      "label": "Sports scientist or physiotherapist",
+      "note": "Help athletes get fit and recover."
+    },
+    {
+      "id": "artist",
+      "type": "career",
+      "label": "Artist or illustrator",
+      "note": "Paint, draw and design."
+    },
+    {
+      "id": "performer",
+      "type": "career",
+      "label": "Musician, dancer or actor",
+      "note": "Perform on stage, screen or online."
+    },
+    {
+      "id": "artteacher",
+      "type": "career",
+      "label": "Art teacher or curator",
+      "note": "Teach art or run exhibitions."
+    }
+  ],
+  "edges": [
+    [
+      "khelo",
+      "athlete"
+    ],
+    [
+      "lnipe",
+      "bped"
+    ],
+    [
+      "bped",
+      "coach"
+    ],
+    [
+      "bped",
+      "sportsci"
+    ],
+    [
+      "bfa",
+      "fa"
+    ],
+    [
+      "fa",
+      "artist"
+    ],
+    [
+      "fa",
+      "artteacher"
+    ],
+    [
+      "music",
+      "perf"
+    ],
+    [
+      "perf",
+      "performer"
+    ],
+    [
+      "perf",
+      "artteacher"
+    ]
+  ]
+}

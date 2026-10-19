@@ -528,5 +528,577 @@
     "eligibility": "Class 10 students. The 2026-27 notice is still awaited.",
     "official": "https://ncert.nic.in",
     "leads": "National scholarship"
+  },
+  "upsc-cse": {
+    "mode": "Three stages: Prelims, Mains, Interview",
+    "rows": [
+      [
+        "Prelims: General Studies",
+        "100",
+        "200"
+      ],
+      [
+        "Prelims: CSAT (pass mark only)",
+        "-",
+        "33% to pass"
+      ]
+    ],
+    "pattern": "",
+    "total": "Then Mains and the Interview",
+    "marking": "Negative marking in Prelims",
+    "official": "https://upsc.gov.in",
+    "leads": "IAS, IPS, IFS and other services",
+    "name": "UPSC Civil Services Exam",
+    "body": "Union Public Service Commission (UPSC)",
+    "simple": "The big exam to become an IAS, IPS or other civil service officer.",
+    "frequency": "Once a year",
+    "month": "Prelims in May (2027: 23 May)",
+    "eligibility": "A degree in any subject. Age 21 to 32 for General (6 attempts). Final-year students can apply."
+  },
+  "ctet-kartet": {
+    "mode": "Paper test (OMR)",
+    "rows": [
+      [
+        "Paper 1 (Classes 1 to 5)",
+        "150",
+        "150"
+      ],
+      [
+        "Paper 2 (Classes 6 to 8)",
+        "150",
+        "150"
+      ]
+    ],
+    "pattern": "",
+    "total": "2 hours 30 minutes for each paper",
+    "marking": "No negative marking",
+    "official": "https://ctet.nic.in",
+    "leads": "Government and private school teaching jobs",
+    "name": "CTET and KARTET (teacher tests)",
+    "body": "CBSE (CTET) and Karnataka School Education Department (KARTET)",
+    "simple": "The test to become a government school teacher.",
+    "frequency": "CTET twice a year",
+    "month": "February and September. KARTET is usually in December",
+    "eligibility": "Paper 1: Class 12 with 50% and a diploma in elementary education. Paper 2: a degree and a B.Ed."
+  },
+  "uceed": {
+    "mode": "Computer test plus a drawing test",
+    "rows": [
+      [
+        "Part A: computer test (2 hours)",
+        "-",
+        "200"
+      ],
+      [
+        "Part B: drawing (1 hour)",
+        "-",
+        "100"
+      ]
+    ],
+    "pattern": "",
+    "total": "300 marks",
+    "marking": "Part A has partial negative marking",
+    "official": "https://www.uceed.iitb.ac.in",
+    "leads": "B.Des at IITs and some other institutes",
+    "name": "UCEED (IIT design test)",
+    "body": "IIT Bombay",
+    "simple": "The test to study design at the IITs.",
+    "frequency": "Once a year",
+    "month": "January (2027: 17 January)",
+    "eligibility": "Any stream in Class 12. Born on or after 1 October 2002 (relaxation for SC/ST/PwD)."
+  },
+  "nid-dat": {
+    "mode": "Prelims, then a studio test and interview",
+    "rows": [],
+    "pattern": "Prelims first, then Mains with studio tests and an interview.",
+    "total": "",
+    "marking": "",
+    "official": "https://admissions.nid.edu",
+    "leads": "B.Des at NID campuses, including Bengaluru",
+    "name": "NID DAT",
+    "body": "National Institute of Design (NID)",
+    "simple": "The test to study design at NID.",
+    "frequency": "Once a year",
+    "month": "Prelims in December (apply by November)",
+    "eligibility": "Class 12 in any stream. No upper age limit."
+  },
+  "nift": {
+    "mode": "Ability tests, then a situation test or interview for some courses",
+    "rows": [
+      [
+        "GAT (General Ability Test)",
+        "-",
+        "-"
+      ],
+      [
+        "CAT (Creative Ability Test)",
+        "-",
+        "-"
+      ]
+    ],
+    "pattern": "",
+    "total": "",
+    "marking": "Check the NIFT notice",
+    "official": "https://www.nift.ac.in",
+    "leads": "B.Des and B.FTech at NIFT",
+    "name": "NIFT entrance",
+    "body": "NIFT with the National Testing Agency",
+    "simple": "The test for fashion and design colleges.",
+    "frequency": "Once a year",
+    "month": "Early in the year (check the NIFT notice)",
+    "eligibility": "B.Des: any stream. B.FTech: Maths needed. Age under 24."
+  },
+  "ncet": {
+    "mode": "Computer test, about 3 hours",
+    "rows": [
+      [
+        "Two languages",
+        "-",
+        "-"
+      ],
+      [
+        "Up to three subjects",
+        "-",
+        "-"
+      ],
+      [
+        "Teaching aptitude and general test",
+        "-",
+        "-"
+      ]
+    ],
+    "pattern": "",
+    "total": "",
+    "marking": "Multiple choice with negative marking",
+    "official": "https://exams.nta.nic.in/ncet",
+    "leads": "ITEP: BA B.Ed or BSc B.Ed",
+    "name": "NCET (teacher degree test)",
+    "body": "National Testing Agency (NTA)",
+    "simple": "The test to join a 4-year teacher degree.",
+    "frequency": "Once a year",
+    "month": "April (2026: 17 and 18 April)",
+    "eligibility": "Class 12 passed or appearing."
+  },
+  "liberal-tests": {
+    "mode": "Aptitude test and essay",
+    "rows": [],
+    "pattern": "FLAME: its own test plus an essay, or SAT or ACT with an essay. Ashoka: an aptitude test and an on-the-spot essay. Azim Premji: its own entrance test and interview.",
+    "total": "",
+    "marking": "",
+    "official": "https://www.flame.edu.in",
+    "leads": "Liberal arts degrees",
+    "name": "Liberal arts university tests",
+    "body": "FLAME, Ashoka and Azim Premji University",
+    "simple": "Each liberal arts university has its own entry test.",
+    "frequency": "Once a year",
+    "month": "Winter and spring (each university sets dates)",
+    "eligibility": "Class 12 passed or appearing."
+  },
+  "ailet": {
+    "mode": "Paper test, 2 hours",
+    "rows": [
+      [
+        "English language",
+        "50",
+        "50"
+      ],
+      [
+        "Current affairs and GK",
+        "30",
+        "30"
+      ],
+      [
+        "Logical reasoning",
+        "70",
+        "70"
+      ]
+    ],
+    "pattern": "",
+    "total": "150 questions",
+    "marking": "+1 for correct, -0.25 for wrong",
+    "official": "https://nludelhi.ac.in",
+    "leads": "BA LLB at NLU Delhi",
+    "name": "AILET (NLU Delhi law test)",
+    "body": "National Law University, Delhi",
+    "simple": "The law entrance test for NLU Delhi.",
+    "frequency": "Once a year",
+    "month": "December (for 2027: 13 December 2026)",
+    "eligibility": "Class 12 passed or appearing."
+  },
+  "slat": {
+    "mode": "Online test, 60 minutes",
+    "rows": [
+      [
+        "English, GK, Legal reasoning, Logical reasoning, Quant",
+        "60",
+        "60"
+      ]
+    ],
+    "pattern": "",
+    "total": "60 questions for SLAT",
+    "marking": "Check the notice",
+    "official": "",
+    "leads": "BA LLB at private law schools",
+    "name": "SLAT and private law tests",
+    "body": "Symbiosis and other private universities",
+    "simple": "Private law schools have their own tests.",
+    "frequency": "Once a year",
+    "month": "December",
+    "eligibility": "Class 12 passed or appearing."
+  },
+  "aibe": {
+    "mode": "Paper test, open book, 3 hours 30 minutes",
+    "rows": [
+      [
+        "All law subjects",
+        "100",
+        "100"
+      ]
+    ],
+    "pattern": "",
+    "total": "100 questions",
+    "marking": "No negative marking. Pass: 45 marks (General), 40 (SC/ST).",
+    "official": "https://allindiabarexamination.com",
+    "leads": "Certificate of Practice, so you can work as an advocate",
+    "name": "AIBE (Bar exam)",
+    "body": "Bar Council of India",
+    "simple": "The exam you must pass to work as a lawyer.",
+    "frequency": "Twice a year",
+    "month": "June and November (2026: 7 June and 29 November)",
+    "eligibility": "A law degree (3-year or 5-year LLB). Final-year students can register."
+  },
+  "civil-judge": {
+    "mode": "Prelims, Mains and Interview",
+    "rows": [],
+    "pattern": "Prelims, Mains and an Interview. The pattern differs by state.",
+    "total": "",
+    "marking": "",
+    "official": "https://kpsc.kar.nic.in",
+    "leads": "Civil Judge and Magistrate",
+    "name": "Civil Judge exam",
+    "body": "State Public Service Commissions with the High Courts",
+    "simple": "The exam to become a judge.",
+    "frequency": "Set by each state",
+    "month": "Check the state notice",
+    "eligibility": "A law degree. Age and years of practice differ by state."
+  },
+  "agniveer": {
+    "mode": "Entrance exam, then fitness and medical tests",
+    "rows": [],
+    "pattern": "A common entrance exam, then physical and medical tests. The pattern differs by post.",
+    "total": "",
+    "marking": "",
+    "official": "https://joinindianarmy.nic.in",
+    "leads": "4 years of service. About a quarter of each batch can stay on.",
+    "name": "Agniveer (Army, Navy, Air Force)",
+    "body": "Indian Army, Navy and Air Force",
+    "simple": "A 4-year job as a soldier, sailor or airman after Class 8, 10 or 12.",
+    "frequency": "Notices come out every year",
+    "month": "Check the official recruitment sites",
+    "eligibility": "Age 17.5 to 21. General Duty: Class 10 with 45%. Technical: Class 12 with PCM and English. Tradesman: Class 8 or 10."
+  },
+  "army-tes": {
+    "mode": "JEE Main rank, then 5-day SSB",
+    "rows": [],
+    "pattern": "Shortlist by JEE Main rank, then an SSB interview and medical tests.",
+    "total": "",
+    "marking": "",
+    "official": "https://joinindianarmy.nic.in",
+    "leads": "4 years of engineering training, then Army officer",
+    "name": "Army 10+2 Technical Entry (TES)",
+    "body": "Indian Army",
+    "simple": "Join the Army after Class 12 and study engineering.",
+    "frequency": "Once or twice a year",
+    "month": "TES-57 notice: 14 October to 12 November 2026",
+    "eligibility": "Class 12 with PCM (60%). JEE Main score needed. Unmarried male. Age about 16.5 to 19.5."
+  },
+  "navy-btech": {
+    "mode": "JEE Main rank, then SSB",
+    "rows": [],
+    "pattern": "Shortlist by JEE Main rank, then an SSB interview and medical tests.",
+    "total": "",
+    "marking": "",
+    "official": "https://www.joinindiannavy.gov.in",
+    "leads": "BTech at the Indian Naval Academy, then Navy officer",
+    "name": "Navy 10+2 BTech entry",
+    "body": "Indian Navy",
+    "simple": "Join the Navy after Class 12 and study BTech at the Naval Academy.",
+    "frequency": "Once a year",
+    "month": "Applications open mid-year (2026: 29 May to 18 June)",
+    "eligibility": "Class 12 with 70% in PCM and 50% in English. JEE Main score needed. Unmarried."
+  },
+  "cds": {
+    "mode": "Written test, then SSB",
+    "rows": [
+      [
+        "English",
+        "-",
+        "-"
+      ],
+      [
+        "General Knowledge",
+        "-",
+        "-"
+      ],
+      [
+        "Elementary Maths (not for OTA)",
+        "-",
+        "-"
+      ]
+    ],
+    "pattern": "",
+    "total": "Then an SSB interview and medical tests",
+    "marking": "Negative marking in the written test",
+    "official": "https://upsc.gov.in",
+    "leads": "Training at IMA, INA, AFA or OTA",
+    "name": "CDS (Combined Defence Services)",
+    "body": "Union Public Service Commission (UPSC)",
+    "simple": "The test to become an officer after a degree.",
+    "frequency": "Twice a year",
+    "month": "April and September (CDS I 2027: 11 April)",
+    "eligibility": "Unmarried graduates. Age about 19 to 24 (25 for OTA)."
+  },
+  "afcat": {
+    "mode": "Online test, 2 hours, then AFSB",
+    "rows": [
+      [
+        "General Awareness, Verbal, Numerical, Reasoning",
+        "100",
+        "-"
+      ]
+    ],
+    "pattern": "",
+    "total": "100 questions in 120 minutes",
+    "marking": "Negative marking",
+    "official": "https://afcat.edcil.co.in",
+    "leads": "Air Force officer (flying or ground duty)",
+    "name": "AFCAT (Air Force)",
+    "body": "Indian Air Force",
+    "simple": "The test to become an Air Force officer after a degree.",
+    "frequency": "Twice a year",
+    "month": "February and August (AFCAT 2 2026: 8 August)",
+    "eligibility": "Graduates. Flying branch age 20 to 24. Flying needs Maths and Physics in Class 12."
+  },
+  "ssb": {
+    "mode": "5 days at a selection centre",
+    "rows": [
+      [
+        "Day 1: Screening (thinking test, picture story)",
+        "-",
+        "-"
+      ],
+      [
+        "Day 2: Psychology tests",
+        "-",
+        "-"
+      ],
+      [
+        "Days 3 and 4: Group tasks and interview",
+        "-",
+        "-"
+      ],
+      [
+        "Day 5: Final conference",
+        "-",
+        "-"
+      ]
+    ],
+    "pattern": "",
+    "total": "Then a medical test",
+    "marking": "Recommended or not recommended",
+    "official": "https://joinindianarmy.nic.in",
+    "leads": "Academy training and a commission as an officer",
+    "name": "SSB interview (5 days)",
+    "body": "Services Selection Board",
+    "simple": "A 5-day test of how you think, lead and work in a team.",
+    "frequency": "After each written test or entry route",
+    "month": "You get a call letter",
+    "eligibility": "You must first clear the entry route (NDA, CDS, AFCAT, TES, Navy BTech or NCC)."
+  },
+  "nchm-jee": {
+    "mode": "Computer test",
+    "rows": [],
+    "pattern": "Computer-based test of about 3 hours. Check the NTA bulletin for the sections.",
+    "total": "",
+    "marking": "",
+    "official": "https://exams.nta.nic.in/nchm-jee",
+    "leads": "BSc Hospitality at Institutes of Hotel Management such as IHM Bangalore",
+    "name": "NCHM JEE (Hotel Management)",
+    "body": "National Testing Agency (NTA)",
+    "simple": "The test to study hotel management.",
+    "frequency": "Once a year",
+    "month": "April (2026: 25 April)",
+    "eligibility": "Class 12 in any stream with English. No age limit."
+  },
+  "igrua": {
+    "mode": "",
+    "rows": [],
+    "pattern": "Entrance test, then an interview and medical tests. See the IGRUA prospectus.",
+    "total": "",
+    "marking": "",
+    "official": "https://igrua.gov.in",
+    "leads": "Commercial Pilot Licence (CPL) training",
+    "name": "IGRUA test (pilot school)",
+    "body": "Indira Gandhi Rashtriya Uran Akademi",
+    "simple": "A test to join a pilot school.",
+    "frequency": "Once a year",
+    "month": "April to May (2026: 3 May)",
+    "eligibility": "Class 12 with Physics, Maths and English, about 50% (45% for reserved categories). A Class 1 medical fitness certificate is needed."
+  },
+  "imu-cet": {
+    "mode": "Computer test, about 3 hours",
+    "rows": [
+      [
+        "Physics, Chemistry, Maths, English, General Aptitude (BTech paper)",
+        "200",
+        "-"
+      ]
+    ],
+    "pattern": "",
+    "total": "About 200 questions for the BTech paper",
+    "marking": "Check the IMU notice",
+    "official": "https://www.imu.edu.in",
+    "leads": "BTech Marine Engineering and BSc Nautical Science",
+    "name": "IMU CET (Merchant Navy)",
+    "body": "Indian Maritime University",
+    "simple": "The test to study to be a ship officer.",
+    "frequency": "Once a year",
+    "month": "May (2026: 24 May)",
+    "eligibility": "Class 12 with 60% in PCM and 50% in English. Medical fitness is needed."
+  },
+  "ifos": {
+    "mode": "Prelims, Mains and Interview",
+    "rows": [],
+    "pattern": "Prelims is shared with the Civil Services exam. Mains is separate.",
+    "total": "",
+    "marking": "",
+    "official": "https://upsc.gov.in",
+    "leads": "Indian Forest Service officer",
+    "name": "Indian Forest Service (IFoS)",
+    "body": "Union Public Service Commission (UPSC)",
+    "simple": "The exam to become a senior forest officer.",
+    "frequency": "Once a year",
+    "month": "Prelims with the Civil Services Prelims (May)",
+    "eligibility": "A degree in Agriculture, Forestry or Engineering, or a science subject such as Botany, Zoology, Physics or Chemistry. Age 21 to 32."
+  },
+  "dte-diploma": {
+    "mode": "Counselling",
+    "rows": [],
+    "pattern": "Seats are given by counselling. Check the DTE Karnataka notice for the exact rules.",
+    "total": "",
+    "marking": "",
+    "official": "https://dtetech.karnataka.gov.in",
+    "leads": "3-year diploma in engineering and other branches",
+    "name": "Polytechnic diploma admission",
+    "body": "Directorate of Technical Education, Karnataka",
+    "simple": "Join a 3-year diploma after Class 10.",
+    "frequency": "Once a year",
+    "month": "After SSLC results (May to June)",
+    "eligibility": "SSLC (Class 10) pass. Science and Maths are needed for most branches."
+  },
+  "dcet": {
+    "mode": "",
+    "rows": [],
+    "pattern": "Check the KEA notice for the pattern.",
+    "total": "",
+    "marking": "",
+    "official": "https://cetonline.karnataka.gov.in",
+    "leads": "BE or BTech in 3 more years",
+    "name": "DCET (join engineering in 2nd year)",
+    "body": "Karnataka Examinations Authority (KEA)",
+    "simple": "After a diploma, you can join BE in the second year.",
+    "frequency": "Once a year",
+    "month": "May",
+    "eligibility": "Diploma holders (and some others, as listed by KEA)."
+  },
+  "iti-admission": {
+    "mode": "Admission by marks",
+    "rows": [],
+    "pattern": "Admission is by marks. Trades take 6 months to 2 years.",
+    "total": "",
+    "marking": "",
+    "official": "",
+    "leads": "National Trade Certificate and apprenticeship",
+    "name": "ITI admission",
+    "body": "Karnataka Directorate of Employment and Training",
+    "simple": "Learn a trade such as electrician or fitter.",
+    "frequency": "Once a year",
+    "month": "After SSLC results",
+    "eligibility": "Class 8 pass for some trades, Class 10 pass for others."
+  },
+  "pmkvy": {
+    "mode": "",
+    "rows": [],
+    "pattern": "Short courses linked to national skill levels (NSQF).",
+    "total": "",
+    "marking": "",
+    "official": "https://www.skillindia.gov.in",
+    "leads": "A skill certificate and entry-level jobs",
+    "name": "PMKVY (Skill India courses)",
+    "body": "Skill India and NSDC",
+    "simple": "Short skill courses with a certificate.",
+    "frequency": "Courses start through the year",
+    "month": "Check the Skill India portal",
+    "eligibility": "Age about 15 to 59 as listed. Check each course."
+  },
+  "inspire-manak": {
+    "mode": "",
+    "rows": [],
+    "pattern": "Your school nominates up to 5 ideas. Winners go from district to state to national level.",
+    "total": "",
+    "marking": "",
+    "official": "https://www.inspireawards-dst.gov.in",
+    "leads": "An award of 10,000 and a start in innovation",
+    "name": "INSPIRE-MANAK idea awards",
+    "body": "Department of Science and Technology",
+    "simple": "Share a new idea and win an award.",
+    "frequency": "Once a year",
+    "month": "Schools nominate in July to September",
+    "eligibility": "Students in Class 6 to 12."
+  },
+  "khelo-india": {
+    "mode": "",
+    "rows": [],
+    "pattern": "You do not apply. Athletes are picked through trials and games and register on the NSRS portal.",
+    "total": "",
+    "marking": "",
+    "official": "https://kheloindia.gov.in",
+    "leads": "About 6.28 lakh a year for training and costs (reported)",
+    "name": "Khelo India Athlete Scholarship",
+    "body": "Sports Authority of India",
+    "simple": "Money and coaching for young athletes.",
+    "frequency": "Talent selection every year",
+    "month": "After the Khelo India Youth Games and trials",
+    "eligibility": "Athletes in Class 9 to 12, college and postgraduate. Support for up to 8 years."
+  },
+  "lnipe-bped": {
+    "mode": "CUET-UG registration plus physical tests",
+    "rows": [],
+    "pattern": "CUET-UG registration, then a fitness test and a sports skill test, as in the 2026-27 notice.",
+    "total": "",
+    "marking": "",
+    "official": "https://www.lnipe.edu.in",
+    "leads": "BPEd and PE teacher jobs",
+    "name": "BPEd at LNIPE Gwalior",
+    "body": "Lakshmibai National Institute of Physical Education",
+    "simple": "The sports teacher degree.",
+    "frequency": "Once a year",
+    "month": "Applications around June",
+    "eligibility": "Class 12 with about 50%."
+  },
+  "bfa-admission": {
+    "mode": "",
+    "rows": [],
+    "pattern": "Many colleges admit by Class 12 marks. Some ask for a portfolio or a test.",
+    "total": "",
+    "marking": "",
+    "official": "",
+    "leads": "BFA and BVA degrees",
+    "name": "BFA and art college admission",
+    "body": "Karnataka Chitrakala Parishath and other colleges",
+    "simple": "Join an art college to paint, draw or design.",
+    "frequency": "Once a year",
+    "month": "After Class 12 results",
+    "eligibility": "Class 12 with about 50%."
   }
 }

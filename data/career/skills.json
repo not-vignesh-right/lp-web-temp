@@ -1,0 +1,105 @@
+{
+  "id": "skills",
+  "title": "Skills and Business",
+  "intro": "Learn skills, try small projects and start something of your own.",
+  "nodes": [
+    {
+      "id": "pmkvy",
+      "type": "exam",
+      "label": "Skill India courses",
+      "exam": "pmkvy"
+    },
+    {
+      "id": "manak",
+      "type": "exam",
+      "label": "INSPIRE-MANAK ideas",
+      "exam": "inspire-manak"
+    },
+    {
+      "id": "digital",
+      "type": "stage",
+      "label": "Learn a digital skill",
+      "note": "Coding, design, spreadsheets or marketing. Many free courses exist."
+    },
+    {
+      "id": "project",
+      "type": "stage",
+      "label": "Try a small project",
+      "note": "Run a school fair stall, sell something small or teach a class. You learn money and teamwork."
+    },
+    {
+      "id": "skillcourse",
+      "type": "course",
+      "label": "Short skill course (certificate)",
+      "note": "Weeks to months. Check that the course is approved."
+    },
+    {
+      "id": "incubator",
+      "type": "course",
+      "label": "Start-up or college incubator",
+      "note": "Get mentors, a space and sometimes small funds."
+    },
+    {
+      "id": "freelancer",
+      "type": "career",
+      "label": "Freelancer (design, coding, content)",
+      "note": "Work for clients on your own time."
+    },
+    {
+      "id": "techskill",
+      "type": "career",
+      "label": "Skilled technician",
+      "note": "Electrician, solar installer, mobile repair and more."
+    },
+    {
+      "id": "founder",
+      "type": "career",
+      "label": "Start-up founder or shop owner",
+      "note": "Build your own business."
+    },
+    {
+      "id": "selfemp",
+      "type": "career",
+      "label": "Self-employed professional",
+      "note": "Tutor, caterer, photographer or repair expert."
+    }
+  ],
+  "edges": [
+    [
+      "pmkvy",
+      "skillcourse"
+    ],
+    [
+      "digital",
+      "skillcourse"
+    ],
+    [
+      "project",
+      "incubator"
+    ],
+    [
+      "manak",
+      "incubator"
+    ],
+    [
+      "skillcourse",
+      "freelancer"
+    ],
+    [
+      "skillcourse",
+      "techskill"
+    ],
+    [
+      "skillcourse",
+      "selfemp"
+    ],
+    [
+      "incubator",
+      "founder"
+    ],
+    [
+      "incubator",
+      "selfemp"
+    ]
+  ]
+}

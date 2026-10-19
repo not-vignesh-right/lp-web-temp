@@ -137,3 +137,28 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
   .cr-soon { display: none; }
   .cr-faq.section-padding { padding-top: 56px; padding-bottom: 56px; }
 }
+
+/* ---------- exam calendar ---------- */
+.cr-months { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6px; margin: 0 auto 18px; max-width: 900px; }
+.cr-month { border: 1px solid #c9d8e8; background: #fff; color: #003366; font: inherit; font-weight: 600; font-size: .9rem; padding: 10px 0; border-radius: 10px; cursor: pointer; }
+.cr-month:hover { background: #eef4fa; }
+.cr-month.is-on { background: #003366; color: #fff; border-color: #003366; }
+.cr-cal-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; min-height: 52px; max-width: 900px; margin: 0 auto; }
+.cr-cal-item { border: 2px solid #ff6600; background: #fff; color: #003366; font: inherit; font-weight: 600; padding: 10px 16px; border-radius: 999px; cursor: pointer; }
+.cr-cal-item:hover { background: #ff6600; color: #fff; }
+.cr-cal-empty { color: #5a6b7d; margin: 0; }
+.cr-cal-note { text-align: center; color: #5a6b7d; font-size: .9rem; margin: 16px 0 0; }
+@media (max-width: 700px) { .cr-months { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* ---------- downloads ---------- */
+.cr-dl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 14px; }
+.cr-dl-card { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid #d8e3ee; border-radius: 14px; padding: 14px 16px; color: #003366; text-decoration: none; min-width: 0; }
+.cr-dl-card:hover { border-color: #ff6600; box-shadow: 0 6px 18px rgba(0, 51, 102, .12); }
+.cr-dl-card > i { font-size: 1.7rem; color: #d93025; flex: none; }
+.cr-dl-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.cr-dl-text strong { font-size: 1rem; }
+.cr-dl-text small { color: #5a6b7d; margin-top: 2px; }
+.cr-dl-go { flex: none; background: #ff6600; color: #fff; font-weight: 700; font-size: .75rem; padding: 6px 10px; border-radius: 999px; }
+.cr-dl-card--main { grid-column: 1 / -1; background: #003366; border-color: #003366; color: #fff; }
+.cr-dl-card--main .cr-dl-text small { color: #cfe0f2; }
+.cr-dl-card--main > i { color: #fff; }

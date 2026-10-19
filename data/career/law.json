@@ -1,0 +1,173 @@
+{
+  "id": "law",
+  "title": "Law",
+  "intro": "Lawyers, judges and legal experts. Law is open to students from every stream.",
+  "nodes": [
+    {
+      "id": "clat",
+      "type": "exam",
+      "label": "CLAT",
+      "exam": "clat"
+    },
+    {
+      "id": "ailet",
+      "type": "exam",
+      "label": "AILET",
+      "exam": "ailet"
+    },
+    {
+      "id": "slat",
+      "type": "exam",
+      "label": "SLAT and private tests",
+      "exam": "slat"
+    },
+    {
+      "id": "kslu",
+      "type": "stage",
+      "label": "Karnataka State Law University",
+      "note": "KSLU colleges mostly admit by marks after Class 12. Check the KSLU notice for the year."
+    },
+    {
+      "id": "anydeg",
+      "type": "stage",
+      "label": "Finish any degree first",
+      "note": "For the 3-year LLB you first finish a degree in any subject."
+    },
+    {
+      "id": "balb",
+      "type": "course",
+      "label": "BA LLB or BBA LLB (5 years)",
+      "note": "Study law right after Class 12."
+    },
+    {
+      "id": "llb3",
+      "type": "course",
+      "label": "LLB (3 years)",
+      "note": "Study law after any graduation."
+    },
+    {
+      "id": "llm",
+      "type": "course",
+      "label": "LLM (master of law)",
+      "note": "1 to 2 years. Choose corporate, IP, tax or constitutional law."
+    },
+    {
+      "id": "aibe",
+      "type": "exam",
+      "label": "AIBE (Bar exam)",
+      "exam": "aibe"
+    },
+    {
+      "id": "judgeexam",
+      "type": "exam",
+      "label": "Civil Judge exam",
+      "exam": "civil-judge"
+    },
+    {
+      "id": "advocate",
+      "type": "career",
+      "label": "Advocate",
+      "note": "Argue cases in court."
+    },
+    {
+      "id": "corporate",
+      "type": "career",
+      "label": "Corporate lawyer",
+      "note": "Advise companies on contracts and rules."
+    },
+    {
+      "id": "iplaw",
+      "type": "career",
+      "label": "IP and tech lawyer",
+      "note": "Patents, data privacy and cyber law."
+    },
+    {
+      "id": "govlaw",
+      "type": "career",
+      "label": "Public prosecutor or legal officer",
+      "note": "Work for the government."
+    },
+    {
+      "id": "judge",
+      "type": "career",
+      "label": "Judge",
+      "note": "Pass the judicial exam to become a Civil Judge."
+    },
+    {
+      "id": "prof",
+      "type": "career",
+      "label": "Law professor",
+      "note": "Teach and research law."
+    }
+  ],
+  "edges": [
+    [
+      "clat",
+      "balb"
+    ],
+    [
+      "ailet",
+      "balb"
+    ],
+    [
+      "slat",
+      "balb"
+    ],
+    [
+      "kslu",
+      "balb"
+    ],
+    [
+      "anydeg",
+      "llb3"
+    ],
+    [
+      "balb",
+      "aibe"
+    ],
+    [
+      "balb",
+      "judgeexam"
+    ],
+    [
+      "balb",
+      "llm"
+    ],
+    [
+      "llb3",
+      "aibe"
+    ],
+    [
+      "llb3",
+      "judgeexam"
+    ],
+    [
+      "llb3",
+      "llm"
+    ],
+    [
+      "aibe",
+      "advocate"
+    ],
+    [
+      "aibe",
+      "corporate"
+    ],
+    [
+      "aibe",
+      "iplaw"
+    ],
+    [
+      "aibe",
+      "govlaw"
+    ],
+    [
+      "judgeexam",
+      "judge"
+    ],
+    [
+      "llm",
+      "prof"
+    ]
+  ]
+}

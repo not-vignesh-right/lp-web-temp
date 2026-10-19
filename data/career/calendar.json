@@ -1,0 +1,320 @@
+{
+  "note": "Tentative. Dates shift every year, so always check the official website.",
+  "months": [
+    {
+      "month": "January",
+      "items": [
+        {
+          "label": "JEE Main",
+          "path": "science-pcm",
+          "node": "jee"
+        },
+        {
+          "label": "UCEED",
+          "path": "arts",
+          "node": "uceed"
+        },
+        {
+          "label": "NMMS scholarship test",
+          "path": "foundation",
+          "node": "nmms"
+        },
+        {
+          "label": "Sainik School test",
+          "path": "defence",
+          "node": "aissee"
+        },
+        {
+          "label": "Maths Olympiad",
+          "path": "foundation",
+          "node": "ioqm"
+        },
+        {
+          "label": "CA Foundation",
+          "path": "commerce",
+          "node": "caf"
+        }
+      ]
+    },
+    {
+      "month": "February",
+      "items": [
+        {
+          "label": "AFCAT",
+          "path": "defence",
+          "node": "afcat"
+        },
+        {
+          "label": "CSEET",
+          "path": "commerce",
+          "node": "cseet"
+        },
+        {
+          "label": "CTET and KARTET",
+          "path": "arts",
+          "node": "tet"
+        },
+        {
+          "label": "Olympiads by SOF",
+          "path": "foundation",
+          "node": "sof"
+        },
+        {
+          "label": "Junior Science Olympiad",
+          "path": "foundation",
+          "node": "nsejs"
+        }
+      ]
+    },
+    {
+      "month": "March",
+      "items": [
+        {
+          "label": "NIFT entrance",
+          "path": "arts",
+          "node": "nift"
+        }
+      ]
+    },
+    {
+      "month": "April",
+      "items": [
+        {
+          "label": "KCET",
+          "path": "science-pcb",
+          "node": "kcet"
+        },
+        {
+          "label": "NDA and NA",
+          "path": "science-pcm",
+          "node": "nda"
+        },
+        {
+          "label": "CDS",
+          "path": "defence",
+          "node": "cds"
+        },
+        {
+          "label": "NCET",
+          "path": "arts",
+          "node": "ncet"
+        },
+        {
+          "label": "NCHM JEE",
+          "path": "aviation",
+          "node": "nchm"
+        },
+        {
+          "label": "NATA",
+          "path": "science-pcm",
+          "node": "nata"
+        },
+        {
+          "label": "BITSAT",
+          "path": "science-pcm",
+          "node": "bitsat"
+        }
+      ]
+    },
+    {
+      "month": "May",
+      "items": [
+        {
+          "label": "NEET-UG",
+          "path": "science-pcb",
+          "node": "neet"
+        },
+        {
+          "label": "CUET-UG",
+          "path": "science-pcb",
+          "node": "cuet"
+        },
+        {
+          "label": "UPSC Civil Services Exam",
+          "path": "arts",
+          "node": "upsc"
+        },
+        {
+          "label": "IPMAT",
+          "path": "commerce",
+          "node": "ipmat"
+        },
+        {
+          "label": "IMU CET",
+          "path": "aviation",
+          "node": "imu"
+        },
+        {
+          "label": "IGRUA test",
+          "path": "aviation",
+          "node": "igrua"
+        },
+        {
+          "label": "DCET",
+          "path": "trades",
+          "node": "dcet"
+        },
+        {
+          "label": "Polytechnic diploma admission",
+          "path": "trades",
+          "node": "dte"
+        }
+      ]
+    },
+    {
+      "month": "June",
+      "items": [
+        {
+          "label": "IISER Aptitude Test",
+          "path": "science-pcb",
+          "node": "iat"
+        },
+        {
+          "label": "AIBE",
+          "path": "law",
+          "node": "aibe"
+        },
+        {
+          "label": "CMA Foundation",
+          "path": "commerce",
+          "node": "cmaf"
+        },
+        {
+          "label": "BPEd at LNIPE Gwalior",
+          "path": "sports",
+          "node": "lnipe"
+        }
+      ]
+    },
+    {
+      "month": "July",
+      "items": [
+        {
+          "label": "INSPIRE-MANAK idea awards",
+          "path": "skills",
+          "node": "manak"
+        },
+        {
+          "label": "CA Foundation",
+          "path": "commerce",
+          "node": "caf"
+        }
+      ]
+    },
+    {
+      "month": "August",
+      "items": [
+        {
+          "label": "AFCAT",
+          "path": "defence",
+          "node": "afcat"
+        }
+      ]
+    },
+    {
+      "month": "September",
+      "items": [
+        {
+          "label": "NDA and NA",
+          "path": "science-pcm",
+          "node": "nda"
+        },
+        {
+          "label": "CDS",
+          "path": "defence",
+          "node": "cds"
+        },
+        {
+          "label": "CTET and KARTET",
+          "path": "arts",
+          "node": "tet"
+        },
+        {
+          "label": "CA Foundation",
+          "path": "commerce",
+          "node": "caf"
+        }
+      ]
+    },
+    {
+      "month": "October",
+      "items": [
+        {
+          "label": "Olympiads by SOF",
+          "path": "foundation",
+          "node": "sof"
+        },
+        {
+          "label": "Army 10+2 Technical Entry",
+          "path": "defence",
+          "node": "tes"
+        },
+        {
+          "label": "CSEET",
+          "path": "commerce",
+          "node": "cseet"
+        }
+      ]
+    },
+    {
+      "month": "November",
+      "items": [
+        {
+          "label": "Maths Olympiad",
+          "path": "foundation",
+          "node": "ioqm"
+        },
+        {
+          "label": "Junior Science Olympiad",
+          "path": "foundation",
+          "node": "nsejs"
+        },
+        {
+          "label": "NTSE",
+          "path": "foundation",
+          "node": "ntse"
+        },
+        {
+          "label": "AIBE",
+          "path": "law",
+          "node": "aibe"
+        },
+        {
+          "label": "NID DAT",
+          "path": "arts",
+          "node": "nid"
+        }
+      ]
+    },
+    {
+      "month": "December",
+      "items": [
+        {
+          "label": "CLAT",
+          "path": "commerce",
+          "node": "clat"
+        },
+        {
+          "label": "AILET",
+          "path": "law",
+          "node": "ailet"
+        },
+        {
+          "label": "SLAT and private law tests",
+          "path": "law",
+          "node": "slat"
+        },
+        {
+          "label": "CMA Foundation",
+          "path": "commerce",
+          "node": "cmaf"
+        },
+        {
+          "label": "NID DAT",
+          "path": "arts",
+          "node": "nid"
+        }
+      ]
+    }
+  ]
+}

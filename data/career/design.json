@@ -1,0 +1,148 @@
+{
+  "id": "design",
+  "title": "Design and Architecture",
+  "intro": "Product, app, brand, fashion design and architecture. Design courses are open to all streams.",
+  "nodes": [
+    {
+      "id": "uceed",
+      "type": "exam",
+      "label": "UCEED (IIT design)",
+      "exam": "uceed"
+    },
+    {
+      "id": "nid",
+      "type": "exam",
+      "label": "NID DAT",
+      "exam": "nid-dat"
+    },
+    {
+      "id": "nift",
+      "type": "exam",
+      "label": "NIFT entrance",
+      "exam": "nift"
+    },
+    {
+      "id": "nata",
+      "type": "exam",
+      "label": "NATA (architecture)",
+      "exam": "nata"
+    },
+    {
+      "id": "private",
+      "type": "stage",
+      "label": "Private design colleges",
+      "note": "Many private colleges have their own tests and portfolio rounds. Check each college."
+    },
+    {
+      "id": "bdes",
+      "type": "course",
+      "label": "B.Des (4 years)",
+      "note": "Product, communication, interaction, fashion and animation design."
+    },
+    {
+      "id": "bftech",
+      "type": "course",
+      "label": "B.FTech (fashion technology)",
+      "note": "4 years. Maths is needed in Class 12."
+    },
+    {
+      "id": "barch",
+      "type": "course",
+      "label": "B.Arch (5 years)",
+      "note": "Needs Physics and Maths in Class 12. Register with the Council of Architecture after."
+    },
+    {
+      "id": "ux",
+      "type": "career",
+      "label": "UX and app designer",
+      "note": "Design how apps and websites feel to use."
+    },
+    {
+      "id": "product",
+      "type": "career",
+      "label": "Product designer",
+      "note": "Design things people use, from chairs to gadgets."
+    },
+    {
+      "id": "graphic",
+      "type": "career",
+      "label": "Graphic and brand designer",
+      "note": "Logos, posters, packaging and brands."
+    },
+    {
+      "id": "fashion",
+      "type": "career",
+      "label": "Fashion designer",
+      "note": "Design clothes, textiles and accessories."
+    },
+    {
+      "id": "animator",
+      "type": "career",
+      "label": "Animator or game designer",
+      "note": "Make characters, films and games."
+    },
+    {
+      "id": "architect",
+      "type": "career",
+      "label": "Architect",
+      "note": "Design buildings and spaces."
+    }
+  ],
+  "edges": [
+    [
+      "uceed",
+      "bdes"
+    ],
+    [
+      "nid",
+      "bdes"
+    ],
+    [
+      "nift",
+      "bdes"
+    ],
+    [
+      "nift",
+      "bftech"
+    ],
+    [
+      "private",
+      "bdes"
+    ],
+    [
+      "nata",
+      "barch"
+    ],
+    [
+      "bdes",
+      "ux"
+    ],
+    [
+      "bdes",
+      "product"
+    ],
+    [
+      "bdes",
+      "graphic"
+    ],
+    [
+      "bdes",
+      "fashion"
+    ],
+    [
+      "bdes",
+      "animator"
+    ],
+    [
+      "bftech",
+      "fashion"
+    ],
+    [
+      "barch",
+      "architect"
+    ]
+  ],
+  "levelTitles": {
+    "exam": "How do you get in?"
+  }
+}

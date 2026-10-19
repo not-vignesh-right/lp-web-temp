@@ -1,0 +1,265 @@
+{
+  "id": "defence",
+  "title": "Defence",
+  "intro": "Army, Navy and Air Force. Start in school, after Class 10 or 12, or after your degree.",
+  "nodes": [
+    {
+      "id": "aissee",
+      "type": "exam",
+      "label": "Sainik School test (Class 6 or 9)",
+      "exam": "aissee"
+    },
+    {
+      "id": "agniveer",
+      "type": "exam",
+      "label": "Agniveer",
+      "exam": "agniveer"
+    },
+    {
+      "id": "nda",
+      "type": "exam",
+      "label": "NDA (after Class 12)",
+      "exam": "nda"
+    },
+    {
+      "id": "tes",
+      "type": "exam",
+      "label": "Army 10+2 TES",
+      "exam": "army-tes"
+    },
+    {
+      "id": "navy",
+      "type": "exam",
+      "label": "Navy 10+2 BTech",
+      "exam": "navy-btech"
+    },
+    {
+      "id": "cds",
+      "type": "exam",
+      "label": "CDS (after degree)",
+      "exam": "cds"
+    },
+    {
+      "id": "afcat",
+      "type": "exam",
+      "label": "AFCAT (Air Force)",
+      "exam": "afcat"
+    },
+    {
+      "id": "ncc",
+      "type": "stage",
+      "label": "NCC Special Entry",
+      "note": "Graduates with an NCC C certificate can go straight to the SSB interview. Check the Army notice for the rules."
+    },
+    {
+      "id": "ssb1",
+      "type": "exam",
+      "label": "SSB interview",
+      "exam": "ssb"
+    },
+    {
+      "id": "ssb2",
+      "type": "exam",
+      "label": "SSB interview",
+      "exam": "ssb"
+    },
+    {
+      "id": "ssb3",
+      "type": "exam",
+      "label": "SSB interview",
+      "exam": "ssb"
+    },
+    {
+      "id": "ssb4",
+      "type": "exam",
+      "label": "SSB interview",
+      "exam": "ssb"
+    },
+    {
+      "id": "ssb5",
+      "type": "exam",
+      "label": "SSB interview",
+      "exam": "ssb"
+    },
+    {
+      "id": "ssb6",
+      "type": "exam",
+      "label": "SSB interview",
+      "exam": "ssb"
+    },
+    {
+      "id": "sainik",
+      "type": "course",
+      "label": "Sainik School (Class 6 to 12)",
+      "note": "A school with a military style. It prepares you for NDA."
+    },
+    {
+      "id": "agserv",
+      "type": "course",
+      "label": "4 years as an Agniveer",
+      "note": "Train and serve. About a quarter of each batch can stay on."
+    },
+    {
+      "id": "ndatrain",
+      "type": "course",
+      "label": "NDA training and degree",
+      "note": "Train at the National Defence Academy, then at a service academy."
+    },
+    {
+      "id": "testrain",
+      "type": "course",
+      "label": "Army technical training",
+      "note": "4 years of engineering training, then commission."
+    },
+    {
+      "id": "navytrain",
+      "type": "course",
+      "label": "Navy BTech at the Naval Academy",
+      "note": "BTech at Ezhimala, then commission as a Navy officer."
+    },
+    {
+      "id": "imatrain",
+      "type": "course",
+      "label": "Officer academy (IMA, INA or OTA)",
+      "note": "1 to 1.5 years of training after your degree."
+    },
+    {
+      "id": "aftrain",
+      "type": "course",
+      "label": "Air Force Academy training",
+      "note": "Flying or ground duty training, then commission."
+    },
+    {
+      "id": "army",
+      "type": "career",
+      "label": "Army officer",
+      "note": "Lead soldiers in the Army."
+    },
+    {
+      "id": "navyofficer",
+      "type": "career",
+      "label": "Navy officer",
+      "note": "Serve on ships and in Navy bases."
+    },
+    {
+      "id": "airforce",
+      "type": "career",
+      "label": "Air Force officer",
+      "note": "Fly aircraft or work on the ground."
+    },
+    {
+      "id": "soldier",
+      "type": "career",
+      "label": "Soldier, sailor or airman",
+      "note": "Serve for 4 years as an Agniveer."
+    },
+    {
+      "id": "second",
+      "type": "career",
+      "label": "Second career",
+      "note": "Police, CAPF, civil services, security and more."
+    }
+  ],
+  "edges": [
+    [
+      "aissee",
+      "sainik"
+    ],
+    [
+      "sainik",
+      "nda"
+    ],
+    [
+      "agniveer",
+      "agserv"
+    ],
+    [
+      "agserv",
+      "soldier"
+    ],
+    [
+      "soldier",
+      "second"
+    ],
+    [
+      "nda",
+      "ssb1"
+    ],
+    [
+      "ssb1",
+      "ndatrain"
+    ],
+    [
+      "tes",
+      "ssb2"
+    ],
+    [
+      "ssb2",
+      "testrain"
+    ],
+    [
+      "navy",
+      "ssb3"
+    ],
+    [
+      "ssb3",
+      "navytrain"
+    ],
+    [
+      "cds",
+      "ssb4"
+    ],
+    [
+      "ssb4",
+      "imatrain"
+    ],
+    [
+      "ncc",
+      "ssb5"
+    ],
+    [
+      "ssb5",
+      "imatrain"
+    ],
+    [
+      "afcat",
+      "ssb6"
+    ],
+    [
+      "ssb6",
+      "aftrain"
+    ],
+    [
+      "ndatrain",
+      "army"
+    ],
+    [
+      "ndatrain",
+      "navyofficer"
+    ],
+    [
+      "ndatrain",
+      "airforce"
+    ],
+    [
+      "testrain",
+      "army"
+    ],
+    [
+      "navytrain",
+      "navyofficer"
+    ],
+    [
+      "imatrain",
+      "army"
+    ],
+    [
+      "imatrain",
+      "navyofficer"
+    ],
+    [
+      "aftrain",
+      "airforce"
+    ]
+  ]
+}

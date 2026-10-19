@@ -1,0 +1,115 @@
+{
+  "id": "health",
+  "title": "Health",
+  "intro": "Nursing, pharmacy, AYUSH and allied health. For doctors and dentists see Science PCB.",
+  "nodes": [
+    {
+      "id": "kcet",
+      "type": "exam",
+      "label": "KCET",
+      "exam": "kcet"
+    },
+    {
+      "id": "neet",
+      "type": "exam",
+      "label": "NEET-UG",
+      "exam": "neet-ug"
+    },
+    {
+      "id": "nursing",
+      "type": "course",
+      "label": "BSc Nursing (4 years)",
+      "note": "In Karnataka, admission is through KCET and KEA counselling."
+    },
+    {
+      "id": "bpharm",
+      "type": "course",
+      "label": "B.Pharm (4 years)",
+      "note": "In Karnataka, admission is through KCET."
+    },
+    {
+      "id": "ayush",
+      "type": "course",
+      "label": "BAMS, BHMS, BUMS (AYUSH)",
+      "note": "Admission is through NEET-UG counselling."
+    },
+    {
+      "id": "allied",
+      "type": "course",
+      "label": "BPT and allied health",
+      "note": "NEET-UG is reported to be needed from 2026-27. Check with the college."
+    },
+    {
+      "id": "nurse",
+      "type": "career",
+      "label": "Nurse",
+      "note": "Hospital, community and school nursing."
+    },
+    {
+      "id": "pharmacist",
+      "type": "career",
+      "label": "Pharmacist",
+      "note": "Hospital pharmacy, pharma companies and research."
+    },
+    {
+      "id": "ayushdoc",
+      "type": "career",
+      "label": "AYUSH doctor",
+      "note": "Ayurveda, homeopathy and unani medicine."
+    },
+    {
+      "id": "therapist",
+      "type": "career",
+      "label": "Physiotherapist or technologist",
+      "note": "Rehabilitation, scans and lab tests."
+    },
+    {
+      "id": "public",
+      "type": "career",
+      "label": "Public health officer",
+      "note": "Plan health programmes for communities."
+    }
+  ],
+  "edges": [
+    [
+      "kcet",
+      "nursing"
+    ],
+    [
+      "kcet",
+      "bpharm"
+    ],
+    [
+      "neet",
+      "ayush"
+    ],
+    [
+      "neet",
+      "allied"
+    ],
+    [
+      "nursing",
+      "nurse"
+    ],
+    [
+      "bpharm",
+      "pharmacist"
+    ],
+    [
+      "ayush",
+      "ayushdoc"
+    ],
+    [
+      "ayush",
+      "public"
+    ],
+    [
+      "allied",
+      "therapist"
+    ],
+    [
+      "allied",
+      "public"
+    ]
+  ]
+}
