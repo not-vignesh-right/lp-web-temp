@@ -134,6 +134,24 @@
       "exam": "nest"
     },
     {
+      "id": "neetpg",
+      "type": "exam",
+      "label": "NEET PG",
+      "exam": "neet-pg"
+    },
+    {
+      "id": "pgmed",
+      "type": "course",
+      "label": "MD or MS (3 years)",
+      "note": "Specialist training after MBBS."
+    },
+    {
+      "id": "specialist",
+      "type": "career",
+      "label": "Specialist doctor",
+      "note": "Heart, bones, children, skin and many more fields."
+    },
+    {
       "id": "jee",
       "lane": "l3",
       "type": "exam",
@@ -246,6 +264,30 @@
       "type": "course",
       "label": "BSc Maths or CS at CMI, B.Stat and B.Math at ISI",
       "note": "3 years. Maths, statistics and data science. A strong path to research."
+    },
+    {
+      "id": "gate",
+      "type": "exam",
+      "label": "GATE (M.Tech)",
+      "exam": "gate"
+    },
+    {
+      "id": "cat",
+      "type": "exam",
+      "label": "CAT (IIMs)",
+      "exam": "cat"
+    },
+    {
+      "id": "mtech",
+      "type": "course",
+      "label": "M.Tech (2 years)",
+      "note": "A master's in engineering at IITs, NITs and other colleges."
+    },
+    {
+      "id": "mba",
+      "type": "course",
+      "label": "MBA or PGDM (2 years)",
+      "note": "A master's in management after your degree."
     }
   ],
   "edges": [
@@ -362,6 +404,18 @@
       "bsc"
     ],
     [
+      "mbbs",
+      "neetpg"
+    ],
+    [
+      "neetpg",
+      "pgmed"
+    ],
+    [
+      "pgmed",
+      "specialist"
+    ],
+    [
       "jee",
       "btech"
     ],
@@ -428,6 +482,30 @@
     [
       "mathcs",
       "scientist"
+    ],
+    [
+      "btech",
+      "gate"
+    ],
+    [
+      "gate",
+      "mtech"
+    ],
+    [
+      "mtech",
+      "scientist"
+    ],
+    [
+      "btech",
+      "cat"
+    ],
+    [
+      "cat",
+      "mba"
+    ],
+    [
+      "mba",
+      "engineer"
     ]
   ]
 }

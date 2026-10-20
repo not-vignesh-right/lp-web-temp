@@ -1221,5 +1221,194 @@
     "pattern": "Multiple-choice test of reasoning and reading. Check the current LSAC India notice.†",
     "eligibility": "Class 12 pass for the 5-year law courses. Each college sets its own rules.",
     "leads": "5-year law courses at colleges that accept it"
+  },
+  "ssc-cgl": {
+    "name": "SSC CGL",
+    "body": "Staff Selection Commission (SSC)",
+    "simple": "The test for many central government officer jobs after a degree.",
+    "frequency": "Once a year",
+    "month": "Notice around May to June; Tier 1 around August to September; Tier 2 later in the year (2026 cycle)",
+    "mode": "Computer based",
+    "rows": [
+      [
+        "General Intelligence and Reasoning",
+        "25",
+        "50"
+      ],
+      [
+        "General Awareness",
+        "25",
+        "50"
+      ],
+      [
+        "Quantitative Aptitude",
+        "25",
+        "50"
+      ],
+      [
+        "English Comprehension",
+        "25",
+        "50"
+      ]
+    ],
+    "total": "100 questions, 200 marks, 60 minutes (Tier 1)",
+    "marking": "Wrong answers lose marks. Check the official notice for the exact deduction.†",
+    "eligibility": "A degree from a recognised university. Age limits depend on the post, mostly between 18 and 32. Relaxation for SC/ST, OBC and PwBD. Some posts need Maths or Statistics.",
+    "official": "https://ssc.gov.in",
+    "leads": "Central government jobs such as Inspector, Assistant Section Officer and Auditor"
+  },
+  "ibps-po": {
+    "name": "IBPS PO (bank officer)",
+    "body": "Institute of Banking Personnel Selection (IBPS)",
+    "simple": "The test to become a bank probationary officer.",
+    "frequency": "Once a year",
+    "month": "Prelims about August, Mains about October (2026 cycle)",
+    "mode": "Computer based, then interview",
+    "pattern": "Three stages: Prelims, Mains and Interview. Section details and marks change, so read the official notice.†",
+    "eligibility": "A degree in any subject from a recognised university. Age about 20 to 30 years, with relaxation for reserved categories.",
+    "official": "https://www.ibps.in",
+    "leads": "Probationary Officer jobs in public sector banks"
+  },
+  "rrb-ntpc": {
+    "name": "RRB NTPC (railways, graduate level)",
+    "body": "Railway Recruitment Boards (RRB)",
+    "simple": "The test for graduate-level jobs in Indian Railways.",
+    "frequency": "Every few years",
+    "month": "Check the RRB notice (2026 notice came in September)",
+    "mode": "Computer based, then skill test or aptitude test",
+    "pattern": "Two computer based tests (CBT 1 and CBT 2), then a typing or skill test, document checks and a medical test. The pattern can change.†",
+    "eligibility": "A degree from a recognised university. Age about 18 to 33 years, with relaxation for reserved categories.†",
+    "official": "https://www.rrbapply.gov.in",
+    "leads": "Railway posts such as Station Master, Goods Guard and Clerk"
+  },
+  "kpsc-kas": {
+    "name": "KPSC KAS (Karnataka officer)",
+    "body": "Karnataka Public Service Commission (KPSC)",
+    "simple": "The state test to become a Karnataka government officer.",
+    "frequency": "When posts are announced",
+    "month": "Prelims planned for November 2026 (dates can change)",
+    "mode": "Prelims, Mains and Interview",
+    "pattern": "Three stages: Preliminary exam, Main exam and Interview. Check the KPSC notice for papers and marks.†",
+    "eligibility": "A degree from a recognised university and a Kannada language rule. Age limits differ by category. Read the notice.†",
+    "official": "https://kpsc.kar.nic.in",
+    "leads": "Posts such as Assistant Commissioner, Tahsildar and Deputy Superintendent of Police"
+  },
+  "cat": {
+    "name": "CAT (IIM MBA)",
+    "body": "IIMs, run by IIM Indore for 2026",
+    "simple": "The test for MBA at the IIMs and many top business schools.",
+    "frequency": "Once a year",
+    "month": "November (2026: 29 November)",
+    "mode": "Computer based, 2 hours",
+    "rows": [
+      [
+        "Verbal Ability and Reading Comprehension",
+        "Mixed",
+        "See notice"
+      ],
+      [
+        "Data Interpretation and Logical Reasoning",
+        "Mixed",
+        "See notice"
+      ],
+      [
+        "Quantitative Ability",
+        "Mixed",
+        "See notice"
+      ]
+    ],
+    "total": "About 68 questions in 120 minutes†",
+    "marking": "+3 for a correct MCQ and -1 for a wrong MCQ. No negative marking for typed answers.†",
+    "eligibility": "A degree with at least 50% marks (45% for SC/ST/PwD). Final-year students can apply.†",
+    "official": "https://iimcat.ac.in",
+    "leads": "MBA or PGDM at the IIMs and other business schools"
+  },
+  "cmat": {
+    "name": "CMAT (MBA)",
+    "body": "National Testing Agency (NTA)",
+    "simple": "A national test for MBA seats at many colleges.",
+    "frequency": "Once a year",
+    "month": "Around January to February 2027 (check the NTA notice)",
+    "mode": "Computer based, 3 hours",
+    "pattern": "Five sections of 20 questions each: Quantitative Techniques and Data Interpretation, Logical Reasoning, Language Comprehension, General Awareness, and Innovation and Entrepreneurship.",
+    "total": "100 questions, 400 marks",
+    "marking": "+4 for correct and -1 for wrong. Nothing for unattempted.",
+    "eligibility": "A degree from a recognised university. No age limit. Final-year students can apply.",
+    "official": "https://cmat.nta.nic.in",
+    "leads": "MBA seats at colleges that accept CMAT"
+  },
+  "ugc-net": {
+    "name": "UGC NET",
+    "body": "National Testing Agency (NTA) for UGC",
+    "simple": "The test to become a college lecturer or get a research fellowship.",
+    "frequency": "Twice a year",
+    "month": "June and December (December 2026: 14 to 19 December)",
+    "mode": "Computer based, one 3-hour session",
+    "pattern": "Two papers in one session: Paper 1 (teaching and research aptitude) and Paper 2 (your subject). 150 questions and 300 marks.†",
+    "marking": "No negative marking.†",
+    "eligibility": "A master's degree with about 55% marks (check the notice for reserved categories).†",
+    "official": "https://ugcnet.nta.ac.in",
+    "leads": "Assistant Professor posts and Junior Research Fellowship"
+  },
+  "kset": {
+    "name": "KSET (Karnataka lecturer test)",
+    "body": "Karnataka Examinations Authority (KEA)",
+    "simple": "The Karnataka test to become a college lecturer.",
+    "frequency": "Once a year",
+    "month": "October (2026: 11 October)",
+    "mode": "Offline OMR, one 3-hour session",
+    "pattern": "Paper 1 and Paper 2 in a single session, with many subject papers.†",
+    "eligibility": "A master's degree with at least 55% (50% for reserved categories). Final-year master's students can apply with conditions.",
+    "official": "https://cetonline.karnataka.gov.in/kea",
+    "leads": "Assistant Professor posts in Karnataka colleges"
+  },
+  "gate": {
+    "name": "GATE (BE or BTech, then M.Tech)",
+    "body": "IIT Madras for 2027, on behalf of IITs and IISc",
+    "simple": "The test for M.Tech at top colleges and for some company jobs.",
+    "frequency": "Once a year",
+    "month": "February (2027: 6, 7, 13, 14, 20 and 21 February)",
+    "mode": "Computer based",
+    "pattern": "About 30 test papers. You choose your subject paper. Check the GATE website for marks.†",
+    "eligibility": "Completed or studying in the 3rd or final year of a BE or BTech degree (or equal).",
+    "official": "https://gate2027.iitm.ac.in",
+    "leads": "M.Tech at IITs and NITs, and some public sector jobs. The score is valid for 3 years."
+  },
+  "neet-pg": {
+    "name": "NEET PG",
+    "body": "National Board of Examinations in Medical Sciences (NBEMS)",
+    "simple": "The test for specialist doctor (MD or MS) seats after MBBS.",
+    "frequency": "Once a year",
+    "month": "August (2026: 30 August)",
+    "mode": "Computer based",
+    "pattern": "Multiple-choice questions on medicine. The count is reported differently, so read the bulletin.†",
+    "marking": "+4 for correct and -1 for wrong.",
+    "eligibility": "An MBBS degree, finishing the 1-year internship by the cut-off date, and a medical council registration.",
+    "official": "https://natboard.edu.in",
+    "leads": "MD or MS seats, then specialist doctor"
+  },
+  "sat": {
+    "name": "SAT (study in the USA and more)",
+    "body": "College Board",
+    "simple": "The test for many bachelor's degrees in the USA and some other countries.",
+    "frequency": "Several times a year",
+    "month": "Check the College Board dates for India",
+    "mode": "Digital, about 2 hours 14 minutes",
+    "pattern": "Reading and Writing, and Maths. Scored from 400 to 1600.",
+    "eligibility": "Usually taken in Class 11 or 12. Each university sets its own score needs.",
+    "official": "https://satsuite.collegeboard.org",
+    "leads": "Applications to bachelor's degrees abroad"
+  },
+  "ielts": {
+    "name": "IELTS (English test)",
+    "body": "IDP, British Council and Cambridge",
+    "simple": "An English test needed for studying or working in many countries.",
+    "frequency": "Many dates through the year",
+    "month": "Book a date that suits your application",
+    "mode": "Computer or paper (paper is being phased out)†",
+    "pattern": "Four parts: Listening, Reading, Writing and Speaking. About 2 hours 45 minutes. Each part is scored from 0 to 9.",
+    "eligibility": "Open to all. Each university sets its own band score.",
+    "official": "https://www.ielts.org",
+    "leads": "Studying or working in English-speaking countries. Fees change, so check IDP India before booking."
   }
 }

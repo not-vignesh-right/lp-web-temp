@@ -89,6 +89,10 @@
       "id": "science-pcmc",
       "file": "science-pcmc.json",
       "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Science-PCM.pdf"
+    },
+    {
+      "id": "abroad",
+      "file": "abroad.json"
     }
   ],
   "doors": [
@@ -462,6 +466,25 @@
         }
       ],
       "groupTitle": "Pick one"
+    },
+    {
+      "id": "abroad",
+      "title": "Study Abroad",
+      "icon": "fa-earth-asia",
+      "live": true,
+      "blurb": "SAT, IELTS and degrees in other countries.",
+      "groups": [
+        {
+          "id": "abroad",
+          "label": "Study Abroad",
+          "sub": "Bachelor's and master's abroad",
+          "pathway": "abroad",
+          "entry": [
+            "sat",
+            "ielts"
+          ]
+        }
+      ]
     }
   ],
   "classStarts": {
@@ -475,6 +498,92 @@
     }
   },
   "search": [
+    {
+      "k": [
+        "bank officer",
+        "bank po",
+        "ibps",
+        "banking"
+      ],
+      "path": "commerce",
+      "node": "banker"
+    },
+    {
+      "k": [
+        "ssc",
+        "cgl",
+        "government job",
+        "govt job",
+        "sarkari"
+      ],
+      "path": "commerce",
+      "node": "govofficer"
+    },
+    {
+      "k": [
+        "mba",
+        "iim",
+        "cat exam",
+        "pgdm"
+      ],
+      "path": "commerce",
+      "node": "mba"
+    },
+    {
+      "k": [
+        "mtech",
+        "m.tech",
+        "gate"
+      ],
+      "path": "science-pcm",
+      "node": "mtech"
+    },
+    {
+      "k": [
+        "specialist",
+        "surgeon",
+        "md",
+        "cardiologist",
+        "neet pg"
+      ],
+      "path": "science-pcb",
+      "node": "specialist"
+    },
+    {
+      "k": [
+        "kas",
+        "kpsc",
+        "tahsildar",
+        "karnataka officer"
+      ],
+      "path": "arts",
+      "node": "kasofficer"
+    },
+    {
+      "k": [
+        "lecturer",
+        "assistant professor",
+        "ugc net",
+        "net",
+        "kset"
+      ],
+      "path": "arts",
+      "node": "researcher"
+    },
+    {
+      "k": [
+        "study abroad",
+        "abroad",
+        "foreign",
+        "usa",
+        "sat",
+        "ielts",
+        "canada",
+        "uk"
+      ],
+      "path": "abroad",
+      "node": "global"
+    },
     {
       "k": [
         "doctor",

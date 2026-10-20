@@ -187,6 +187,48 @@
       "type": "career",
       "label": "Actuary",
       "note": "Use maths to measure risk for insurance and finance."
+    },
+    {
+      "id": "cat",
+      "type": "exam",
+      "label": "CAT (IIMs)",
+      "exam": "cat"
+    },
+    {
+      "id": "cmat",
+      "type": "exam",
+      "label": "CMAT",
+      "exam": "cmat"
+    },
+    {
+      "id": "ibps",
+      "type": "exam",
+      "label": "IBPS PO (bank officer)",
+      "exam": "ibps-po"
+    },
+    {
+      "id": "sscgl",
+      "type": "exam",
+      "label": "SSC CGL (govt jobs)",
+      "exam": "ssc-cgl"
+    },
+    {
+      "id": "mba",
+      "type": "course",
+      "label": "MBA or PGDM (2 years)",
+      "note": "A master's in management after your degree."
+    },
+    {
+      "id": "banker",
+      "type": "career",
+      "label": "Bank officer",
+      "note": "Run branches and serve customers in public sector banks."
+    },
+    {
+      "id": "govofficer",
+      "type": "career",
+      "label": "Government officer",
+      "note": "Work in tax, audit and other central government offices."
     }
   ],
   "edges": [
@@ -289,6 +331,50 @@
     [
       "actsci",
       "actuary"
+    ],
+    [
+      "bcom",
+      "cat"
+    ],
+    [
+      "bcom",
+      "cmat"
+    ],
+    [
+      "bcom",
+      "ibps"
+    ],
+    [
+      "bcom",
+      "sscgl"
+    ],
+    [
+      "bba",
+      "cat"
+    ],
+    [
+      "bba",
+      "cmat"
+    ],
+    [
+      "cat",
+      "mba"
+    ],
+    [
+      "cmat",
+      "mba"
+    ],
+    [
+      "mba",
+      "manager"
+    ],
+    [
+      "ibps",
+      "banker"
+    ],
+    [
+      "sscgl",
+      "govofficer"
     ]
   ]
 }

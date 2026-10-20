@@ -156,6 +156,24 @@
       "type": "exam",
       "label": "NEST (NISER)",
       "exam": "nest"
+    },
+    {
+      "id": "neetpg",
+      "type": "exam",
+      "label": "NEET PG",
+      "exam": "neet-pg"
+    },
+    {
+      "id": "pgmed",
+      "type": "course",
+      "label": "MD or MS (3 years)",
+      "note": "Specialist training after MBBS."
+    },
+    {
+      "id": "specialist",
+      "type": "career",
+      "label": "Specialist doctor",
+      "note": "Heart, bones, children, skin and many more fields."
     }
   ],
   "edges": [
@@ -238,6 +256,18 @@
     [
       "nest",
       "bsc"
+    ],
+    [
+      "mbbs",
+      "neetpg"
+    ],
+    [
+      "neetpg",
+      "pgmed"
+    ],
+    [
+      "pgmed",
+      "specialist"
     ]
   ]
 }

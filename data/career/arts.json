@@ -152,6 +152,48 @@
       "type": "career",
       "label": "Researcher or professor",
       "note": "Study society, history or language and teach at a college."
+    },
+    {
+      "id": "kas",
+      "type": "exam",
+      "label": "KPSC KAS (Karnataka officer)",
+      "exam": "kpsc-kas"
+    },
+    {
+      "id": "sscgl",
+      "type": "exam",
+      "label": "SSC CGL (govt jobs)",
+      "exam": "ssc-cgl"
+    },
+    {
+      "id": "ugcnet",
+      "type": "exam",
+      "label": "UGC NET",
+      "exam": "ugc-net"
+    },
+    {
+      "id": "kset",
+      "type": "exam",
+      "label": "KSET (Karnataka lecturer)",
+      "exam": "kset"
+    },
+    {
+      "id": "ma",
+      "type": "course",
+      "label": "MA (master's degree, 2 years)",
+      "note": "Needed for lecturer tests. Pick the subject you love."
+    },
+    {
+      "id": "kasofficer",
+      "type": "career",
+      "label": "Karnataka state officer (KAS)",
+      "note": "Work as Tahsildar, Assistant Commissioner or in other state posts."
+    },
+    {
+      "id": "govofficer",
+      "type": "career",
+      "label": "Government officer",
+      "note": "Work in tax, audit and other central government offices."
     }
   ],
   "edges": [
@@ -253,6 +295,42 @@
     ],
     [
       "lib",
+      "researcher"
+    ],
+    [
+      "ba",
+      "kas"
+    ],
+    [
+      "ba",
+      "sscgl"
+    ],
+    [
+      "ba",
+      "ma"
+    ],
+    [
+      "ma",
+      "ugcnet"
+    ],
+    [
+      "ma",
+      "kset"
+    ],
+    [
+      "kas",
+      "kasofficer"
+    ],
+    [
+      "sscgl",
+      "govofficer"
+    ],
+    [
+      "ugcnet",
+      "researcher"
+    ],
+    [
+      "kset",
       "researcher"
     ]
   ]

@@ -5,6 +5,11 @@
       "month": "January",
       "items": [
         {
+          "label": "CMAT",
+          "path": "commerce",
+          "node": "cmat"
+        },
+        {
           "label": "JEE Main",
           "path": "science-pcm",
           "node": "jee"
@@ -39,6 +44,11 @@
     {
       "month": "February",
       "items": [
+        {
+          "label": "GATE",
+          "path": "science-pcm",
+          "node": "gate"
+        },
         {
           "label": "AFCAT",
           "path": "defence",
@@ -185,6 +195,11 @@
       "month": "June",
       "items": [
         {
+          "label": "UGC NET",
+          "path": "arts",
+          "node": "ugcnet"
+        },
+        {
           "label": "IISER Aptitude Test",
           "path": "science-pcb",
           "node": "iat"
@@ -238,6 +253,16 @@
           "label": "AFCAT",
           "path": "defence",
           "node": "afcat"
+        },
+        {
+          "label": "IBPS PO",
+          "path": "commerce",
+          "node": "ibps"
+        },
+        {
+          "label": "NEET PG",
+          "path": "science-pcb",
+          "node": "neetpg"
         }
       ]
     },
@@ -270,6 +295,11 @@
       "month": "October",
       "items": [
         {
+          "label": "KSET",
+          "path": "arts",
+          "node": "kset"
+        },
+        {
           "label": "Olympiads by SOF",
           "path": "foundation",
           "node": "sof"
@@ -289,6 +319,16 @@
     {
       "month": "November",
       "items": [
+        {
+          "label": "CAT",
+          "path": "science-pcm",
+          "node": "cat"
+        },
+        {
+          "label": "KPSC KAS",
+          "path": "arts",
+          "node": "kas"
+        },
         {
           "label": "Maths Olympiad",
           "path": "foundation",
@@ -319,6 +359,11 @@
     {
       "month": "December",
       "items": [
+        {
+          "label": "UGC NET",
+          "path": "arts",
+          "node": "ugcnet"
+        },
         {
           "label": "CLAT",
           "path": "commerce",
