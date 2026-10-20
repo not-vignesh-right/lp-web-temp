@@ -1,0 +1,511 @@
+{
+  "id": "science-pcmb",
+  "title": "Science PCMB",
+  "intro": "Physics, Chemistry, Maths and Biology. This keeps both medicine and engineering open.",
+  "nodes": [
+    {
+      "id": "choose",
+      "type": "stage",
+      "label": "Choose PCMB",
+      "note": "You study all four subjects. This keeps both medicine and engineering open."
+    },
+    {
+      "id": "boards",
+      "type": "stage",
+      "label": "Boards and entrance prep",
+      "note": "In Karnataka this is the 2-year PUC. Keep up your board marks as well as exam prep."
+    },
+    {
+      "id": "neet",
+      "lane": "l3",
+      "type": "exam",
+      "label": "NEET-UG",
+      "exam": "neet-ug"
+    },
+    {
+      "id": "kcet",
+      "lane": "l3",
+      "type": "exam",
+      "label": "KCET",
+      "exam": "kcet"
+    },
+    {
+      "id": "cuet",
+      "lane": "l3",
+      "type": "exam",
+      "label": "CUET-UG",
+      "exam": "cuet-ug"
+    },
+    {
+      "id": "iat",
+      "lane": "l3",
+      "type": "exam",
+      "label": "IISER IAT",
+      "exam": "iiser-iat"
+    },
+    {
+      "id": "mbbs",
+      "lane": "l4",
+      "type": "course",
+      "label": "MBBS / BDS / AYUSH",
+      "note": "About 4.5 to 5.5 years including internship."
+    },
+    {
+      "id": "vetc",
+      "lane": "l4",
+      "type": "course",
+      "label": "BVSc and AH",
+      "note": "Veterinary degree through NEET merit, about 5 years."
+    },
+    {
+      "id": "allied",
+      "lane": "l4",
+      "type": "course",
+      "label": "BPT and allied health",
+      "note": "NEET is reported to be required from 2026-27. Confirm with the institute."
+    },
+    {
+      "id": "nursing",
+      "lane": "l4",
+      "type": "course",
+      "label": "BSc Nursing",
+      "note": "4 years. In Karnataka admission is through KCET and KEA counselling."
+    },
+    {
+      "id": "bpharm",
+      "lane": "l4",
+      "type": "course",
+      "label": "B.Pharm",
+      "note": "4 years through KCET in Karnataka."
+    },
+    {
+      "id": "bsc",
+      "lane": "l4",
+      "type": "course",
+      "label": "BSc Life Sciences / BS-MS",
+      "note": "3 to 5 years. Research and industry route."
+    },
+    {
+      "id": "doctor",
+      "lane": "l5",
+      "type": "career",
+      "label": "Doctor",
+      "note": "Doctor, dentist, AYUSH physician. Specialise with NEET-PG after MBBS."
+    },
+    {
+      "id": "vet",
+      "lane": "l5",
+      "type": "career",
+      "label": "Veterinarian",
+      "note": "Livestock, pets, dairy and wildlife health."
+    },
+    {
+      "id": "allied-career",
+      "lane": "l5",
+      "type": "career",
+      "label": "Physiotherapist / technologist",
+      "note": "Rehabilitation, diagnostics and lab roles."
+    },
+    {
+      "id": "nurse",
+      "lane": "l5",
+      "type": "career",
+      "label": "Nurse",
+      "note": "Hospital, community and teaching roles."
+    },
+    {
+      "id": "pharmacist",
+      "lane": "l5",
+      "type": "career",
+      "label": "Pharmacist",
+      "note": "Hospital pharmacy, pharma industry, regulatory roles."
+    },
+    {
+      "id": "researcher",
+      "lane": "l5",
+      "type": "career",
+      "label": "Researcher",
+      "note": "Biotechnology, microbiology, genetics, teaching and PhD."
+    },
+    {
+      "id": "nest",
+      "type": "exam",
+      "label": "NEST (NISER)",
+      "exam": "nest"
+    },
+    {
+      "id": "neetpg",
+      "type": "exam",
+      "label": "NEET PG",
+      "exam": "neet-pg"
+    },
+    {
+      "id": "pgmed",
+      "type": "course",
+      "label": "MD or MS (3 years)",
+      "note": "Specialist training after MBBS."
+    },
+    {
+      "id": "specialist",
+      "type": "career",
+      "label": "Specialist doctor",
+      "note": "Heart, bones, children, skin and many more fields."
+    },
+    {
+      "id": "jee",
+      "lane": "l3",
+      "type": "exam",
+      "label": "JEE Main",
+      "exam": "jee-main"
+    },
+    {
+      "id": "bitsat",
+      "lane": "l3",
+      "type": "exam",
+      "label": "BITSAT",
+      "exam": "bitsat"
+    },
+    {
+      "id": "nata",
+      "lane": "l3",
+      "type": "exam",
+      "label": "NATA",
+      "exam": "nata"
+    },
+    {
+      "id": "nda",
+      "lane": "l3",
+      "type": "exam",
+      "label": "NDA (UPSC)",
+      "exam": "nda"
+    },
+    {
+      "id": "btech",
+      "lane": "l4",
+      "type": "course",
+      "label": "BE / BTech",
+      "note": "4 years. Computer science, electronics, mechanical, civil, aerospace and more."
+    },
+    {
+      "id": "barch",
+      "lane": "l4",
+      "type": "course",
+      "label": "B.Arch",
+      "note": "5 years. Through NATA or JEE Main Paper 2A."
+    },
+    {
+      "id": "ndat",
+      "lane": "l4",
+      "type": "course",
+      "label": "NDA training and degree",
+      "note": "Officer training with a degree, then commission."
+    },
+    {
+      "id": "msbs",
+      "lane": "l4",
+      "type": "course",
+      "label": "BS-MS (IISER) / BSc",
+      "note": "Research focused science degrees."
+    },
+    {
+      "id": "engineer",
+      "lane": "l5",
+      "type": "career",
+      "label": "Engineer",
+      "note": "Software, core engineering, aerospace, data and AI roles."
+    },
+    {
+      "id": "architect",
+      "lane": "l5",
+      "type": "career",
+      "label": "Architect",
+      "note": "Registration with the Council of Architecture."
+    },
+    {
+      "id": "officer",
+      "lane": "l5",
+      "type": "career",
+      "label": "Defence officer",
+      "note": "Army, Navy or Air Force officer."
+    },
+    {
+      "id": "scientist",
+      "lane": "l5",
+      "type": "career",
+      "label": "Scientist",
+      "note": "Physics, chemistry, maths and research careers."
+    },
+    {
+      "id": "jeeadv",
+      "type": "exam",
+      "label": "JEE Advanced (IITs)",
+      "exam": "jee-advanced"
+    },
+    {
+      "id": "comedk",
+      "type": "exam",
+      "label": "COMEDK (private colleges)",
+      "exam": "comedk"
+    },
+    {
+      "id": "cmi",
+      "type": "exam",
+      "label": "CMI and ISI tests",
+      "exam": "cmi-isi"
+    },
+    {
+      "id": "privateengg",
+      "type": "exam",
+      "label": "VITEEE, SRMJEEE (private)",
+      "exam": "private-engg"
+    },
+    {
+      "id": "mathcs",
+      "type": "course",
+      "label": "BSc Maths or CS at CMI, B.Stat and B.Math at ISI",
+      "note": "3 years. Maths, statistics and data science. A strong path to research."
+    },
+    {
+      "id": "gate",
+      "type": "exam",
+      "label": "GATE (M.Tech)",
+      "exam": "gate"
+    },
+    {
+      "id": "cat",
+      "type": "exam",
+      "label": "CAT (IIMs)",
+      "exam": "cat"
+    },
+    {
+      "id": "mtech",
+      "type": "course",
+      "label": "M.Tech (2 years)",
+      "note": "A master's in engineering at IITs, NITs and other colleges."
+    },
+    {
+      "id": "mba",
+      "type": "course",
+      "label": "MBA or PGDM (2 years)",
+      "note": "A master's in management after your degree."
+    }
+  ],
+  "edges": [
+    [
+      "choose",
+      "boards"
+    ],
+    [
+      "boards",
+      "neet"
+    ],
+    [
+      "boards",
+      "kcet"
+    ],
+    [
+      "boards",
+      "cuet"
+    ],
+    [
+      "boards",
+      "iat"
+    ],
+    [
+      "boards",
+      "nest"
+    ],
+    [
+      "boards",
+      "jee"
+    ],
+    [
+      "boards",
+      "bitsat"
+    ],
+    [
+      "boards",
+      "nata"
+    ],
+    [
+      "boards",
+      "nda"
+    ],
+    [
+      "boards",
+      "jeeadv"
+    ],
+    [
+      "boards",
+      "comedk"
+    ],
+    [
+      "boards",
+      "cmi"
+    ],
+    [
+      "boards",
+      "privateengg"
+    ],
+    [
+      "neet",
+      "mbbs"
+    ],
+    [
+      "neet",
+      "vetc"
+    ],
+    [
+      "neet",
+      "allied"
+    ],
+    [
+      "kcet",
+      "nursing"
+    ],
+    [
+      "kcet",
+      "bpharm"
+    ],
+    [
+      "cuet",
+      "bsc"
+    ],
+    [
+      "iat",
+      "bsc"
+    ],
+    [
+      "mbbs",
+      "doctor"
+    ],
+    [
+      "vetc",
+      "vet"
+    ],
+    [
+      "allied",
+      "allied-career"
+    ],
+    [
+      "nursing",
+      "nurse"
+    ],
+    [
+      "bpharm",
+      "pharmacist"
+    ],
+    [
+      "bsc",
+      "researcher"
+    ],
+    [
+      "nest",
+      "bsc"
+    ],
+    [
+      "mbbs",
+      "neetpg"
+    ],
+    [
+      "neetpg",
+      "pgmed"
+    ],
+    [
+      "pgmed",
+      "specialist"
+    ],
+    [
+      "jee",
+      "btech"
+    ],
+    [
+      "kcet",
+      "btech"
+    ],
+    [
+      "bitsat",
+      "btech"
+    ],
+    [
+      "jee",
+      "barch"
+    ],
+    [
+      "nata",
+      "barch"
+    ],
+    [
+      "nda",
+      "ndat"
+    ],
+    [
+      "iat",
+      "msbs"
+    ],
+    [
+      "btech",
+      "engineer"
+    ],
+    [
+      "barch",
+      "architect"
+    ],
+    [
+      "ndat",
+      "officer"
+    ],
+    [
+      "msbs",
+      "scientist"
+    ],
+    [
+      "jeeadv",
+      "btech"
+    ],
+    [
+      "comedk",
+      "btech"
+    ],
+    [
+      "privateengg",
+      "btech"
+    ],
+    [
+      "nest",
+      "msbs"
+    ],
+    [
+      "cmi",
+      "mathcs"
+    ],
+    [
+      "mathcs",
+      "scientist"
+    ],
+    [
+      "btech",
+      "gate"
+    ],
+    [
+      "gate",
+      "mtech"
+    ],
+    [
+      "mtech",
+      "scientist"
+    ],
+    [
+      "btech",
+      "cat"
+    ],
+    [
+      "cat",
+      "mba"
+    ],
+    [
+      "mba",
+      "engineer"
+    ]
+  ]
+}

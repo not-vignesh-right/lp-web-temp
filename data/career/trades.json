@@ -1,0 +1,115 @@
+{
+  "id": "trades",
+  "title": "Diploma and ITI",
+  "intro": "Technical skills you can start after Class 8 or Class 10.",
+  "nodes": [
+    {
+      "id": "iti",
+      "type": "exam",
+      "label": "ITI admission",
+      "exam": "iti-admission"
+    },
+    {
+      "id": "dte",
+      "type": "exam",
+      "label": "Diploma (Polytechnic)",
+      "exam": "dte-diploma"
+    },
+    {
+      "id": "dcet",
+      "type": "exam",
+      "label": "DCET (join BE in year 2)",
+      "exam": "dcet"
+    },
+    {
+      "id": "ittrade",
+      "type": "course",
+      "label": "ITI trade (6 months to 2 years)",
+      "note": "Electrician, fitter, welder, turner, COPA and more."
+    },
+    {
+      "id": "diploma",
+      "type": "course",
+      "label": "Diploma (3 years)",
+      "note": "Mechanical, civil, electrical, electronics, computer science and more."
+    },
+    {
+      "id": "belat",
+      "type": "course",
+      "label": "BE or BTech (join in 2nd year)",
+      "note": "An engineering degree in 3 more years."
+    },
+    {
+      "id": "tech",
+      "type": "career",
+      "label": "Technician or machine operator",
+      "note": "Make and fix things in factories and workshops."
+    },
+    {
+      "id": "apprentice",
+      "type": "career",
+      "label": "Apprentice in industry or railways",
+      "note": "Learn on the job and get paid."
+    },
+    {
+      "id": "workshop",
+      "type": "career",
+      "label": "Workshop owner",
+      "note": "Start your own workshop or service centre."
+    },
+    {
+      "id": "jr",
+      "type": "career",
+      "label": "Junior engineer",
+      "note": "Work in companies, railways and government departments."
+    },
+    {
+      "id": "eng",
+      "type": "career",
+      "label": "Engineer",
+      "note": "Work as an engineer after your degree."
+    }
+  ],
+  "edges": [
+    [
+      "iti",
+      "ittrade"
+    ],
+    [
+      "dte",
+      "diploma"
+    ],
+    [
+      "diploma",
+      "dcet"
+    ],
+    [
+      "diploma",
+      "jr"
+    ],
+    [
+      "diploma",
+      "workshop"
+    ],
+    [
+      "dcet",
+      "belat"
+    ],
+    [
+      "ittrade",
+      "tech"
+    ],
+    [
+      "ittrade",
+      "apprentice"
+    ],
+    [
+      "ittrade",
+      "workshop"
+    ],
+    [
+      "belat",
+      "eng"
+    ]
+  ]
+}

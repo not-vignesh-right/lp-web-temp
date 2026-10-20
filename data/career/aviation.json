@@ -1,0 +1,139 @@
+{
+  "id": "aviation",
+  "title": "Hotels, Flying and Ships",
+  "intro": "Hotel management, pilot, cabin crew, aircraft engineer and ship officer.",
+  "nodes": [
+    {
+      "id": "nchm",
+      "type": "exam",
+      "label": "NCHM JEE (hotels)",
+      "exam": "nchm-jee"
+    },
+    {
+      "id": "igrua",
+      "type": "exam",
+      "label": "IGRUA and flying schools",
+      "exam": "igrua"
+    },
+    {
+      "id": "imu",
+      "type": "exam",
+      "label": "IMU CET (ships)",
+      "exam": "imu-cet"
+    },
+    {
+      "id": "cabin",
+      "type": "stage",
+      "label": "Airline cabin crew hiring",
+      "note": "Class 12 pass, good English and Hindi, and the airline height and age rules. Airlines hire through interviews."
+    },
+    {
+      "id": "amestage",
+      "type": "stage",
+      "label": "Aircraft engineer entry",
+      "note": "Class 12 with PCM, or an engineering diploma after Class 10. Join a DGCA-approved college."
+    },
+    {
+      "id": "hhm",
+      "type": "course",
+      "label": "BSc Hospitality (3 years)",
+      "note": "At Institutes of Hotel Management, for example IHM Bangalore."
+    },
+    {
+      "id": "cpl",
+      "type": "course",
+      "label": "Pilot training (CPL)",
+      "note": "Ground exams and flying hours. A Class 1 medical is needed."
+    },
+    {
+      "id": "cabincourse",
+      "type": "course",
+      "label": "Cabin crew course",
+      "note": "A short course on service, safety and grooming."
+    },
+    {
+      "id": "amecourse",
+      "type": "course",
+      "label": "Aircraft Maintenance Engineering",
+      "note": "Train to look after aircraft."
+    },
+    {
+      "id": "nautical",
+      "type": "course",
+      "label": "BSc Nautical Science or BTech Marine",
+      "note": "3 to 4 years at the Indian Maritime University and similar colleges."
+    },
+    {
+      "id": "hotel",
+      "type": "career",
+      "label": "Hotel manager or chef",
+      "note": "Run hotels, kitchens and events."
+    },
+    {
+      "id": "pilot",
+      "type": "career",
+      "label": "Commercial pilot",
+      "note": "Fly airline and charter aircraft."
+    },
+    {
+      "id": "crew",
+      "type": "career",
+      "label": "Cabin crew",
+      "note": "Look after passengers in the air."
+    },
+    {
+      "id": "amecareer",
+      "type": "career",
+      "label": "Aircraft engineer",
+      "note": "Keep aircraft safe and flying."
+    },
+    {
+      "id": "ship",
+      "type": "career",
+      "label": "Ship officer",
+      "note": "Deck or engine officer on a merchant ship."
+    }
+  ],
+  "edges": [
+    [
+      "nchm",
+      "hhm"
+    ],
+    [
+      "hhm",
+      "hotel"
+    ],
+    [
+      "igrua",
+      "cpl"
+    ],
+    [
+      "cpl",
+      "pilot"
+    ],
+    [
+      "cabin",
+      "cabincourse"
+    ],
+    [
+      "cabincourse",
+      "crew"
+    ],
+    [
+      "amestage",
+      "amecourse"
+    ],
+    [
+      "amecourse",
+      "amecareer"
+    ],
+    [
+      "imu",
+      "nautical"
+    ],
+    [
+      "nautical",
+      "ship"
+    ]
+  ]
+}

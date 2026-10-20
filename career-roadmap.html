@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta charset="UTF-8">
+    <meta name="author" content="LessonPlan Pvt Ltd">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LessonPlan Career Roadmap: pick a goal and see every entrance exam, eligibility rule, scholarship and course from Class 6 to career. Free guides for Science, Commerce, Arts, Law, Defence, Design and more.">
+    <meta name="keywords"
+        content="career roadmap, career guidance after 10th, career guidance after 12th, NEET eligibility, JEE Main pattern, KCET pattern, CA Foundation, CLAT, career counselling Yelahanka, career counselling Bangalore, stream selection after 10th, PCB career options, PCM career options, commerce career options, entrance exam calendar, LessonPlan">
+    <title>LessonPlan | Career Roadmap - Class 6 to Career Guide, Yelahanka, Bangalore</title>
+
+    <meta property="og:site_name" content="LessonPlan">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lessonplan.co.in/career-roadmap.html">
+    <meta property="og:title" content="LessonPlan Career Roadmap - From Class 6 to Career">
+    <meta property="og:description"
+        content="Pick a goal and see the exams, eligibility, courses and careers on one clear route. Guides for every stream, by LessonPlan, Yelahanka, Bangalore.">
+    <meta property="og:image" content="https://www.lessonplan.co.in/assets/logo_with_name.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LessonPlan Career Roadmap - From Class 6 to Career">
+    <meta name="twitter:description"
+        content="Pick a goal and see the exams, eligibility, courses and careers on one clear route.">
+    <meta name="twitter:image" content="https://www.lessonplan.co.in/assets/logo_with_name.png">
+
+    <link rel="icon" type="image/png" href="https://www.lessonplan.co.in/assets/logo-removebg.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="https://www.lessonplan.co.in/assets/logo-removebg.png" sizes="192x192">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/whatsapp-widget.css">
+    <link rel="stylesheet" href="css/career-roadmap.css">
+
+    </head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html" aria-label="LessonPlan home"><img src="assets/logo_with_name.png"
+                            alt="LessonPlan" class="logo-img"></a>
+                </div>
+
+                <div class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="company-verticals.html">Company verticals</a></li>
+                    <li><a href="workshops.html">Training & workshop</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="career-roadmap.html" class="nav-current" aria-current="page">Career roadmap</a></li>
+                    <li><a href="contact.html" class="btn-primary"
+                            style="padding: 8px 20px; color: white; border-radius: 999px;">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="cr-hero">
+            <div class="container">
+                <h1>Career Roadmap: <span>Class 6 to Career</span></h1>
+                <p class="cr-hero-sub">Type a goal, or tap your way from Class 6 to college and beyond. Every exam, course and career, step by step.</p>
+
+                <form class="cr-search" id="crSearch" role="search" autocomplete="off">
+                    <label for="crQuery" class="cr-sr">Type a career you want</label>
+                    <input id="crQuery" type="search" placeholder="I want to become a doctor, engineer, CA, lawyer..."
+                        enterkeyhint="search">
+                    <button type="submit" class="btn btn-primary">Find my path</button>
+                </form>
+                <div class="cr-search-msg" id="crSearchMsg" aria-live="polite"></div>
+
+                <div class="cr-chips" id="crChips" role="group" aria-label="Show pathways for">
+                    <button type="button" class="cr-chip" data-tag="c6">Class 6-8</button>
+                    <button type="button" class="cr-chip" data-tag="c9">Class 9-10</button>
+                    <button type="button" class="cr-chip" data-tag="a10">After 10th</button>
+                    <button type="button" class="cr-chip" data-tag="a12">After 12th</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cr-explorer" id="explorer" aria-labelledby="crPrompt">
+            <div class="container">
+                <div class="cr-top">
+                    <div>
+                        <h2 id="crPrompt">What do you want to become?</h2>
+                        <p class="cr-top-sub" id="crSub">Tap a bubble to open it. New bubbles appear as you go.</p>
+                    </div>
+                    <div class="cr-top-btns">
+                        <button type="button" class="btn btn-primary cr-save" id="crDownload" hidden><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Download my roadmap (PDF)</button>
+                        <button type="button" class="btn btn-secondary cr-reset" id="crReset" hidden>Start over</button>
+                    </div>
+                </div>
+
+                <div class="cr-split" id="crSplit">
+                    <div class="cr-mapwrap">
+                        <div class="cr-scroll" id="crScroll">
+                            <div class="cr-map" id="crMap"></div>
+                        </div>
+                        <div class="cr-tip" id="crTip" aria-live="polite"></div>
+                    </div>
+
+                    <aside class="cr-side" id="crSide" hidden aria-label="Details">
+                        <button type="button" class="cr-side-close" id="crClose" aria-label="Close details"><i
+                                class="fa-solid fa-xmark"></i></button>
+                        <div id="crSideBody"></div>
+                    </aside>
+                </div>
+                <noscript>
+                    <p class="cr-noscript">This page needs JavaScript to show the interactive map. Please
+                        <a href="contact.html">contact LessonPlan</a> for the career guides.</p>
+                </noscript>
+                <p class="cr-disclaimer">Cut-offs, past-year criteria, dates, patterns and eligibility shown here are approximate and may not be exact. They change every year. This page is for general guidance only. Please confirm on the official website of the conducting body before you apply.</p>
+            </div>
+        </section>
+        <section class="cr-cal section-padding" id="calendar" aria-labelledby="crCalTitle">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="crCalTitle">Exam calendar</h2>
+                    <p>Pick a month to see which exams usually happen. Tap an exam to see its route.</p>
+                </div>
+                <div class="cr-months" id="crMonths" role="tablist" aria-label="Months"></div>
+                <div class="cr-cal-list" id="crCalList" aria-live="polite"></div>
+                <p class="cr-cal-note" id="crCalNote"></p>
+            </div>
+        </section>
+        <!-- Guide downloads (hidden for now; the visitor downloads their own roadmap instead)
+        <section class="cr-dl section-padding section-bg-light" id="downloads" aria-labelledby="crDlTitle">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="crDlTitle">Download the guides</h2>
+                    <p>Free PDF guides with the full route, exam details and a one-page summary.</p>
+                </div>
+                <div class="cr-dl-grid" id="crDlGrid"></div>
+            </div>
+        </section>
+        -->
+        <section class="cr-faq section-padding section-bg-light" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Good to know</h2>
+                </div>
+                <div class="cr-faq-grid">
+                    <div class="cr-faq-item">
+                        <h3>How does it work?</h3>
+                        <p>Tap a stream like Science. Bubbles open one step at a time: subjects, exams, courses and careers. Or type a career in the search box and the whole route opens for you.</p>
+                    </div>
+                    <div class="cr-faq-item">
+                        <h3>Are the dates final?</h3>
+                        <p>No. Exam dates and rules change every year, so use this as a guide and confirm on the
+                            official website of the exam.</p>
+                    </div>
+                    <div class="cr-faq-item">
+                        <h3>Can I talk to someone?</h3>
+                        <p>Yes. Use the Ask button on any exam, or the button below. Your choice is filled in for you,
+                            so you only add your name and phone number.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cr-cta">
+            <div class="container">
+                <h2>Not sure what to choose?</h2>
+                <p>Talk to a LessonPlan counsellor. We will help you match interests and marks to the right route.</p>
+                <a class="btn btn-primary" id="crCtaTalk"
+                    href="contact.html?topic=Career+guidance&amp;path=Career+Roadmap&amp;from=career-roadmap">Talk to a
+                    counsellor</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="cr-backdrop" id="crBackdrop" hidden></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/logo_with_name.png" alt="LessonPlan" class="footer-logo-img">
+                    </div>
+                    <p class="footer-mission">Empowering minds, transforming futures. Your breakthrough begins here.</p>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=61582919596153" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/lessonplan_patil/?hl=en" target="_blank"
+                                rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/lessonplan-private-limited-0109a23a9" target="_blank"
+                                rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://wa.me/918050512005" target="_blank" rel="noopener noreferrer"
+                                aria-label="WhatsApp" class="whatsapp-highlight">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="company-verticals.html">Company Verticals</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="career-roadmap.html">Career Roadmap</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@lessonplan.co.in">info@lessonplan.co.in</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+918050512005">+91-8050512005</a>
+                    </div>
+                    <div class="contact-item whatsapp-highlight">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://wa.me/918050512005" target="_blank">WhatsApp Us</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Above omega clinic, Kogilu,<br>Yelahanka, Bangalore - 560064</span>
+                    </div>
+                </div>
+
+                <div class="footer-map">
+                    <h3>Find Us</h3>
+                    <div class="map-embed">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.931515703902!2d77.61319017484375!3d13.103524987224088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae199598348e37%3A0xe5b05703a757dd25!2sLesson%20Plan%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1769865245228!5m2!1sen!2sin"
+                            width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 15px;">By using or visiting
+                    this site, you automatically agree to our <a href="terms-conditions.html"
+                        style="color: var(--action-orange); text-decoration: none;">Terms & Conditions</a>.</p>
+                <div class="copyright">© 2026 LessonPlan Pvt Ltd. All rights reserved. Copyright Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Icon -->
+    <a href="https://wa.me/918050512005" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/career-roadmap-pdf.js" defer></script>
+    <script src="js/career-roadmap.js" defer></script>
+</body>
+
+</html>

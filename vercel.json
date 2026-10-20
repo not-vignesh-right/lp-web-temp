@@ -34,6 +34,24 @@
           "value": "strict-origin-when-cross-origin"
         }
       ]
+    },
+    {
+      "source": "/career-roadmap",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/data/career/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

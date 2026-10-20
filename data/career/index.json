@@ -1,0 +1,1222 @@
+{
+  "updated": "2026-27 cycle",
+  "pathways": [
+    {
+      "id": "foundation",
+      "file": "foundation.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Foundation-Class6-10.pdf"
+    },
+    {
+      "id": "science-pcb",
+      "file": "science-pcb.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Science-PCB.pdf"
+    },
+    {
+      "id": "science-pcm",
+      "file": "science-pcm.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Science-PCM.pdf"
+    },
+    {
+      "id": "commerce",
+      "file": "commerce.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Commerce.pdf"
+    },
+    {
+      "id": "arts",
+      "file": "arts.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Arts-Humanities.pdf"
+    },
+    {
+      "id": "law",
+      "file": "law.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Law.pdf"
+    },
+    {
+      "id": "defence",
+      "file": "defence.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Defence.pdf"
+    },
+    {
+      "id": "design",
+      "file": "design.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Design-Architecture.pdf"
+    },
+    {
+      "id": "aviation",
+      "file": "aviation.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Hospitality-Aviation-Maritime.pdf"
+    },
+    {
+      "id": "health",
+      "file": "health.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Health-Allied.pdf"
+    },
+    {
+      "id": "agri",
+      "file": "agri.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Agriculture-Veterinary-Forestry.pdf"
+    },
+    {
+      "id": "trades",
+      "file": "trades.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Polytechnic-ITI.pdf"
+    },
+    {
+      "id": "skills",
+      "file": "skills.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Skills-Entrepreneurship.pdf"
+    },
+    {
+      "id": "sports",
+      "file": "sports.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Sports-Arts.pdf"
+    },
+    {
+      "id": "science-pcmb",
+      "file": "science-pcmb.json",
+      "guides": [
+        {
+          "label": "Download PCM guide",
+          "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Science-PCM.pdf"
+        },
+        {
+          "label": "Download PCB guide",
+          "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Science-PCB.pdf"
+        }
+      ]
+    },
+    {
+      "id": "science-pcmc",
+      "file": "science-pcmc.json",
+      "guide": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Science-PCM.pdf"
+    },
+    {
+      "id": "abroad",
+      "file": "abroad.json"
+    }
+  ],
+  "doors": [
+    {
+      "id": "foundation",
+      "title": "Class 6 to 10",
+      "icon": "fa-seedling",
+      "live": true,
+      "blurb": "Start here if you are in school.",
+      "groups": [
+        {
+          "id": "f68",
+          "label": "Class 6 to 8",
+          "sub": "Olympiads and school tests",
+          "pathway": "foundation",
+          "entry": [
+            "sof",
+            "ioqm",
+            "nmms",
+            "aissee",
+            "rimc"
+          ]
+        },
+        {
+          "id": "f910",
+          "label": "Class 9 to 10",
+          "sub": "Tests and the big choice",
+          "pathway": "foundation",
+          "entry": [
+            "nsejs",
+            "ntse",
+            "mathpick"
+          ]
+        }
+      ],
+      "groupTitle": "Pick your class"
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "icon": "fa-atom",
+      "live": true,
+      "blurb": "Doctors, engineers, scientists and more.",
+      "groups": [
+        {
+          "id": "pcm",
+          "label": "PCM",
+          "sub": "Physics, Chemistry, Maths",
+          "pathway": "science-pcm"
+        },
+        {
+          "id": "pcb",
+          "label": "PCB",
+          "sub": "Physics, Chemistry, Biology",
+          "pathway": "science-pcb"
+        },
+        {
+          "id": "pcmb",
+          "label": "PCMB",
+          "sub": "Maths and Biology together",
+          "pathway": "science-pcmb"
+        },
+        {
+          "id": "pcmc",
+          "label": "PCMC",
+          "sub": "Maths and Computer Science",
+          "pathway": "science-pcmc"
+        }
+      ],
+      "groupTitle": "Pick your subjects"
+    },
+    {
+      "id": "commerce",
+      "title": "Commerce",
+      "icon": "fa-chart-line",
+      "live": true,
+      "blurb": "Accounts, business, banking and law.",
+      "groups": [
+        {
+          "id": "commerce",
+          "label": "Commerce",
+          "sub": "Accounts, Business, Economics",
+          "pathway": "commerce"
+        }
+      ]
+    },
+    {
+      "id": "arts",
+      "title": "Arts",
+      "icon": "fa-landmark",
+      "live": true,
+      "blurb": "Civil services, psychology, media, teaching.",
+      "groups": [
+        {
+          "id": "arts",
+          "label": "Arts",
+          "sub": "History, Politics, Languages, Psychology",
+          "pathway": "arts",
+          "entry": [
+            "cuet",
+            "merit",
+            "clat",
+            "uceed",
+            "nid",
+            "nift",
+            "ncet",
+            "liberal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "law",
+      "title": "Law",
+      "icon": "fa-scale-balanced",
+      "live": true,
+      "blurb": "Advocate, judge, corporate counsel.",
+      "groups": [
+        {
+          "id": "law",
+          "label": "Law",
+          "sub": "Study law after Class 12 or after a degree",
+          "pathway": "law",
+          "entry": [
+            "clat",
+            "ailet",
+            "slat",
+            "kslu",
+            "anydeg",
+            "lsat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defence",
+      "title": "Defence",
+      "icon": "fa-shield-halved",
+      "live": true,
+      "blurb": "Sainik School, NDA, Army, Navy, Air Force.",
+      "groups": [
+        {
+          "id": "school",
+          "label": "In school",
+          "sub": "Sainik School, Class 6 or 9",
+          "pathway": "defence",
+          "entry": [
+            "aissee",
+            "rimc"
+          ]
+        },
+        {
+          "id": "after10",
+          "label": "After Class 10",
+          "sub": "Join as an Agniveer",
+          "pathway": "defence",
+          "entry": [
+            "agniveer"
+          ]
+        },
+        {
+          "id": "after12",
+          "label": "After Class 12",
+          "sub": "NDA, Army 10+2 TES, Navy BTech",
+          "pathway": "defence",
+          "entry": [
+            "nda",
+            "tes",
+            "navy"
+          ]
+        },
+        {
+          "id": "graduate",
+          "label": "After a degree",
+          "sub": "CDS, Air Force, NCC Special Entry",
+          "pathway": "defence",
+          "entry": [
+            "cds",
+            "afcat",
+            "ncc"
+          ]
+        }
+      ],
+      "groupTitle": "When will you start?"
+    },
+    {
+      "id": "design",
+      "title": "Design",
+      "icon": "fa-pen-ruler",
+      "live": true,
+      "blurb": "Product, app, fashion and architecture.",
+      "groups": [
+        {
+          "id": "design",
+          "label": "Design and Architecture",
+          "sub": "Product, app, fashion, buildings",
+          "pathway": "design",
+          "entry": [
+            "uceed",
+            "nid",
+            "nift",
+            "nata",
+            "private"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aviation",
+      "title": "Hotels, Flying, Ships",
+      "icon": "fa-plane",
+      "live": true,
+      "blurb": "Hotel manager, pilot, ship officer.",
+      "groups": [
+        {
+          "id": "hotels",
+          "label": "Hotels",
+          "sub": "Hotel management and hospitality",
+          "pathway": "aviation",
+          "entry": [
+            "nchm"
+          ]
+        },
+        {
+          "id": "flying",
+          "label": "Flying",
+          "sub": "Pilot, cabin crew, aircraft engineer",
+          "pathway": "aviation",
+          "entry": [
+            "igrua",
+            "cabin",
+            "amestage"
+          ]
+        },
+        {
+          "id": "ships",
+          "label": "Ships",
+          "sub": "Merchant Navy officer",
+          "pathway": "aviation",
+          "entry": [
+            "imu"
+          ]
+        }
+      ],
+      "groupTitle": "Pick one"
+    },
+    {
+      "id": "health",
+      "title": "Health",
+      "icon": "fa-heart-pulse",
+      "live": true,
+      "blurb": "Nursing, pharmacy, therapy, AYUSH.",
+      "groups": [
+        {
+          "id": "nursepharm",
+          "label": "Nursing and Pharmacy",
+          "sub": "Admission through KCET",
+          "pathway": "health",
+          "entry": [
+            "kcet"
+          ]
+        },
+        {
+          "id": "ayushallied",
+          "label": "AYUSH and Allied Health",
+          "sub": "Admission through NEET-UG",
+          "pathway": "health",
+          "entry": [
+            "neet"
+          ]
+        }
+      ],
+      "groupTitle": "Pick one"
+    },
+    {
+      "id": "agri",
+      "title": "Farming and Animals",
+      "icon": "fa-wheat-awn",
+      "live": true,
+      "blurb": "Agri-science, vets, forests.",
+      "groups": [
+        {
+          "id": "agri",
+          "label": "Farming and Animals",
+          "sub": "Agriculture, forests, vet",
+          "pathway": "agri",
+          "entry": [
+            "kcet",
+            "cuet",
+            "neet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trades",
+      "title": "Diploma and ITI",
+      "icon": "fa-screwdriver-wrench",
+      "live": true,
+      "blurb": "Skills you can start after Class 8 or 10.",
+      "groups": [
+        {
+          "id": "after8",
+          "label": "After Class 8",
+          "sub": "ITI trades",
+          "pathway": "trades",
+          "entry": [
+            "iti"
+          ]
+        },
+        {
+          "id": "after10t",
+          "label": "After Class 10",
+          "sub": "ITI or Diploma",
+          "pathway": "trades",
+          "entry": [
+            "dte",
+            "iti"
+          ]
+        }
+      ],
+      "groupTitle": "Pick your class"
+    },
+    {
+      "id": "skills",
+      "title": "Skills and Business",
+      "icon": "fa-lightbulb",
+      "live": true,
+      "blurb": "Start-ups and skill courses.",
+      "groups": [
+        {
+          "id": "skills",
+          "label": "Skills and Business",
+          "sub": "Courses, projects, start-ups",
+          "pathway": "skills",
+          "entry": [
+            "pmkvy",
+            "digital",
+            "project",
+            "manak"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sports",
+      "title": "Sports and Arts",
+      "icon": "fa-medal",
+      "live": true,
+      "blurb": "Sports, music, dance, painting.",
+      "groups": [
+        {
+          "id": "sportsg",
+          "label": "Sports",
+          "sub": "Athlete, coach, sports science",
+          "pathway": "sports",
+          "entry": [
+            "khelo",
+            "lnipe"
+          ]
+        },
+        {
+          "id": "artsg",
+          "label": "Arts",
+          "sub": "Painting, music, dance, theatre",
+          "pathway": "sports",
+          "entry": [
+            "bfa",
+            "music"
+          ]
+        }
+      ],
+      "groupTitle": "Pick one"
+    },
+    {
+      "id": "abroad",
+      "title": "Study Abroad",
+      "icon": "fa-earth-asia",
+      "live": true,
+      "blurb": "SAT, IELTS and degrees in other countries.",
+      "groups": [
+        {
+          "id": "abroad",
+          "label": "Study Abroad",
+          "sub": "Bachelor's and master's abroad",
+          "pathway": "abroad",
+          "entry": [
+            "sat",
+            "ielts"
+          ]
+        }
+      ]
+    }
+  ],
+  "classStarts": {
+    "c6": {
+      "door": "foundation",
+      "group": "f68"
+    },
+    "c9": {
+      "door": "foundation",
+      "group": "f910"
+    }
+  },
+  "search": [
+    {
+      "k": [
+        "bank officer",
+        "bank po",
+        "ibps",
+        "banking"
+      ],
+      "path": "commerce",
+      "node": "banker"
+    },
+    {
+      "k": [
+        "ssc",
+        "cgl",
+        "government job",
+        "govt job",
+        "sarkari"
+      ],
+      "path": "commerce",
+      "node": "govofficer"
+    },
+    {
+      "k": [
+        "mba",
+        "iim",
+        "cat exam",
+        "pgdm"
+      ],
+      "path": "commerce",
+      "node": "mba"
+    },
+    {
+      "k": [
+        "mtech",
+        "m.tech",
+        "gate"
+      ],
+      "path": "science-pcm",
+      "node": "mtech"
+    },
+    {
+      "k": [
+        "specialist",
+        "surgeon",
+        "md",
+        "cardiologist",
+        "neet pg"
+      ],
+      "path": "science-pcb",
+      "node": "specialist"
+    },
+    {
+      "k": [
+        "kas",
+        "kpsc",
+        "tahsildar",
+        "karnataka officer"
+      ],
+      "path": "arts",
+      "node": "kasofficer"
+    },
+    {
+      "k": [
+        "lecturer",
+        "assistant professor",
+        "ugc net",
+        "net",
+        "kset"
+      ],
+      "path": "arts",
+      "node": "researcher"
+    },
+    {
+      "k": [
+        "study abroad",
+        "abroad",
+        "foreign",
+        "usa",
+        "sat",
+        "ielts",
+        "canada",
+        "uk"
+      ],
+      "path": "abroad",
+      "node": "global"
+    },
+    {
+      "k": [
+        "doctor",
+        "mbbs",
+        "medicine",
+        "surgeon",
+        "dentist",
+        "bds",
+        "ayush",
+        "neet"
+      ],
+      "path": "science-pcb",
+      "node": "doctor"
+    },
+    {
+      "k": [
+        "nurse",
+        "nursing"
+      ],
+      "path": "science-pcb",
+      "node": "nurse"
+    },
+    {
+      "k": [
+        "pharmacist",
+        "pharmacy",
+        "pharma"
+      ],
+      "path": "science-pcb",
+      "node": "pharmacist"
+    },
+    {
+      "k": [
+        "researcher",
+        "biotech",
+        "life science",
+        "microbiology"
+      ],
+      "path": "science-pcb",
+      "node": "researcher"
+    },
+    {
+      "k": [
+        "vet",
+        "veterinary",
+        "veterinarian",
+        "animal doctor"
+      ],
+      "path": "science-pcb",
+      "node": "vet"
+    },
+    {
+      "k": [
+        "physiotherapist",
+        "physiotherapy",
+        "allied health",
+        "lab technician",
+        "optometrist"
+      ],
+      "path": "science-pcb",
+      "node": "allied-career"
+    },
+    {
+      "k": [
+        "engineer",
+        "engineering",
+        "btech",
+        "software",
+        "computer science",
+        "jee",
+        "coding"
+      ],
+      "path": "science-pcm",
+      "node": "engineer"
+    },
+    {
+      "k": [
+        "architect",
+        "architecture",
+        "barch"
+      ],
+      "path": "science-pcm",
+      "node": "architect"
+    },
+    {
+      "k": [
+        "army",
+        "navy",
+        "air force",
+        "defence officer",
+        "nda",
+        "soldier",
+        "military"
+      ],
+      "path": "defence",
+      "node": "army"
+    },
+    {
+      "k": [
+        "scientist",
+        "physicist",
+        "mathematician"
+      ],
+      "path": "science-pcm",
+      "node": "scientist"
+    },
+    {
+      "k": [
+        "ca",
+        "chartered accountant",
+        "accountant",
+        "audit"
+      ],
+      "path": "commerce",
+      "node": "ca-career"
+    },
+    {
+      "k": [
+        "company secretary",
+        "cs"
+      ],
+      "path": "commerce",
+      "node": "cs-career"
+    },
+    {
+      "k": [
+        "cost accountant",
+        "cma"
+      ],
+      "path": "commerce",
+      "node": "cma-career"
+    },
+    {
+      "k": [
+        "manager",
+        "mba",
+        "bba",
+        "management",
+        "business",
+        "banker",
+        "bank",
+        "finance"
+      ],
+      "path": "commerce",
+      "node": "manager"
+    },
+    {
+      "k": [
+        "lawyer",
+        "law",
+        "advocate",
+        "judge",
+        "clat"
+      ],
+      "path": "law",
+      "node": "advocate"
+    },
+    {
+      "k": [
+        "olympiad",
+        "olympiads"
+      ],
+      "path": "foundation",
+      "node": "sof"
+    },
+    {
+      "k": [
+        "maths olympiad",
+        "imo",
+        "ioqm",
+        "rmo",
+        "inmo"
+      ],
+      "path": "foundation",
+      "node": "ioqm"
+    },
+    {
+      "k": [
+        "scholarship",
+        "nmms"
+      ],
+      "path": "foundation",
+      "node": "nmms"
+    },
+    {
+      "k": [
+        "sainik",
+        "sainik school"
+      ],
+      "path": "foundation",
+      "node": "aissee"
+    },
+    {
+      "k": [
+        "ntse",
+        "talent"
+      ],
+      "path": "foundation",
+      "node": "ntse"
+    },
+    {
+      "k": [
+        "junior science",
+        "nsejs"
+      ],
+      "path": "foundation",
+      "node": "nsejs"
+    },
+    {
+      "k": [
+        "civil servant",
+        "ias",
+        "ips",
+        "upsc",
+        "collector",
+        "ias officer"
+      ],
+      "path": "arts",
+      "node": "civil"
+    },
+    {
+      "k": [
+        "psychologist",
+        "psychology",
+        "counsellor"
+      ],
+      "path": "arts",
+      "node": "psychologist"
+    },
+    {
+      "k": [
+        "journalist",
+        "journalism",
+        "media",
+        "reporter",
+        "anchor"
+      ],
+      "path": "arts",
+      "node": "journalist"
+    },
+    {
+      "k": [
+        "teacher",
+        "teaching",
+        "professor",
+        "ctet",
+        "tet"
+      ],
+      "path": "arts",
+      "node": "teacher"
+    },
+    {
+      "k": [
+        "designer",
+        "design",
+        "ux",
+        "ui",
+        "graphic"
+      ],
+      "path": "design",
+      "node": "ux"
+    },
+    {
+      "k": [
+        "fashion",
+        "fashion designer",
+        "nift"
+      ],
+      "path": "design",
+      "node": "fashion"
+    },
+    {
+      "k": [
+        "animator",
+        "animation",
+        "game designer",
+        "gaming"
+      ],
+      "path": "design",
+      "node": "animator"
+    },
+    {
+      "k": [
+        "product designer",
+        "nid",
+        "uceed"
+      ],
+      "path": "design",
+      "node": "product"
+    },
+    {
+      "k": [
+        "corporate lawyer",
+        "company lawyer"
+      ],
+      "path": "law",
+      "node": "corporate"
+    },
+    {
+      "k": [
+        "judge",
+        "magistrate",
+        "civil judge"
+      ],
+      "path": "law",
+      "node": "judge"
+    },
+    {
+      "k": [
+        "pilot",
+        "airline pilot",
+        "commercial pilot",
+        "aeroplane"
+      ],
+      "path": "aviation",
+      "node": "pilot"
+    },
+    {
+      "k": [
+        "cabin crew",
+        "air hostess",
+        "flight attendant"
+      ],
+      "path": "aviation",
+      "node": "crew"
+    },
+    {
+      "k": [
+        "hotel manager",
+        "chef",
+        "hotel management",
+        "hospitality"
+      ],
+      "path": "aviation",
+      "node": "hotel"
+    },
+    {
+      "k": [
+        "aircraft engineer",
+        "ame",
+        "aircraft maintenance"
+      ],
+      "path": "aviation",
+      "node": "amecareer"
+    },
+    {
+      "k": [
+        "ship",
+        "merchant navy",
+        "sailor",
+        "captain"
+      ],
+      "path": "aviation",
+      "node": "ship"
+    },
+    {
+      "k": [
+        "air force officer",
+        "afcat",
+        "fighter pilot"
+      ],
+      "path": "defence",
+      "node": "airforce"
+    },
+    {
+      "k": [
+        "navy officer"
+      ],
+      "path": "defence",
+      "node": "navyofficer"
+    },
+    {
+      "k": [
+        "agniveer",
+        "agnipath"
+      ],
+      "path": "defence",
+      "node": "soldier"
+    },
+    {
+      "k": [
+        "ayurveda",
+        "homeopathy",
+        "bams",
+        "bhms"
+      ],
+      "path": "health",
+      "node": "ayushdoc"
+    },
+    {
+      "k": [
+        "public health"
+      ],
+      "path": "health",
+      "node": "public"
+    },
+    {
+      "k": [
+        "farmer",
+        "agriculture",
+        "agri",
+        "farming",
+        "horticulture"
+      ],
+      "path": "agri",
+      "node": "agrio"
+    },
+    {
+      "k": [
+        "forest officer",
+        "forest",
+        "wildlife",
+        "ifs"
+      ],
+      "path": "agri",
+      "node": "rfo"
+    },
+    {
+      "k": [
+        "iti",
+        "electrician",
+        "fitter",
+        "welder",
+        "technician",
+        "mechanic"
+      ],
+      "path": "trades",
+      "node": "tech"
+    },
+    {
+      "k": [
+        "diploma",
+        "polytechnic",
+        "junior engineer"
+      ],
+      "path": "trades",
+      "node": "jr"
+    },
+    {
+      "k": [
+        "entrepreneur",
+        "startup",
+        "start-up",
+        "founder",
+        "own business"
+      ],
+      "path": "skills",
+      "node": "founder"
+    },
+    {
+      "k": [
+        "freelancer",
+        "freelance",
+        "youtuber",
+        "content creator"
+      ],
+      "path": "skills",
+      "node": "freelancer"
+    },
+    {
+      "k": [
+        "athlete",
+        "sportsperson",
+        "player",
+        "cricketer"
+      ],
+      "path": "sports",
+      "node": "athlete"
+    },
+    {
+      "k": [
+        "coach",
+        "pe teacher",
+        "physical education"
+      ],
+      "path": "sports",
+      "node": "coach"
+    },
+    {
+      "k": [
+        "artist",
+        "painter",
+        "illustrator"
+      ],
+      "path": "sports",
+      "node": "artist"
+    },
+    {
+      "k": [
+        "singer",
+        "musician",
+        "dancer",
+        "actor",
+        "actress"
+      ],
+      "path": "sports",
+      "node": "performer"
+    },
+    {
+      "k": [
+        "data analyst",
+        "ai engineer",
+        "data science",
+        "machine learning"
+      ],
+      "path": "science-pcmc",
+      "node": "data"
+    },
+    {
+      "k": [
+        "bca",
+        "software developer",
+        "programmer"
+      ],
+      "path": "science-pcmc",
+      "node": "software"
+    },
+    {
+      "k": [
+        "actuary",
+        "actuarial"
+      ],
+      "path": "commerce",
+      "node": "actuary"
+    },
+    {
+      "k": [
+        "rimc",
+        "military college"
+      ],
+      "path": "foundation",
+      "node": "rimc"
+    },
+    {
+      "k": [
+        "comedk",
+        "iit",
+        "jee advanced",
+        "iitian"
+      ],
+      "path": "science-pcm",
+      "node": "jeeadv"
+    },
+    {
+      "k": [
+        "cmi",
+        "isi",
+        "statistician",
+        "statistics",
+        "mathematics"
+      ],
+      "path": "science-pcm",
+      "node": "mathcs"
+    }
+  ],
+  "downloads": [
+    {
+      "title": "Foundation (Class 6 to 10)",
+      "blurb": "Olympiads, NMMS, NTSE, Sainik School (5 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Foundation-Class6-10.pdf"
+    },
+    {
+      "title": "Science PCB",
+      "blurb": "NEET, KCET, CUET, IISER (7 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Science-PCB.pdf"
+    },
+    {
+      "title": "Science PCM",
+      "blurb": "JEE, KCET, BITSAT, NDA, NATA (7 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Science-PCM.pdf"
+    },
+    {
+      "title": "Commerce",
+      "blurb": "CA, CS, CMA, IPMAT, CLAT (7 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Commerce.pdf"
+    },
+    {
+      "title": "Arts and Humanities",
+      "blurb": "UPSC, design, teaching, media (7 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Arts-Humanities.pdf"
+    },
+    {
+      "title": "Law",
+      "blurb": "CLAT, AILET, AIBE, judiciary (5 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Law.pdf"
+    },
+    {
+      "title": "Defence",
+      "blurb": "NDA, CDS, AFCAT, Agniveer, SSB (6 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Defence.pdf"
+    },
+    {
+      "title": "Design and Architecture",
+      "blurb": "UCEED, NID, NIFT, NATA (6 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Design-Architecture.pdf"
+    },
+    {
+      "title": "Hotels, Flying and Ships",
+      "blurb": "NCHM JEE, pilot, cabin crew, IMU CET (6 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Hospitality-Aviation-Maritime.pdf"
+    },
+    {
+      "title": "Health and Allied",
+      "blurb": "Nursing, pharmacy, allied, AYUSH (5 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Health-Allied.pdf"
+    },
+    {
+      "title": "Farming, Animals and Forests",
+      "blurb": "ICAR, BVSc, forest services (5 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Agriculture-Veterinary-Forestry.pdf"
+    },
+    {
+      "title": "Diploma and ITI",
+      "blurb": "Diploma, DCET, ITI (5 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Polytechnic-ITI.pdf"
+    },
+    {
+      "title": "Skills and Business",
+      "blurb": "Skill courses and start-ups (5 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Skills-Entrepreneurship.pdf"
+    },
+    {
+      "title": "Sports and Arts",
+      "blurb": "Khelo India, BPEd, fine arts (5 pages)",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Sports-Arts.pdf"
+    }
+  ],
+  "downloadsHidden": [
+    {
+      "title": "Complete guide (all streams)",
+      "blurb": "82 pages with contents and bookmarks",
+      "href": "assets/career-roadmap/guides/LessonPlan-Career-Roadmap-Complete-Guide.pdf",
+      "main": true
+    }
+  ]
+}

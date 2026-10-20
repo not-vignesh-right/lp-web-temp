@@ -1,0 +1,343 @@
+{
+  "id": "science-pcm",
+  "title": "Science PCM",
+  "intro": "Physics, Chemistry and Maths after Class 10. Pick a career to see its route.",
+  "lanes": [
+    {
+      "id": "l1",
+      "label": "After Class 10"
+    },
+    {
+      "id": "l2",
+      "label": "Class 11-12"
+    },
+    {
+      "id": "l3",
+      "label": "Entrance exams"
+    },
+    {
+      "id": "l4",
+      "label": "Degree"
+    },
+    {
+      "id": "l5",
+      "label": "Career"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "choose",
+      "lane": "l1",
+      "type": "stage",
+      "label": "Choose PCM",
+      "note": "Take Standard Maths in Class 10 if you are unsure. Computer Science or Biology can be the optional subject."
+    },
+    {
+      "id": "boards",
+      "lane": "l2",
+      "type": "stage",
+      "label": "Boards and entrance prep",
+      "note": "In Karnataka this is the 2-year PUC. KCET rank uses 50% of PUC marks."
+    },
+    {
+      "id": "jee",
+      "lane": "l3",
+      "type": "exam",
+      "label": "JEE Main",
+      "exam": "jee-main"
+    },
+    {
+      "id": "kcet",
+      "lane": "l3",
+      "type": "exam",
+      "label": "KCET",
+      "exam": "kcet"
+    },
+    {
+      "id": "bitsat",
+      "lane": "l3",
+      "type": "exam",
+      "label": "BITSAT",
+      "exam": "bitsat"
+    },
+    {
+      "id": "nata",
+      "lane": "l3",
+      "type": "exam",
+      "label": "NATA",
+      "exam": "nata"
+    },
+    {
+      "id": "nda",
+      "lane": "l3",
+      "type": "exam",
+      "label": "NDA (UPSC)",
+      "exam": "nda"
+    },
+    {
+      "id": "iat",
+      "lane": "l3",
+      "type": "exam",
+      "label": "IISER IAT",
+      "exam": "iiser-iat"
+    },
+    {
+      "id": "btech",
+      "lane": "l4",
+      "type": "course",
+      "label": "BE / BTech",
+      "note": "4 years. Computer science, electronics, mechanical, civil, aerospace and more."
+    },
+    {
+      "id": "barch",
+      "lane": "l4",
+      "type": "course",
+      "label": "B.Arch",
+      "note": "5 years. Through NATA or JEE Main Paper 2A."
+    },
+    {
+      "id": "ndat",
+      "lane": "l4",
+      "type": "course",
+      "label": "NDA training and degree",
+      "note": "Officer training with a degree, then commission."
+    },
+    {
+      "id": "msbs",
+      "lane": "l4",
+      "type": "course",
+      "label": "BS-MS (IISER) / BSc",
+      "note": "Research focused science degrees."
+    },
+    {
+      "id": "engineer",
+      "lane": "l5",
+      "type": "career",
+      "label": "Engineer",
+      "note": "Software, core engineering, aerospace, data and AI roles."
+    },
+    {
+      "id": "architect",
+      "lane": "l5",
+      "type": "career",
+      "label": "Architect",
+      "note": "Registration with the Council of Architecture."
+    },
+    {
+      "id": "officer",
+      "lane": "l5",
+      "type": "career",
+      "label": "Defence officer",
+      "note": "Army, Navy or Air Force officer."
+    },
+    {
+      "id": "scientist",
+      "lane": "l5",
+      "type": "career",
+      "label": "Scientist",
+      "note": "Physics, chemistry, maths and research careers."
+    },
+    {
+      "id": "jeeadv",
+      "type": "exam",
+      "label": "JEE Advanced (IITs)",
+      "exam": "jee-advanced"
+    },
+    {
+      "id": "comedk",
+      "type": "exam",
+      "label": "COMEDK (private colleges)",
+      "exam": "comedk"
+    },
+    {
+      "id": "nest",
+      "type": "exam",
+      "label": "NEST (NISER)",
+      "exam": "nest"
+    },
+    {
+      "id": "cmi",
+      "type": "exam",
+      "label": "CMI and ISI tests",
+      "exam": "cmi-isi"
+    },
+    {
+      "id": "privateengg",
+      "type": "exam",
+      "label": "VITEEE, SRMJEEE (private)",
+      "exam": "private-engg"
+    },
+    {
+      "id": "mathcs",
+      "type": "course",
+      "label": "BSc Maths or CS at CMI, B.Stat and B.Math at ISI",
+      "note": "3 years. Maths, statistics and data science. A strong path to research."
+    },
+    {
+      "id": "gate",
+      "type": "exam",
+      "label": "GATE (M.Tech)",
+      "exam": "gate"
+    },
+    {
+      "id": "cat",
+      "type": "exam",
+      "label": "CAT (IIMs)",
+      "exam": "cat"
+    },
+    {
+      "id": "mtech",
+      "type": "course",
+      "label": "M.Tech (2 years)",
+      "note": "A master's in engineering at IITs, NITs and other colleges."
+    },
+    {
+      "id": "mba",
+      "type": "course",
+      "label": "MBA or PGDM (2 years)",
+      "note": "A master's in management after your degree."
+    }
+  ],
+  "edges": [
+    [
+      "choose",
+      "boards"
+    ],
+    [
+      "boards",
+      "jee"
+    ],
+    [
+      "boards",
+      "kcet"
+    ],
+    [
+      "boards",
+      "bitsat"
+    ],
+    [
+      "boards",
+      "nata"
+    ],
+    [
+      "boards",
+      "nda"
+    ],
+    [
+      "boards",
+      "iat"
+    ],
+    [
+      "jee",
+      "btech"
+    ],
+    [
+      "kcet",
+      "btech"
+    ],
+    [
+      "bitsat",
+      "btech"
+    ],
+    [
+      "jee",
+      "barch"
+    ],
+    [
+      "nata",
+      "barch"
+    ],
+    [
+      "nda",
+      "ndat"
+    ],
+    [
+      "iat",
+      "msbs"
+    ],
+    [
+      "btech",
+      "engineer"
+    ],
+    [
+      "barch",
+      "architect"
+    ],
+    [
+      "ndat",
+      "officer"
+    ],
+    [
+      "msbs",
+      "scientist"
+    ],
+    [
+      "boards",
+      "jeeadv"
+    ],
+    [
+      "boards",
+      "comedk"
+    ],
+    [
+      "boards",
+      "nest"
+    ],
+    [
+      "boards",
+      "cmi"
+    ],
+    [
+      "boards",
+      "privateengg"
+    ],
+    [
+      "jeeadv",
+      "btech"
+    ],
+    [
+      "comedk",
+      "btech"
+    ],
+    [
+      "privateengg",
+      "btech"
+    ],
+    [
+      "nest",
+      "msbs"
+    ],
+    [
+      "cmi",
+      "mathcs"
+    ],
+    [
+      "mathcs",
+      "scientist"
+    ],
+    [
+      "btech",
+      "gate"
+    ],
+    [
+      "gate",
+      "mtech"
+    ],
+    [
+      "mtech",
+      "scientist"
+    ],
+    [
+      "btech",
+      "cat"
+    ],
+    [
+      "cat",
+      "mba"
+    ],
+    [
+      "mba",
+      "engineer"
+    ]
+  ]
+}

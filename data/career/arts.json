@@ -1,0 +1,337 @@
+{
+  "id": "arts",
+  "title": "Arts",
+  "intro": "Civil services, psychology, media, law, design and teaching. Tap to open each step.",
+  "nodes": [
+    {
+      "id": "cuet",
+      "type": "exam",
+      "label": "CUET-UG",
+      "exam": "cuet-ug"
+    },
+    {
+      "id": "merit",
+      "type": "stage",
+      "label": "Admission by marks",
+      "note": "Many Karnataka BA colleges admit by Class 12 (PUC) marks. There is no entrance test."
+    },
+    {
+      "id": "clat",
+      "type": "exam",
+      "label": "CLAT (law)",
+      "exam": "clat"
+    },
+    {
+      "id": "uceed",
+      "type": "exam",
+      "label": "UCEED (design)",
+      "exam": "uceed"
+    },
+    {
+      "id": "nid",
+      "type": "exam",
+      "label": "NID DAT (design)",
+      "exam": "nid-dat"
+    },
+    {
+      "id": "nift",
+      "type": "exam",
+      "label": "NIFT (fashion)",
+      "exam": "nift"
+    },
+    {
+      "id": "ncet",
+      "type": "exam",
+      "label": "NCET (teaching)",
+      "exam": "ncet"
+    },
+    {
+      "id": "liberal",
+      "type": "exam",
+      "label": "Liberal arts tests",
+      "exam": "liberal-tests"
+    },
+    {
+      "id": "ba",
+      "type": "course",
+      "label": "BA (History, Political Science, Economics, Languages)",
+      "note": "3 to 4 years. A base for civil services, teaching, research and policy."
+    },
+    {
+      "id": "psych",
+      "type": "course",
+      "label": "BA Psychology",
+      "note": "Then MA or MSc. Clinical psychologists need a recognised clinical qualification and registration."
+    },
+    {
+      "id": "media",
+      "type": "course",
+      "label": "BJMC / Media Studies",
+      "note": "3 years. Journalism, PR, digital media."
+    },
+    {
+      "id": "llb",
+      "type": "course",
+      "label": "BA LLB",
+      "note": "5 years at a law university."
+    },
+    {
+      "id": "bdes",
+      "type": "course",
+      "label": "B.Des",
+      "note": "4 years. Product, communication, interaction and fashion design."
+    },
+    {
+      "id": "itep",
+      "type": "course",
+      "label": "ITEP (BA B.Ed)",
+      "note": "4-year teacher degree."
+    },
+    {
+      "id": "lib",
+      "type": "course",
+      "label": "Liberal Arts degree",
+      "note": "3 to 4 years at FLAME, Ashoka, Azim Premji and similar universities."
+    },
+    {
+      "id": "bed",
+      "type": "course",
+      "label": "B.Ed (after BA)",
+      "note": "2 years after your degree."
+    },
+    {
+      "id": "upsc",
+      "type": "exam",
+      "label": "UPSC Civil Services",
+      "exam": "upsc-cse"
+    },
+    {
+      "id": "tet",
+      "type": "exam",
+      "label": "CTET / KARTET",
+      "exam": "ctet-kartet"
+    },
+    {
+      "id": "civil",
+      "type": "career",
+      "label": "Civil servant (IAS, IPS)",
+      "note": "Run districts and departments, and shape policy."
+    },
+    {
+      "id": "psychologist",
+      "type": "career",
+      "label": "Psychologist or counsellor",
+      "note": "Help people with learning, work and mental health."
+    },
+    {
+      "id": "journalist",
+      "type": "career",
+      "label": "Journalist or media professional",
+      "note": "News, content, PR and digital media."
+    },
+    {
+      "id": "lawyer",
+      "type": "career",
+      "label": "Lawyer",
+      "note": "Court work and legal advice. Pass the Bar exam first."
+    },
+    {
+      "id": "designer",
+      "type": "career",
+      "label": "Designer",
+      "note": "Product, brand, app or fashion designer."
+    },
+    {
+      "id": "teacher",
+      "type": "career",
+      "label": "School teacher",
+      "note": "Teach in a school after clearing the teacher tests."
+    },
+    {
+      "id": "researcher",
+      "type": "career",
+      "label": "Researcher or professor",
+      "note": "Study society, history or language and teach at a college."
+    },
+    {
+      "id": "kas",
+      "type": "exam",
+      "label": "KPSC KAS (Karnataka officer)",
+      "exam": "kpsc-kas"
+    },
+    {
+      "id": "sscgl",
+      "type": "exam",
+      "label": "SSC CGL (govt jobs)",
+      "exam": "ssc-cgl"
+    },
+    {
+      "id": "ugcnet",
+      "type": "exam",
+      "label": "UGC NET",
+      "exam": "ugc-net"
+    },
+    {
+      "id": "kset",
+      "type": "exam",
+      "label": "KSET (Karnataka lecturer)",
+      "exam": "kset"
+    },
+    {
+      "id": "ma",
+      "type": "course",
+      "label": "MA (master's degree, 2 years)",
+      "note": "Needed for lecturer tests. Pick the subject you love."
+    },
+    {
+      "id": "kasofficer",
+      "type": "career",
+      "label": "Karnataka state officer (KAS)",
+      "note": "Work as Tahsildar, Assistant Commissioner or in other state posts."
+    },
+    {
+      "id": "govofficer",
+      "type": "career",
+      "label": "Government officer",
+      "note": "Work in tax, audit and other central government offices."
+    }
+  ],
+  "edges": [
+    [
+      "cuet",
+      "ba"
+    ],
+    [
+      "cuet",
+      "psych"
+    ],
+    [
+      "cuet",
+      "media"
+    ],
+    [
+      "cuet",
+      "lib"
+    ],
+    [
+      "merit",
+      "ba"
+    ],
+    [
+      "merit",
+      "psych"
+    ],
+    [
+      "merit",
+      "media"
+    ],
+    [
+      "clat",
+      "llb"
+    ],
+    [
+      "uceed",
+      "bdes"
+    ],
+    [
+      "nid",
+      "bdes"
+    ],
+    [
+      "nift",
+      "bdes"
+    ],
+    [
+      "ncet",
+      "itep"
+    ],
+    [
+      "liberal",
+      "lib"
+    ],
+    [
+      "ba",
+      "upsc"
+    ],
+    [
+      "ba",
+      "bed"
+    ],
+    [
+      "ba",
+      "researcher"
+    ],
+    [
+      "bed",
+      "tet"
+    ],
+    [
+      "itep",
+      "tet"
+    ],
+    [
+      "tet",
+      "teacher"
+    ],
+    [
+      "upsc",
+      "civil"
+    ],
+    [
+      "psych",
+      "psychologist"
+    ],
+    [
+      "media",
+      "journalist"
+    ],
+    [
+      "llb",
+      "lawyer"
+    ],
+    [
+      "bdes",
+      "designer"
+    ],
+    [
+      "lib",
+      "researcher"
+    ],
+    [
+      "ba",
+      "kas"
+    ],
+    [
+      "ba",
+      "sscgl"
+    ],
+    [
+      "ba",
+      "ma"
+    ],
+    [
+      "ma",
+      "ugcnet"
+    ],
+    [
+      "ma",
+      "kset"
+    ],
+    [
+      "kas",
+      "kasofficer"
+    ],
+    [
+      "sscgl",
+      "govofficer"
+    ],
+    [
+      "ugcnet",
+      "researcher"
+    ],
+    [
+      "kset",
+      "researcher"
+    ]
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "agri",
+  "title": "Farming and Animals",
+  "intro": "Agriculture, horticulture, forests and veterinary science.",
+  "nodes": [
+    {
+      "id": "kcet",
+      "type": "exam",
+      "label": "KCET",
+      "exam": "kcet"
+    },
+    {
+      "id": "cuet",
+      "type": "exam",
+      "label": "CUET-UG (ICAR seats)",
+      "exam": "cuet-ug"
+    },
+    {
+      "id": "neet",
+      "type": "exam",
+      "label": "NEET-UG (vet)",
+      "exam": "neet-ug"
+    },
+    {
+      "id": "bscagri",
+      "type": "course",
+      "label": "BSc Agriculture or Horticulture",
+      "note": "4 years at the agricultural and horticulture universities."
+    },
+    {
+      "id": "forestry",
+      "type": "course",
+      "label": "BSc Forestry",
+      "note": "4 years at forestry colleges such as Sirsi and Ponnampet."
+    },
+    {
+      "id": "bvsc",
+      "type": "course",
+      "label": "BVSc and AH (veterinary)",
+      "note": "About 5 years, with NEET-UG merit."
+    },
+    {
+      "id": "ifos",
+      "type": "exam",
+      "label": "Indian Forest Service exam",
+      "exam": "ifos"
+    },
+    {
+      "id": "agrio",
+      "type": "career",
+      "label": "Agri-officer or scientist",
+      "note": "Help farmers and do research."
+    },
+    {
+      "id": "farm",
+      "type": "career",
+      "label": "Agri-entrepreneur",
+      "note": "Start a farm, a food business or an agri start-up."
+    },
+    {
+      "id": "rfo",
+      "type": "career",
+      "label": "Forest officer (RFO)",
+      "note": "Protect forests and wildlife for the state."
+    },
+    {
+      "id": "ifo",
+      "type": "career",
+      "label": "Indian Forest Service officer",
+      "note": "A senior forest officer."
+    },
+    {
+      "id": "vet",
+      "type": "career",
+      "label": "Veterinarian",
+      "note": "Treat pets, farm animals and wildlife."
+    }
+  ],
+  "edges": [
+    [
+      "kcet",
+      "bscagri"
+    ],
+    [
+      "kcet",
+      "forestry"
+    ],
+    [
+      "cuet",
+      "bscagri"
+    ],
+    [
+      "cuet",
+      "forestry"
+    ],
+    [
+      "neet",
+      "bvsc"
+    ],
+    [
+      "bscagri",
+      "agrio"
+    ],
+    [
+      "bscagri",
+      "farm"
+    ],
+    [
+      "forestry",
+      "rfo"
+    ],
+    [
+      "forestry",
+      "ifos"
+    ],
+    [
+      "ifos",
+      "ifo"
+    ],
+    [
+      "bvsc",
+      "vet"
+    ]
+  ]
+}

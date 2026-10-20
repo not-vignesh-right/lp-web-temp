@@ -1,0 +1,73 @@
+{
+  "id": "abroad",
+  "title": "Study Abroad",
+  "intro": "Tests and steps for studying in another country. Costs, visas and scholarships differ for each country.",
+  "nodes": [
+    {
+      "id": "sat",
+      "type": "exam",
+      "label": "SAT (bachelor's abroad)",
+      "exam": "sat"
+    },
+    {
+      "id": "ielts",
+      "type": "exam",
+      "label": "IELTS (English test)",
+      "exam": "ielts"
+    },
+    {
+      "id": "ugabroad",
+      "type": "course",
+      "label": "Bachelor's degree abroad",
+      "note": "Usually 3 to 4 years. Apply to many universities and check scholarships."
+    },
+    {
+      "id": "pgabroad",
+      "type": "course",
+      "label": "Master's degree abroad",
+      "note": "Usually 1 to 2 years after your degree. Many want an English test score."
+    },
+    {
+      "id": "global",
+      "type": "career",
+      "label": "Professional abroad",
+      "note": "Work in another country after your degree, if the visa rules allow."
+    },
+    {
+      "id": "returnhome",
+      "type": "career",
+      "label": "Return and build in India",
+      "note": "Bring your skills back to start a career or business at home."
+    }
+  ],
+  "edges": [
+    [
+      "sat",
+      "ugabroad"
+    ],
+    [
+      "ielts",
+      "ugabroad"
+    ],
+    [
+      "ielts",
+      "pgabroad"
+    ],
+    [
+      "ugabroad",
+      "global"
+    ],
+    [
+      "ugabroad",
+      "returnhome"
+    ],
+    [
+      "pgabroad",
+      "global"
+    ],
+    [
+      "pgabroad",
+      "returnhome"
+    ]
+  ]
+}
