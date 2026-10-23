@@ -500,6 +500,106 @@
   "search": [
     {
       "k": [
+        "astrophysics",
+        "astronomy",
+        "astronomer",
+        "astronaut",
+        "isro",
+        "space scientist",
+        "space",
+        "cosmology",
+        "astrophysicist"
+      ],
+      "path": "science-pcm",
+      "node": "scientist"
+    },
+    {
+      "k": [
+        "cyber security",
+        "ethical hacker",
+        "hacker",
+        "ai",
+        "artificial intelligence",
+        "robotics",
+        "app developer",
+        "game developer",
+        "web developer"
+      ],
+      "path": "science-pcmc",
+      "node": "software"
+    },
+    {
+      "k": [
+        "police",
+        "sub inspector",
+        "psi",
+        "ips officer"
+      ],
+      "path": "defence",
+      "node": "second"
+    },
+    {
+      "k": [
+        "marine biologist",
+        "geologist",
+        "environment",
+        "botanist",
+        "zoologist",
+        "biologist"
+      ],
+      "path": "science-pcb",
+      "node": "researcher"
+    },
+    {
+      "k": [
+        "dietitian",
+        "nutritionist",
+        "optometrist",
+        "radiographer"
+      ],
+      "path": "science-pcb",
+      "node": "allied-career"
+    },
+    {
+      "k": [
+        "interior designer",
+        "graphic designer",
+        "web designer"
+      ],
+      "path": "design",
+      "node": "graphic"
+    },
+    {
+      "k": [
+        "photographer",
+        "filmmaker",
+        "video editor",
+        "director"
+      ],
+      "path": "arts",
+      "node": "journalist"
+    },
+    {
+      "k": [
+        "accountant",
+        "tax",
+        "auditor",
+        "finance manager"
+      ],
+      "path": "commerce",
+      "node": "ca-career"
+    },
+    {
+      "k": [
+        "entrepreneur",
+        "business owner",
+        "shop"
+      ],
+      "path": "skills",
+      "node": "founder"
+    },
+    {
+      "k": [
         "bank officer",
         "bank po",
         "ibps",

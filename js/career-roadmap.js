@@ -26,7 +26,7 @@
     };
 
     var ICON = { group: 'fa-layer-group', stage: 'fa-flag', exam: 'fa-file-pen', course: 'fa-graduation-cap', career: 'fa-star', next: 'fa-arrow-right' };
-    var TITLES = { door: 'Pick a stream', group: 'Pick your subjects', stage: 'Next step', exam: 'How do you get in?', course: 'What will you study?', career: 'What can you become?', next: 'What next?' };
+    var TITLES = { door: 'Pick a stream', group: 'Pick your subjects', stage: 'Next step', exam: 'How do you get in? Each is a separate choice', course: 'What will you study?', career: 'What can you become?', next: 'What next?' };
     var state = { index: null, exams: null, cache: {}, chain: [], hi: null, side: null, cols: 0 };
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var small = function () { return window.innerWidth <= 900; };
@@ -267,9 +267,17 @@
         var t = topic || (state.chain.length ? state.chain[state.chain.length - 1].label : 'Career guidance');
         return 'contact.html?topic=' + encodeURIComponent(t) + '&path=' + encodeURIComponent(routeText() || 'Career Roadmap') + '&from=career-roadmap';
     }
+    function waUrl() {
+        var route = routeText();
+        var msg = route ? 'Hello LessonPlan, I am exploring the Career Roadmap: ' + route + '. Please guide me.' : 'Hello LessonPlan, I need guidance from the Career Roadmap.';
+        return 'https://wa.me/918050512005?text=' + encodeURIComponent(msg);
+    }
     function syncTalkLinks() {
         var a = document.getElementById('crCtaTalk');
         if (a) a.href = talkUrl('');
+        var t = document.getElementById('crHelpTalk'), w = document.getElementById('crHelpWa');
+        if (t) t.href = talkUrl('');
+        if (w) w.href = waUrl();
     }
 
     /* ---------- download my roadmap (PDF) ---------- */
@@ -385,6 +393,8 @@
         var dlb = h('button', 'btn btn-secondary', 'Download my roadmap (PDF)'); dlb.type = 'button';
         dlb.addEventListener('click', downloadRoadmap);
         actions.appendChild(dlb);
+        var wab = h('a', 'btn cr-wa', 'WhatsApp our expert'); wab.href = waUrl(); wab.target = '_blank'; wab.rel = 'noopener noreferrer';
+        actions.appendChild(wab);
         b.appendChild(actions);
         b.appendChild(h('p', 'cr-d-note', 'Details are for the ' + state.index.updated + '. Cut-offs, past-year criteria and dates are approximate and may not be exact. They change every year, so confirm on the official website.'));
 
@@ -408,19 +418,23 @@
     el.backdrop.addEventListener('click', closeSide);
 
     /* ---------- open a whole route (search, shared link) ---------- */
-    function findGroup(pathId, nodeId) {
-        var best = null;
+    // pick the group of this pathway whose first bubbles can reach the target (a pathway can have several groups)
+    function findGroup(d, pathId, nodeId) {
+        var best = null, reach = null;
+        var up = walk(d.inn, nodeId);
         state.index.doors.forEach(function (door) {
             (door.groups || []).forEach(function (g) {
                 if (g.pathway !== pathId) return;
-                if (!best || (g.entry && g.entry.indexOf(nodeId) > -1)) best = { door: door, group: g };
+                var ids = entryIds(d, g).ids, ok = ids.some(function (id) { return up[id]; });
+                if (!best) best = { door: door, group: g };
+                if (ok && !reach) reach = { door: door, group: g };
             });
         });
-        return best;
+        return reach || best;
     }
     function openTarget(pathId, nodeId) {
         return loadPath(pathId).then(function (d) {
-            var node = d.byId[nodeId], fg = findGroup(pathId, nodeId);
+            var node = d.byId[nodeId], fg = findGroup(d, pathId, nodeId);
             if (!node || !fg) return false;
             var e = entryIds(d, fg.group), parents = [], seen = {};
             // walk back from the target to one of the first bubbles
@@ -460,16 +474,55 @@
         if (!q) { el.msg.textContent = 'Type a job you like, for example doctor or engineer.'; return; }
         var found = null;
         state.index.search.some(function (s) { return s.k.some(function (k) { if (hit(q, k)) { found = s; return true; } return false; }); });
-        if (!found) {
-            el.msg.appendChild(document.createTextNode('We do not have that one yet. Try doctor, engineer, architect, CA or lawyer, or '));
+        function miss() {
+            el.msg.textContent = '';
+            el.msg.appendChild(document.createTextNode('We could not find that one. Try doctor, pilot, engineer, lawyer or CA, or '));
             var a = h('a', 'cr-d-link', 'ask a counsellor'); a.href = talkUrl(el.query.value);
             el.msg.appendChild(a); el.msg.appendChild(document.createTextNode('.'));
-            return;
         }
-        openTarget(found.path, found.node).then(function (ok) {
-            if (ok) { el.msg.textContent = 'Here is your whole route.'; goExplorer(); }
+        function open(hitObj, closest) {
+            return openTarget(hitObj.path, hitObj.node).then(function (ok) {
+                if (ok) { el.msg.textContent = closest ? 'Closest match: ' + closest + '. Here is the route.' : 'Here is your whole route.'; goExplorer(); }
+                return ok;
+            });
+        }
+        (found ? open(found) : Promise.resolve(false)).then(function (ok) {
+            if (ok) return;
+            fuzzy(q).then(function (best) {
+                if (best) open(best, best.label).then(function (ok2) { if (!ok2) miss(); }); else miss();
+            });
         });
     });
+
+    /* search every step name and note when the keyword list has no answer */
+    var STOP = { the: 1, and: 1, for: 1, how: 1, can: 1, become: 1, want: 1, to: 1, a: 1, an: 1, of: 1, in: 1, my: 1, i: 1, be: 1, job: 1, jobs: 1, career: 1, work: 1, study: 1 };
+    var RANK = { career: 3, course: 2, exam: 1 };
+    function allPaths() {
+        return Promise.all(state.index.pathways.map(function (p) { return loadPath(p.id); }));
+    }
+    function fuzzy(q) {
+        var words = q.replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter(function (w) { return w.length > 2 && !STOP[w]; });
+        if (!words.length) return Promise.resolve(null);
+        return allPaths().then(function (all) {
+            var best = null, bs = 0;
+            all.forEach(function (d) {
+                d.nodes.forEach(function (n) {
+                    if (!RANK[n.type]) return;
+                    var x = n.exam && state.exams[n.exam];
+                    var label = (n.label + ' ' + (x ? x.name : '')).toLowerCase(), note = ((n.note || '') + ' ' + (x ? (x.simple || '') + ' ' + (x.leads || '') : '')).toLowerCase();
+                    var s = 0;
+                    words.forEach(function (w) {
+                        var stem = w.length > 5 ? w.slice(0, w.length - 1) : w;
+                        if (label.indexOf(stem) > -1) s += 4; else if (note.indexOf(stem) > -1) s += 1;
+                    });
+                    if (!s) return;
+                    s = s * 10 + RANK[n.type];
+                    if (s > bs) { bs = s; best = { path: d.id, node: n.id, label: n.label }; }
+                });
+            });
+            return best;
+        });
+    }
     el.chips.addEventListener('click', function (e) {
         var b = e.target.closest('.cr-chip'); if (!b) return;
         var tag = b.getAttribute('data-tag'), cs = state.index.classStarts[tag];

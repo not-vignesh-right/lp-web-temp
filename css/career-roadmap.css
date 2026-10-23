@@ -175,3 +175,12 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 @media (max-width: 900px) {
     .cr-d-actions .btn { flex: 1 1 100%; width: 100%; text-align: center; justify-content: center; box-sizing: border-box; }
 }
+
+/* ---------- talk to an expert bar ---------- */
+.cr-help { display: flex; align-items: center; justify-content: space-between; gap: 14px 20px; flex-wrap: wrap; margin-top: 18px; padding: 16px 18px; background: #eef4fa; border: 1px solid #c9d8e8; border-radius: 14px; }
+.cr-help-text { margin: 0; color: #003366; flex: 1 1 260px; }
+.cr-help-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.cr-wa { background: #25d366; color: #fff; border: 2px solid #25d366; }
+.cr-wa:hover { background: #1ebe5a; border-color: #1ebe5a; color: #fff; }
+.cr-help .btn i, .cr-d-actions .cr-wa i { margin-right: 6px; }
+@media (max-width: 560px) { .cr-help-btns { width: 100%; } .cr-help-btns .btn { flex: 1 1 100%; text-align: center; box-sizing: border-box; } }
