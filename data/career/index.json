@@ -505,10 +505,9 @@
         "astronomer",
         "astronaut",
         "isro",
-        "space scientist",
         "space",
         "cosmology",
-        "astrophysicist"
+        "scientist"
       ],
       "path": "science-pcm",
       "node": "scientist"
@@ -522,7 +521,6 @@
         "artificial intelligence",
         "robotics",
         "app developer",
-        "game developer",
         "web developer"
       ],
       "path": "science-pcmc",
@@ -533,19 +531,20 @@
         "police",
         "sub inspector",
         "psi",
-        "ips officer"
+        "ips officer",
+        "second career"
       ],
       "path": "defence",
       "node": "second"
     },
     {
       "k": [
-        "marine biologist",
         "geologist",
         "environment",
         "botanist",
         "zoologist",
-        "biologist"
+        "biologist",
+        "researcher"
       ],
       "path": "science-pcb",
       "node": "researcher"
@@ -554,46 +553,49 @@
       "k": [
         "dietitian",
         "nutritionist",
-        "optometrist",
-        "radiographer"
+        "physiotherapist / technologist",
+        "technologist"
       ],
       "path": "science-pcb",
       "node": "allied-career"
     },
     {
       "k": [
-        "interior designer",
         "graphic designer",
-        "web designer"
+        "graphic and brand designer",
+        "graphic",
+        "brand designer"
       ],
       "path": "design",
       "node": "graphic"
     },
     {
       "k": [
-        "photographer",
         "filmmaker",
-        "video editor",
-        "director"
+        "director",
+        "journalist or media professional",
+        "journalist",
+        "media professional"
       ],
       "path": "arts",
       "node": "journalist"
     },
     {
       "k": [
-        "accountant",
         "tax",
-        "auditor",
-        "finance manager"
+        "finance manager",
+        "chartered accountant"
       ],
       "path": "commerce",
       "node": "ca-career"
     },
     {
       "k": [
-        "entrepreneur",
         "business owner",
-        "shop"
+        "shop",
+        "start up founder or shop owner",
+        "start up founder",
+        "shop owner"
       ],
       "path": "skills",
       "node": "founder"
@@ -614,7 +616,8 @@
         "cgl",
         "government job",
         "govt job",
-        "sarkari"
+        "sarkari",
+        "government officer"
       ],
       "path": "commerce",
       "node": "govofficer"
@@ -641,10 +644,9 @@
     {
       "k": [
         "specialist",
-        "surgeon",
         "md",
-        "cardiologist",
-        "neet pg"
+        "neet pg",
+        "specialist doctor"
       ],
       "path": "science-pcb",
       "node": "specialist"
@@ -654,7 +656,8 @@
         "kas",
         "kpsc",
         "tahsildar",
-        "karnataka officer"
+        "karnataka officer",
+        "karnataka state officer"
       ],
       "path": "arts",
       "node": "kasofficer"
@@ -665,7 +668,9 @@
         "assistant professor",
         "ugc net",
         "net",
-        "kset"
+        "kset",
+        "researcher or professor",
+        "professor"
       ],
       "path": "arts",
       "node": "researcher"
@@ -679,7 +684,8 @@
         "sat",
         "ielts",
         "canada",
-        "uk"
+        "uk",
+        "professional abroad"
       ],
       "path": "abroad",
       "node": "global"
@@ -689,8 +695,6 @@
         "doctor",
         "mbbs",
         "medicine",
-        "surgeon",
-        "dentist",
         "bds",
         "ayush",
         "neet"
@@ -737,11 +741,9 @@
     },
     {
       "k": [
-        "physiotherapist",
         "physiotherapy",
         "allied health",
-        "lab technician",
-        "optometrist"
+        "lab technician"
       ],
       "path": "science-pcb",
       "node": "allied-career"
@@ -776,16 +778,15 @@
         "defence officer",
         "nda",
         "soldier",
-        "military"
+        "military",
+        "army officer"
       ],
       "path": "defence",
       "node": "army"
     },
     {
       "k": [
-        "scientist",
-        "physicist",
-        "mathematician"
+        "scientist"
       ],
       "path": "science-pcm",
       "node": "scientist"
@@ -794,7 +795,6 @@
       "k": [
         "ca",
         "chartered accountant",
-        "accountant",
         "audit"
       ],
       "path": "commerce",
@@ -825,7 +825,8 @@
         "business",
         "banker",
         "bank",
-        "finance"
+        "finance",
+        "manager / banker"
       ],
       "path": "commerce",
       "node": "manager"
@@ -835,7 +836,6 @@
         "lawyer",
         "law",
         "advocate",
-        "judge",
         "clat"
       ],
       "path": "law",
@@ -908,7 +908,8 @@
       "k": [
         "psychologist",
         "psychology",
-        "counsellor"
+        "counsellor",
+        "psychologist or counsellor"
       ],
       "path": "arts",
       "node": "psychologist"
@@ -930,18 +931,20 @@
         "teaching",
         "professor",
         "ctet",
-        "tet"
+        "tet",
+        "school teacher"
       ],
       "path": "arts",
       "node": "teacher"
     },
     {
       "k": [
-        "designer",
         "design",
         "ux",
         "ui",
-        "graphic"
+        "graphic",
+        "ux and app designer",
+        "app designer"
       ],
       "path": "design",
       "node": "ux"
@@ -960,7 +963,8 @@
         "animator",
         "animation",
         "game designer",
-        "gaming"
+        "gaming",
+        "animator or game designer"
       ],
       "path": "design",
       "node": "animator"
@@ -1013,9 +1017,9 @@
     {
       "k": [
         "hotel manager",
-        "chef",
         "hotel management",
-        "hospitality"
+        "hospitality",
+        "hotel manager or chef"
       ],
       "path": "aviation",
       "node": "hotel"
@@ -1034,7 +1038,8 @@
         "ship",
         "merchant navy",
         "sailor",
-        "captain"
+        "captain",
+        "ship officer"
       ],
       "path": "aviation",
       "node": "ship"
@@ -1058,7 +1063,10 @@
     {
       "k": [
         "agniveer",
-        "agnipath"
+        "agnipath",
+        "soldier sailor or airman",
+        "soldier sailor",
+        "airman"
       ],
       "path": "defence",
       "node": "soldier"
@@ -1068,14 +1076,16 @@
         "ayurveda",
         "homeopathy",
         "bams",
-        "bhms"
+        "bhms",
+        "ayush doctor"
       ],
       "path": "health",
       "node": "ayushdoc"
     },
     {
       "k": [
-        "public health"
+        "public health",
+        "public health officer"
       ],
       "path": "health",
       "node": "public"
@@ -1086,7 +1096,9 @@
         "agriculture",
         "agri",
         "farming",
-        "horticulture"
+        "horticulture",
+        "agri officer or scientist",
+        "agri officer"
       ],
       "path": "agri",
       "node": "agrio"
@@ -1104,11 +1116,10 @@
     {
       "k": [
         "iti",
-        "electrician",
-        "fitter",
-        "welder",
         "technician",
-        "mechanic"
+        "mechanic",
+        "technician or machine operator",
+        "machine operator"
       ],
       "path": "trades",
       "node": "tech"
@@ -1124,7 +1135,6 @@
     },
     {
       "k": [
-        "entrepreneur",
         "startup",
         "start-up",
         "founder",
@@ -1137,8 +1147,7 @@
       "k": [
         "freelancer",
         "freelance",
-        "youtuber",
-        "content creator"
+        "youtuber"
       ],
       "path": "skills",
       "node": "freelancer"
@@ -1156,8 +1165,8 @@
     {
       "k": [
         "coach",
-        "pe teacher",
-        "physical education"
+        "physical education",
+        "coach or pe teacher"
       ],
       "path": "sports",
       "node": "coach"
@@ -1165,29 +1174,28 @@
     {
       "k": [
         "artist",
-        "painter",
-        "illustrator"
+        "artist or illustrator"
       ],
       "path": "sports",
       "node": "artist"
     },
     {
       "k": [
-        "singer",
         "musician",
         "dancer",
-        "actor",
-        "actress"
+        "actress",
+        "musician dancer or actor",
+        "musician dancer"
       ],
       "path": "sports",
       "node": "performer"
     },
     {
       "k": [
-        "data analyst",
         "ai engineer",
         "data science",
-        "machine learning"
+        "machine learning",
+        "data analyst or ai engineer"
       ],
       "path": "science-pcmc",
       "node": "data"
@@ -1195,7 +1203,6 @@
     {
       "k": [
         "bca",
-        "software developer",
         "programmer"
       ],
       "path": "science-pcmc",
@@ -1231,12 +1238,1956 @@
       "k": [
         "cmi",
         "isi",
-        "statistician",
         "statistics",
         "mathematics"
       ],
       "path": "science-pcm",
       "node": "mathcs"
+    },
+    {
+      "k": [
+        "defence officer"
+      ],
+      "path": "science-pcm",
+      "node": "officer"
+    },
+    {
+      "k": [
+        "software developer"
+      ],
+      "path": "science-pcm",
+      "node": "software-dev"
+    },
+    {
+      "k": [
+        "ai and machine learning engineer",
+        "machine learning engineer"
+      ],
+      "path": "science-pcm",
+      "node": "ai-eng"
+    },
+    {
+      "k": [
+        "data scientist"
+      ],
+      "path": "science-pcm",
+      "node": "data-sci"
+    },
+    {
+      "k": [
+        "cybersecurity analyst"
+      ],
+      "path": "science-pcm",
+      "node": "cyber"
+    },
+    {
+      "k": [
+        "cloud and devops engineer",
+        "cloud",
+        "devops engineer"
+      ],
+      "path": "science-pcm",
+      "node": "cloud"
+    },
+    {
+      "k": [
+        "game developer"
+      ],
+      "path": "science-pcm",
+      "node": "game-dev"
+    },
+    {
+      "k": [
+        "robotics engineer"
+      ],
+      "path": "science-pcm",
+      "node": "robot"
+    },
+    {
+      "k": [
+        "iot and embedded engineer",
+        "embedded engineer"
+      ],
+      "path": "science-pcm",
+      "node": "iot"
+    },
+    {
+      "k": [
+        "blockchain developer"
+      ],
+      "path": "science-pcm",
+      "node": "blockchain"
+    },
+    {
+      "k": [
+        "software tester"
+      ],
+      "path": "science-pcm",
+      "node": "qa"
+    },
+    {
+      "k": [
+        "mechanical engineer"
+      ],
+      "path": "science-pcm",
+      "node": "mech-eng"
+    },
+    {
+      "k": [
+        "automobile engineer"
+      ],
+      "path": "science-pcm",
+      "node": "auto-eng"
+    },
+    {
+      "k": [
+        "aerospace engineer"
+      ],
+      "path": "science-pcm",
+      "node": "aero-eng"
+    },
+    {
+      "k": [
+        "manufacturing engineer"
+      ],
+      "path": "science-pcm",
+      "node": "mfg-eng"
+    },
+    {
+      "k": [
+        "marine engineer"
+      ],
+      "path": "science-pcm",
+      "node": "marine-eng"
+    },
+    {
+      "k": [
+        "renewable energy engineer"
+      ],
+      "path": "science-pcm",
+      "node": "energy-eng"
+    },
+    {
+      "k": [
+        "civil engineer"
+      ],
+      "path": "science-pcm",
+      "node": "civil-eng"
+    },
+    {
+      "k": [
+        "structural engineer"
+      ],
+      "path": "science-pcm",
+      "node": "struct-eng"
+    },
+    {
+      "k": [
+        "environmental engineer"
+      ],
+      "path": "science-pcm",
+      "node": "env-eng"
+    },
+    {
+      "k": [
+        "urban planner"
+      ],
+      "path": "science-pcm",
+      "node": "urban-plan"
+    },
+    {
+      "k": [
+        "surveyor"
+      ],
+      "path": "science-pcm",
+      "node": "surveyor"
+    },
+    {
+      "k": [
+        "electrical engineer"
+      ],
+      "path": "science-pcm",
+      "node": "elec-eng"
+    },
+    {
+      "k": [
+        "electronics engineer"
+      ],
+      "path": "science-pcm",
+      "node": "ece-eng"
+    },
+    {
+      "k": [
+        "telecom engineer"
+      ],
+      "path": "science-pcm",
+      "node": "telecom"
+    },
+    {
+      "k": [
+        "power systems engineer"
+      ],
+      "path": "science-pcm",
+      "node": "power-eng"
+    },
+    {
+      "k": [
+        "electric vehicle engineer"
+      ],
+      "path": "science-pcm",
+      "node": "ev-eng"
+    },
+    {
+      "k": [
+        "chemical engineer"
+      ],
+      "path": "science-pcm",
+      "node": "chem-eng"
+    },
+    {
+      "k": [
+        "biotechnologist"
+      ],
+      "path": "science-pcm",
+      "node": "biotech-eng"
+    },
+    {
+      "k": [
+        "materials scientist"
+      ],
+      "path": "science-pcm",
+      "node": "materials"
+    },
+    {
+      "k": [
+        "food technologist"
+      ],
+      "path": "science-pcm",
+      "node": "food-tech"
+    },
+    {
+      "k": [
+        "petroleum engineer"
+      ],
+      "path": "science-pcm",
+      "node": "petro-eng"
+    },
+    {
+      "k": [
+        "physicist"
+      ],
+      "path": "science-pcm",
+      "node": "physicist"
+    },
+    {
+      "k": [
+        "astrophysicist"
+      ],
+      "path": "science-pcm",
+      "node": "astro"
+    },
+    {
+      "k": [
+        "mathematician"
+      ],
+      "path": "science-pcm",
+      "node": "mathematician"
+    },
+    {
+      "k": [
+        "statistician"
+      ],
+      "path": "science-pcm",
+      "node": "statistician"
+    },
+    {
+      "k": [
+        "quantitative analyst"
+      ],
+      "path": "science-pcm",
+      "node": "quant"
+    },
+    {
+      "k": [
+        "chemist"
+      ],
+      "path": "science-pcm",
+      "node": "chemist"
+    },
+    {
+      "k": [
+        "space scientist"
+      ],
+      "path": "science-pcm",
+      "node": "isro-sci"
+    },
+    {
+      "k": [
+        "science professor"
+      ],
+      "path": "science-pcm",
+      "node": "prof-sci"
+    },
+    {
+      "k": [
+        "landscape architect"
+      ],
+      "path": "science-pcm",
+      "node": "land-arch"
+    },
+    {
+      "k": [
+        "interior architect"
+      ],
+      "path": "science-pcm",
+      "node": "interior-arch"
+    },
+    {
+      "k": [
+        "conservation architect"
+      ],
+      "path": "science-pcm",
+      "node": "heritage"
+    },
+    {
+      "k": [
+        "management consultant"
+      ],
+      "path": "science-pcm",
+      "node": "consultant"
+    },
+    {
+      "k": [
+        "product manager"
+      ],
+      "path": "science-pcm",
+      "node": "prod-mgr"
+    },
+    {
+      "k": [
+        "operations manager"
+      ],
+      "path": "science-pcm",
+      "node": "ops-mgr"
+    },
+    {
+      "k": [
+        "research engineer"
+      ],
+      "path": "science-pcm",
+      "node": "res-eng"
+    },
+    {
+      "k": [
+        "engineering professor"
+      ],
+      "path": "science-pcm",
+      "node": "prof-eng"
+    },
+    {
+      "k": [
+        "dentist"
+      ],
+      "path": "science-pcb",
+      "node": "dentist"
+    },
+    {
+      "k": [
+        "orthodontist"
+      ],
+      "path": "science-pcb",
+      "node": "ortho"
+    },
+    {
+      "k": [
+        "oral surgeon"
+      ],
+      "path": "science-pcb",
+      "node": "oral-surgeon"
+    },
+    {
+      "k": [
+        "general physician"
+      ],
+      "path": "science-pcb",
+      "node": "gp"
+    },
+    {
+      "k": [
+        "government medical officer"
+      ],
+      "path": "science-pcb",
+      "node": "gov-doc"
+    },
+    {
+      "k": [
+        "armed forces doctor"
+      ],
+      "path": "science-pcb",
+      "node": "military-doc"
+    },
+    {
+      "k": [
+        "hospital administrator"
+      ],
+      "path": "science-pcb",
+      "node": "health-admin"
+    },
+    {
+      "k": [
+        "surgeon"
+      ],
+      "path": "science-pcb",
+      "node": "surgeon"
+    },
+    {
+      "k": [
+        "paediatrician"
+      ],
+      "path": "science-pcb",
+      "node": "paed"
+    },
+    {
+      "k": [
+        "cardiologist"
+      ],
+      "path": "science-pcb",
+      "node": "cardio"
+    },
+    {
+      "k": [
+        "gynaecologist"
+      ],
+      "path": "science-pcb",
+      "node": "gyn"
+    },
+    {
+      "k": [
+        "radiologist"
+      ],
+      "path": "science-pcb",
+      "node": "radio"
+    },
+    {
+      "k": [
+        "dermatologist"
+      ],
+      "path": "science-pcb",
+      "node": "derm"
+    },
+    {
+      "k": [
+        "psychiatrist"
+      ],
+      "path": "science-pcb",
+      "node": "psych-doc"
+    },
+    {
+      "k": [
+        "orthopaedic surgeon"
+      ],
+      "path": "science-pcb",
+      "node": "ortho-doc"
+    },
+    {
+      "k": [
+        "anaesthetist"
+      ],
+      "path": "science-pcb",
+      "node": "anaes"
+    },
+    {
+      "k": [
+        "physiotherapist"
+      ],
+      "path": "science-pcb",
+      "node": "physio"
+    },
+    {
+      "k": [
+        "optometrist"
+      ],
+      "path": "science-pcb",
+      "node": "optom"
+    },
+    {
+      "k": [
+        "radiographer"
+      ],
+      "path": "science-pcb",
+      "node": "radiographer"
+    },
+    {
+      "k": [
+        "medical lab technologist"
+      ],
+      "path": "science-pcb",
+      "node": "lab-tech"
+    },
+    {
+      "k": [
+        "occupational therapist"
+      ],
+      "path": "science-pcb",
+      "node": "ot-therapist"
+    },
+    {
+      "k": [
+        "speech and hearing therapist",
+        "speech",
+        "hearing therapist"
+      ],
+      "path": "science-pcb",
+      "node": "speech"
+    },
+    {
+      "k": [
+        "paramedic"
+      ],
+      "path": "science-pcb",
+      "node": "paramedic"
+    },
+    {
+      "k": [
+        "dialysis technician"
+      ],
+      "path": "science-pcb",
+      "node": "dialysis"
+    },
+    {
+      "k": [
+        "nurse practitioner"
+      ],
+      "path": "science-pcb",
+      "node": "nurse-prac"
+    },
+    {
+      "k": [
+        "community health nurse"
+      ],
+      "path": "science-pcb",
+      "node": "community-nurse"
+    },
+    {
+      "k": [
+        "nursing teacher"
+      ],
+      "path": "science-pcb",
+      "node": "nurse-tutor"
+    },
+    {
+      "k": [
+        "clinical research associate"
+      ],
+      "path": "science-pcb",
+      "node": "clin-res"
+    },
+    {
+      "k": [
+        "drug inspector"
+      ],
+      "path": "science-pcb",
+      "node": "drug-insp"
+    },
+    {
+      "k": [
+        "medical representative"
+      ],
+      "path": "science-pcb",
+      "node": "med-rep"
+    },
+    {
+      "k": [
+        "pharmaceutical scientist"
+      ],
+      "path": "science-pcb",
+      "node": "pharma-sci"
+    },
+    {
+      "k": [
+        "microbiologist"
+      ],
+      "path": "science-pcb",
+      "node": "micro"
+    },
+    {
+      "k": [
+        "geneticist"
+      ],
+      "path": "science-pcb",
+      "node": "genetics"
+    },
+    {
+      "k": [
+        "forensic scientist"
+      ],
+      "path": "science-pcb",
+      "node": "forensic"
+    },
+    {
+      "k": [
+        "food scientist"
+      ],
+      "path": "science-pcb",
+      "node": "food-sci"
+    },
+    {
+      "k": [
+        "environmental scientist"
+      ],
+      "path": "science-pcb",
+      "node": "env-sci"
+    },
+    {
+      "k": [
+        "marine biologist"
+      ],
+      "path": "science-pcb",
+      "node": "marine-bio"
+    },
+    {
+      "k": [
+        "wildlife biologist"
+      ],
+      "path": "science-pcb",
+      "node": "wildlife-bio"
+    },
+    {
+      "k": [
+        "dietitian or nutritionist",
+        "dietitian",
+        "nutritionist"
+      ],
+      "path": "science-pcb",
+      "node": "dietitian"
+    },
+    {
+      "k": [
+        "biology teacher"
+      ],
+      "path": "science-pcb",
+      "node": "bio-teacher"
+    },
+    {
+      "k": [
+        "wildlife veterinarian"
+      ],
+      "path": "science-pcb",
+      "node": "wild-vet"
+    },
+    {
+      "k": [
+        "livestock veterinarian"
+      ],
+      "path": "science-pcb",
+      "node": "livestock-vet"
+    },
+    {
+      "k": [
+        "lawyer"
+      ],
+      "path": "commerce",
+      "node": "lawyer"
+    },
+    {
+      "k": [
+        "auditor"
+      ],
+      "path": "commerce",
+      "node": "auditor"
+    },
+    {
+      "k": [
+        "tax consultant"
+      ],
+      "path": "commerce",
+      "node": "tax-cons"
+    },
+    {
+      "k": [
+        "chief financial officer"
+      ],
+      "path": "commerce",
+      "node": "cfo"
+    },
+    {
+      "k": [
+        "forensic accountant"
+      ],
+      "path": "commerce",
+      "node": "forensic-acc"
+    },
+    {
+      "k": [
+        "compliance officer"
+      ],
+      "path": "commerce",
+      "node": "compliance"
+    },
+    {
+      "k": [
+        "corporate governance officer"
+      ],
+      "path": "commerce",
+      "node": "corp-sec"
+    },
+    {
+      "k": [
+        "cost manager"
+      ],
+      "path": "commerce",
+      "node": "cost-mgr"
+    },
+    {
+      "k": [
+        "financial controller"
+      ],
+      "path": "commerce",
+      "node": "fin-ctrl"
+    },
+    {
+      "k": [
+        "accountant"
+      ],
+      "path": "commerce",
+      "node": "accountant"
+    },
+    {
+      "k": [
+        "tax assistant"
+      ],
+      "path": "commerce",
+      "node": "tax-asst"
+    },
+    {
+      "k": [
+        "insurance advisor"
+      ],
+      "path": "commerce",
+      "node": "insurance"
+    },
+    {
+      "k": [
+        "e commerce executive"
+      ],
+      "path": "commerce",
+      "node": "ecommerce"
+    },
+    {
+      "k": [
+        "bank clerk"
+      ],
+      "path": "commerce",
+      "node": "bank-clerk"
+    },
+    {
+      "k": [
+        "event manager"
+      ],
+      "path": "commerce",
+      "node": "event-mgr"
+    },
+    {
+      "k": [
+        "financial analyst"
+      ],
+      "path": "commerce",
+      "node": "fin-analyst"
+    },
+    {
+      "k": [
+        "investment banker"
+      ],
+      "path": "commerce",
+      "node": "inv-banker"
+    },
+    {
+      "k": [
+        "wealth manager"
+      ],
+      "path": "commerce",
+      "node": "wealth"
+    },
+    {
+      "k": [
+        "risk analyst"
+      ],
+      "path": "commerce",
+      "node": "risk"
+    },
+    {
+      "k": [
+        "financial planner"
+      ],
+      "path": "commerce",
+      "node": "fin-planner"
+    },
+    {
+      "k": [
+        "hr manager"
+      ],
+      "path": "commerce",
+      "node": "hr-mgr"
+    },
+    {
+      "k": [
+        "marketing manager"
+      ],
+      "path": "commerce",
+      "node": "mkt-mgr"
+    },
+    {
+      "k": [
+        "sales manager"
+      ],
+      "path": "commerce",
+      "node": "sales-mgr"
+    },
+    {
+      "k": [
+        "supply chain manager"
+      ],
+      "path": "commerce",
+      "node": "supply"
+    },
+    {
+      "k": [
+        "brand manager"
+      ],
+      "path": "commerce",
+      "node": "brand"
+    },
+    {
+      "k": [
+        "entrepreneur"
+      ],
+      "path": "commerce",
+      "node": "startup-founder"
+    },
+    {
+      "k": [
+        "data analyst"
+      ],
+      "path": "commerce",
+      "node": "data-analyst"
+    },
+    {
+      "k": [
+        "statistical officer"
+      ],
+      "path": "commerce",
+      "node": "stat-off"
+    },
+    {
+      "k": [
+        "designer"
+      ],
+      "path": "arts",
+      "node": "designer"
+    },
+    {
+      "k": [
+        "diplomat"
+      ],
+      "path": "arts",
+      "node": "ifs"
+    },
+    {
+      "k": [
+        "revenue officer"
+      ],
+      "path": "arts",
+      "node": "irs"
+    },
+    {
+      "k": [
+        "police officer"
+      ],
+      "path": "arts",
+      "node": "ips"
+    },
+    {
+      "k": [
+        "social media manager"
+      ],
+      "path": "arts",
+      "node": "social-media"
+    },
+    {
+      "k": [
+        "content writer"
+      ],
+      "path": "arts",
+      "node": "content-writer"
+    },
+    {
+      "k": [
+        "translator or interpreter",
+        "translator",
+        "interpreter"
+      ],
+      "path": "arts",
+      "node": "translator"
+    },
+    {
+      "k": [
+        "librarian"
+      ],
+      "path": "arts",
+      "node": "librarian"
+    },
+    {
+      "k": [
+        "archaeologist"
+      ],
+      "path": "arts",
+      "node": "archaeologist"
+    },
+    {
+      "k": [
+        "museum curator"
+      ],
+      "path": "arts",
+      "node": "museum"
+    },
+    {
+      "k": [
+        "public relations officer"
+      ],
+      "path": "arts",
+      "node": "pr"
+    },
+    {
+      "k": [
+        "hr executive"
+      ],
+      "path": "arts",
+      "node": "hr-exec"
+    },
+    {
+      "k": [
+        "social worker"
+      ],
+      "path": "arts",
+      "node": "social-worker"
+    },
+    {
+      "k": [
+        "ngo programme manager"
+      ],
+      "path": "arts",
+      "node": "ngo"
+    },
+    {
+      "k": [
+        "csr officer"
+      ],
+      "path": "arts",
+      "node": "csr"
+    },
+    {
+      "k": [
+        "economist"
+      ],
+      "path": "arts",
+      "node": "economist"
+    },
+    {
+      "k": [
+        "public policy analyst"
+      ],
+      "path": "arts",
+      "node": "policy"
+    },
+    {
+      "k": [
+        "historian"
+      ],
+      "path": "arts",
+      "node": "historian"
+    },
+    {
+      "k": [
+        "political analyst"
+      ],
+      "path": "arts",
+      "node": "pol-sci"
+    },
+    {
+      "k": [
+        "school or career counsellor",
+        "school",
+        "career counsellor"
+      ],
+      "path": "arts",
+      "node": "counselor"
+    },
+    {
+      "k": [
+        "clinical psychologist"
+      ],
+      "path": "arts",
+      "node": "clin-psych"
+    },
+    {
+      "k": [
+        "industrial psychologist"
+      ],
+      "path": "arts",
+      "node": "hr-psych"
+    },
+    {
+      "k": [
+        "news anchor or reporter",
+        "news anchor",
+        "reporter"
+      ],
+      "path": "arts",
+      "node": "anchor"
+    },
+    {
+      "k": [
+        "media planner"
+      ],
+      "path": "arts",
+      "node": "pr-media"
+    },
+    {
+      "k": [
+        "filmmaker or video editor",
+        "filmmaker"
+      ],
+      "path": "arts",
+      "node": "film"
+    },
+    {
+      "k": [
+        "radio jockey"
+      ],
+      "path": "arts",
+      "node": "radio-jock"
+    },
+    {
+      "k": [
+        "ux designer"
+      ],
+      "path": "arts",
+      "node": "ux-arts"
+    },
+    {
+      "k": [
+        "illustrator"
+      ],
+      "path": "arts",
+      "node": "illus"
+    },
+    {
+      "k": [
+        "school principal"
+      ],
+      "path": "arts",
+      "node": "edu-admin"
+    },
+    {
+      "k": [
+        "primary school teacher"
+      ],
+      "path": "arts",
+      "node": "primary-teacher"
+    },
+    {
+      "k": [
+        "ip and tech lawyer",
+        "tech lawyer"
+      ],
+      "path": "law",
+      "node": "iplaw"
+    },
+    {
+      "k": [
+        "public prosecutor or legal officer",
+        "public prosecutor",
+        "legal officer"
+      ],
+      "path": "law",
+      "node": "govlaw"
+    },
+    {
+      "k": [
+        "law professor"
+      ],
+      "path": "law",
+      "node": "prof"
+    },
+    {
+      "k": [
+        "notary public"
+      ],
+      "path": "law",
+      "node": "notary"
+    },
+    {
+      "k": [
+        "cyber lawyer"
+      ],
+      "path": "law",
+      "node": "cyber-law"
+    },
+    {
+      "k": [
+        "family lawyer"
+      ],
+      "path": "law",
+      "node": "family-law"
+    },
+    {
+      "k": [
+        "tax lawyer"
+      ],
+      "path": "law",
+      "node": "tax-law"
+    },
+    {
+      "k": [
+        "arbitrator or mediator",
+        "arbitrator",
+        "mediator"
+      ],
+      "path": "law",
+      "node": "arbitrator"
+    },
+    {
+      "k": [
+        "legal advisor"
+      ],
+      "path": "law",
+      "node": "legal-adv"
+    },
+    {
+      "k": [
+        "coast guard officer"
+      ],
+      "path": "defence",
+      "node": "coast"
+    },
+    {
+      "k": [
+        "military engineer"
+      ],
+      "path": "defence",
+      "node": "mil-eng"
+    },
+    {
+      "k": [
+        "police sub inspector"
+      ],
+      "path": "defence",
+      "node": "police-si"
+    },
+    {
+      "k": [
+        "paramilitary officer"
+      ],
+      "path": "defence",
+      "node": "capf"
+    },
+    {
+      "k": [
+        "security manager"
+      ],
+      "path": "defence",
+      "node": "sec-mgr"
+    },
+    {
+      "k": [
+        "fire service officer"
+      ],
+      "path": "defence",
+      "node": "fireman"
+    },
+    {
+      "k": [
+        "motion graphics designer"
+      ],
+      "path": "design",
+      "node": "motion"
+    },
+    {
+      "k": [
+        "game artist"
+      ],
+      "path": "design",
+      "node": "game-art"
+    },
+    {
+      "k": [
+        "industrial designer"
+      ],
+      "path": "design",
+      "node": "indus"
+    },
+    {
+      "k": [
+        "art director"
+      ],
+      "path": "design",
+      "node": "art-dir"
+    },
+    {
+      "k": [
+        "packaging designer"
+      ],
+      "path": "design",
+      "node": "pack"
+    },
+    {
+      "k": [
+        "interior designer"
+      ],
+      "path": "design",
+      "node": "interior"
+    },
+    {
+      "k": [
+        "photographer"
+      ],
+      "path": "design",
+      "node": "photog"
+    },
+    {
+      "k": [
+        "jewellery designer"
+      ],
+      "path": "design",
+      "node": "jewel"
+    },
+    {
+      "k": [
+        "textile designer"
+      ],
+      "path": "design",
+      "node": "textile"
+    },
+    {
+      "k": [
+        "ux researcher"
+      ],
+      "path": "design",
+      "node": "ux-research"
+    },
+    {
+      "k": [
+        "fashion stylist"
+      ],
+      "path": "design",
+      "node": "stylist"
+    },
+    {
+      "k": [
+        "fashion merchandiser"
+      ],
+      "path": "design",
+      "node": "merch"
+    },
+    {
+      "k": [
+        "chef"
+      ],
+      "path": "aviation",
+      "node": "chef"
+    },
+    {
+      "k": [
+        "front office manager"
+      ],
+      "path": "aviation",
+      "node": "front-office"
+    },
+    {
+      "k": [
+        "event planner"
+      ],
+      "path": "aviation",
+      "node": "event-plan"
+    },
+    {
+      "k": [
+        "travel and tour manager",
+        "travel",
+        "tour manager"
+      ],
+      "path": "aviation",
+      "node": "travel"
+    },
+    {
+      "k": [
+        "restaurant owner"
+      ],
+      "path": "aviation",
+      "node": "resto"
+    },
+    {
+      "k": [
+        "cruise ship hospitality officer"
+      ],
+      "path": "aviation",
+      "node": "cruise"
+    },
+    {
+      "k": [
+        "cargo pilot"
+      ],
+      "path": "aviation",
+      "node": "cargo-pilot"
+    },
+    {
+      "k": [
+        "flight instructor"
+      ],
+      "path": "aviation",
+      "node": "flight-inst"
+    },
+    {
+      "k": [
+        "air traffic controller"
+      ],
+      "path": "aviation",
+      "node": "atco"
+    },
+    {
+      "k": [
+        "airport ground staff"
+      ],
+      "path": "aviation",
+      "node": "ground-staff"
+    },
+    {
+      "k": [
+        "airport operations officer"
+      ],
+      "path": "aviation",
+      "node": "airport-ops"
+    },
+    {
+      "k": [
+        "ship captain"
+      ],
+      "path": "aviation",
+      "node": "captain"
+    },
+    {
+      "k": [
+        "port manager"
+      ],
+      "path": "aviation",
+      "node": "port-mgr"
+    },
+    {
+      "k": [
+        "marine surveyor"
+      ],
+      "path": "aviation",
+      "node": "marine-surv"
+    },
+    {
+      "k": [
+        "physiotherapist or technologist",
+        "technologist"
+      ],
+      "path": "health",
+      "node": "therapist"
+    },
+    {
+      "k": [
+        "icu nurse"
+      ],
+      "path": "health",
+      "node": "icu-nurse"
+    },
+    {
+      "k": [
+        "midwife"
+      ],
+      "path": "health",
+      "node": "midwife"
+    },
+    {
+      "k": [
+        "hospital pharmacist"
+      ],
+      "path": "health",
+      "node": "hospital-pharm"
+    },
+    {
+      "k": [
+        "quality control analyst"
+      ],
+      "path": "health",
+      "node": "pharma-qc"
+    },
+    {
+      "k": [
+        "yoga and naturopathy therapist",
+        "yoga",
+        "naturopathy therapist"
+      ],
+      "path": "health",
+      "node": "yoga-therapist"
+    },
+    {
+      "k": [
+        "ayurveda researcher"
+      ],
+      "path": "health",
+      "node": "ayur-research"
+    },
+    {
+      "k": [
+        "radiology technician"
+      ],
+      "path": "health",
+      "node": "radio-tech"
+    },
+    {
+      "k": [
+        "agri entrepreneur"
+      ],
+      "path": "agri",
+      "node": "farm"
+    },
+    {
+      "k": [
+        "indian forest service officer"
+      ],
+      "path": "agri",
+      "node": "ifo"
+    },
+    {
+      "k": [
+        "agri business manager"
+      ],
+      "path": "agri",
+      "node": "agribiz"
+    },
+    {
+      "k": [
+        "horticulturist"
+      ],
+      "path": "agri",
+      "node": "hort"
+    },
+    {
+      "k": [
+        "soil scientist"
+      ],
+      "path": "agri",
+      "node": "soil"
+    },
+    {
+      "k": [
+        "dairy technologist"
+      ],
+      "path": "agri",
+      "node": "dairy"
+    },
+    {
+      "k": [
+        "fisheries officer"
+      ],
+      "path": "agri",
+      "node": "fish"
+    },
+    {
+      "k": [
+        "plantation manager"
+      ],
+      "path": "agri",
+      "node": "plant"
+    },
+    {
+      "k": [
+        "organic farmer"
+      ],
+      "path": "agri",
+      "node": "organic"
+    },
+    {
+      "k": [
+        "agricultural engineer"
+      ],
+      "path": "agri",
+      "node": "agri-eng"
+    },
+    {
+      "k": [
+        "seed technologist"
+      ],
+      "path": "agri",
+      "node": "seed"
+    },
+    {
+      "k": [
+        "wildlife conservationist"
+      ],
+      "path": "agri",
+      "node": "wild-cons"
+    },
+    {
+      "k": [
+        "forest guard or ranger",
+        "forest guard",
+        "ranger"
+      ],
+      "path": "agri",
+      "node": "forest-guard"
+    },
+    {
+      "k": [
+        "eco tourism guide"
+      ],
+      "path": "agri",
+      "node": "eco-tourism"
+    },
+    {
+      "k": [
+        "pet and small animal vet",
+        "small animal vet"
+      ],
+      "path": "agri",
+      "node": "pet-vet"
+    },
+    {
+      "k": [
+        "government veterinary officer"
+      ],
+      "path": "agri",
+      "node": "vet-officer"
+    },
+    {
+      "k": [
+        "apprentice in industry or railways",
+        "apprentice in industry",
+        "railways"
+      ],
+      "path": "trades",
+      "node": "apprentice"
+    },
+    {
+      "k": [
+        "workshop owner"
+      ],
+      "path": "trades",
+      "node": "workshop"
+    },
+    {
+      "k": [
+        "electrician"
+      ],
+      "path": "trades",
+      "node": "electrician"
+    },
+    {
+      "k": [
+        "fitter"
+      ],
+      "path": "trades",
+      "node": "fitter"
+    },
+    {
+      "k": [
+        "welder"
+      ],
+      "path": "trades",
+      "node": "welder"
+    },
+    {
+      "k": [
+        "turner or machinist",
+        "turner",
+        "machinist"
+      ],
+      "path": "trades",
+      "node": "turner"
+    },
+    {
+      "k": [
+        "cnc machine operator"
+      ],
+      "path": "trades",
+      "node": "cnc"
+    },
+    {
+      "k": [
+        "auto mechanic"
+      ],
+      "path": "trades",
+      "node": "auto-mech"
+    },
+    {
+      "k": [
+        "ac and refrigeration technician",
+        "refrigeration technician"
+      ],
+      "path": "trades",
+      "node": "ac-tech"
+    },
+    {
+      "k": [
+        "plumber"
+      ],
+      "path": "trades",
+      "node": "plumber"
+    },
+    {
+      "k": [
+        "solar installer"
+      ],
+      "path": "trades",
+      "node": "solar-inst"
+    },
+    {
+      "k": [
+        "mobile phone technician"
+      ],
+      "path": "trades",
+      "node": "mobile-tech"
+    },
+    {
+      "k": [
+        "carpenter"
+      ],
+      "path": "trades",
+      "node": "carpenter"
+    },
+    {
+      "k": [
+        "tailor or fashion technician",
+        "tailor",
+        "fashion technician"
+      ],
+      "path": "trades",
+      "node": "tailor"
+    },
+    {
+      "k": [
+        "computer operator"
+      ],
+      "path": "trades",
+      "node": "copa"
+    },
+    {
+      "k": [
+        "site supervisor"
+      ],
+      "path": "trades",
+      "node": "site-sup"
+    },
+    {
+      "k": [
+        "draughtsman"
+      ],
+      "path": "trades",
+      "node": "draughts"
+    },
+    {
+      "k": [
+        "quality inspector"
+      ],
+      "path": "trades",
+      "node": "quality"
+    },
+    {
+      "k": [
+        "laboratory technician"
+      ],
+      "path": "trades",
+      "node": "lab-asst"
+    },
+    {
+      "k": [
+        "diploma pharmacist"
+      ],
+      "path": "trades",
+      "node": "pharma-dip"
+    },
+    {
+      "k": [
+        "skilled technician"
+      ],
+      "path": "skills",
+      "node": "techskill"
+    },
+    {
+      "k": [
+        "self employed professional"
+      ],
+      "path": "skills",
+      "node": "selfemp"
+    },
+    {
+      "k": [
+        "digital marketer"
+      ],
+      "path": "skills",
+      "node": "digi-mkt"
+    },
+    {
+      "k": [
+        "video editor"
+      ],
+      "path": "skills",
+      "node": "video-ed"
+    },
+    {
+      "k": [
+        "web designer"
+      ],
+      "path": "skills",
+      "node": "web-design"
+    },
+    {
+      "k": [
+        "tutor or trainer",
+        "tutor",
+        "trainer"
+      ],
+      "path": "skills",
+      "node": "tutor"
+    },
+    {
+      "k": [
+        "photographer or videographer",
+        "videographer"
+      ],
+      "path": "skills",
+      "node": "photog2"
+    },
+    {
+      "k": [
+        "caterer"
+      ],
+      "path": "skills",
+      "node": "caterer"
+    },
+    {
+      "k": [
+        "beauty and wellness professional",
+        "beauty",
+        "wellness professional"
+      ],
+      "path": "skills",
+      "node": "beauty"
+    },
+    {
+      "k": [
+        "content creator"
+      ],
+      "path": "skills",
+      "node": "content-cr"
+    },
+    {
+      "k": [
+        "yoga or fitness instructor",
+        "yoga",
+        "fitness instructor"
+      ],
+      "path": "skills",
+      "node": "yoga-inst"
+    },
+    {
+      "k": [
+        "office and data assistant",
+        "office",
+        "data assistant"
+      ],
+      "path": "skills",
+      "node": "data-entry"
+    },
+    {
+      "k": [
+        "social entrepreneur"
+      ],
+      "path": "skills",
+      "node": "social-ent"
+    },
+    {
+      "k": [
+        "agri start up founder"
+      ],
+      "path": "skills",
+      "node": "agri-startup"
+    },
+    {
+      "k": [
+        "app or tech founder",
+        "tech founder"
+      ],
+      "path": "skills",
+      "node": "app-founder"
+    },
+    {
+      "k": [
+        "sports scientist or physiotherapist",
+        "sports scientist"
+      ],
+      "path": "sports",
+      "node": "sportsci"
+    },
+    {
+      "k": [
+        "art teacher or curator",
+        "art teacher",
+        "curator"
+      ],
+      "path": "sports",
+      "node": "artteacher"
+    },
+    {
+      "k": [
+        "referee or umpire",
+        "referee",
+        "umpire"
+      ],
+      "path": "sports",
+      "node": "referee"
+    },
+    {
+      "k": [
+        "sports manager"
+      ],
+      "path": "sports",
+      "node": "sports-mgr"
+    },
+    {
+      "k": [
+        "fitness trainer"
+      ],
+      "path": "sports",
+      "node": "fitness"
+    },
+    {
+      "k": [
+        "sports journalist"
+      ],
+      "path": "sports",
+      "node": "sports-journal"
+    },
+    {
+      "k": [
+        "pe teacher"
+      ],
+      "path": "sports",
+      "node": "pe-teacher2"
+    },
+    {
+      "k": [
+        "painter"
+      ],
+      "path": "sports",
+      "node": "painter"
+    },
+    {
+      "k": [
+        "sculptor"
+      ],
+      "path": "sports",
+      "node": "sculptor"
+    },
+    {
+      "k": [
+        "art therapist"
+      ],
+      "path": "sports",
+      "node": "art-therapist"
+    },
+    {
+      "k": [
+        "gallery manager"
+      ],
+      "path": "sports",
+      "node": "gallery"
+    },
+    {
+      "k": [
+        "singer"
+      ],
+      "path": "sports",
+      "node": "singer"
+    },
+    {
+      "k": [
+        "dancer or choreographer",
+        "dancer",
+        "choreographer"
+      ],
+      "path": "sports",
+      "node": "dancer"
+    },
+    {
+      "k": [
+        "actor"
+      ],
+      "path": "sports",
+      "node": "actor"
+    },
+    {
+      "k": [
+        "music teacher"
+      ],
+      "path": "sports",
+      "node": "music-teacher"
+    },
+    {
+      "k": [
+        "sound engineer"
+      ],
+      "path": "sports",
+      "node": "sound"
+    },
+    {
+      "k": [
+        "return and build in india",
+        "return",
+        "build in india"
+      ],
+      "path": "abroad",
+      "node": "returnhome"
+    },
+    {
+      "k": [
+        "lawyer"
+      ],
+      "path": "arts",
+      "node": "lawyer"
+    },
+    {
+      "k": [
+        "defence officer"
+      ],
+      "path": "science-pcmc",
+      "node": "officer"
+    },
+    {
+      "k": [
+        "machine learning engineer"
+      ],
+      "path": "science-pcmc",
+      "node": "ai-eng"
+    },
+    {
+      "k": [
+        "cloud",
+        "devops engineer"
+      ],
+      "path": "science-pcmc",
+      "node": "cloud"
+    },
+    {
+      "k": [
+        "embedded engineer"
+      ],
+      "path": "science-pcmc",
+      "node": "iot"
     }
   ],
   "downloads": [

@@ -229,6 +229,174 @@
       "type": "career",
       "label": "Government officer",
       "note": "Work in tax, audit and other central government offices."
+    },
+    {
+      "id": "auditor",
+      "type": "career",
+      "label": "Auditor",
+      "note": "Check that company accounts are true."
+    },
+    {
+      "id": "tax-cons",
+      "type": "career",
+      "label": "Tax consultant",
+      "note": "Help people and firms with income tax and GST."
+    },
+    {
+      "id": "cfo",
+      "type": "career",
+      "label": "Chief Financial Officer",
+      "note": "Lead a company's money planning."
+    },
+    {
+      "id": "forensic-acc",
+      "type": "career",
+      "label": "Forensic accountant",
+      "note": "Trace fraud in money records."
+    },
+    {
+      "id": "compliance",
+      "type": "career",
+      "label": "Compliance officer",
+      "note": "Make sure a company follows the rules."
+    },
+    {
+      "id": "corp-sec",
+      "type": "career",
+      "label": "Corporate governance officer",
+      "note": "Help the board run a company properly."
+    },
+    {
+      "id": "cost-mgr",
+      "type": "career",
+      "label": "Cost manager",
+      "note": "Control costs so a company earns more."
+    },
+    {
+      "id": "fin-ctrl",
+      "type": "career",
+      "label": "Financial controller",
+      "note": "Watch budgets and spending."
+    },
+    {
+      "id": "fin-cert",
+      "type": "course",
+      "label": "Finance courses (CFA, FRM, financial planning)",
+      "note": "Extra qualifications after BCom for finance jobs."
+    },
+    {
+      "id": "accountant",
+      "type": "career",
+      "label": "Accountant",
+      "note": "Keep a business's money records."
+    },
+    {
+      "id": "tax-asst",
+      "type": "career",
+      "label": "Tax assistant",
+      "note": "Help prepare tax returns."
+    },
+    {
+      "id": "insurance",
+      "type": "career",
+      "label": "Insurance advisor",
+      "note": "Help families pick insurance."
+    },
+    {
+      "id": "ecommerce",
+      "type": "career",
+      "label": "E-commerce executive",
+      "note": "Run an online shop."
+    },
+    {
+      "id": "bank-clerk",
+      "type": "career",
+      "label": "Bank clerk",
+      "note": "Serve customers at a bank branch."
+    },
+    {
+      "id": "event-mgr",
+      "type": "career",
+      "label": "Event manager",
+      "note": "Plan weddings, shows and conferences."
+    },
+    {
+      "id": "fin-analyst",
+      "type": "career",
+      "label": "Financial analyst",
+      "note": "Study companies and markets for investors."
+    },
+    {
+      "id": "inv-banker",
+      "type": "career",
+      "label": "Investment banker",
+      "note": "Help companies raise money."
+    },
+    {
+      "id": "wealth",
+      "type": "career",
+      "label": "Wealth manager",
+      "note": "Help people grow their savings."
+    },
+    {
+      "id": "risk",
+      "type": "career",
+      "label": "Risk analyst",
+      "note": "Spot money risks early."
+    },
+    {
+      "id": "fin-planner",
+      "type": "career",
+      "label": "Financial planner",
+      "note": "Plan savings, loans and retirement."
+    },
+    {
+      "id": "hr-mgr",
+      "type": "career",
+      "label": "HR manager",
+      "note": "Hire and support people at work."
+    },
+    {
+      "id": "mkt-mgr",
+      "type": "career",
+      "label": "Marketing manager",
+      "note": "Tell people about products."
+    },
+    {
+      "id": "sales-mgr",
+      "type": "career",
+      "label": "Sales manager",
+      "note": "Lead a team that sells."
+    },
+    {
+      "id": "supply",
+      "type": "career",
+      "label": "Supply chain manager",
+      "note": "Move goods from factory to shop."
+    },
+    {
+      "id": "brand",
+      "type": "career",
+      "label": "Brand manager",
+      "note": "Look after how a brand is seen."
+    },
+    {
+      "id": "startup-founder",
+      "type": "career",
+      "label": "Entrepreneur",
+      "note": "Start and grow your own company."
+    },
+    {
+      "id": "data-analyst",
+      "type": "career",
+      "label": "Data analyst",
+      "note": "Turn numbers into useful stories."
+    },
+    {
+      "id": "stat-off",
+      "type": "career",
+      "label": "Statistical officer",
+      "note": "Work on government data and surveys."
     }
   ],
   "edges": [
@@ -375,6 +543,118 @@
     [
       "sscgl",
       "govofficer"
+    ],
+    [
+      "ca",
+      "auditor"
+    ],
+    [
+      "ca",
+      "tax-cons"
+    ],
+    [
+      "ca",
+      "cfo"
+    ],
+    [
+      "ca",
+      "forensic-acc"
+    ],
+    [
+      "cs",
+      "compliance"
+    ],
+    [
+      "cs",
+      "corp-sec"
+    ],
+    [
+      "cma",
+      "cost-mgr"
+    ],
+    [
+      "cma",
+      "fin-ctrl"
+    ],
+    [
+      "bcom",
+      "fin-cert"
+    ],
+    [
+      "bcom",
+      "accountant"
+    ],
+    [
+      "bcom",
+      "tax-asst"
+    ],
+    [
+      "bcom",
+      "insurance"
+    ],
+    [
+      "bcom",
+      "ecommerce"
+    ],
+    [
+      "bcom",
+      "bank-clerk"
+    ],
+    [
+      "bcom",
+      "event-mgr"
+    ],
+    [
+      "fin-cert",
+      "fin-analyst"
+    ],
+    [
+      "fin-cert",
+      "inv-banker"
+    ],
+    [
+      "fin-cert",
+      "wealth"
+    ],
+    [
+      "fin-cert",
+      "risk"
+    ],
+    [
+      "fin-cert",
+      "fin-planner"
+    ],
+    [
+      "mba",
+      "hr-mgr"
+    ],
+    [
+      "mba",
+      "mkt-mgr"
+    ],
+    [
+      "mba",
+      "sales-mgr"
+    ],
+    [
+      "mba",
+      "supply"
+    ],
+    [
+      "mba",
+      "brand"
+    ],
+    [
+      "mba",
+      "startup-founder"
+    ],
+    [
+      "actsci",
+      "data-analyst"
+    ],
+    [
+      "actsci",
+      "stat-off"
     ]
   ]
 }

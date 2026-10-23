@@ -472,8 +472,18 @@
         var q = el.query.value.toLowerCase().trim();
         el.msg.textContent = '';
         if (!q) { el.msg.textContent = 'Type a job you like, for example doctor or engineer.'; return; }
-        var found = null;
-        state.index.search.some(function (s) { return s.k.some(function (k) { if (hit(q, k)) { found = s; return true; } return false; }); });
+        var found = null, bestScore = 0;
+        q = q.replace(/[^a-z0-9 /]/g, ' ').replace(/\s+/g, ' ').trim();
+        state.index.search.forEach(function (s) {
+            s.k.forEach(function (k) {
+                var sc = 0;
+                if (q === k) sc = 1000 + k.length;
+                else if (k.length <= 3) { if (hit(q, k)) sc = 40; }
+                else if (q.indexOf(k) > -1) sc = 100 + k.length * 5;
+                else if (q.length >= 4 && k.indexOf(q) > -1) sc = q.length * 2;
+                if (sc > bestScore) { bestScore = sc; found = s; }
+            });
+        });
         function miss() {
             el.msg.textContent = '';
             el.msg.appendChild(document.createTextNode('We could not find that one. Try doctor, pilot, engineer, lawyer or CA, or '));

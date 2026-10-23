@@ -198,6 +198,324 @@
       "note": "A master's in management after your degree."
     },
     {
+      "id": "b-cs",
+      "type": "course",
+      "label": "BTech Computer Science, AI and Data",
+      "note": "Learn coding, data and smart machines."
+    },
+    {
+      "id": "b-mech",
+      "type": "course",
+      "label": "BTech Mechanical, Automobile and Aerospace",
+      "note": "Machines, vehicles, engines and aircraft."
+    },
+    {
+      "id": "b-civil",
+      "type": "course",
+      "label": "BTech Civil and Environmental",
+      "note": "Buildings, roads, bridges, water and the environment."
+    },
+    {
+      "id": "b-elec",
+      "type": "course",
+      "label": "BTech Electrical and Electronics",
+      "note": "Power, circuits, chips and communication."
+    },
+    {
+      "id": "b-chem",
+      "type": "course",
+      "label": "BTech Chemical, Materials and Biotech",
+      "note": "Chemicals, materials, medicines and food processes."
+    },
+    {
+      "id": "software-dev",
+      "type": "career",
+      "label": "Software developer",
+      "note": "Build apps, websites and systems."
+    },
+    {
+      "id": "ai-eng",
+      "type": "career",
+      "label": "AI and machine learning engineer",
+      "note": "Teach computers to learn from data."
+    },
+    {
+      "id": "data-sci",
+      "type": "career",
+      "label": "Data scientist",
+      "note": "Find patterns in data to help decisions."
+    },
+    {
+      "id": "cyber",
+      "type": "career",
+      "label": "Cybersecurity analyst",
+      "note": "Protect computers and data from hackers."
+    },
+    {
+      "id": "cloud",
+      "type": "career",
+      "label": "Cloud and DevOps engineer",
+      "note": "Run apps on the internet reliably."
+    },
+    {
+      "id": "game-dev",
+      "type": "career",
+      "label": "Game developer",
+      "note": "Make video games."
+    },
+    {
+      "id": "robot",
+      "type": "career",
+      "label": "Robotics engineer",
+      "note": "Build robots that sense and move."
+    },
+    {
+      "id": "iot",
+      "type": "career",
+      "label": "IoT and embedded engineer",
+      "note": "Make smart devices and gadgets."
+    },
+    {
+      "id": "blockchain",
+      "type": "career",
+      "label": "Blockchain developer",
+      "note": "Build secure digital record systems."
+    },
+    {
+      "id": "qa",
+      "type": "career",
+      "label": "Software tester",
+      "note": "Find and report bugs before users do."
+    },
+    {
+      "id": "mech-eng",
+      "type": "career",
+      "label": "Mechanical engineer",
+      "note": "Design and improve machines."
+    },
+    {
+      "id": "auto-eng",
+      "type": "career",
+      "label": "Automobile engineer",
+      "note": "Design cars, bikes and electric vehicles."
+    },
+    {
+      "id": "aero-eng",
+      "type": "career",
+      "label": "Aerospace engineer",
+      "note": "Design aircraft, rockets and satellites."
+    },
+    {
+      "id": "mfg-eng",
+      "type": "career",
+      "label": "Manufacturing engineer",
+      "note": "Make factories run well."
+    },
+    {
+      "id": "marine-eng",
+      "type": "career",
+      "label": "Marine engineer",
+      "note": "Keep ship engines running."
+    },
+    {
+      "id": "energy-eng",
+      "type": "career",
+      "label": "Renewable energy engineer",
+      "note": "Work on solar, wind and clean power."
+    },
+    {
+      "id": "civil-eng",
+      "type": "career",
+      "label": "Civil engineer",
+      "note": "Plan and build roads, bridges and buildings."
+    },
+    {
+      "id": "struct-eng",
+      "type": "career",
+      "label": "Structural engineer",
+      "note": "Make sure buildings are strong and safe."
+    },
+    {
+      "id": "env-eng",
+      "type": "career",
+      "label": "Environmental engineer",
+      "note": "Clean air and water and manage waste."
+    },
+    {
+      "id": "urban-plan",
+      "type": "career",
+      "label": "Urban planner",
+      "note": "Plan how cities grow."
+    },
+    {
+      "id": "surveyor",
+      "type": "career",
+      "label": "Surveyor",
+      "note": "Measure land for maps and projects."
+    },
+    {
+      "id": "elec-eng",
+      "type": "career",
+      "label": "Electrical engineer",
+      "note": "Work on power plants, grids and motors."
+    },
+    {
+      "id": "ece-eng",
+      "type": "career",
+      "label": "Electronics engineer",
+      "note": "Design circuits and chips."
+    },
+    {
+      "id": "telecom",
+      "type": "career",
+      "label": "Telecom engineer",
+      "note": "Build phone and internet networks."
+    },
+    {
+      "id": "power-eng",
+      "type": "career",
+      "label": "Power systems engineer",
+      "note": "Keep electricity flowing to homes."
+    },
+    {
+      "id": "ev-eng",
+      "type": "career",
+      "label": "Electric vehicle engineer",
+      "note": "Design batteries and EV systems."
+    },
+    {
+      "id": "chem-eng",
+      "type": "career",
+      "label": "Chemical engineer",
+      "note": "Make chemicals, fuels and materials at scale."
+    },
+    {
+      "id": "biotech-eng",
+      "type": "career",
+      "label": "Biotechnologist",
+      "note": "Use living cells to make medicines and food."
+    },
+    {
+      "id": "materials",
+      "type": "career",
+      "label": "Materials scientist",
+      "note": "Create new materials like strong plastics and metals."
+    },
+    {
+      "id": "food-tech",
+      "type": "career",
+      "label": "Food technologist",
+      "note": "Make food safe, tasty and long lasting."
+    },
+    {
+      "id": "petro-eng",
+      "type": "career",
+      "label": "Petroleum engineer",
+      "note": "Work on oil and gas."
+    },
+    {
+      "id": "b-sci",
+      "type": "course",
+      "label": "BSc Physics, Chemistry, Maths, Statistics",
+      "note": "3 years. A base for research and teaching."
+    },
+    {
+      "id": "physicist",
+      "type": "career",
+      "label": "Physicist",
+      "note": "Study matter, energy and the universe."
+    },
+    {
+      "id": "astro",
+      "type": "career",
+      "label": "Astrophysicist",
+      "note": "Study stars, planets and galaxies."
+    },
+    {
+      "id": "mathematician",
+      "type": "career",
+      "label": "Mathematician",
+      "note": "Solve deep problems in maths."
+    },
+    {
+      "id": "statistician",
+      "type": "career",
+      "label": "Statistician",
+      "note": "Use numbers to understand the world."
+    },
+    {
+      "id": "quant",
+      "type": "career",
+      "label": "Quantitative analyst",
+      "note": "Use maths to price and manage money risk."
+    },
+    {
+      "id": "chemist",
+      "type": "career",
+      "label": "Chemist",
+      "note": "Study substances and reactions."
+    },
+    {
+      "id": "isro-sci",
+      "type": "career",
+      "label": "Space scientist",
+      "note": "Work on rockets and satellites at space agencies."
+    },
+    {
+      "id": "prof-sci",
+      "type": "career",
+      "label": "Science professor",
+      "note": "Teach and research at a university."
+    },
+    {
+      "id": "land-arch",
+      "type": "career",
+      "label": "Landscape architect",
+      "note": "Design parks and gardens."
+    },
+    {
+      "id": "interior-arch",
+      "type": "career",
+      "label": "Interior architect",
+      "note": "Design the insides of buildings."
+    },
+    {
+      "id": "heritage",
+      "type": "career",
+      "label": "Conservation architect",
+      "note": "Protect old buildings and heritage."
+    },
+    {
+      "id": "consultant",
+      "type": "career",
+      "label": "Management consultant",
+      "note": "Help companies solve business problems."
+    },
+    {
+      "id": "prod-mgr",
+      "type": "career",
+      "label": "Product manager",
+      "note": "Decide what a product should do."
+    },
+    {
+      "id": "ops-mgr",
+      "type": "career",
+      "label": "Operations manager",
+      "note": "Keep a company running smoothly."
+    },
+    {
+      "id": "res-eng",
+      "type": "career",
+      "label": "Research engineer",
+      "note": "Invent new technology in a lab or company."
+    },
+    {
+      "id": "prof-eng",
+      "type": "career",
+      "label": "Engineering professor",
+      "note": "Teach engineering at colleges."
+    },
+    {
       "id": "cuet",
       "type": "exam",
       "label": "CUET-UG",
@@ -362,6 +680,250 @@
     [
       "mba",
       "engineer"
+    ],
+    [
+      "btech",
+      "b-cs"
+    ],
+    [
+      "btech",
+      "b-mech"
+    ],
+    [
+      "btech",
+      "b-civil"
+    ],
+    [
+      "btech",
+      "b-elec"
+    ],
+    [
+      "btech",
+      "b-chem"
+    ],
+    [
+      "b-cs",
+      "software-dev"
+    ],
+    [
+      "b-cs",
+      "ai-eng"
+    ],
+    [
+      "b-cs",
+      "data-sci"
+    ],
+    [
+      "b-cs",
+      "cyber"
+    ],
+    [
+      "b-cs",
+      "cloud"
+    ],
+    [
+      "b-cs",
+      "game-dev"
+    ],
+    [
+      "b-cs",
+      "robot"
+    ],
+    [
+      "b-cs",
+      "iot"
+    ],
+    [
+      "b-cs",
+      "blockchain"
+    ],
+    [
+      "b-cs",
+      "qa"
+    ],
+    [
+      "b-mech",
+      "mech-eng"
+    ],
+    [
+      "b-mech",
+      "auto-eng"
+    ],
+    [
+      "b-mech",
+      "aero-eng"
+    ],
+    [
+      "b-mech",
+      "mfg-eng"
+    ],
+    [
+      "b-mech",
+      "marine-eng"
+    ],
+    [
+      "b-mech",
+      "energy-eng"
+    ],
+    [
+      "b-civil",
+      "civil-eng"
+    ],
+    [
+      "b-civil",
+      "struct-eng"
+    ],
+    [
+      "b-civil",
+      "env-eng"
+    ],
+    [
+      "b-civil",
+      "urban-plan"
+    ],
+    [
+      "b-civil",
+      "surveyor"
+    ],
+    [
+      "b-elec",
+      "elec-eng"
+    ],
+    [
+      "b-elec",
+      "ece-eng"
+    ],
+    [
+      "b-elec",
+      "telecom"
+    ],
+    [
+      "b-elec",
+      "power-eng"
+    ],
+    [
+      "b-elec",
+      "ev-eng"
+    ],
+    [
+      "b-chem",
+      "chem-eng"
+    ],
+    [
+      "b-chem",
+      "biotech-eng"
+    ],
+    [
+      "b-chem",
+      "materials"
+    ],
+    [
+      "b-chem",
+      "food-tech"
+    ],
+    [
+      "b-chem",
+      "petro-eng"
+    ],
+    [
+      "msbs",
+      "b-sci"
+    ],
+    [
+      "mathcs",
+      "physicist"
+    ],
+    [
+      "b-sci",
+      "physicist"
+    ],
+    [
+      "mathcs",
+      "astro"
+    ],
+    [
+      "b-sci",
+      "astro"
+    ],
+    [
+      "mathcs",
+      "mathematician"
+    ],
+    [
+      "b-sci",
+      "mathematician"
+    ],
+    [
+      "mathcs",
+      "statistician"
+    ],
+    [
+      "b-sci",
+      "statistician"
+    ],
+    [
+      "mathcs",
+      "quant"
+    ],
+    [
+      "b-sci",
+      "quant"
+    ],
+    [
+      "mathcs",
+      "chemist"
+    ],
+    [
+      "b-sci",
+      "chemist"
+    ],
+    [
+      "mathcs",
+      "isro-sci"
+    ],
+    [
+      "b-sci",
+      "isro-sci"
+    ],
+    [
+      "mathcs",
+      "prof-sci"
+    ],
+    [
+      "b-sci",
+      "prof-sci"
+    ],
+    [
+      "barch",
+      "land-arch"
+    ],
+    [
+      "barch",
+      "interior-arch"
+    ],
+    [
+      "barch",
+      "heritage"
+    ],
+    [
+      "mba",
+      "consultant"
+    ],
+    [
+      "mba",
+      "prod-mgr"
+    ],
+    [
+      "mba",
+      "ops-mgr"
+    ],
+    [
+      "mtech",
+      "res-eng"
+    ],
+    [
+      "mtech",
+      "prof-eng"
     ],
     [
       "boards",

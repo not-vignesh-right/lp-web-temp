@@ -68,6 +68,114 @@
       "type": "career",
       "label": "Engineer",
       "note": "Work as an engineer after your degree."
+    },
+    {
+      "id": "electrician",
+      "type": "career",
+      "label": "Electrician",
+      "note": "Wire homes and fix electrical faults."
+    },
+    {
+      "id": "fitter",
+      "type": "career",
+      "label": "Fitter",
+      "note": "Assemble and repair machines."
+    },
+    {
+      "id": "welder",
+      "type": "career",
+      "label": "Welder",
+      "note": "Join metal parts safely."
+    },
+    {
+      "id": "turner",
+      "type": "career",
+      "label": "Turner or machinist",
+      "note": "Shape metal on lathes."
+    },
+    {
+      "id": "cnc",
+      "type": "career",
+      "label": "CNC machine operator",
+      "note": "Run computer-controlled machines."
+    },
+    {
+      "id": "auto-mech",
+      "type": "career",
+      "label": "Auto mechanic",
+      "note": "Repair cars and bikes."
+    },
+    {
+      "id": "ac-tech",
+      "type": "career",
+      "label": "AC and refrigeration technician",
+      "note": "Install and fix coolers and ACs."
+    },
+    {
+      "id": "plumber",
+      "type": "career",
+      "label": "Plumber",
+      "note": "Fit pipes and fix leaks."
+    },
+    {
+      "id": "solar-inst",
+      "type": "career",
+      "label": "Solar installer",
+      "note": "Put solar panels on roofs."
+    },
+    {
+      "id": "mobile-tech",
+      "type": "career",
+      "label": "Mobile phone technician",
+      "note": "Repair phones and gadgets."
+    },
+    {
+      "id": "carpenter",
+      "type": "career",
+      "label": "Carpenter",
+      "note": "Make and fix wooden furniture."
+    },
+    {
+      "id": "tailor",
+      "type": "career",
+      "label": "Tailor or fashion technician",
+      "note": "Stitch clothes and designs."
+    },
+    {
+      "id": "copa",
+      "type": "career",
+      "label": "Computer operator (COPA)",
+      "note": "Do office computer work."
+    },
+    {
+      "id": "site-sup",
+      "type": "career",
+      "label": "Site supervisor",
+      "note": "Watch over a building site."
+    },
+    {
+      "id": "draughts",
+      "type": "career",
+      "label": "Draughtsman",
+      "note": "Draw plans for buildings and machines."
+    },
+    {
+      "id": "quality",
+      "type": "career",
+      "label": "Quality inspector",
+      "note": "Check that products are made well."
+    },
+    {
+      "id": "lab-asst",
+      "type": "career",
+      "label": "Laboratory technician",
+      "note": "Run tests in a lab."
+    },
+    {
+      "id": "pharma-dip",
+      "type": "career",
+      "label": "Diploma pharmacist",
+      "note": "Work in a pharmacy after a diploma in pharmacy."
     }
   ],
   "edges": [
@@ -110,6 +218,78 @@
     [
       "belat",
       "eng"
+    ],
+    [
+      "ittrade",
+      "electrician"
+    ],
+    [
+      "ittrade",
+      "fitter"
+    ],
+    [
+      "ittrade",
+      "welder"
+    ],
+    [
+      "ittrade",
+      "turner"
+    ],
+    [
+      "ittrade",
+      "cnc"
+    ],
+    [
+      "ittrade",
+      "auto-mech"
+    ],
+    [
+      "ittrade",
+      "ac-tech"
+    ],
+    [
+      "ittrade",
+      "plumber"
+    ],
+    [
+      "ittrade",
+      "solar-inst"
+    ],
+    [
+      "ittrade",
+      "mobile-tech"
+    ],
+    [
+      "ittrade",
+      "carpenter"
+    ],
+    [
+      "ittrade",
+      "tailor"
+    ],
+    [
+      "ittrade",
+      "copa"
+    ],
+    [
+      "diploma",
+      "site-sup"
+    ],
+    [
+      "diploma",
+      "draughts"
+    ],
+    [
+      "diploma",
+      "quality"
+    ],
+    [
+      "diploma",
+      "lab-asst"
+    ],
+    [
+      "diploma",
+      "pharma-dip"
     ]
   ]
 }

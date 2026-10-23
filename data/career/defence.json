@@ -170,6 +170,42 @@
       "type": "career",
       "label": "Second career",
       "note": "Police, CAPF, civil services, security and more."
+    },
+    {
+      "id": "coast",
+      "type": "career",
+      "label": "Coast Guard officer",
+      "note": "Guard India's coast and seas. Check the Coast Guard notice."
+    },
+    {
+      "id": "mil-eng",
+      "type": "career",
+      "label": "Military engineer",
+      "note": "Build roads, bridges and bases for the forces."
+    },
+    {
+      "id": "police-si",
+      "type": "career",
+      "label": "Police sub-inspector",
+      "note": "Join the state police."
+    },
+    {
+      "id": "capf",
+      "type": "career",
+      "label": "Paramilitary officer (CAPF)",
+      "note": "Serve in BSF, CRPF, CISF and more."
+    },
+    {
+      "id": "sec-mgr",
+      "type": "career",
+      "label": "Security manager",
+      "note": "Lead security at companies and events."
+    },
+    {
+      "id": "fireman",
+      "type": "career",
+      "label": "Fire service officer",
+      "note": "Fight fires and rescue people."
     }
   ],
   "edges": [
@@ -280,6 +316,38 @@
     [
       "aftrain",
       "airforce"
+    ],
+    [
+      "imatrain",
+      "coast"
+    ],
+    [
+      "ndatrain",
+      "coast"
+    ],
+    [
+      "imatrain",
+      "mil-eng"
+    ],
+    [
+      "ndatrain",
+      "mil-eng"
+    ],
+    [
+      "second",
+      "police-si"
+    ],
+    [
+      "second",
+      "capf"
+    ],
+    [
+      "second",
+      "sec-mgr"
+    ],
+    [
+      "second",
+      "fireman"
     ]
   ]
 }

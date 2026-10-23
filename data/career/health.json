@@ -68,6 +68,66 @@
       "type": "career",
       "label": "Public health officer",
       "note": "Plan health programmes for communities."
+    },
+    {
+      "id": "icu-nurse",
+      "type": "career",
+      "label": "ICU nurse",
+      "note": "Care for very sick patients."
+    },
+    {
+      "id": "midwife",
+      "type": "career",
+      "label": "Midwife",
+      "note": "Help mothers during childbirth."
+    },
+    {
+      "id": "hospital-pharm",
+      "type": "career",
+      "label": "Hospital pharmacist",
+      "note": "Give medicines and advice in a hospital."
+    },
+    {
+      "id": "pharma-qc",
+      "type": "career",
+      "label": "Quality control analyst",
+      "note": "Test that medicines are safe."
+    },
+    {
+      "id": "yoga-therapist",
+      "type": "career",
+      "label": "Yoga and naturopathy therapist",
+      "note": "Heal with yoga and natural methods."
+    },
+    {
+      "id": "ayur-research",
+      "type": "career",
+      "label": "Ayurveda researcher",
+      "note": "Study traditional medicine."
+    },
+    {
+      "id": "lab",
+      "type": "career",
+      "label": "Medical lab technologist",
+      "note": "Run tests that help diagnose illness."
+    },
+    {
+      "id": "physio2",
+      "type": "career",
+      "label": "Physiotherapist",
+      "note": "Help people recover movement."
+    },
+    {
+      "id": "optom2",
+      "type": "career",
+      "label": "Optometrist",
+      "note": "Test eyes and prescribe glasses."
+    },
+    {
+      "id": "radio-tech",
+      "type": "career",
+      "label": "Radiology technician",
+      "note": "Take X-rays and scans."
     }
   ],
   "edges": [
@@ -110,6 +170,46 @@
     [
       "allied",
       "public"
+    ],
+    [
+      "nursing",
+      "icu-nurse"
+    ],
+    [
+      "nursing",
+      "midwife"
+    ],
+    [
+      "bpharm",
+      "hospital-pharm"
+    ],
+    [
+      "bpharm",
+      "pharma-qc"
+    ],
+    [
+      "ayush",
+      "yoga-therapist"
+    ],
+    [
+      "ayush",
+      "ayur-research"
+    ],
+    [
+      "allied",
+      "lab"
+    ],
+    [
+      "allied",
+      "physio2"
+    ],
+    [
+      "allied",
+      "optom2"
+    ],
+    [
+      "allied",
+      "radio-tech"
     ]
   ]
 }

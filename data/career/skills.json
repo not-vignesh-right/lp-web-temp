@@ -62,6 +62,84 @@
       "type": "career",
       "label": "Self-employed professional",
       "note": "Tutor, caterer, photographer or repair expert."
+    },
+    {
+      "id": "digi-mkt",
+      "type": "career",
+      "label": "Digital marketer",
+      "note": "Promote brands online."
+    },
+    {
+      "id": "video-ed",
+      "type": "career",
+      "label": "Video editor",
+      "note": "Cut and polish videos."
+    },
+    {
+      "id": "web-design",
+      "type": "career",
+      "label": "Web designer",
+      "note": "Build and design websites."
+    },
+    {
+      "id": "tutor",
+      "type": "career",
+      "label": "Tutor or trainer",
+      "note": "Teach what you know."
+    },
+    {
+      "id": "photog2",
+      "type": "career",
+      "label": "Photographer or videographer",
+      "note": "Shoot events and brands."
+    },
+    {
+      "id": "caterer",
+      "type": "career",
+      "label": "Caterer",
+      "note": "Cook for parties and events."
+    },
+    {
+      "id": "beauty",
+      "type": "career",
+      "label": "Beauty and wellness professional",
+      "note": "Hair, skin and wellness services."
+    },
+    {
+      "id": "content-cr",
+      "type": "career",
+      "label": "Content creator",
+      "note": "Make videos or posts people follow."
+    },
+    {
+      "id": "yoga-inst",
+      "type": "career",
+      "label": "Yoga or fitness instructor",
+      "note": "Lead yoga and fitness classes."
+    },
+    {
+      "id": "data-entry",
+      "type": "career",
+      "label": "Office and data assistant",
+      "note": "Help with office tasks and data."
+    },
+    {
+      "id": "social-ent",
+      "type": "career",
+      "label": "Social entrepreneur",
+      "note": "Start a business that solves a community problem."
+    },
+    {
+      "id": "agri-startup",
+      "type": "career",
+      "label": "Agri start-up founder",
+      "note": "Use new ideas to help farmers."
+    },
+    {
+      "id": "app-founder",
+      "type": "career",
+      "label": "App or tech founder",
+      "note": "Build and sell a software product."
     }
   ],
   "edges": [
@@ -100,6 +178,58 @@
     [
       "incubator",
       "selfemp"
+    ],
+    [
+      "skillcourse",
+      "digi-mkt"
+    ],
+    [
+      "skillcourse",
+      "video-ed"
+    ],
+    [
+      "skillcourse",
+      "web-design"
+    ],
+    [
+      "skillcourse",
+      "tutor"
+    ],
+    [
+      "skillcourse",
+      "photog2"
+    ],
+    [
+      "skillcourse",
+      "caterer"
+    ],
+    [
+      "skillcourse",
+      "beauty"
+    ],
+    [
+      "skillcourse",
+      "content-cr"
+    ],
+    [
+      "skillcourse",
+      "yoga-inst"
+    ],
+    [
+      "skillcourse",
+      "data-entry"
+    ],
+    [
+      "incubator",
+      "social-ent"
+    ],
+    [
+      "incubator",
+      "agri-startup"
+    ],
+    [
+      "incubator",
+      "app-founder"
     ]
   ]
 }

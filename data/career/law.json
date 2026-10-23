@@ -104,6 +104,42 @@
       "type": "career",
       "label": "Law professor",
       "note": "Teach and research law."
+    },
+    {
+      "id": "notary",
+      "type": "career",
+      "label": "Notary public",
+      "note": "Certify important papers."
+    },
+    {
+      "id": "cyber-law",
+      "type": "career",
+      "label": "Cyber lawyer",
+      "note": "Handle online crime and data cases."
+    },
+    {
+      "id": "family-law",
+      "type": "career",
+      "label": "Family lawyer",
+      "note": "Help with marriage, property and custody cases."
+    },
+    {
+      "id": "tax-law",
+      "type": "career",
+      "label": "Tax lawyer",
+      "note": "Help with tax rules and disputes."
+    },
+    {
+      "id": "arbitrator",
+      "type": "career",
+      "label": "Arbitrator or mediator",
+      "note": "Settle disputes without going to court."
+    },
+    {
+      "id": "legal-adv",
+      "type": "career",
+      "label": "Legal advisor",
+      "note": "Advise a company or government office."
     }
   ],
   "edges": [
@@ -178,6 +214,30 @@
     [
       "llm",
       "prof"
+    ],
+    [
+      "aibe",
+      "notary"
+    ],
+    [
+      "aibe",
+      "cyber-law"
+    ],
+    [
+      "aibe",
+      "family-law"
+    ],
+    [
+      "aibe",
+      "tax-law"
+    ],
+    [
+      "llm",
+      "arbitrator"
+    ],
+    [
+      "llm",
+      "legal-adv"
     ]
   ]
 }

@@ -80,6 +80,90 @@
       "type": "career",
       "label": "Art teacher or curator",
       "note": "Teach art or run exhibitions."
+    },
+    {
+      "id": "referee",
+      "type": "career",
+      "label": "Referee or umpire",
+      "note": "Run matches fairly."
+    },
+    {
+      "id": "sports-mgr",
+      "type": "career",
+      "label": "Sports manager",
+      "note": "Manage teams and events."
+    },
+    {
+      "id": "fitness",
+      "type": "career",
+      "label": "Fitness trainer",
+      "note": "Train people to be strong and fit."
+    },
+    {
+      "id": "sports-journal",
+      "type": "career",
+      "label": "Sports journalist",
+      "note": "Report on sports."
+    },
+    {
+      "id": "pe-teacher2",
+      "type": "career",
+      "label": "PE teacher",
+      "note": "Teach sport in schools."
+    },
+    {
+      "id": "painter",
+      "type": "career",
+      "label": "Painter",
+      "note": "Create art for galleries and homes."
+    },
+    {
+      "id": "sculptor",
+      "type": "career",
+      "label": "Sculptor",
+      "note": "Make art from stone, metal or clay."
+    },
+    {
+      "id": "art-therapist",
+      "type": "career",
+      "label": "Art therapist",
+      "note": "Use art to help people heal."
+    },
+    {
+      "id": "gallery",
+      "type": "career",
+      "label": "Gallery manager",
+      "note": "Run art shows and sales."
+    },
+    {
+      "id": "singer",
+      "type": "career",
+      "label": "Singer",
+      "note": "Perform songs live or in studios."
+    },
+    {
+      "id": "dancer",
+      "type": "career",
+      "label": "Dancer or choreographer",
+      "note": "Perform and create dances."
+    },
+    {
+      "id": "actor",
+      "type": "career",
+      "label": "Actor",
+      "note": "Act in plays, films and shows."
+    },
+    {
+      "id": "music-teacher",
+      "type": "career",
+      "label": "Music teacher",
+      "note": "Teach an instrument or singing."
+    },
+    {
+      "id": "sound",
+      "type": "career",
+      "label": "Sound engineer",
+      "note": "Record and mix music and sound."
     }
   ],
   "edges": [
@@ -122,6 +206,62 @@
     [
       "perf",
       "artteacher"
+    ],
+    [
+      "bped",
+      "referee"
+    ],
+    [
+      "bped",
+      "sports-mgr"
+    ],
+    [
+      "bped",
+      "fitness"
+    ],
+    [
+      "bped",
+      "sports-journal"
+    ],
+    [
+      "bped",
+      "pe-teacher2"
+    ],
+    [
+      "fa",
+      "painter"
+    ],
+    [
+      "fa",
+      "sculptor"
+    ],
+    [
+      "fa",
+      "art-therapist"
+    ],
+    [
+      "fa",
+      "gallery"
+    ],
+    [
+      "perf",
+      "singer"
+    ],
+    [
+      "perf",
+      "dancer"
+    ],
+    [
+      "perf",
+      "actor"
+    ],
+    [
+      "perf",
+      "music-teacher"
+    ],
+    [
+      "perf",
+      "sound"
     ]
   ]
 }

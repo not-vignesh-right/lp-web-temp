@@ -92,6 +92,96 @@
       "type": "career",
       "label": "Ship officer",
       "note": "Deck or engine officer on a merchant ship."
+    },
+    {
+      "id": "chef",
+      "type": "career",
+      "label": "Chef",
+      "note": "Cook and lead a kitchen."
+    },
+    {
+      "id": "front-office",
+      "type": "career",
+      "label": "Front office manager",
+      "note": "Welcome guests at a hotel."
+    },
+    {
+      "id": "event-plan",
+      "type": "career",
+      "label": "Event planner",
+      "note": "Plan weddings and events."
+    },
+    {
+      "id": "travel",
+      "type": "career",
+      "label": "Travel and tour manager",
+      "note": "Plan trips for others."
+    },
+    {
+      "id": "resto",
+      "type": "career",
+      "label": "Restaurant owner",
+      "note": "Start your own restaurant or cafe."
+    },
+    {
+      "id": "cruise",
+      "type": "career",
+      "label": "Cruise ship hospitality officer",
+      "note": "Work in hotels at sea."
+    },
+    {
+      "id": "cargo-pilot",
+      "type": "career",
+      "label": "Cargo pilot",
+      "note": "Fly goods around the world."
+    },
+    {
+      "id": "flight-inst",
+      "type": "career",
+      "label": "Flight instructor",
+      "note": "Teach new pilots."
+    },
+    {
+      "id": "atc",
+      "type": "course",
+      "label": "Air traffic control training",
+      "note": "Graduates in science or engineering can join the Airports Authority of India. Check its notice."
+    },
+    {
+      "id": "atco",
+      "type": "career",
+      "label": "Air traffic controller",
+      "note": "Guide aircraft safely in the sky and on the ground."
+    },
+    {
+      "id": "ground-staff",
+      "type": "career",
+      "label": "Airport ground staff",
+      "note": "Check in passengers and handle bags."
+    },
+    {
+      "id": "airport-ops",
+      "type": "career",
+      "label": "Airport operations officer",
+      "note": "Keep an airport running on time."
+    },
+    {
+      "id": "captain",
+      "type": "career",
+      "label": "Ship captain",
+      "note": "Lead a ship and its crew."
+    },
+    {
+      "id": "port-mgr",
+      "type": "career",
+      "label": "Port manager",
+      "note": "Run the work at a seaport."
+    },
+    {
+      "id": "marine-surv",
+      "type": "career",
+      "label": "Marine surveyor",
+      "note": "Inspect ships for safety."
     }
   ],
   "edges": [
@@ -134,6 +224,66 @@
     [
       "nautical",
       "ship"
+    ],
+    [
+      "hhm",
+      "chef"
+    ],
+    [
+      "hhm",
+      "front-office"
+    ],
+    [
+      "hhm",
+      "event-plan"
+    ],
+    [
+      "hhm",
+      "travel"
+    ],
+    [
+      "hhm",
+      "resto"
+    ],
+    [
+      "hhm",
+      "cruise"
+    ],
+    [
+      "cpl",
+      "cargo-pilot"
+    ],
+    [
+      "cpl",
+      "flight-inst"
+    ],
+    [
+      "amestage",
+      "atc"
+    ],
+    [
+      "atc",
+      "atco"
+    ],
+    [
+      "cabincourse",
+      "ground-staff"
+    ],
+    [
+      "cabincourse",
+      "airport-ops"
+    ],
+    [
+      "nautical",
+      "captain"
+    ],
+    [
+      "nautical",
+      "port-mgr"
+    ],
+    [
+      "nautical",
+      "marine-surv"
     ]
   ]
 }

@@ -86,6 +86,78 @@
       "type": "career",
       "label": "Architect",
       "note": "Design buildings and spaces."
+    },
+    {
+      "id": "motion",
+      "type": "career",
+      "label": "Motion graphics designer",
+      "note": "Make moving titles and effects."
+    },
+    {
+      "id": "game-art",
+      "type": "career",
+      "label": "Game artist",
+      "note": "Create characters and worlds for games."
+    },
+    {
+      "id": "indus",
+      "type": "career",
+      "label": "Industrial designer",
+      "note": "Shape everyday products."
+    },
+    {
+      "id": "art-dir",
+      "type": "career",
+      "label": "Art director",
+      "note": "Lead the look of ads, films and magazines."
+    },
+    {
+      "id": "pack",
+      "type": "career",
+      "label": "Packaging designer",
+      "note": "Design boxes and labels."
+    },
+    {
+      "id": "interior",
+      "type": "career",
+      "label": "Interior designer",
+      "note": "Design homes and offices inside."
+    },
+    {
+      "id": "photog",
+      "type": "career",
+      "label": "Photographer",
+      "note": "Take pictures for people and brands."
+    },
+    {
+      "id": "jewel",
+      "type": "career",
+      "label": "Jewellery designer",
+      "note": "Design rings, necklaces and more."
+    },
+    {
+      "id": "textile",
+      "type": "career",
+      "label": "Textile designer",
+      "note": "Design fabrics and prints."
+    },
+    {
+      "id": "ux-research",
+      "type": "career",
+      "label": "UX researcher",
+      "note": "Find out what users need."
+    },
+    {
+      "id": "stylist",
+      "type": "career",
+      "label": "Fashion stylist",
+      "note": "Pick clothes and looks for people and shoots."
+    },
+    {
+      "id": "merch",
+      "type": "career",
+      "label": "Fashion merchandiser",
+      "note": "Plan what clothes a brand sells."
     }
   ],
   "edges": [
@@ -140,6 +212,54 @@
     [
       "barch",
       "architect"
+    ],
+    [
+      "bdes",
+      "motion"
+    ],
+    [
+      "bdes",
+      "game-art"
+    ],
+    [
+      "bdes",
+      "indus"
+    ],
+    [
+      "bdes",
+      "art-dir"
+    ],
+    [
+      "bdes",
+      "pack"
+    ],
+    [
+      "bdes",
+      "interior"
+    ],
+    [
+      "bdes",
+      "photog"
+    ],
+    [
+      "bdes",
+      "jewel"
+    ],
+    [
+      "bdes",
+      "textile"
+    ],
+    [
+      "bdes",
+      "ux-research"
+    ],
+    [
+      "bftech",
+      "stylist"
+    ],
+    [
+      "bftech",
+      "merch"
     ]
   ],
   "levelTitles": {

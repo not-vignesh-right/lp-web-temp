@@ -194,6 +194,192 @@
       "type": "career",
       "label": "Government officer",
       "note": "Work in tax, audit and other central government offices."
+    },
+    {
+      "id": "msw",
+      "type": "course",
+      "label": "MSW (social work, 2 years)",
+      "note": "Master's in social work."
+    },
+    {
+      "id": "ma-eco",
+      "type": "course",
+      "label": "MA Economics, History or Political Science",
+      "note": "2 years. Deeper study of society."
+    },
+    {
+      "id": "ifs",
+      "type": "career",
+      "label": "Diplomat (Indian Foreign Service)",
+      "note": "Represent India in other countries."
+    },
+    {
+      "id": "irs",
+      "type": "career",
+      "label": "Revenue officer (IRS)",
+      "note": "Work on income tax and customs."
+    },
+    {
+      "id": "ips",
+      "type": "career",
+      "label": "Police officer (IPS)",
+      "note": "Lead police and keep people safe."
+    },
+    {
+      "id": "social-media",
+      "type": "career",
+      "label": "Social media manager",
+      "note": "Run pages and campaigns for brands."
+    },
+    {
+      "id": "content-writer",
+      "type": "career",
+      "label": "Content writer",
+      "note": "Write articles, scripts and posts."
+    },
+    {
+      "id": "translator",
+      "type": "career",
+      "label": "Translator or interpreter",
+      "note": "Turn one language into another."
+    },
+    {
+      "id": "librarian",
+      "type": "career",
+      "label": "Librarian",
+      "note": "Look after books and information."
+    },
+    {
+      "id": "archaeologist",
+      "type": "career",
+      "label": "Archaeologist",
+      "note": "Study the past from old objects."
+    },
+    {
+      "id": "museum",
+      "type": "career",
+      "label": "Museum curator",
+      "note": "Care for exhibits and tell their stories."
+    },
+    {
+      "id": "pr",
+      "type": "career",
+      "label": "Public relations officer",
+      "note": "Build a good image for people and firms."
+    },
+    {
+      "id": "hr-exec",
+      "type": "career",
+      "label": "HR executive",
+      "note": "Help with hiring and staff matters."
+    },
+    {
+      "id": "social-worker",
+      "type": "career",
+      "label": "Social worker",
+      "note": "Help families and communities in need."
+    },
+    {
+      "id": "ngo",
+      "type": "career",
+      "label": "NGO programme manager",
+      "note": "Run projects for a non-profit."
+    },
+    {
+      "id": "csr",
+      "type": "career",
+      "label": "CSR officer",
+      "note": "Help companies do good for society."
+    },
+    {
+      "id": "economist",
+      "type": "career",
+      "label": "Economist",
+      "note": "Study how money and markets work."
+    },
+    {
+      "id": "policy",
+      "type": "career",
+      "label": "Public policy analyst",
+      "note": "Study problems and suggest government plans."
+    },
+    {
+      "id": "historian",
+      "type": "career",
+      "label": "Historian",
+      "note": "Study and write about the past."
+    },
+    {
+      "id": "pol-sci",
+      "type": "career",
+      "label": "Political analyst",
+      "note": "Study politics and elections."
+    },
+    {
+      "id": "counselor",
+      "type": "career",
+      "label": "School or career counsellor",
+      "note": "Guide students and families."
+    },
+    {
+      "id": "clin-psych",
+      "type": "career",
+      "label": "Clinical psychologist",
+      "note": "Help people with mental health needs."
+    },
+    {
+      "id": "hr-psych",
+      "type": "career",
+      "label": "Industrial psychologist",
+      "note": "Make workplaces happier and fairer."
+    },
+    {
+      "id": "anchor",
+      "type": "career",
+      "label": "News anchor or reporter",
+      "note": "Present and report the news."
+    },
+    {
+      "id": "pr-media",
+      "type": "career",
+      "label": "Media planner",
+      "note": "Plan where ads and shows appear."
+    },
+    {
+      "id": "film",
+      "type": "career",
+      "label": "Filmmaker or video editor",
+      "note": "Make films and videos."
+    },
+    {
+      "id": "radio-jock",
+      "type": "career",
+      "label": "Radio jockey",
+      "note": "Host shows on the radio."
+    },
+    {
+      "id": "ux-arts",
+      "type": "career",
+      "label": "UX designer",
+      "note": "Design how apps feel to use."
+    },
+    {
+      "id": "illus",
+      "type": "career",
+      "label": "Illustrator",
+      "note": "Draw pictures for books and brands."
+    },
+    {
+      "id": "edu-admin",
+      "type": "career",
+      "label": "School principal",
+      "note": "Lead a school after years of teaching."
+    },
+    {
+      "id": "primary-teacher",
+      "type": "career",
+      "label": "Primary school teacher",
+      "note": "Teach young children."
     }
   ],
   "edges": [
@@ -332,6 +518,130 @@
     [
       "kset",
       "researcher"
+    ],
+    [
+      "ba",
+      "msw"
+    ],
+    [
+      "ba",
+      "ma-eco"
+    ],
+    [
+      "upsc",
+      "ifs"
+    ],
+    [
+      "upsc",
+      "irs"
+    ],
+    [
+      "upsc",
+      "ips"
+    ],
+    [
+      "ba",
+      "social-media"
+    ],
+    [
+      "ba",
+      "content-writer"
+    ],
+    [
+      "ba",
+      "translator"
+    ],
+    [
+      "ba",
+      "librarian"
+    ],
+    [
+      "ba",
+      "archaeologist"
+    ],
+    [
+      "ba",
+      "museum"
+    ],
+    [
+      "ba",
+      "pr"
+    ],
+    [
+      "ba",
+      "hr-exec"
+    ],
+    [
+      "msw",
+      "social-worker"
+    ],
+    [
+      "msw",
+      "ngo"
+    ],
+    [
+      "msw",
+      "csr"
+    ],
+    [
+      "ma-eco",
+      "economist"
+    ],
+    [
+      "ma-eco",
+      "policy"
+    ],
+    [
+      "ma-eco",
+      "historian"
+    ],
+    [
+      "ma-eco",
+      "pol-sci"
+    ],
+    [
+      "psych",
+      "counselor"
+    ],
+    [
+      "psych",
+      "clin-psych"
+    ],
+    [
+      "psych",
+      "hr-psych"
+    ],
+    [
+      "media",
+      "anchor"
+    ],
+    [
+      "media",
+      "pr-media"
+    ],
+    [
+      "media",
+      "film"
+    ],
+    [
+      "media",
+      "radio-jock"
+    ],
+    [
+      "bdes",
+      "ux-arts"
+    ],
+    [
+      "bdes",
+      "illus"
+    ],
+    [
+      "bed",
+      "edu-admin"
+    ],
+    [
+      "itep",
+      "primary-teacher"
     ]
   ]
 }

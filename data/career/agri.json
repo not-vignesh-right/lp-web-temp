@@ -74,6 +74,90 @@
       "type": "career",
       "label": "Veterinarian",
       "note": "Treat pets, farm animals and wildlife."
+    },
+    {
+      "id": "agribiz",
+      "type": "career",
+      "label": "Agri-business manager",
+      "note": "Run farms, food firms and supply chains."
+    },
+    {
+      "id": "hort",
+      "type": "career",
+      "label": "Horticulturist",
+      "note": "Grow fruits, vegetables and flowers."
+    },
+    {
+      "id": "soil",
+      "type": "career",
+      "label": "Soil scientist",
+      "note": "Study soil to grow better crops."
+    },
+    {
+      "id": "dairy",
+      "type": "career",
+      "label": "Dairy technologist",
+      "note": "Make milk products safely."
+    },
+    {
+      "id": "fish",
+      "type": "career",
+      "label": "Fisheries officer",
+      "note": "Help fish farming and fishers."
+    },
+    {
+      "id": "plant",
+      "type": "career",
+      "label": "Plantation manager",
+      "note": "Run coffee, tea and spice estates."
+    },
+    {
+      "id": "organic",
+      "type": "career",
+      "label": "Organic farmer",
+      "note": "Grow food without harmful chemicals."
+    },
+    {
+      "id": "agri-eng",
+      "type": "career",
+      "label": "Agricultural engineer",
+      "note": "Design farm machines and irrigation."
+    },
+    {
+      "id": "seed",
+      "type": "career",
+      "label": "Seed technologist",
+      "note": "Develop and test seeds."
+    },
+    {
+      "id": "wild-cons",
+      "type": "career",
+      "label": "Wildlife conservationist",
+      "note": "Protect animals and their homes."
+    },
+    {
+      "id": "forest-guard",
+      "type": "career",
+      "label": "Forest guard or ranger",
+      "note": "Look after forests on the ground."
+    },
+    {
+      "id": "eco-tourism",
+      "type": "career",
+      "label": "Eco-tourism guide",
+      "note": "Show visitors nature safely."
+    },
+    {
+      "id": "pet-vet",
+      "type": "career",
+      "label": "Pet and small animal vet",
+      "note": "Treat dogs, cats and pets."
+    },
+    {
+      "id": "vet-officer",
+      "type": "career",
+      "label": "Government veterinary officer",
+      "note": "Care for animals for the state."
     }
   ],
   "edges": [
@@ -120,6 +204,62 @@
     [
       "bvsc",
       "vet"
+    ],
+    [
+      "bscagri",
+      "agribiz"
+    ],
+    [
+      "bscagri",
+      "hort"
+    ],
+    [
+      "bscagri",
+      "soil"
+    ],
+    [
+      "bscagri",
+      "dairy"
+    ],
+    [
+      "bscagri",
+      "fish"
+    ],
+    [
+      "bscagri",
+      "plant"
+    ],
+    [
+      "bscagri",
+      "organic"
+    ],
+    [
+      "bscagri",
+      "agri-eng"
+    ],
+    [
+      "bscagri",
+      "seed"
+    ],
+    [
+      "forestry",
+      "wild-cons"
+    ],
+    [
+      "forestry",
+      "forest-guard"
+    ],
+    [
+      "forestry",
+      "eco-tourism"
+    ],
+    [
+      "bvsc",
+      "pet-vet"
+    ],
+    [
+      "bvsc",
+      "vet-officer"
     ]
   ]
 }

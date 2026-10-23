@@ -152,6 +152,270 @@
       "note": "Heart, bones, children, skin and many more fields."
     },
     {
+      "id": "bds",
+      "type": "course",
+      "label": "BDS (dentistry, 5 years)",
+      "note": "Study teeth and mouth care. Admission by NEET-UG."
+    },
+    {
+      "id": "dentist",
+      "type": "career",
+      "label": "Dentist",
+      "note": "Care for teeth, gums and smiles."
+    },
+    {
+      "id": "ortho",
+      "type": "career",
+      "label": "Orthodontist",
+      "note": "Straighten teeth with braces."
+    },
+    {
+      "id": "oral-surgeon",
+      "type": "career",
+      "label": "Oral surgeon",
+      "note": "Do surgery on the mouth and jaw."
+    },
+    {
+      "id": "gp",
+      "type": "career",
+      "label": "General physician",
+      "note": "First doctor to see for many illnesses."
+    },
+    {
+      "id": "gov-doc",
+      "type": "career",
+      "label": "Government medical officer",
+      "note": "Serve in government hospitals and health centres."
+    },
+    {
+      "id": "military-doc",
+      "type": "career",
+      "label": "Armed forces doctor",
+      "note": "Treat soldiers and families in the forces."
+    },
+    {
+      "id": "health-admin",
+      "type": "career",
+      "label": "Hospital administrator",
+      "note": "Run a hospital after more study."
+    },
+    {
+      "id": "surgeon",
+      "type": "career",
+      "label": "Surgeon",
+      "note": "Operate to treat injuries and disease."
+    },
+    {
+      "id": "paed",
+      "type": "career",
+      "label": "Paediatrician",
+      "note": "Doctor for children."
+    },
+    {
+      "id": "cardio",
+      "type": "career",
+      "label": "Cardiologist",
+      "note": "Heart doctor."
+    },
+    {
+      "id": "gyn",
+      "type": "career",
+      "label": "Gynaecologist",
+      "note": "Doctor for women's health and childbirth."
+    },
+    {
+      "id": "radio",
+      "type": "career",
+      "label": "Radiologist",
+      "note": "Read scans like X-ray and MRI."
+    },
+    {
+      "id": "derm",
+      "type": "career",
+      "label": "Dermatologist",
+      "note": "Skin, hair and nail doctor."
+    },
+    {
+      "id": "psych-doc",
+      "type": "career",
+      "label": "Psychiatrist",
+      "note": "Doctor for mental health."
+    },
+    {
+      "id": "ortho-doc",
+      "type": "career",
+      "label": "Orthopaedic surgeon",
+      "note": "Bones and joints doctor."
+    },
+    {
+      "id": "anaes",
+      "type": "career",
+      "label": "Anaesthetist",
+      "note": "Keeps patients safe during surgery."
+    },
+    {
+      "id": "physio",
+      "type": "career",
+      "label": "Physiotherapist",
+      "note": "Help people recover movement."
+    },
+    {
+      "id": "optom",
+      "type": "career",
+      "label": "Optometrist",
+      "note": "Test eyes and prescribe glasses."
+    },
+    {
+      "id": "radiographer",
+      "type": "career",
+      "label": "Radiographer",
+      "note": "Take X-rays and scans."
+    },
+    {
+      "id": "lab-tech",
+      "type": "career",
+      "label": "Medical lab technologist",
+      "note": "Run tests that help diagnose illness."
+    },
+    {
+      "id": "ot-therapist",
+      "type": "career",
+      "label": "Occupational therapist",
+      "note": "Help people do daily tasks again."
+    },
+    {
+      "id": "speech",
+      "type": "career",
+      "label": "Speech and hearing therapist",
+      "note": "Help people speak and hear better."
+    },
+    {
+      "id": "paramedic",
+      "type": "career",
+      "label": "Paramedic",
+      "note": "Give emergency care on the road."
+    },
+    {
+      "id": "dialysis",
+      "type": "career",
+      "label": "Dialysis technician",
+      "note": "Run kidney dialysis machines."
+    },
+    {
+      "id": "nurse-prac",
+      "type": "career",
+      "label": "Nurse practitioner",
+      "note": "Advanced nurse who can do more patient care."
+    },
+    {
+      "id": "community-nurse",
+      "type": "career",
+      "label": "Community health nurse",
+      "note": "Bring health care to villages and schools."
+    },
+    {
+      "id": "nurse-tutor",
+      "type": "career",
+      "label": "Nursing teacher",
+      "note": "Train new nurses."
+    },
+    {
+      "id": "clin-res",
+      "type": "career",
+      "label": "Clinical research associate",
+      "note": "Run trials that test new medicines."
+    },
+    {
+      "id": "drug-insp",
+      "type": "career",
+      "label": "Drug inspector",
+      "note": "Check medicines for safety for the government."
+    },
+    {
+      "id": "med-rep",
+      "type": "career",
+      "label": "Medical representative",
+      "note": "Tell doctors about new medicines."
+    },
+    {
+      "id": "pharma-sci",
+      "type": "career",
+      "label": "Pharmaceutical scientist",
+      "note": "Invent and improve medicines."
+    },
+    {
+      "id": "biotech",
+      "type": "career",
+      "label": "Biotechnologist",
+      "note": "Use biology to make medicines, food and fuel."
+    },
+    {
+      "id": "micro",
+      "type": "career",
+      "label": "Microbiologist",
+      "note": "Study tiny living things like bacteria."
+    },
+    {
+      "id": "genetics",
+      "type": "career",
+      "label": "Geneticist",
+      "note": "Study genes and inherited diseases."
+    },
+    {
+      "id": "forensic",
+      "type": "career",
+      "label": "Forensic scientist",
+      "note": "Use science to solve crimes."
+    },
+    {
+      "id": "food-sci",
+      "type": "career",
+      "label": "Food scientist",
+      "note": "Make food safe and healthy."
+    },
+    {
+      "id": "env-sci",
+      "type": "career",
+      "label": "Environmental scientist",
+      "note": "Protect nature and fight pollution."
+    },
+    {
+      "id": "marine-bio",
+      "type": "career",
+      "label": "Marine biologist",
+      "note": "Study life in the sea."
+    },
+    {
+      "id": "wildlife-bio",
+      "type": "career",
+      "label": "Wildlife biologist",
+      "note": "Study and protect animals in the wild."
+    },
+    {
+      "id": "dietitian",
+      "type": "career",
+      "label": "Dietitian or nutritionist",
+      "note": "Plan healthy food for people."
+    },
+    {
+      "id": "bio-teacher",
+      "type": "career",
+      "label": "Biology teacher",
+      "note": "Teach biology in school or college."
+    },
+    {
+      "id": "wild-vet",
+      "type": "career",
+      "label": "Wildlife veterinarian",
+      "note": "Treat animals in forests and zoos."
+    },
+    {
+      "id": "livestock-vet",
+      "type": "career",
+      "label": "Livestock veterinarian",
+      "note": "Care for farm animals and dairy."
+    },
+    {
       "id": "jee",
       "lane": "l3",
       "type": "exam",
@@ -288,6 +552,318 @@
       "type": "course",
       "label": "MBA or PGDM (2 years)",
       "note": "A master's in management after your degree."
+    },
+    {
+      "id": "b-cs",
+      "type": "course",
+      "label": "BTech Computer Science, AI and Data",
+      "note": "Learn coding, data and smart machines."
+    },
+    {
+      "id": "b-mech",
+      "type": "course",
+      "label": "BTech Mechanical, Automobile and Aerospace",
+      "note": "Machines, vehicles, engines and aircraft."
+    },
+    {
+      "id": "b-civil",
+      "type": "course",
+      "label": "BTech Civil and Environmental",
+      "note": "Buildings, roads, bridges, water and the environment."
+    },
+    {
+      "id": "b-elec",
+      "type": "course",
+      "label": "BTech Electrical and Electronics",
+      "note": "Power, circuits, chips and communication."
+    },
+    {
+      "id": "b-chem",
+      "type": "course",
+      "label": "BTech Chemical, Materials and Biotech",
+      "note": "Chemicals, materials, medicines and food processes."
+    },
+    {
+      "id": "software-dev",
+      "type": "career",
+      "label": "Software developer",
+      "note": "Build apps, websites and systems."
+    },
+    {
+      "id": "ai-eng",
+      "type": "career",
+      "label": "AI and machine learning engineer",
+      "note": "Teach computers to learn from data."
+    },
+    {
+      "id": "data-sci",
+      "type": "career",
+      "label": "Data scientist",
+      "note": "Find patterns in data to help decisions."
+    },
+    {
+      "id": "cyber",
+      "type": "career",
+      "label": "Cybersecurity analyst",
+      "note": "Protect computers and data from hackers."
+    },
+    {
+      "id": "cloud",
+      "type": "career",
+      "label": "Cloud and DevOps engineer",
+      "note": "Run apps on the internet reliably."
+    },
+    {
+      "id": "game-dev",
+      "type": "career",
+      "label": "Game developer",
+      "note": "Make video games."
+    },
+    {
+      "id": "robot",
+      "type": "career",
+      "label": "Robotics engineer",
+      "note": "Build robots that sense and move."
+    },
+    {
+      "id": "iot",
+      "type": "career",
+      "label": "IoT and embedded engineer",
+      "note": "Make smart devices and gadgets."
+    },
+    {
+      "id": "blockchain",
+      "type": "career",
+      "label": "Blockchain developer",
+      "note": "Build secure digital record systems."
+    },
+    {
+      "id": "qa",
+      "type": "career",
+      "label": "Software tester",
+      "note": "Find and report bugs before users do."
+    },
+    {
+      "id": "mech-eng",
+      "type": "career",
+      "label": "Mechanical engineer",
+      "note": "Design and improve machines."
+    },
+    {
+      "id": "auto-eng",
+      "type": "career",
+      "label": "Automobile engineer",
+      "note": "Design cars, bikes and electric vehicles."
+    },
+    {
+      "id": "aero-eng",
+      "type": "career",
+      "label": "Aerospace engineer",
+      "note": "Design aircraft, rockets and satellites."
+    },
+    {
+      "id": "mfg-eng",
+      "type": "career",
+      "label": "Manufacturing engineer",
+      "note": "Make factories run well."
+    },
+    {
+      "id": "marine-eng",
+      "type": "career",
+      "label": "Marine engineer",
+      "note": "Keep ship engines running."
+    },
+    {
+      "id": "energy-eng",
+      "type": "career",
+      "label": "Renewable energy engineer",
+      "note": "Work on solar, wind and clean power."
+    },
+    {
+      "id": "civil-eng",
+      "type": "career",
+      "label": "Civil engineer",
+      "note": "Plan and build roads, bridges and buildings."
+    },
+    {
+      "id": "struct-eng",
+      "type": "career",
+      "label": "Structural engineer",
+      "note": "Make sure buildings are strong and safe."
+    },
+    {
+      "id": "env-eng",
+      "type": "career",
+      "label": "Environmental engineer",
+      "note": "Clean air and water and manage waste."
+    },
+    {
+      "id": "urban-plan",
+      "type": "career",
+      "label": "Urban planner",
+      "note": "Plan how cities grow."
+    },
+    {
+      "id": "surveyor",
+      "type": "career",
+      "label": "Surveyor",
+      "note": "Measure land for maps and projects."
+    },
+    {
+      "id": "elec-eng",
+      "type": "career",
+      "label": "Electrical engineer",
+      "note": "Work on power plants, grids and motors."
+    },
+    {
+      "id": "ece-eng",
+      "type": "career",
+      "label": "Electronics engineer",
+      "note": "Design circuits and chips."
+    },
+    {
+      "id": "telecom",
+      "type": "career",
+      "label": "Telecom engineer",
+      "note": "Build phone and internet networks."
+    },
+    {
+      "id": "power-eng",
+      "type": "career",
+      "label": "Power systems engineer",
+      "note": "Keep electricity flowing to homes."
+    },
+    {
+      "id": "ev-eng",
+      "type": "career",
+      "label": "Electric vehicle engineer",
+      "note": "Design batteries and EV systems."
+    },
+    {
+      "id": "chem-eng",
+      "type": "career",
+      "label": "Chemical engineer",
+      "note": "Make chemicals, fuels and materials at scale."
+    },
+    {
+      "id": "materials",
+      "type": "career",
+      "label": "Materials scientist",
+      "note": "Create new materials like strong plastics and metals."
+    },
+    {
+      "id": "food-tech",
+      "type": "career",
+      "label": "Food technologist",
+      "note": "Make food safe, tasty and long lasting."
+    },
+    {
+      "id": "petro-eng",
+      "type": "career",
+      "label": "Petroleum engineer",
+      "note": "Work on oil and gas."
+    },
+    {
+      "id": "b-sci",
+      "type": "course",
+      "label": "BSc Physics, Chemistry, Maths, Statistics",
+      "note": "3 years. A base for research and teaching."
+    },
+    {
+      "id": "physicist",
+      "type": "career",
+      "label": "Physicist",
+      "note": "Study matter, energy and the universe."
+    },
+    {
+      "id": "astro",
+      "type": "career",
+      "label": "Astrophysicist",
+      "note": "Study stars, planets and galaxies."
+    },
+    {
+      "id": "mathematician",
+      "type": "career",
+      "label": "Mathematician",
+      "note": "Solve deep problems in maths."
+    },
+    {
+      "id": "statistician",
+      "type": "career",
+      "label": "Statistician",
+      "note": "Use numbers to understand the world."
+    },
+    {
+      "id": "quant",
+      "type": "career",
+      "label": "Quantitative analyst",
+      "note": "Use maths to price and manage money risk."
+    },
+    {
+      "id": "chemist",
+      "type": "career",
+      "label": "Chemist",
+      "note": "Study substances and reactions."
+    },
+    {
+      "id": "isro-sci",
+      "type": "career",
+      "label": "Space scientist",
+      "note": "Work on rockets and satellites at space agencies."
+    },
+    {
+      "id": "prof-sci",
+      "type": "career",
+      "label": "Science professor",
+      "note": "Teach and research at a university."
+    },
+    {
+      "id": "land-arch",
+      "type": "career",
+      "label": "Landscape architect",
+      "note": "Design parks and gardens."
+    },
+    {
+      "id": "interior-arch",
+      "type": "career",
+      "label": "Interior architect",
+      "note": "Design the insides of buildings."
+    },
+    {
+      "id": "heritage",
+      "type": "career",
+      "label": "Conservation architect",
+      "note": "Protect old buildings and heritage."
+    },
+    {
+      "id": "consultant",
+      "type": "career",
+      "label": "Management consultant",
+      "note": "Help companies solve business problems."
+    },
+    {
+      "id": "prod-mgr",
+      "type": "career",
+      "label": "Product manager",
+      "note": "Decide what a product should do."
+    },
+    {
+      "id": "ops-mgr",
+      "type": "career",
+      "label": "Operations manager",
+      "note": "Keep a company running smoothly."
+    },
+    {
+      "id": "res-eng",
+      "type": "career",
+      "label": "Research engineer",
+      "note": "Invent new technology in a lab or company."
+    },
+    {
+      "id": "prof-eng",
+      "type": "career",
+      "label": "Engineering professor",
+      "note": "Teach engineering at colleges."
     }
   ],
   "edges": [
@@ -416,6 +992,182 @@
       "specialist"
     ],
     [
+      "neet",
+      "bds"
+    ],
+    [
+      "bds",
+      "dentist"
+    ],
+    [
+      "bds",
+      "ortho"
+    ],
+    [
+      "bds",
+      "oral-surgeon"
+    ],
+    [
+      "mbbs",
+      "gp"
+    ],
+    [
+      "mbbs",
+      "gov-doc"
+    ],
+    [
+      "mbbs",
+      "military-doc"
+    ],
+    [
+      "mbbs",
+      "health-admin"
+    ],
+    [
+      "pgmed",
+      "surgeon"
+    ],
+    [
+      "pgmed",
+      "paed"
+    ],
+    [
+      "pgmed",
+      "cardio"
+    ],
+    [
+      "pgmed",
+      "gyn"
+    ],
+    [
+      "pgmed",
+      "radio"
+    ],
+    [
+      "pgmed",
+      "derm"
+    ],
+    [
+      "pgmed",
+      "psych-doc"
+    ],
+    [
+      "pgmed",
+      "ortho-doc"
+    ],
+    [
+      "pgmed",
+      "anaes"
+    ],
+    [
+      "allied",
+      "physio"
+    ],
+    [
+      "allied",
+      "optom"
+    ],
+    [
+      "allied",
+      "radiographer"
+    ],
+    [
+      "allied",
+      "lab-tech"
+    ],
+    [
+      "allied",
+      "ot-therapist"
+    ],
+    [
+      "allied",
+      "speech"
+    ],
+    [
+      "allied",
+      "paramedic"
+    ],
+    [
+      "allied",
+      "dialysis"
+    ],
+    [
+      "nursing",
+      "nurse-prac"
+    ],
+    [
+      "nursing",
+      "community-nurse"
+    ],
+    [
+      "nursing",
+      "nurse-tutor"
+    ],
+    [
+      "bpharm",
+      "clin-res"
+    ],
+    [
+      "bpharm",
+      "drug-insp"
+    ],
+    [
+      "bpharm",
+      "med-rep"
+    ],
+    [
+      "bpharm",
+      "pharma-sci"
+    ],
+    [
+      "bsc",
+      "biotech"
+    ],
+    [
+      "bsc",
+      "micro"
+    ],
+    [
+      "bsc",
+      "genetics"
+    ],
+    [
+      "bsc",
+      "forensic"
+    ],
+    [
+      "bsc",
+      "food-sci"
+    ],
+    [
+      "bsc",
+      "env-sci"
+    ],
+    [
+      "bsc",
+      "marine-bio"
+    ],
+    [
+      "bsc",
+      "wildlife-bio"
+    ],
+    [
+      "bsc",
+      "dietitian"
+    ],
+    [
+      "bsc",
+      "bio-teacher"
+    ],
+    [
+      "vetc",
+      "wild-vet"
+    ],
+    [
+      "vetc",
+      "livestock-vet"
+    ],
+    [
       "jee",
       "btech"
     ],
@@ -506,6 +1258,250 @@
     [
       "mba",
       "engineer"
+    ],
+    [
+      "btech",
+      "b-cs"
+    ],
+    [
+      "btech",
+      "b-mech"
+    ],
+    [
+      "btech",
+      "b-civil"
+    ],
+    [
+      "btech",
+      "b-elec"
+    ],
+    [
+      "btech",
+      "b-chem"
+    ],
+    [
+      "b-cs",
+      "software-dev"
+    ],
+    [
+      "b-cs",
+      "ai-eng"
+    ],
+    [
+      "b-cs",
+      "data-sci"
+    ],
+    [
+      "b-cs",
+      "cyber"
+    ],
+    [
+      "b-cs",
+      "cloud"
+    ],
+    [
+      "b-cs",
+      "game-dev"
+    ],
+    [
+      "b-cs",
+      "robot"
+    ],
+    [
+      "b-cs",
+      "iot"
+    ],
+    [
+      "b-cs",
+      "blockchain"
+    ],
+    [
+      "b-cs",
+      "qa"
+    ],
+    [
+      "b-mech",
+      "mech-eng"
+    ],
+    [
+      "b-mech",
+      "auto-eng"
+    ],
+    [
+      "b-mech",
+      "aero-eng"
+    ],
+    [
+      "b-mech",
+      "mfg-eng"
+    ],
+    [
+      "b-mech",
+      "marine-eng"
+    ],
+    [
+      "b-mech",
+      "energy-eng"
+    ],
+    [
+      "b-civil",
+      "civil-eng"
+    ],
+    [
+      "b-civil",
+      "struct-eng"
+    ],
+    [
+      "b-civil",
+      "env-eng"
+    ],
+    [
+      "b-civil",
+      "urban-plan"
+    ],
+    [
+      "b-civil",
+      "surveyor"
+    ],
+    [
+      "b-elec",
+      "elec-eng"
+    ],
+    [
+      "b-elec",
+      "ece-eng"
+    ],
+    [
+      "b-elec",
+      "telecom"
+    ],
+    [
+      "b-elec",
+      "power-eng"
+    ],
+    [
+      "b-elec",
+      "ev-eng"
+    ],
+    [
+      "b-chem",
+      "chem-eng"
+    ],
+    [
+      "b-chem",
+      "biotech"
+    ],
+    [
+      "b-chem",
+      "materials"
+    ],
+    [
+      "b-chem",
+      "food-tech"
+    ],
+    [
+      "b-chem",
+      "petro-eng"
+    ],
+    [
+      "msbs",
+      "b-sci"
+    ],
+    [
+      "mathcs",
+      "physicist"
+    ],
+    [
+      "b-sci",
+      "physicist"
+    ],
+    [
+      "mathcs",
+      "astro"
+    ],
+    [
+      "b-sci",
+      "astro"
+    ],
+    [
+      "mathcs",
+      "mathematician"
+    ],
+    [
+      "b-sci",
+      "mathematician"
+    ],
+    [
+      "mathcs",
+      "statistician"
+    ],
+    [
+      "b-sci",
+      "statistician"
+    ],
+    [
+      "mathcs",
+      "quant"
+    ],
+    [
+      "b-sci",
+      "quant"
+    ],
+    [
+      "mathcs",
+      "chemist"
+    ],
+    [
+      "b-sci",
+      "chemist"
+    ],
+    [
+      "mathcs",
+      "isro-sci"
+    ],
+    [
+      "b-sci",
+      "isro-sci"
+    ],
+    [
+      "mathcs",
+      "prof-sci"
+    ],
+    [
+      "b-sci",
+      "prof-sci"
+    ],
+    [
+      "barch",
+      "land-arch"
+    ],
+    [
+      "barch",
+      "interior-arch"
+    ],
+    [
+      "barch",
+      "heritage"
+    ],
+    [
+      "mba",
+      "consultant"
+    ],
+    [
+      "mba",
+      "prod-mgr"
+    ],
+    [
+      "mba",
+      "ops-mgr"
+    ],
+    [
+      "mtech",
+      "res-eng"
+    ],
+    [
+      "mtech",
+      "prof-eng"
     ]
   ]
 }

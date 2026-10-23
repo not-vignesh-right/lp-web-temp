@@ -174,6 +174,270 @@
       "type": "career",
       "label": "Specialist doctor",
       "note": "Heart, bones, children, skin and many more fields."
+    },
+    {
+      "id": "bds",
+      "type": "course",
+      "label": "BDS (dentistry, 5 years)",
+      "note": "Study teeth and mouth care. Admission by NEET-UG."
+    },
+    {
+      "id": "dentist",
+      "type": "career",
+      "label": "Dentist",
+      "note": "Care for teeth, gums and smiles."
+    },
+    {
+      "id": "ortho",
+      "type": "career",
+      "label": "Orthodontist",
+      "note": "Straighten teeth with braces."
+    },
+    {
+      "id": "oral-surgeon",
+      "type": "career",
+      "label": "Oral surgeon",
+      "note": "Do surgery on the mouth and jaw."
+    },
+    {
+      "id": "gp",
+      "type": "career",
+      "label": "General physician",
+      "note": "First doctor to see for many illnesses."
+    },
+    {
+      "id": "gov-doc",
+      "type": "career",
+      "label": "Government medical officer",
+      "note": "Serve in government hospitals and health centres."
+    },
+    {
+      "id": "military-doc",
+      "type": "career",
+      "label": "Armed forces doctor",
+      "note": "Treat soldiers and families in the forces."
+    },
+    {
+      "id": "health-admin",
+      "type": "career",
+      "label": "Hospital administrator",
+      "note": "Run a hospital after more study."
+    },
+    {
+      "id": "surgeon",
+      "type": "career",
+      "label": "Surgeon",
+      "note": "Operate to treat injuries and disease."
+    },
+    {
+      "id": "paed",
+      "type": "career",
+      "label": "Paediatrician",
+      "note": "Doctor for children."
+    },
+    {
+      "id": "cardio",
+      "type": "career",
+      "label": "Cardiologist",
+      "note": "Heart doctor."
+    },
+    {
+      "id": "gyn",
+      "type": "career",
+      "label": "Gynaecologist",
+      "note": "Doctor for women's health and childbirth."
+    },
+    {
+      "id": "radio",
+      "type": "career",
+      "label": "Radiologist",
+      "note": "Read scans like X-ray and MRI."
+    },
+    {
+      "id": "derm",
+      "type": "career",
+      "label": "Dermatologist",
+      "note": "Skin, hair and nail doctor."
+    },
+    {
+      "id": "psych-doc",
+      "type": "career",
+      "label": "Psychiatrist",
+      "note": "Doctor for mental health."
+    },
+    {
+      "id": "ortho-doc",
+      "type": "career",
+      "label": "Orthopaedic surgeon",
+      "note": "Bones and joints doctor."
+    },
+    {
+      "id": "anaes",
+      "type": "career",
+      "label": "Anaesthetist",
+      "note": "Keeps patients safe during surgery."
+    },
+    {
+      "id": "physio",
+      "type": "career",
+      "label": "Physiotherapist",
+      "note": "Help people recover movement."
+    },
+    {
+      "id": "optom",
+      "type": "career",
+      "label": "Optometrist",
+      "note": "Test eyes and prescribe glasses."
+    },
+    {
+      "id": "radiographer",
+      "type": "career",
+      "label": "Radiographer",
+      "note": "Take X-rays and scans."
+    },
+    {
+      "id": "lab-tech",
+      "type": "career",
+      "label": "Medical lab technologist",
+      "note": "Run tests that help diagnose illness."
+    },
+    {
+      "id": "ot-therapist",
+      "type": "career",
+      "label": "Occupational therapist",
+      "note": "Help people do daily tasks again."
+    },
+    {
+      "id": "speech",
+      "type": "career",
+      "label": "Speech and hearing therapist",
+      "note": "Help people speak and hear better."
+    },
+    {
+      "id": "paramedic",
+      "type": "career",
+      "label": "Paramedic",
+      "note": "Give emergency care on the road."
+    },
+    {
+      "id": "dialysis",
+      "type": "career",
+      "label": "Dialysis technician",
+      "note": "Run kidney dialysis machines."
+    },
+    {
+      "id": "nurse-prac",
+      "type": "career",
+      "label": "Nurse practitioner",
+      "note": "Advanced nurse who can do more patient care."
+    },
+    {
+      "id": "community-nurse",
+      "type": "career",
+      "label": "Community health nurse",
+      "note": "Bring health care to villages and schools."
+    },
+    {
+      "id": "nurse-tutor",
+      "type": "career",
+      "label": "Nursing teacher",
+      "note": "Train new nurses."
+    },
+    {
+      "id": "clin-res",
+      "type": "career",
+      "label": "Clinical research associate",
+      "note": "Run trials that test new medicines."
+    },
+    {
+      "id": "drug-insp",
+      "type": "career",
+      "label": "Drug inspector",
+      "note": "Check medicines for safety for the government."
+    },
+    {
+      "id": "med-rep",
+      "type": "career",
+      "label": "Medical representative",
+      "note": "Tell doctors about new medicines."
+    },
+    {
+      "id": "pharma-sci",
+      "type": "career",
+      "label": "Pharmaceutical scientist",
+      "note": "Invent and improve medicines."
+    },
+    {
+      "id": "biotech",
+      "type": "career",
+      "label": "Biotechnologist",
+      "note": "Use biology to make medicines, food and fuel."
+    },
+    {
+      "id": "micro",
+      "type": "career",
+      "label": "Microbiologist",
+      "note": "Study tiny living things like bacteria."
+    },
+    {
+      "id": "genetics",
+      "type": "career",
+      "label": "Geneticist",
+      "note": "Study genes and inherited diseases."
+    },
+    {
+      "id": "forensic",
+      "type": "career",
+      "label": "Forensic scientist",
+      "note": "Use science to solve crimes."
+    },
+    {
+      "id": "food-sci",
+      "type": "career",
+      "label": "Food scientist",
+      "note": "Make food safe and healthy."
+    },
+    {
+      "id": "env-sci",
+      "type": "career",
+      "label": "Environmental scientist",
+      "note": "Protect nature and fight pollution."
+    },
+    {
+      "id": "marine-bio",
+      "type": "career",
+      "label": "Marine biologist",
+      "note": "Study life in the sea."
+    },
+    {
+      "id": "wildlife-bio",
+      "type": "career",
+      "label": "Wildlife biologist",
+      "note": "Study and protect animals in the wild."
+    },
+    {
+      "id": "dietitian",
+      "type": "career",
+      "label": "Dietitian or nutritionist",
+      "note": "Plan healthy food for people."
+    },
+    {
+      "id": "bio-teacher",
+      "type": "career",
+      "label": "Biology teacher",
+      "note": "Teach biology in school or college."
+    },
+    {
+      "id": "wild-vet",
+      "type": "career",
+      "label": "Wildlife veterinarian",
+      "note": "Treat animals in forests and zoos."
+    },
+    {
+      "id": "livestock-vet",
+      "type": "career",
+      "label": "Livestock veterinarian",
+      "note": "Care for farm animals and dairy."
     }
   ],
   "edges": [
@@ -268,6 +532,182 @@
     [
       "pgmed",
       "specialist"
+    ],
+    [
+      "neet",
+      "bds"
+    ],
+    [
+      "bds",
+      "dentist"
+    ],
+    [
+      "bds",
+      "ortho"
+    ],
+    [
+      "bds",
+      "oral-surgeon"
+    ],
+    [
+      "mbbs",
+      "gp"
+    ],
+    [
+      "mbbs",
+      "gov-doc"
+    ],
+    [
+      "mbbs",
+      "military-doc"
+    ],
+    [
+      "mbbs",
+      "health-admin"
+    ],
+    [
+      "pgmed",
+      "surgeon"
+    ],
+    [
+      "pgmed",
+      "paed"
+    ],
+    [
+      "pgmed",
+      "cardio"
+    ],
+    [
+      "pgmed",
+      "gyn"
+    ],
+    [
+      "pgmed",
+      "radio"
+    ],
+    [
+      "pgmed",
+      "derm"
+    ],
+    [
+      "pgmed",
+      "psych-doc"
+    ],
+    [
+      "pgmed",
+      "ortho-doc"
+    ],
+    [
+      "pgmed",
+      "anaes"
+    ],
+    [
+      "allied",
+      "physio"
+    ],
+    [
+      "allied",
+      "optom"
+    ],
+    [
+      "allied",
+      "radiographer"
+    ],
+    [
+      "allied",
+      "lab-tech"
+    ],
+    [
+      "allied",
+      "ot-therapist"
+    ],
+    [
+      "allied",
+      "speech"
+    ],
+    [
+      "allied",
+      "paramedic"
+    ],
+    [
+      "allied",
+      "dialysis"
+    ],
+    [
+      "nursing",
+      "nurse-prac"
+    ],
+    [
+      "nursing",
+      "community-nurse"
+    ],
+    [
+      "nursing",
+      "nurse-tutor"
+    ],
+    [
+      "bpharm",
+      "clin-res"
+    ],
+    [
+      "bpharm",
+      "drug-insp"
+    ],
+    [
+      "bpharm",
+      "med-rep"
+    ],
+    [
+      "bpharm",
+      "pharma-sci"
+    ],
+    [
+      "bsc",
+      "biotech"
+    ],
+    [
+      "bsc",
+      "micro"
+    ],
+    [
+      "bsc",
+      "genetics"
+    ],
+    [
+      "bsc",
+      "forensic"
+    ],
+    [
+      "bsc",
+      "food-sci"
+    ],
+    [
+      "bsc",
+      "env-sci"
+    ],
+    [
+      "bsc",
+      "marine-bio"
+    ],
+    [
+      "bsc",
+      "wildlife-bio"
+    ],
+    [
+      "bsc",
+      "dietitian"
+    ],
+    [
+      "bsc",
+      "bio-teacher"
+    ],
+    [
+      "vetc",
+      "wild-vet"
+    ],
+    [
+      "vetc",
+      "livestock-vet"
     ]
   ]
 }
