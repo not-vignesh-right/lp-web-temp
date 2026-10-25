@@ -1,0 +1,2143 @@
+{
+  "id": "jobs",
+  "title": "Jobs and Services",
+  "intro": "Government jobs, trades, media, care work and many more ways to earn a living. Many need no long degree.",
+  "nodes": [
+    {
+      "id": "sscgl",
+      "type": "exam",
+      "label": "SSC CGL",
+      "exam": "ssc-cgl"
+    },
+    {
+      "id": "sscchsl",
+      "type": "exam",
+      "label": "SSC CHSL",
+      "exam": "ssc-chsl"
+    },
+    {
+      "id": "rrbntpc",
+      "type": "exam",
+      "label": "RRB NTPC",
+      "exam": "rrb-ntpc"
+    },
+    {
+      "id": "rrbd",
+      "type": "exam",
+      "label": "RRB Group D",
+      "exam": "rrb-groupd"
+    },
+    {
+      "id": "rrbalp",
+      "type": "exam",
+      "label": "RRB ALP (train driver)",
+      "exam": "rrb-alp"
+    },
+    {
+      "id": "ibpspo",
+      "type": "exam",
+      "label": "IBPS PO",
+      "exam": "ibps-po"
+    },
+    {
+      "id": "ibpsclerk",
+      "type": "exam",
+      "label": "IBPS Clerk",
+      "exam": "ibps-clerk"
+    },
+    {
+      "id": "police",
+      "type": "exam",
+      "label": "Karnataka Police recruitment",
+      "exam": "ksp-police"
+    },
+    {
+      "id": "post",
+      "type": "exam",
+      "label": "India Post GDS",
+      "exam": "india-post"
+    },
+    {
+      "id": "tax-insp",
+      "type": "career",
+      "label": "Income tax inspector",
+      "note": "Check tax returns and catch tax cheats."
+    },
+    {
+      "id": "aso",
+      "type": "career",
+      "label": "Assistant section officer",
+      "note": "Work in central government offices."
+    },
+    {
+      "id": "gov-auditor",
+      "type": "career",
+      "label": "Government auditor",
+      "note": "Check government accounts."
+    },
+    {
+      "id": "excise",
+      "type": "career",
+      "label": "Excise and customs inspector",
+      "note": "Check goods and tax at borders and ports."
+    },
+    {
+      "id": "lda",
+      "type": "career",
+      "label": "Government clerk",
+      "note": "Handle files and records in an office."
+    },
+    {
+      "id": "postal-asst",
+      "type": "career",
+      "label": "Postal assistant",
+      "note": "Work at the post office counter."
+    },
+    {
+      "id": "deo",
+      "type": "career",
+      "label": "Data entry operator (government)",
+      "note": "Type and manage records on computers."
+    },
+    {
+      "id": "stn-master",
+      "type": "career",
+      "label": "Railway station master",
+      "note": "Run a railway station and train movement."
+    },
+    {
+      "id": "goods-guard",
+      "type": "career",
+      "label": "Goods guard",
+      "note": "Look after goods trains on the move."
+    },
+    {
+      "id": "tte",
+      "type": "career",
+      "label": "Ticket examiner",
+      "note": "Check tickets on trains."
+    },
+    {
+      "id": "rail-clerk",
+      "type": "career",
+      "label": "Railway clerk",
+      "note": "Handle tickets and records in railways."
+    },
+    {
+      "id": "track-maint",
+      "type": "career",
+      "label": "Track maintainer",
+      "note": "Keep railway tracks safe."
+    },
+    {
+      "id": "rail-helper",
+      "type": "career",
+      "label": "Railway helper",
+      "note": "Help in workshops, signals and stations."
+    },
+    {
+      "id": "pointsman",
+      "type": "career",
+      "label": "Pointsman",
+      "note": "Set the points that guide trains."
+    },
+    {
+      "id": "loco-pilot",
+      "type": "career",
+      "label": "Loco pilot (train driver)",
+      "note": "Drive trains safely."
+    },
+    {
+      "id": "technician-rail",
+      "type": "career",
+      "label": "Railway technician",
+      "note": "Fix and service trains and tracks."
+    },
+    {
+      "id": "bank-po",
+      "type": "career",
+      "label": "Bank probationary officer",
+      "note": "Start as an officer in a public sector bank."
+    },
+    {
+      "id": "branch-mgr",
+      "type": "career",
+      "label": "Bank branch manager",
+      "note": "Lead a bank branch."
+    },
+    {
+      "id": "bank-clerk-j",
+      "type": "career",
+      "label": "Bank clerk",
+      "note": "Serve customers at a bank counter."
+    },
+    {
+      "id": "constable",
+      "type": "career",
+      "label": "Police constable",
+      "note": "Keep law and order on the ground."
+    },
+    {
+      "id": "police-si-j",
+      "type": "career",
+      "label": "Police sub-inspector",
+      "note": "Lead a police station team."
+    },
+    {
+      "id": "traffic-police",
+      "type": "career",
+      "label": "Traffic police",
+      "note": "Manage roads and traffic."
+    },
+    {
+      "id": "postman",
+      "type": "career",
+      "label": "Postman (Gramin Dak Sevak)",
+      "note": "Deliver letters and parcels in villages."
+    },
+    {
+      "id": "branch-pm",
+      "type": "career",
+      "label": "Branch postmaster",
+      "note": "Run a village post office."
+    },
+    {
+      "id": "bca-j",
+      "type": "course",
+      "label": "BCA (3 years)",
+      "note": "A computer degree after Class 12."
+    },
+    {
+      "id": "itdip",
+      "type": "course",
+      "label": "Diploma in IT or Computer Science",
+      "note": "3 years after Class 10."
+    },
+    {
+      "id": "certs",
+      "type": "course",
+      "label": "Short online and certificate courses",
+      "note": "Learn a digital skill in weeks or months."
+    },
+    {
+      "id": "web-dev",
+      "type": "career",
+      "label": "Web developer",
+      "note": "Build websites."
+    },
+    {
+      "id": "app-dev",
+      "type": "career",
+      "label": "Mobile app developer",
+      "note": "Build apps for phones."
+    },
+    {
+      "id": "it-support",
+      "type": "career",
+      "label": "IT support engineer",
+      "note": "Fix computer and network problems."
+    },
+    {
+      "id": "net-admin",
+      "type": "career",
+      "label": "Network administrator",
+      "note": "Keep office networks running."
+    },
+    {
+      "id": "sys-admin",
+      "type": "career",
+      "label": "System administrator",
+      "note": "Manage servers and computers."
+    },
+    {
+      "id": "dba",
+      "type": "career",
+      "label": "Database administrator",
+      "note": "Look after company data."
+    },
+    {
+      "id": "it-trainer",
+      "type": "career",
+      "label": "IT trainer",
+      "note": "Teach computer skills."
+    },
+    {
+      "id": "seo",
+      "type": "career",
+      "label": "SEO specialist",
+      "note": "Help websites show up in search."
+    },
+    {
+      "id": "digital-artist",
+      "type": "career",
+      "label": "Digital artist",
+      "note": "Make art on computers and tablets."
+    },
+    {
+      "id": "tech-writer",
+      "type": "career",
+      "label": "Technical writer",
+      "note": "Write clear guides and manuals."
+    },
+    {
+      "id": "bpo",
+      "type": "career",
+      "label": "Customer support executive",
+      "note": "Help customers by phone, chat or email."
+    },
+    {
+      "id": "gis",
+      "type": "career",
+      "label": "GIS and mapping analyst",
+      "note": "Work with digital maps and location data."
+    },
+    {
+      "id": "cad-tech",
+      "type": "career",
+      "label": "CAD technician",
+      "note": "Draw designs on a computer."
+    },
+    {
+      "id": "ai-tools",
+      "type": "career",
+      "label": "AI tools specialist",
+      "note": "Use AI tools to help teams work faster."
+    },
+    {
+      "id": "it-pm",
+      "type": "career",
+      "label": "IT project manager",
+      "note": "Lead software projects."
+    },
+    {
+      "id": "bizstart",
+      "type": "course",
+      "label": "Start small: a shop or trading business",
+      "note": "Learn by doing, with family or a mentor."
+    },
+    {
+      "id": "retail-course",
+      "type": "course",
+      "label": "Retail and sales courses",
+      "note": "Short courses on selling and customers."
+    },
+    {
+      "id": "realest",
+      "type": "course",
+      "label": "Real estate and finance courses",
+      "note": "Courses and licences for property and money services."
+    },
+    {
+      "id": "shop-owner",
+      "type": "career",
+      "label": "Shop owner",
+      "note": "Run your own shop."
+    },
+    {
+      "id": "retail-mgr",
+      "type": "career",
+      "label": "Retail store manager",
+      "note": "Lead a store team."
+    },
+    {
+      "id": "franchise",
+      "type": "career",
+      "label": "Franchise owner",
+      "note": "Run a branch of a known brand."
+    },
+    {
+      "id": "trader",
+      "type": "career",
+      "label": "Wholesale trader",
+      "note": "Buy and sell goods in bulk."
+    },
+    {
+      "id": "online-seller",
+      "type": "career",
+      "label": "Online seller",
+      "note": "Sell products on online marketplaces."
+    },
+    {
+      "id": "sales-exec",
+      "type": "career",
+      "label": "Sales executive",
+      "note": "Sell products and services."
+    },
+    {
+      "id": "bde",
+      "type": "career",
+      "label": "Business development executive",
+      "note": "Find new customers for a company."
+    },
+    {
+      "id": "crm",
+      "type": "career",
+      "label": "Customer relationship manager",
+      "note": "Keep customers happy."
+    },
+    {
+      "id": "import-export",
+      "type": "career",
+      "label": "Import-export manager",
+      "note": "Buy and sell goods across countries."
+    },
+    {
+      "id": "procure",
+      "type": "career",
+      "label": "Procurement officer",
+      "note": "Buy what a company needs."
+    },
+    {
+      "id": "warehouse",
+      "type": "career",
+      "label": "Warehouse manager",
+      "note": "Run a storage and delivery centre."
+    },
+    {
+      "id": "realtor",
+      "type": "career",
+      "label": "Real estate agent",
+      "note": "Help people buy, sell and rent property."
+    },
+    {
+      "id": "valuer",
+      "type": "career",
+      "label": "Property valuer",
+      "note": "Work out what a property is worth."
+    },
+    {
+      "id": "stockbroker",
+      "type": "career",
+      "label": "Stock broker",
+      "note": "Help clients invest in shares. Needs market certification."
+    },
+    {
+      "id": "mf-dist",
+      "type": "career",
+      "label": "Mutual fund distributor",
+      "note": "Help families invest in mutual funds."
+    },
+    {
+      "id": "ins-agent",
+      "type": "career",
+      "label": "Insurance agent",
+      "note": "Help families pick insurance."
+    },
+    {
+      "id": "loan-officer",
+      "type": "career",
+      "label": "Loan officer",
+      "note": "Help people get loans."
+    },
+    {
+      "id": "licence",
+      "type": "course",
+      "label": "Driving licence and training",
+      "note": "Learn to drive safely and get the right licence."
+    },
+    {
+      "id": "logi-dip",
+      "type": "course",
+      "label": "Logistics and supply chain diploma",
+      "note": "Learn how goods move from place to place."
+    },
+    {
+      "id": "port-course",
+      "type": "course",
+      "label": "Port, shipping and customs courses",
+      "note": "Short courses for ports and trade."
+    },
+    {
+      "id": "driver",
+      "type": "career",
+      "label": "Professional driver",
+      "note": "Drive cars, vans, buses or trucks."
+    },
+    {
+      "id": "cab-driver",
+      "type": "career",
+      "label": "Cab or auto driver",
+      "note": "Drive passengers around the city."
+    },
+    {
+      "id": "delivery",
+      "type": "career",
+      "label": "Delivery partner",
+      "note": "Deliver food and parcels."
+    },
+    {
+      "id": "fleet-owner",
+      "type": "career",
+      "label": "Fleet owner",
+      "note": "Own and run vehicles for hire."
+    },
+    {
+      "id": "bus-conductor",
+      "type": "career",
+      "label": "Bus conductor or driver (state transport)",
+      "note": "Serve on public buses."
+    },
+    {
+      "id": "logi-mgr",
+      "type": "career",
+      "label": "Logistics manager",
+      "note": "Plan how goods move."
+    },
+    {
+      "id": "courier",
+      "type": "career",
+      "label": "Courier executive",
+      "note": "Handle parcel pickup and delivery."
+    },
+    {
+      "id": "forklift",
+      "type": "career",
+      "label": "Forklift and warehouse operator",
+      "note": "Move goods in a warehouse."
+    },
+    {
+      "id": "fleet-mgr",
+      "type": "career",
+      "label": "Fleet manager",
+      "note": "Look after a company's vehicles."
+    },
+    {
+      "id": "cha",
+      "type": "career",
+      "label": "Customs house agent",
+      "note": "Help traders clear goods through customs."
+    },
+    {
+      "id": "port-worker",
+      "type": "career",
+      "label": "Port and dock worker",
+      "note": "Load and unload ships."
+    },
+    {
+      "id": "ship-broker",
+      "type": "career",
+      "label": "Shipping broker",
+      "note": "Help find ships for cargo."
+    },
+    {
+      "id": "iti-build",
+      "type": "course",
+      "label": "ITI in construction trades",
+      "note": "Learn building skills after Class 8 or 10."
+    },
+    {
+      "id": "civdip",
+      "type": "course",
+      "label": "Diploma in Civil Engineering",
+      "note": "3 years after Class 10."
+    },
+    {
+      "id": "mason",
+      "type": "career",
+      "label": "Mason",
+      "note": "Build walls, floors and structures."
+    },
+    {
+      "id": "bar-bender",
+      "type": "career",
+      "label": "Bar bender and steel fixer",
+      "note": "Prepare steel for strong concrete."
+    },
+    {
+      "id": "painter-h",
+      "type": "career",
+      "label": "House painter",
+      "note": "Paint homes and buildings."
+    },
+    {
+      "id": "tile-fitter",
+      "type": "career",
+      "label": "Tile and floor fitter",
+      "note": "Lay tiles and floors."
+    },
+    {
+      "id": "crane-op",
+      "type": "career",
+      "label": "Crane operator",
+      "note": "Lift heavy loads on sites."
+    },
+    {
+      "id": "glass-fit",
+      "type": "career",
+      "label": "Glass and aluminium fitter",
+      "note": "Fit windows and glass fronts."
+    },
+    {
+      "id": "site-eng",
+      "type": "career",
+      "label": "Site engineer",
+      "note": "Run work on a building site."
+    },
+    {
+      "id": "qs",
+      "type": "career",
+      "label": "Quantity surveyor",
+      "note": "Work out materials and costs for building."
+    },
+    {
+      "id": "contractor",
+      "type": "career",
+      "label": "Building contractor",
+      "note": "Win and run building projects."
+    },
+    {
+      "id": "draught-arch",
+      "type": "career",
+      "label": "Architectural draughtsperson",
+      "note": "Draw building plans."
+    },
+    {
+      "id": "bldg-insp",
+      "type": "career",
+      "label": "Building inspector",
+      "note": "Check buildings follow the rules."
+    },
+    {
+      "id": "media-dip",
+      "type": "course",
+      "label": "Media, film or music courses",
+      "note": "Diplomas and degrees in film, sound and journalism."
+    },
+    {
+      "id": "writing",
+      "type": "course",
+      "label": "Writing and language practice",
+      "note": "Write a lot and read a lot."
+    },
+    {
+      "id": "art-class",
+      "type": "course",
+      "label": "Art and craft classes",
+      "note": "Learn drawing, painting and crafts."
+    },
+    {
+      "id": "scriptwriter",
+      "type": "career",
+      "label": "Scriptwriter",
+      "note": "Write stories for films, shows and ads."
+    },
+    {
+      "id": "author",
+      "type": "career",
+      "label": "Author or novelist",
+      "note": "Write books."
+    },
+    {
+      "id": "poet",
+      "type": "career",
+      "label": "Poet or lyricist",
+      "note": "Write poems and song words."
+    },
+    {
+      "id": "book-editor",
+      "type": "career",
+      "label": "Book editor",
+      "note": "Improve books before they are printed."
+    },
+    {
+      "id": "proofreader",
+      "type": "career",
+      "label": "Proofreader",
+      "note": "Fix mistakes in written work."
+    },
+    {
+      "id": "blogger",
+      "type": "career",
+      "label": "Blogger or vlogger",
+      "note": "Share stories and ideas online."
+    },
+    {
+      "id": "podcaster",
+      "type": "career",
+      "label": "Podcaster",
+      "note": "Host audio shows online."
+    },
+    {
+      "id": "cinematog",
+      "type": "career",
+      "label": "Cinematographer",
+      "note": "Shoot films with the camera."
+    },
+    {
+      "id": "vfx",
+      "type": "career",
+      "label": "VFX artist",
+      "note": "Make special effects for films."
+    },
+    {
+      "id": "voice",
+      "type": "career",
+      "label": "Voice artist",
+      "note": "Use your voice for ads, films and games."
+    },
+    {
+      "id": "dj",
+      "type": "career",
+      "label": "DJ and music producer",
+      "note": "Mix and make music."
+    },
+    {
+      "id": "rj",
+      "type": "career",
+      "label": "Radio jockey",
+      "note": "Host radio shows."
+    },
+    {
+      "id": "standup",
+      "type": "career",
+      "label": "Stand-up comedian",
+      "note": "Make people laugh on stage."
+    },
+    {
+      "id": "subtitle",
+      "type": "career",
+      "label": "Subtitle and dubbing artist",
+      "note": "Bring films to new languages."
+    },
+    {
+      "id": "cartoonist",
+      "type": "career",
+      "label": "Cartoonist",
+      "note": "Draw cartoons and comics."
+    },
+    {
+      "id": "mural",
+      "type": "career",
+      "label": "Mural and street artist",
+      "note": "Paint big art in public places."
+    },
+    {
+      "id": "calligrapher",
+      "type": "career",
+      "label": "Calligrapher",
+      "note": "Create beautiful lettering."
+    },
+    {
+      "id": "gnm",
+      "type": "course",
+      "label": "GNM or ANM nursing diploma",
+      "note": "A nursing diploma after Class 12 (GNM) or Class 10 or 12 (ANM). Check the college rules."
+    },
+    {
+      "id": "deled",
+      "type": "course",
+      "label": "D.El.Ed (primary teaching)",
+      "note": "A 2-year diploma to teach in primary schools."
+    },
+    {
+      "id": "care-course",
+      "type": "course",
+      "label": "Caregiver and child care courses",
+      "note": "Short courses on caring for children and elders."
+    },
+    {
+      "id": "special-course",
+      "type": "course",
+      "label": "Special education course",
+      "note": "Learn to teach children with special needs."
+    },
+    {
+      "id": "anm",
+      "type": "career",
+      "label": "Auxiliary nurse midwife",
+      "note": "Give care in villages and health centres."
+    },
+    {
+      "id": "staff-nurse",
+      "type": "career",
+      "label": "Staff nurse",
+      "note": "Care for patients in hospitals."
+    },
+    {
+      "id": "prim-teacher-j",
+      "type": "career",
+      "label": "Primary school teacher",
+      "note": "Teach young children."
+    },
+    {
+      "id": "anganwadi",
+      "type": "career",
+      "label": "Anganwadi worker",
+      "note": "Care for young children and mothers in villages."
+    },
+    {
+      "id": "elder-care",
+      "type": "career",
+      "label": "Elder care assistant",
+      "note": "Help older people at home or in care homes."
+    },
+    {
+      "id": "nanny",
+      "type": "career",
+      "label": "Child care assistant",
+      "note": "Look after young children."
+    },
+    {
+      "id": "home-nurse",
+      "type": "career",
+      "label": "Home health aide",
+      "note": "Help patients recover at home."
+    },
+    {
+      "id": "special-edu",
+      "type": "career",
+      "label": "Special educator",
+      "note": "Teach children with special needs."
+    },
+    {
+      "id": "early-int",
+      "type": "career",
+      "label": "Early intervention worker",
+      "note": "Help very young children with delays."
+    },
+    {
+      "id": "mining-dip",
+      "type": "course",
+      "label": "Diploma in Mining Engineering",
+      "note": "3 years after Class 10."
+    },
+    {
+      "id": "solar-course",
+      "type": "course",
+      "label": "Solar and wind technician courses",
+      "note": "Short courses on clean power."
+    },
+    {
+      "id": "env-course",
+      "type": "course",
+      "label": "Environment and waste management courses",
+      "note": "Courses on keeping air, water and cities clean."
+    },
+    {
+      "id": "mining-eng",
+      "type": "career",
+      "label": "Mining engineer",
+      "note": "Plan safe ways to take minerals from the ground."
+    },
+    {
+      "id": "geologist",
+      "type": "career",
+      "label": "Geologist",
+      "note": "Study rocks and the earth."
+    },
+    {
+      "id": "mine-surveyor",
+      "type": "career",
+      "label": "Mine surveyor",
+      "note": "Measure and map mines."
+    },
+    {
+      "id": "solar-tech",
+      "type": "career",
+      "label": "Solar technician",
+      "note": "Install and fix solar panels."
+    },
+    {
+      "id": "wind-tech",
+      "type": "career",
+      "label": "Wind turbine technician",
+      "note": "Look after wind turbines."
+    },
+    {
+      "id": "energy-auditor",
+      "type": "career",
+      "label": "Energy auditor",
+      "note": "Find ways to save electricity."
+    },
+    {
+      "id": "waste-mgr",
+      "type": "career",
+      "label": "Waste management officer",
+      "note": "Plan how a city handles waste."
+    },
+    {
+      "id": "water-op",
+      "type": "career",
+      "label": "Water treatment operator",
+      "note": "Keep drinking water clean."
+    },
+    {
+      "id": "pollution",
+      "type": "career",
+      "label": "Pollution control officer",
+      "note": "Check that factories keep air and water clean."
+    },
+    {
+      "id": "recycler",
+      "type": "career",
+      "label": "Recycling entrepreneur",
+      "note": "Start a business that reuses waste."
+    },
+    {
+      "id": "craft-train",
+      "type": "course",
+      "label": "Craft and handloom training",
+      "note": "Learn a traditional craft from a master or a training centre."
+    },
+    {
+      "id": "garment-course",
+      "type": "course",
+      "label": "Tailoring and garment courses",
+      "note": "Learn to stitch and make clothes."
+    },
+    {
+      "id": "weaver",
+      "type": "career",
+      "label": "Handloom weaver",
+      "note": "Weave cloth by hand."
+    },
+    {
+      "id": "potter",
+      "type": "career",
+      "label": "Potter",
+      "note": "Make pots and clay art."
+    },
+    {
+      "id": "silk",
+      "type": "career",
+      "label": "Silk worker (sericulture)",
+      "note": "Grow silkworms and make silk."
+    },
+    {
+      "id": "toy-maker",
+      "type": "career",
+      "label": "Wooden toy maker",
+      "note": "Make toys, like Channapatna toys."
+    },
+    {
+      "id": "leather",
+      "type": "career",
+      "label": "Leather craftsperson",
+      "note": "Make bags, shoes and belts."
+    },
+    {
+      "id": "jeweller",
+      "type": "career",
+      "label": "Jeweller and goldsmith",
+      "note": "Make and fix jewellery."
+    },
+    {
+      "id": "embroider",
+      "type": "career",
+      "label": "Embroidery artist",
+      "note": "Decorate cloth with thread."
+    },
+    {
+      "id": "tailor-j",
+      "type": "career",
+      "label": "Tailor",
+      "note": "Stitch clothes."
+    },
+    {
+      "id": "garment-sup",
+      "type": "career",
+      "label": "Garment factory supervisor",
+      "note": "Lead a team in a clothes factory."
+    },
+    {
+      "id": "boutique",
+      "type": "career",
+      "label": "Boutique owner",
+      "note": "Run your own clothing shop."
+    },
+    {
+      "id": "food-course",
+      "type": "course",
+      "label": "Cooking and food business courses",
+      "note": "Learn to cook and run a food business."
+    },
+    {
+      "id": "beauty-course",
+      "type": "course",
+      "label": "Beauty and wellness courses",
+      "note": "Short courses on hair, skin and wellness."
+    },
+    {
+      "id": "repair-course",
+      "type": "course",
+      "label": "Repair and service skills",
+      "note": "Learn to fix things around homes and offices."
+    },
+    {
+      "id": "baker",
+      "type": "career",
+      "label": "Baker or pastry chef",
+      "note": "Bake bread, cakes and sweets."
+    },
+    {
+      "id": "cloud-kitchen",
+      "type": "career",
+      "label": "Cloud kitchen owner",
+      "note": "Cook food only for delivery."
+    },
+    {
+      "id": "food-truck",
+      "type": "career",
+      "label": "Food truck or stall owner",
+      "note": "Sell food on the street."
+    },
+    {
+      "id": "barista",
+      "type": "career",
+      "label": "Barista",
+      "note": "Make coffee and drinks."
+    },
+    {
+      "id": "catering-j",
+      "type": "career",
+      "label": "Caterer",
+      "note": "Cook for parties and events."
+    },
+    {
+      "id": "hair",
+      "type": "career",
+      "label": "Hair stylist",
+      "note": "Cut and style hair."
+    },
+    {
+      "id": "makeup",
+      "type": "career",
+      "label": "Makeup artist",
+      "note": "Do makeup for people and shoots."
+    },
+    {
+      "id": "spa",
+      "type": "career",
+      "label": "Spa therapist",
+      "note": "Give massage and wellness care."
+    },
+    {
+      "id": "mehndi",
+      "type": "career",
+      "label": "Mehndi artist",
+      "note": "Draw henna designs."
+    },
+    {
+      "id": "appliance",
+      "type": "career",
+      "label": "Appliance repair technician",
+      "note": "Fix fridges, washing machines and more."
+    },
+    {
+      "id": "security",
+      "type": "career",
+      "label": "Security guard or supervisor",
+      "note": "Keep buildings and people safe."
+    },
+    {
+      "id": "housekeep",
+      "type": "career",
+      "label": "Housekeeping supervisor",
+      "note": "Keep hotels and offices clean."
+    },
+    {
+      "id": "pest",
+      "type": "career",
+      "label": "Pest control technician",
+      "note": "Remove pests safely."
+    },
+    {
+      "id": "laundry",
+      "type": "career",
+      "label": "Laundry and dry-cleaning owner",
+      "note": "Run a clothes cleaning business."
+    },
+    {
+      "id": "teach-train",
+      "type": "course",
+      "label": "Teacher training (D.El.Ed, B.Ed)",
+      "note": "Needed to teach in most schools."
+    },
+    {
+      "id": "tutor-skill",
+      "type": "course",
+      "label": "Subject skills and tutoring practice",
+      "note": "Teach others what you know well."
+    },
+    {
+      "id": "hs-teacher",
+      "type": "career",
+      "label": "High school teacher",
+      "note": "Teach older students a subject."
+    },
+    {
+      "id": "montessori",
+      "type": "career",
+      "label": "Montessori or pre-school teacher",
+      "note": "Teach very young children."
+    },
+    {
+      "id": "prin-j",
+      "type": "career",
+      "label": "School principal",
+      "note": "Lead a school after years of teaching."
+    },
+    {
+      "id": "online-teacher",
+      "type": "career",
+      "label": "Online teacher",
+      "note": "Teach students over the internet."
+    },
+    {
+      "id": "coach-centre",
+      "type": "career",
+      "label": "Coaching centre teacher",
+      "note": "Teach exam courses at a coaching centre."
+    },
+    {
+      "id": "lang-trainer",
+      "type": "career",
+      "label": "Language trainer",
+      "note": "Teach English, Kannada or a foreign language."
+    },
+    {
+      "id": "driving-inst",
+      "type": "career",
+      "label": "Driving instructor",
+      "note": "Teach people to drive."
+    },
+    {
+      "id": "skill-trainer",
+      "type": "career",
+      "label": "Skill trainer",
+      "note": "Teach job skills to adults."
+    },
+    {
+      "id": "farm-train",
+      "type": "course",
+      "label": "Farming training (farm science centres and short courses)",
+      "note": "Farm science centres and farm universities run short courses for farmers."
+    },
+    {
+      "id": "animal-train",
+      "type": "course",
+      "label": "Dairy, poultry and fisheries training",
+      "note": "Short courses on keeping animals and fish."
+    },
+    {
+      "id": "farmer",
+      "type": "career",
+      "label": "Farmer",
+      "note": "Grow crops on your own or family land."
+    },
+    {
+      "id": "gardener",
+      "type": "career",
+      "label": "Gardener and nursery owner",
+      "note": "Grow plants, flowers and saplings."
+    },
+    {
+      "id": "bee",
+      "type": "career",
+      "label": "Beekeeper",
+      "note": "Keep bees for honey and pollination."
+    },
+    {
+      "id": "mushroom",
+      "type": "career",
+      "label": "Mushroom grower",
+      "note": "Grow mushrooms indoors."
+    },
+    {
+      "id": "tractor-op",
+      "type": "career",
+      "label": "Tractor and farm machine operator",
+      "note": "Run tractors and harvesters."
+    },
+    {
+      "id": "agri-shop",
+      "type": "career",
+      "label": "Agri-input shop owner",
+      "note": "Sell seeds, fertiliser and tools to farmers."
+    },
+    {
+      "id": "sericulture-f",
+      "type": "career",
+      "label": "Silk farmer",
+      "note": "Grow mulberry and raise silkworms."
+    },
+    {
+      "id": "dairy-farmer",
+      "type": "career",
+      "label": "Dairy farmer",
+      "note": "Keep cows or buffaloes and sell milk."
+    },
+    {
+      "id": "poultry",
+      "type": "career",
+      "label": "Poultry farmer",
+      "note": "Raise hens for eggs and meat."
+    },
+    {
+      "id": "goat",
+      "type": "career",
+      "label": "Goat and sheep farmer",
+      "note": "Raise goats and sheep."
+    },
+    {
+      "id": "fisher",
+      "type": "career",
+      "label": "Fish farmer or fisher",
+      "note": "Farm or catch fish."
+    },
+    {
+      "id": "govt-class10",
+      "type": "course",
+      "label": "Government jobs after Class 10 or 12 (state notices)",
+      "note": "Many state and local offices post jobs for Class 10 and Class 12 pass candidates. Watch official notices."
+    },
+    {
+      "id": "vao",
+      "type": "career",
+      "label": "Village accountant",
+      "note": "Keep land and village records."
+    },
+    {
+      "id": "panchayat",
+      "type": "career",
+      "label": "Panchayat development officer",
+      "note": "Help run village development work."
+    },
+    {
+      "id": "court-clerk",
+      "type": "career",
+      "label": "Court clerk",
+      "note": "Handle files and records in a court."
+    },
+    {
+      "id": "peon",
+      "type": "career",
+      "label": "Office attendant",
+      "note": "Support work in government offices."
+    },
+    {
+      "id": "home-guard",
+      "type": "career",
+      "label": "Home guard",
+      "note": "Help the police in emergencies and events."
+    },
+    {
+      "id": "warder",
+      "type": "career",
+      "label": "Jail warder",
+      "note": "Keep order and safety in prisons."
+    },
+    {
+      "id": "forest-watcher",
+      "type": "career",
+      "label": "Forest watcher",
+      "note": "Guard forests and wildlife."
+    },
+    {
+      "id": "ksrtc",
+      "type": "career",
+      "label": "State bus driver or conductor",
+      "note": "Serve on state transport buses."
+    },
+    {
+      "id": "guru-train",
+      "type": "course",
+      "label": "Learning from a guru or traditional school",
+      "note": "Traditional arts and knowledge are often taught by a master over many years."
+    },
+    {
+      "id": "priest",
+      "type": "career",
+      "label": "Priest or religious teacher",
+      "note": "Lead worship and teach traditions."
+    },
+    {
+      "id": "classical-music",
+      "type": "career",
+      "label": "Classical musician (Carnatic or Hindustani)",
+      "note": "Perform and teach classical music."
+    },
+    {
+      "id": "classical-dance",
+      "type": "career",
+      "label": "Classical dancer (Bharatanatyam, Kathak and more)",
+      "note": "Perform and teach classical dance."
+    },
+    {
+      "id": "folk-artist",
+      "type": "career",
+      "label": "Folk artist (Yakshagana, Harikatha and more)",
+      "note": "Keep folk art and theatre alive."
+    },
+    {
+      "id": "yoga-guru",
+      "type": "career",
+      "label": "Yoga guru",
+      "note": "Teach yoga and meditation."
+    },
+    {
+      "id": "astro-j",
+      "type": "career",
+      "label": "Vedic astrologer",
+      "note": "Offer advice from traditional astrology."
+    }
+  ],
+  "edges": [
+    [
+      "sscgl",
+      "tax-insp"
+    ],
+    [
+      "sscgl",
+      "aso"
+    ],
+    [
+      "sscgl",
+      "gov-auditor"
+    ],
+    [
+      "sscgl",
+      "excise"
+    ],
+    [
+      "sscchsl",
+      "lda"
+    ],
+    [
+      "sscchsl",
+      "postal-asst"
+    ],
+    [
+      "sscchsl",
+      "deo"
+    ],
+    [
+      "rrbntpc",
+      "stn-master"
+    ],
+    [
+      "rrbntpc",
+      "goods-guard"
+    ],
+    [
+      "rrbntpc",
+      "tte"
+    ],
+    [
+      "rrbntpc",
+      "rail-clerk"
+    ],
+    [
+      "rrbd",
+      "track-maint"
+    ],
+    [
+      "rrbd",
+      "rail-helper"
+    ],
+    [
+      "rrbd",
+      "pointsman"
+    ],
+    [
+      "rrbalp",
+      "loco-pilot"
+    ],
+    [
+      "rrbalp",
+      "technician-rail"
+    ],
+    [
+      "ibpspo",
+      "bank-po"
+    ],
+    [
+      "ibpspo",
+      "branch-mgr"
+    ],
+    [
+      "ibpsclerk",
+      "bank-clerk-j"
+    ],
+    [
+      "police",
+      "constable"
+    ],
+    [
+      "police",
+      "police-si-j"
+    ],
+    [
+      "police",
+      "traffic-police"
+    ],
+    [
+      "post",
+      "postman"
+    ],
+    [
+      "post",
+      "branch-pm"
+    ],
+    [
+      "bca-j",
+      "web-dev"
+    ],
+    [
+      "itdip",
+      "web-dev"
+    ],
+    [
+      "certs",
+      "web-dev"
+    ],
+    [
+      "bca-j",
+      "app-dev"
+    ],
+    [
+      "itdip",
+      "app-dev"
+    ],
+    [
+      "certs",
+      "app-dev"
+    ],
+    [
+      "bca-j",
+      "it-support"
+    ],
+    [
+      "itdip",
+      "it-support"
+    ],
+    [
+      "certs",
+      "it-support"
+    ],
+    [
+      "bca-j",
+      "net-admin"
+    ],
+    [
+      "itdip",
+      "net-admin"
+    ],
+    [
+      "bca-j",
+      "sys-admin"
+    ],
+    [
+      "itdip",
+      "sys-admin"
+    ],
+    [
+      "bca-j",
+      "dba"
+    ],
+    [
+      "itdip",
+      "dba"
+    ],
+    [
+      "bca-j",
+      "it-trainer"
+    ],
+    [
+      "itdip",
+      "it-trainer"
+    ],
+    [
+      "certs",
+      "seo"
+    ],
+    [
+      "bca-j",
+      "seo"
+    ],
+    [
+      "certs",
+      "digital-artist"
+    ],
+    [
+      "bca-j",
+      "digital-artist"
+    ],
+    [
+      "certs",
+      "tech-writer"
+    ],
+    [
+      "bca-j",
+      "tech-writer"
+    ],
+    [
+      "certs",
+      "bpo"
+    ],
+    [
+      "bca-j",
+      "bpo"
+    ],
+    [
+      "certs",
+      "gis"
+    ],
+    [
+      "bca-j",
+      "gis"
+    ],
+    [
+      "certs",
+      "cad-tech"
+    ],
+    [
+      "bca-j",
+      "cad-tech"
+    ],
+    [
+      "certs",
+      "ai-tools"
+    ],
+    [
+      "bca-j",
+      "ai-tools"
+    ],
+    [
+      "certs",
+      "it-pm"
+    ],
+    [
+      "bca-j",
+      "it-pm"
+    ],
+    [
+      "bizstart",
+      "shop-owner"
+    ],
+    [
+      "retail-course",
+      "shop-owner"
+    ],
+    [
+      "bizstart",
+      "retail-mgr"
+    ],
+    [
+      "retail-course",
+      "retail-mgr"
+    ],
+    [
+      "bizstart",
+      "franchise"
+    ],
+    [
+      "retail-course",
+      "franchise"
+    ],
+    [
+      "bizstart",
+      "trader"
+    ],
+    [
+      "retail-course",
+      "trader"
+    ],
+    [
+      "bizstart",
+      "online-seller"
+    ],
+    [
+      "retail-course",
+      "online-seller"
+    ],
+    [
+      "bizstart",
+      "sales-exec"
+    ],
+    [
+      "retail-course",
+      "sales-exec"
+    ],
+    [
+      "bizstart",
+      "bde"
+    ],
+    [
+      "retail-course",
+      "bde"
+    ],
+    [
+      "bizstart",
+      "crm"
+    ],
+    [
+      "retail-course",
+      "crm"
+    ],
+    [
+      "bizstart",
+      "import-export"
+    ],
+    [
+      "retail-course",
+      "import-export"
+    ],
+    [
+      "bizstart",
+      "procure"
+    ],
+    [
+      "retail-course",
+      "procure"
+    ],
+    [
+      "bizstart",
+      "warehouse"
+    ],
+    [
+      "retail-course",
+      "warehouse"
+    ],
+    [
+      "realest",
+      "realtor"
+    ],
+    [
+      "realest",
+      "valuer"
+    ],
+    [
+      "realest",
+      "stockbroker"
+    ],
+    [
+      "realest",
+      "mf-dist"
+    ],
+    [
+      "realest",
+      "ins-agent"
+    ],
+    [
+      "realest",
+      "loan-officer"
+    ],
+    [
+      "licence",
+      "driver"
+    ],
+    [
+      "licence",
+      "cab-driver"
+    ],
+    [
+      "licence",
+      "delivery"
+    ],
+    [
+      "licence",
+      "fleet-owner"
+    ],
+    [
+      "licence",
+      "bus-conductor"
+    ],
+    [
+      "logi-dip",
+      "logi-mgr"
+    ],
+    [
+      "logi-dip",
+      "courier"
+    ],
+    [
+      "logi-dip",
+      "forklift"
+    ],
+    [
+      "logi-dip",
+      "fleet-mgr"
+    ],
+    [
+      "port-course",
+      "cha"
+    ],
+    [
+      "port-course",
+      "port-worker"
+    ],
+    [
+      "port-course",
+      "ship-broker"
+    ],
+    [
+      "iti-build",
+      "mason"
+    ],
+    [
+      "civdip",
+      "mason"
+    ],
+    [
+      "iti-build",
+      "bar-bender"
+    ],
+    [
+      "civdip",
+      "bar-bender"
+    ],
+    [
+      "iti-build",
+      "painter-h"
+    ],
+    [
+      "civdip",
+      "painter-h"
+    ],
+    [
+      "iti-build",
+      "tile-fitter"
+    ],
+    [
+      "civdip",
+      "tile-fitter"
+    ],
+    [
+      "iti-build",
+      "crane-op"
+    ],
+    [
+      "civdip",
+      "crane-op"
+    ],
+    [
+      "iti-build",
+      "glass-fit"
+    ],
+    [
+      "civdip",
+      "glass-fit"
+    ],
+    [
+      "civdip",
+      "site-eng"
+    ],
+    [
+      "civdip",
+      "qs"
+    ],
+    [
+      "civdip",
+      "contractor"
+    ],
+    [
+      "civdip",
+      "draught-arch"
+    ],
+    [
+      "civdip",
+      "bldg-insp"
+    ],
+    [
+      "media-dip",
+      "scriptwriter"
+    ],
+    [
+      "writing",
+      "scriptwriter"
+    ],
+    [
+      "media-dip",
+      "author"
+    ],
+    [
+      "writing",
+      "author"
+    ],
+    [
+      "media-dip",
+      "poet"
+    ],
+    [
+      "writing",
+      "poet"
+    ],
+    [
+      "media-dip",
+      "book-editor"
+    ],
+    [
+      "writing",
+      "book-editor"
+    ],
+    [
+      "media-dip",
+      "proofreader"
+    ],
+    [
+      "writing",
+      "proofreader"
+    ],
+    [
+      "media-dip",
+      "blogger"
+    ],
+    [
+      "writing",
+      "blogger"
+    ],
+    [
+      "media-dip",
+      "podcaster"
+    ],
+    [
+      "writing",
+      "podcaster"
+    ],
+    [
+      "media-dip",
+      "cinematog"
+    ],
+    [
+      "media-dip",
+      "vfx"
+    ],
+    [
+      "media-dip",
+      "voice"
+    ],
+    [
+      "media-dip",
+      "dj"
+    ],
+    [
+      "media-dip",
+      "rj"
+    ],
+    [
+      "media-dip",
+      "standup"
+    ],
+    [
+      "media-dip",
+      "subtitle"
+    ],
+    [
+      "art-class",
+      "cartoonist"
+    ],
+    [
+      "art-class",
+      "mural"
+    ],
+    [
+      "art-class",
+      "calligrapher"
+    ],
+    [
+      "gnm",
+      "anm"
+    ],
+    [
+      "gnm",
+      "staff-nurse"
+    ],
+    [
+      "deled",
+      "prim-teacher-j"
+    ],
+    [
+      "deled",
+      "anganwadi"
+    ],
+    [
+      "care-course",
+      "elder-care"
+    ],
+    [
+      "care-course",
+      "nanny"
+    ],
+    [
+      "care-course",
+      "home-nurse"
+    ],
+    [
+      "special-course",
+      "special-edu"
+    ],
+    [
+      "special-course",
+      "early-int"
+    ],
+    [
+      "mining-dip",
+      "mining-eng"
+    ],
+    [
+      "mining-dip",
+      "geologist"
+    ],
+    [
+      "mining-dip",
+      "mine-surveyor"
+    ],
+    [
+      "solar-course",
+      "solar-tech"
+    ],
+    [
+      "solar-course",
+      "wind-tech"
+    ],
+    [
+      "solar-course",
+      "energy-auditor"
+    ],
+    [
+      "env-course",
+      "waste-mgr"
+    ],
+    [
+      "env-course",
+      "water-op"
+    ],
+    [
+      "env-course",
+      "pollution"
+    ],
+    [
+      "env-course",
+      "recycler"
+    ],
+    [
+      "craft-train",
+      "weaver"
+    ],
+    [
+      "craft-train",
+      "potter"
+    ],
+    [
+      "craft-train",
+      "silk"
+    ],
+    [
+      "craft-train",
+      "toy-maker"
+    ],
+    [
+      "craft-train",
+      "leather"
+    ],
+    [
+      "craft-train",
+      "jeweller"
+    ],
+    [
+      "craft-train",
+      "embroider"
+    ],
+    [
+      "garment-course",
+      "tailor-j"
+    ],
+    [
+      "garment-course",
+      "garment-sup"
+    ],
+    [
+      "garment-course",
+      "boutique"
+    ],
+    [
+      "food-course",
+      "baker"
+    ],
+    [
+      "food-course",
+      "cloud-kitchen"
+    ],
+    [
+      "food-course",
+      "food-truck"
+    ],
+    [
+      "food-course",
+      "barista"
+    ],
+    [
+      "food-course",
+      "catering-j"
+    ],
+    [
+      "beauty-course",
+      "hair"
+    ],
+    [
+      "beauty-course",
+      "makeup"
+    ],
+    [
+      "beauty-course",
+      "spa"
+    ],
+    [
+      "beauty-course",
+      "mehndi"
+    ],
+    [
+      "repair-course",
+      "appliance"
+    ],
+    [
+      "repair-course",
+      "security"
+    ],
+    [
+      "repair-course",
+      "housekeep"
+    ],
+    [
+      "repair-course",
+      "pest"
+    ],
+    [
+      "repair-course",
+      "laundry"
+    ],
+    [
+      "teach-train",
+      "hs-teacher"
+    ],
+    [
+      "teach-train",
+      "montessori"
+    ],
+    [
+      "teach-train",
+      "prin-j"
+    ],
+    [
+      "tutor-skill",
+      "online-teacher"
+    ],
+    [
+      "tutor-skill",
+      "coach-centre"
+    ],
+    [
+      "tutor-skill",
+      "lang-trainer"
+    ],
+    [
+      "tutor-skill",
+      "driving-inst"
+    ],
+    [
+      "tutor-skill",
+      "skill-trainer"
+    ],
+    [
+      "farm-train",
+      "farmer"
+    ],
+    [
+      "farm-train",
+      "gardener"
+    ],
+    [
+      "farm-train",
+      "bee"
+    ],
+    [
+      "farm-train",
+      "mushroom"
+    ],
+    [
+      "farm-train",
+      "tractor-op"
+    ],
+    [
+      "farm-train",
+      "agri-shop"
+    ],
+    [
+      "farm-train",
+      "sericulture-f"
+    ],
+    [
+      "animal-train",
+      "dairy-farmer"
+    ],
+    [
+      "animal-train",
+      "poultry"
+    ],
+    [
+      "animal-train",
+      "goat"
+    ],
+    [
+      "animal-train",
+      "fisher"
+    ],
+    [
+      "govt-class10",
+      "vao"
+    ],
+    [
+      "govt-class10",
+      "panchayat"
+    ],
+    [
+      "govt-class10",
+      "court-clerk"
+    ],
+    [
+      "govt-class10",
+      "peon"
+    ],
+    [
+      "govt-class10",
+      "home-guard"
+    ],
+    [
+      "govt-class10",
+      "warder"
+    ],
+    [
+      "govt-class10",
+      "forest-watcher"
+    ],
+    [
+      "govt-class10",
+      "ksrtc"
+    ],
+    [
+      "guru-train",
+      "priest"
+    ],
+    [
+      "guru-train",
+      "classical-music"
+    ],
+    [
+      "guru-train",
+      "classical-dance"
+    ],
+    [
+      "guru-train",
+      "folk-artist"
+    ],
+    [
+      "guru-train",
+      "yoga-guru"
+    ],
+    [
+      "guru-train",
+      "astro-j"
+    ]
+  ]
+}

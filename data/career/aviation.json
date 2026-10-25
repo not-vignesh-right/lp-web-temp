@@ -182,6 +182,18 @@
       "type": "career",
       "label": "Marine surveyor",
       "note": "Inspect ships for safety."
+    },
+    {
+      "id": "steward",
+      "type": "career",
+      "label": "Restaurant steward or waiter",
+      "note": "Serve guests in restaurants and hotels."
+    },
+    {
+      "id": "bellboy",
+      "type": "career",
+      "label": "Bell captain and guest services",
+      "note": "Help hotel guests with luggage and needs."
     }
   ],
   "edges": [
@@ -284,6 +296,14 @@
     [
       "nautical",
       "marine-surv"
+    ],
+    [
+      "hhm",
+      "steward"
+    ],
+    [
+      "hhm",
+      "bellboy"
     ]
   ]
 }

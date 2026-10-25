@@ -73,8 +73,10 @@
 
                 <form class="cr-search" id="crSearch" role="search" autocomplete="off">
                     <label for="crQuery" class="cr-sr">Type a career you want</label>
-                    <input id="crQuery" type="search" placeholder="I want to become a doctor, engineer, CA, lawyer..."
-                        enterkeyhint="search">
+                    <div class="cr-search-box">
+                        <input id="crQuery" type="text" inputmode="search" placeholder="I want to become a doctor, pilot, engineer, chef..." enterkeyhint="search" autocomplete="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="crSuggest" aria-autocomplete="list">
+                        <ul class="cr-suggest" id="crSuggest" role="listbox" hidden></ul>
+                    </div>
                     <button type="submit" class="btn btn-primary">Find my path</button>
                 </form>
                 <div class="cr-search-msg" id="crSearchMsg" aria-live="polite"></div>
@@ -129,6 +131,21 @@
                 <p class="cr-disclaimer">Cut-offs, past-year criteria, dates, patterns and eligibility shown here are approximate and may not be exact. They change every year. This page is for general guidance only. Please confirm on the official website of the conducting body before you apply.</p>
             </div>
         </section>
+        <section class="cr-all section-padding section-bg-light" id="allcareers" aria-labelledby="crAllTitle">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="crAllTitle">Browse all careers</h2>
+                    <p>Every career on this page, from A to Z. Tap one to see the whole route.</p>
+                </div>
+                <div class="cr-all-tools">
+                    <input id="crAllFilter" type="text" inputmode="search" placeholder="Filter this list..." autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Filter careers">
+                    <select id="crAllField" aria-label="Choose a field"><option value="">All fields</option></select>
+                </div>
+                <div class="cr-letters" id="crLetters" aria-label="Jump to letter"></div>
+                <div class="cr-all-list" id="crAllList"></div>
+                <p class="cr-all-count" id="crAllCount" aria-live="polite"></p>
+            </div>
+        </section>
         <section class="cr-cal section-padding" id="calendar" aria-labelledby="crCalTitle">
             <div class="container">
                 <div class="section-header">
@@ -151,7 +168,7 @@
             </div>
         </section>
         -->
-        <section class="cr-faq section-padding section-bg-light" id="faq">
+        <section class="cr-faq section-padding" id="faq">
             <div class="container">
                 <div class="section-header">
                     <h2>Good to know</h2>

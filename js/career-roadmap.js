@@ -27,7 +27,7 @@
 
     var ICON = { group: 'fa-layer-group', stage: 'fa-flag', exam: 'fa-file-pen', course: 'fa-graduation-cap', career: 'fa-star', next: 'fa-arrow-right' };
     var TITLES = { door: 'Pick a stream', group: 'Pick your subjects', stage: 'Next step', exam: 'How do you get in? Each is a separate choice', course: 'What will you study?', career: 'What can you become?', next: 'What next?' };
-    var state = { index: null, exams: null, cache: {}, chain: [], hi: null, side: null, cols: 0 };
+    var state = { index: null, exams: null, careers: null, cache: {}, chain: [], hi: null, side: null, cols: 0 };
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var small = function () { return window.innerWidth <= 900; };
 
@@ -461,78 +461,159 @@
         });
     }
 
-    /* ---------- search and class buttons ---------- */
-    function hit(q, k) {
-        if (k.length <= 3) return (' ' + q.replace(/[^a-z0-9 ]/g, ' ') + ' ').indexOf(' ' + k + ' ') > -1;
-        return q.indexOf(k) > -1 || (q.length >= 4 && k.indexOf(q) > -1);
-    }
+    /* ---------- search: instant suggestions over one small file ---------- */
     function goExplorer() { el.explorer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); }
+    function norm(s) { return String(s).toLowerCase().replace(/\([^)]*\)/g, ' ').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim(); }
+    function prepCareers(c) {
+        return c.items.map(function (r) {
+            var kws = r[5] ? r[5].split('|') : [];
+            var ln = norm(r[0]);
+            return { label: r[0], type: r[1], path: r[2], node: r[3], field: r[4], ln: ln, words: ln.split(' '), kw: kws.map(norm), id: r[2] + '/' + r[3] };
+        });
+    }
+    function near(a, b) { // true when two words differ by one letter, one gap or one swap
+        if (Math.abs(a.length - b.length) > 1) return false;
+        var i = 0; while (i < a.length && i < b.length && a[i] === b[i]) i++;
+        if (a.length === b.length) { return a.slice(i + 1) === b.slice(i + 1) || (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2)); }
+        return a.length > b.length ? a.slice(i + 1) === b.slice(i) : b.slice(i + 1) === a.slice(i);
+    }
+    function scoreItem(it, q, toks) {
+        var s = 0, w, k, j;
+        if (it.ln === q) s = 1000;
+        else if (it.ln.indexOf(q) === 0) s = 800 - (it.ln.length - q.length);
+        else {
+            for (j = 0; j < it.words.length; j++) if (it.words[j].indexOf(q) === 0) { s = Math.max(s, 640 - j * 10); break; }
+            if (!s && q.length >= 3 && it.ln.indexOf(q) > -1) s = 450;
+        }
+        for (k = 0; k < it.kw.length; k++) {
+            w = it.kw[k];
+            if (w === q) s = Math.max(s, 900);
+            else if (w.indexOf(q) === 0) s = Math.max(s, 620);
+            else if (q.length >= 3 && w.indexOf(q) > -1) s = Math.max(s, 380);
+            else if (w.length >= 4 && (' ' + q + ' ').indexOf(' ' + w + ' ') > -1) s = Math.max(s, 330 + w.length);
+            else if (w.length >= 5 && q.indexOf(w) > -1) s = Math.max(s, 300 + w.length);
+        }
+        if (!s && toks.length > 1) {
+            var all = it.words.concat(it.kw.join(' ').split(' '));
+            var hits = 0; toks.forEach(function (t) { if (all.some(function (x) { return x.indexOf(t) === 0; })) hits++; });
+            if (hits === toks.length) s = 350; else if (hits) s = 120 * hits / toks.length + 60;
+        }
+        if (!s && q.length >= 5) {
+            var pool = it.words.concat(it.kw);
+            for (j = 0; j < pool.length; j++) if (pool[j].length >= 5 && near(q, pool[j])) { s = 200; break; }
+        }
+        if (!s) return 0;
+        return s + (it.type === 'c' ? 20 : it.type === 'e' ? 10 : 0);
+    }
+    function searchCareers(raw, limit) {
+        var q = norm(raw);
+        if (!state.careers || q.length < 2) return [];
+        var toks = q.split(' ').filter(function (t) { return t.length > 1; });
+        var out = [];
+        for (var i = 0; i < state.careers.length; i++) {
+            var sc = scoreItem(state.careers[i], q, toks);
+            if (sc) out.push({ it: state.careers[i], sc: sc });
+        }
+        out.sort(function (a, b) { return b.sc - a.sc || a.it.label.length - b.it.label.length; });
+        return out.slice(0, limit || 8).map(function (x) { return x.it; });
+    }
+
+    var sug = { list: document.getElementById('crSuggest'), items: [], active: -1 };
+    function closeSuggest() {
+        if (!sug.list) return;
+        sug.list.hidden = true; sug.list.textContent = ''; sug.items = []; sug.active = -1;
+        el.query.setAttribute('aria-expanded', 'false'); el.query.removeAttribute('aria-activedescendant');
+    }
+    function setActive(i) {
+        var lis = sug.list.children;
+        if (!lis.length) return;
+        sug.active = (i + lis.length) % lis.length;
+        Array.prototype.forEach.call(lis, function (li, j) { li.classList.toggle('is-active', j === sug.active); li.setAttribute('aria-selected', j === sug.active ? 'true' : 'false'); });
+        el.query.setAttribute('aria-activedescendant', lis[sug.active].id);
+    }
+    function showSuggest() {
+        if (!sug.list) return;
+        var res = searchCareers(el.query.value, 8);
+        sug.list.textContent = ''; sug.items = res; sug.active = -1;
+        if (!res.length) { closeSuggest(); return; }
+        res.forEach(function (it, i) {
+            var li = h('li', 'cr-sug-item'); li.id = 'crSug' + i; li.setAttribute('role', 'option');
+            li.appendChild(h('span', 'cr-sug-label', it.label));
+            li.appendChild(h('small', 'cr-sug-meta', (it.type === 'e' ? 'Exam, ' : it.type === 'k' ? 'Course, ' : '') + it.field));
+            li.addEventListener('mousedown', function (e) { e.preventDefault(); }); // keep focus so the tap is not lost
+            li.addEventListener('click', function () { chooseItem(it); });
+            sug.list.appendChild(li);
+        });
+        sug.list.hidden = false; el.query.setAttribute('aria-expanded', 'true');
+    }
+    function chooseItem(it) {
+        el.query.value = it.label; closeSuggest(); el.msg.textContent = '';
+        openTarget(it.path, it.node).then(function (ok) {
+            if (ok) { el.msg.textContent = 'Here is your whole route.'; goExplorer(); } else missMsg();
+        });
+    }
+    function missMsg() {
+        el.msg.textContent = '';
+        el.msg.appendChild(document.createTextNode('We could not find that one. Try another word, browse the full list below, or '));
+        var a = h('a', 'cr-d-link', 'ask a counsellor'); a.href = talkUrl(el.query.value);
+        el.msg.appendChild(a); el.msg.appendChild(document.createTextNode('.'));
+    }
+    var sugTimer = 0;
+    el.query.addEventListener('input', function () { clearTimeout(sugTimer); sugTimer = setTimeout(showSuggest, 60); });
+    el.query.addEventListener('focus', function () { if (el.query.value.trim().length > 1) showSuggest(); });
+    el.query.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            if (sug.list.hidden) showSuggest();
+            if (sug.items.length) { e.preventDefault(); setActive(sug.active + (e.key === 'ArrowDown' ? 1 : -1)); }
+        } else if (e.key === 'Escape') closeSuggest();
+    });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.cr-search-box')) closeSuggest(); });
     el.form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var q = el.query.value.toLowerCase().trim();
         el.msg.textContent = '';
-        if (!q) { el.msg.textContent = 'Type a job you like, for example doctor or engineer.'; return; }
-        var found = null, bestScore = 0;
-        q = q.replace(/[^a-z0-9 /]/g, ' ').replace(/\s+/g, ' ').trim();
-        state.index.search.forEach(function (s) {
-            s.k.forEach(function (k) {
-                var sc = 0;
-                if (q === k) sc = 1000 + k.length;
-                else if (k.length <= 3) { if (hit(q, k)) sc = 40; }
-                else if (q.indexOf(k) > -1) sc = 100 + k.length * 5;
-                else if (q.length >= 4 && k.indexOf(q) > -1) sc = q.length * 2;
-                if (sc > bestScore) { bestScore = sc; found = s; }
-            });
-        });
-        function miss() {
-            el.msg.textContent = '';
-            el.msg.appendChild(document.createTextNode('We could not find that one. Try doctor, pilot, engineer, lawyer or CA, or '));
-            var a = h('a', 'cr-d-link', 'ask a counsellor'); a.href = talkUrl(el.query.value);
-            el.msg.appendChild(a); el.msg.appendChild(document.createTextNode('.'));
-        }
-        function open(hitObj, closest) {
-            return openTarget(hitObj.path, hitObj.node).then(function (ok) {
-                if (ok) { el.msg.textContent = closest ? 'Closest match: ' + closest + '. Here is the route.' : 'Here is your whole route.'; goExplorer(); }
-                return ok;
-            });
-        }
-        (found ? open(found) : Promise.resolve(false)).then(function (ok) {
-            if (ok) return;
-            fuzzy(q).then(function (best) {
-                if (best) open(best, best.label).then(function (ok2) { if (!ok2) miss(); }); else miss();
-            });
-        });
+        var raw = el.query.value;
+        if (!raw.trim()) { el.msg.textContent = 'Type a job you like, for example doctor or pilot.'; return; }
+        if (!state.careers) { el.msg.textContent = 'One moment, the list is still loading. Please try again.'; return; }
+        var pick = sug.active >= 0 ? sug.items[sug.active] : searchCareers(raw, 1)[0];
+        if (pick) chooseItem(pick); else { closeSuggest(); missMsg(); }
     });
 
-    /* search every step name and note when the keyword list has no answer */
-    var STOP = { the: 1, and: 1, for: 1, how: 1, can: 1, become: 1, want: 1, to: 1, a: 1, an: 1, of: 1, in: 1, my: 1, i: 1, be: 1, job: 1, jobs: 1, career: 1, work: 1, study: 1 };
-    var RANK = { career: 3, course: 2, exam: 1 };
-    function allPaths() {
-        return Promise.all(state.index.pathways.map(function (p) { return loadPath(p.id); }));
-    }
-    function fuzzy(q) {
-        var words = q.replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter(function (w) { return w.length > 2 && !STOP[w]; });
-        if (!words.length) return Promise.resolve(null);
-        return allPaths().then(function (all) {
-            var best = null, bs = 0;
-            all.forEach(function (d) {
-                d.nodes.forEach(function (n) {
-                    if (!RANK[n.type]) return;
-                    var x = n.exam && state.exams[n.exam];
-                    var label = (n.label + ' ' + (x ? x.name : '')).toLowerCase(), note = ((n.note || '') + ' ' + (x ? (x.simple || '') + ' ' + (x.leads || '') : '')).toLowerCase();
-                    var s = 0;
-                    words.forEach(function (w) {
-                        var stem = w.length > 5 ? w.slice(0, w.length - 1) : w;
-                        if (label.indexOf(stem) > -1) s += 4; else if (note.indexOf(stem) > -1) s += 1;
-                    });
-                    if (!s) return;
-                    s = s * 10 + RANK[n.type];
-                    if (s > bs) { bs = s; best = { path: d.id, node: n.id, label: n.label }; }
+    /* ---------- browse all careers, A to Z ---------- */
+    function renderAll() {
+        var list = document.getElementById('crAllList'), letters = document.getElementById('crLetters'), field = document.getElementById('crAllField'), filter = document.getElementById('crAllFilter'), count = document.getElementById('crAllCount');
+        if (!list || !state.careers) return;
+        var careers = state.careers.filter(function (c) { return c.type === 'c'; });
+        var fields = {}; careers.forEach(function (c) { fields[c.field] = 1; });
+        Object.keys(fields).sort().forEach(function (f) { var o = h('option', '', f); o.value = f; field.appendChild(o); });
+        function draw() {
+            var f = field.value, q = norm(filter.value);
+            list.textContent = ''; letters.textContent = '';
+            var shown = careers.filter(function (c) { return (!f || c.field === f) && (!q || c.ln.indexOf(q) > -1 || c.kw.some(function (k) { return k.indexOf(q) > -1; })); });
+            var by = {};
+            shown.forEach(function (c) { var L = c.label.charAt(0).toUpperCase(); (by[L] = by[L] || []).push(c); });
+            Object.keys(by).sort().forEach(function (L) {
+                var a = h('a', 'cr-letter', L); a.href = '#cr-l-' + L;
+                a.addEventListener('click', function (e) { e.preventDefault(); var t = document.getElementById('cr-l-' + L); if (t) t.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); });
+                letters.appendChild(a);
+                var sec = h('div', 'cr-all-group'); sec.id = 'cr-l-' + L;
+                sec.appendChild(h('h3', 'cr-all-h', L));
+                var wrap = h('div', 'cr-all-items');
+                by[L].forEach(function (c) {
+                    var b = h('button', 'cr-all-item'); b.type = 'button';
+                    b.appendChild(h('span', 'cr-all-name', c.label)); b.appendChild(h('small', 'cr-all-field', c.field));
+                    b.addEventListener('click', function () { chooseItem(c); });
+                    wrap.appendChild(b);
                 });
+                sec.appendChild(wrap); list.appendChild(sec);
             });
-            return best;
-        });
+            count.textContent = shown.length ? shown.length + ' careers' + (f || q ? ' shown' : ' in all') : 'No career matches. Try another word, or ask a counsellor.';
+        }
+        field.addEventListener('change', draw);
+        var ft = 0; filter.addEventListener('input', function () { clearTimeout(ft); ft = setTimeout(draw, 80); });
+        draw();
     }
+
+    /* ---------- class buttons ---------- */
     el.chips.addEventListener('click', function (e) {
         var b = e.target.closest('.cr-chip'); if (!b) return;
         var tag = b.getAttribute('data-tag'), cs = state.index.classStarts[tag];
@@ -589,6 +670,10 @@
     /* ---------- start ---------- */
     Promise.all([getJSON(BASE + 'index.json'), getJSON(BASE + 'exams.json')]).then(function (r) {
         state.index = r[0]; state.exams = r[1];
+        getJSON(BASE + 'careers.json').then(function (c) {
+            state.careers = prepCareers(c); renderAll();
+            if (document.activeElement === el.query && el.query.value.trim().length > 1) showSuggest();
+        }).catch(function () {});
         renderDownloads(state.index.downloads);
         getJSON(BASE + 'calendar.json').then(renderCalendar).catch(function () {});
         var q = new URLSearchParams(location.search), path = q.get('path'), node = q.get('node');

@@ -1410,5 +1410,71 @@
     "eligibility": "Open to all. Each university sets its own band score.",
     "official": "https://www.ielts.org",
     "leads": "Studying or working in English-speaking countries. Fees change, so check IDP India before booking."
+  },
+  "ssc-chsl": {
+    "name": "SSC CHSL",
+    "body": "Staff Selection Commission (SSC)",
+    "simple": "The test for clerk and assistant jobs after Class 12.",
+    "frequency": "Check the official notice",
+    "month": "Once a year, check the SSC calendar",
+    "pattern": "Computer based tests in stages. Check the notice for papers and marks.†",
+    "eligibility": "Class 12 pass. Age limits depend on the post.†",
+    "leads": "Clerk, Postal Assistant and Data Entry Operator posts",
+    "official": "https://ssc.gov.in"
+  },
+  "rrb-groupd": {
+    "name": "RRB Group D",
+    "body": "Railway Recruitment Boards (RRB)",
+    "simple": "The test for helper and track posts in Indian Railways.",
+    "frequency": "Check the official notice",
+    "month": "Check the RRB notice",
+    "pattern": "Computer based test, then a physical test, document checks and a medical test.†",
+    "eligibility": "Class 10 pass or ITI. Age limits and fitness rules apply.†",
+    "leads": "Track Maintainer, Helper and Assistant posts in railways",
+    "official": "https://www.rrbapply.gov.in"
+  },
+  "rrb-alp": {
+    "name": "RRB ALP (train driver)",
+    "body": "Railway Recruitment Boards (RRB)",
+    "simple": "The test to become an assistant loco pilot, the person who drives trains.",
+    "frequency": "Check the official notice",
+    "month": "Check the RRB notice",
+    "pattern": "Computer based tests, an aptitude test and a medical test.†",
+    "eligibility": "Class 10 plus ITI, or a diploma in a related trade. Age and eyesight rules apply.†",
+    "leads": "Assistant Loco Pilot and then Loco Pilot",
+    "official": "https://www.rrbapply.gov.in"
+  },
+  "ibps-clerk": {
+    "name": "IBPS Clerk",
+    "body": "Institute of Banking Personnel Selection (IBPS)",
+    "simple": "The test for bank clerk jobs after a degree.",
+    "frequency": "Check the official notice",
+    "month": "Once a year, check the IBPS calendar",
+    "pattern": "Prelims and Mains, both computer based.†",
+    "eligibility": "A degree in any subject. Age about 20 to 28 years, with relaxation for reserved categories.†",
+    "leads": "Clerk jobs in public sector banks",
+    "official": "https://www.ibps.in"
+  },
+  "ksp-police": {
+    "name": "Karnataka Police recruitment",
+    "body": "Karnataka State Police and KEA",
+    "simple": "Tests to join the Karnataka police as a constable or sub-inspector.",
+    "frequency": "Check the official notice",
+    "month": "When posts are announced",
+    "pattern": "Written test, physical tests and document checks. Sub-inspector posts add a main exam.†",
+    "eligibility": "Constable: usually Class 12 pass. Sub-inspector: a degree. Height, age and fitness rules apply.†",
+    "leads": "Police Constable and Police Sub-Inspector",
+    "official": "https://ksp.karnataka.gov.in"
+  },
+  "india-post": {
+    "name": "India Post GDS",
+    "body": "India Post",
+    "simple": "Jobs as postmen and branch postmasters in villages.",
+    "frequency": "Check the official notice",
+    "month": "When posts are announced",
+    "pattern": "Selection is based on Class 10 marks. Check the notice.†",
+    "eligibility": "Class 10 pass with Maths and English. Basic computer skills and cycling or two-wheeler skills help.†",
+    "leads": "Gramin Dak Sevak, Branch Postmaster",
+    "official": "https://indiapostgdsonline.gov.in"
   }
 }

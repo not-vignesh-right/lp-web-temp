@@ -176,6 +176,42 @@
       "type": "career",
       "label": "Diploma pharmacist",
       "note": "Work in a pharmacy after a diploma in pharmacy."
+    },
+    {
+      "id": "wireman",
+      "type": "career",
+      "label": "Wireman",
+      "note": "Wire buildings and machines safely."
+    },
+    {
+      "id": "sheet-metal",
+      "type": "career",
+      "label": "Sheet metal worker",
+      "note": "Cut and shape thin metal for ducts and bodies."
+    },
+    {
+      "id": "blacksmith",
+      "type": "career",
+      "label": "Blacksmith",
+      "note": "Forge tools and metal parts."
+    },
+    {
+      "id": "instrument-mech",
+      "type": "career",
+      "label": "Instrument mechanic",
+      "note": "Fix measuring and control devices."
+    },
+    {
+      "id": "grinder",
+      "type": "career",
+      "label": "Machinist and grinder",
+      "note": "Finish metal parts to exact size."
+    },
+    {
+      "id": "mech-diesel",
+      "type": "career",
+      "label": "Diesel mechanic",
+      "note": "Repair trucks, buses and generators."
     }
   ],
   "edges": [
@@ -290,6 +326,30 @@
     [
       "diploma",
       "pharma-dip"
+    ],
+    [
+      "ittrade",
+      "wireman"
+    ],
+    [
+      "ittrade",
+      "sheet-metal"
+    ],
+    [
+      "ittrade",
+      "blacksmith"
+    ],
+    [
+      "ittrade",
+      "instrument-mech"
+    ],
+    [
+      "ittrade",
+      "grinder"
+    ],
+    [
+      "ittrade",
+      "mech-diesel"
     ]
   ]
 }
