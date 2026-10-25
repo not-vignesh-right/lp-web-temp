@@ -185,27 +185,34 @@
         svg.textContent = '';
         var r = mapEl.getBoundingClientRect();
         var rows = mapEl.querySelectorAll('.cr-row');
-        function link(from, to) {
+        function link(from, to, lift) {
             var A = from.getBoundingClientRect(), B = to.getBoundingClientRect();
-            var x1 = A.left + A.width / 2 - r.left, y1 = A.bottom - r.top, x2 = B.left + B.width / 2 - r.left, y2 = B.top - r.top, dy = Math.max(16, (y2 - y1) * 0.5);
+            var x1 = A.left + A.width / 2 - r.left, y1 = A.bottom - r.top, x2 = B.left + B.width / 2 - r.left, y2 = B.top - r.top - (lift || 0), dy = Math.max(16, (y2 - y1) * 0.5);
             var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             p.setAttribute('d', 'M' + x1 + ' ' + y1 + ' C' + x1 + ' ' + (y1 + dy) + ' ' + x2 + ' ' + (y2 - dy) + ' ' + x2 + ' ' + y2);
             svg.appendChild(p);
         }
+        // a row that wraps onto several lines becomes one group: a single curve reaches the group,
+        // so lower bubbles never look attached to the bubbles above them
+        function lineCount(row) {
+            var tops = [];
+            Array.prototype.forEach.call(row.querySelectorAll('.cr-node'), function (n) {
+                var t = Math.round(n.getBoundingClientRect().top);
+                if (!tops.some(function (x) { return Math.abs(x - t) < 8; })) tops.push(t);
+            });
+            return tops.length;
+        }
+        var wrapped = [];
+        for (var q = 1; q < rows.length; q++) {
+            wrapped[q] = !rows[q].classList.contains('is-single') && lineCount(rows[q]) > 1;
+            rows[q].querySelector('.cr-nodes').classList.toggle('is-grouped', wrapped[q]);
+        }
+        r = mapEl.getBoundingClientRect();
         for (var k = 0; k < rows.length - 1; k++) {
             var from = rows[k].querySelector('.cr-node.is-selected');
             if (!from) continue;
-            var kids = Array.prototype.slice.call(rows[k + 1].querySelectorAll('.cr-node'));
-            var lines = [];
-            kids.forEach(function (n) {
-                var t = Math.round(n.getBoundingClientRect().top), g = null;
-                lines.forEach(function (l) { if (Math.abs(l.t - t) < 8) g = l; });
-                if (g) g.n.push(n); else lines.push({ t: t, n: [n] });
-            });
-            lines.sort(function (a, b) { return a.t - b.t; });
-            lines.forEach(function (line, li) {
-                line.n.forEach(function (n) { link(li === 0 ? from : nearestByX(lines[li - 1].n, n), n); });
-            });
+            if (wrapped[k + 1]) { link(from, rows[k + 1].querySelector('.cr-nodes'), 16); continue; }
+            Array.prototype.forEach.call(rows[k + 1].querySelectorAll('.cr-node'), function (n) { link(from, n, 0); });
         }
     }
     window.addEventListener('resize', function () { var s = mapEl.querySelector('.cr-links'); if (s) drawLinks(s); });

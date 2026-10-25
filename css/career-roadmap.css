@@ -209,3 +209,7 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 .cr-all-field { color: #5a6b7d; font-size: .78rem; }
 .cr-all-count { text-align: center; color: #5a6b7d; margin: 14px 0 0; }
 @media (max-width: 560px) { .cr-search-box { flex: none; width: 100%; } .cr-all-items { grid-template-columns: 1fr; } }
+
+/* ---------- grouped rows: one line from the parent, separate choices inside ---------- */
+.cr-nodes.is-grouped { position: relative; margin-top: 18px; }
+.cr-nodes.is-grouped::before { content: ""; position: absolute; inset: -16px -14px -14px; border: 2px dashed #b9cbe0; border-radius: 22px; background: rgba(238, 244, 250, .7); z-index: -1; pointer-events: none; }
